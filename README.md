@@ -12,7 +12,7 @@ Javascript Cheat Sheet for the most common stuff..
              console.log( 'filterSkills(searchvalue) ENTER KEY - $(this).val(): ' + $(this).val() );
              filterSkills( $(this).val() );
           }
-          else $( '.skillbarWRAP-sub-search-results' ).css( 'display', 'flex' );
+          else $( '.skillbarWRAP-sub-search-empty' ).css( 'display', 'flex' );
 
        return false; // prevent page reload on enter
        } 
