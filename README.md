@@ -219,7 +219,7 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 
-                           // dont use input or enter key with reload page.. Use always custom class/id
+                           // dont use input or enter key will reload page.. Use always custom class/id
                           $(".searchbox-input").on("keydown",function search(e) {
 
                                   if( !$(this).val() ) {
