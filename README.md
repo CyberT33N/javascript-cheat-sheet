@@ -11,12 +11,12 @@ Javascript Cheat Sheet for the most common stuff..
           if( $(this).val() ){
              console.log( 'filterSkills(searchvalue) ENTER KEY - $(this).val(): ' + $(this).val() );
              filterSkills( $(this).val() );
-          } // if( $(this).val() ){
+          }
           else $( '.skillbarWRAP-sub-search-results' ).css( 'display', 'flex' );
 
        return false; // prevent page reload on enter
-       } // if(e.keyCode == 13) { // ENTER KEY
+       } 
 
-}); //$("input").on("keydown",function search(e) {
+});
 ```  
 
