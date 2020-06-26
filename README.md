@@ -1,7 +1,7 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
-# Search Form Sample
+# DOM Search Sample
 ```html
 
 
