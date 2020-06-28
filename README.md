@@ -20,6 +20,20 @@ element.dispatchEvent(event);
 ```
 
 
+________________________________________________________
+________________________________________________________
+
+# jQuery use !important with .css()
+```javascript
+let elem = $(".ui__downloadList__item.purple");
+elem[0].style.removeProperty('z-index');
+elem[0].style.setProperty('z-index', '1', 'important');
+```
+
+________________________________________________________
+________________________________________________________
+
+
 # Prevent redirect on input search with Enter
 ```javascript
                            // dont use input as selector or enter key will reload page.. Use always custom class/id
