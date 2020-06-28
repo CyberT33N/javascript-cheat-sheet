@@ -1,6 +1,11 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
+# Click
+```javascript
+document.querySelector('.ui__downloadList__item.purple').click();
+```
+
 # Prevent redirect on input search with Enter
 ```javascript
                            // dont use input as selector or enter key will reload page.. Use always custom class/id
