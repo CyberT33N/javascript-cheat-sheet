@@ -1,10 +1,24 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
-# Click
+# Simulate Click
 ```javascript
 document.querySelector('.ui__downloadList__item.purple').click();
 ```
+
+# Simulate Hover
+```javascript
+var element = document.querySelector('.ui__downloadList__item.purple');
+
+var event = new MouseEvent('mouseover', {
+  'view': window,
+  'bubbles': true,
+  'cancelable': true
+});
+
+element.dispatchEvent(event);
+```
+
 
 # Prevent redirect on input search with Enter
 ```javascript
