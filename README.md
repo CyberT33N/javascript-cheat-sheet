@@ -14,6 +14,7 @@ Javascript Cheat Sheet for the most common stuff..
 
           tmpARtwo.push(currenturl);
       }) 
+      log( 'For loop is done.. );
     );
 ```
 
