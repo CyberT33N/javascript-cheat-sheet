@@ -17,6 +17,13 @@ Javascript Cheat Sheet for the most common stuff..
     );
 ```
 
+## Loops - Sequential
+```javascript
+for (let d of yourArrayHere) {
+    await redirectChecker(d);
+ }
+```
+
 
 <br />
 <br />
