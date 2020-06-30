@@ -1,6 +1,30 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
+# Async
+
+## Loops - In Parallel
+```javascript
+  await Promise.all(
+      yourArrayHere.map(async d => {
+      log( 'Current array item we process: ' + d );
+
+          let currenturl = await redirectChecker(d);
+          log( 'Final url after redirect: ' + currenturl );
+
+          tmpARtwo.push(currenturl);
+      }) 
+    );
+```
+
+
+<br />
+<br />
+________________________________________________________
+________________________________________________________
+<br />
+<br />
+
 # Simulate Click
 ```javascript
 document.querySelector('.ui__downloadList__item.purple').click();
@@ -19,9 +43,12 @@ var event = new MouseEvent('mouseover', {
 element.dispatchEvent(event);
 ```
 
-
+<br />
+<br />
 ________________________________________________________
 ________________________________________________________
+<br />
+<br />
 
 # jQuery use !important with .css()
 ```javascript
