@@ -1,6 +1,27 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
+# jQuery
+
+## Class Modification
+```javascript
+if($(this).hasClass(animClass)){
+   $(this).removeClass(animClass);
+} $(this).addClass(animClassBlack);
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
 # Async
 
 ## Loops - In Parallel
