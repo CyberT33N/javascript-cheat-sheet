@@ -10,6 +10,14 @@ if($(this).hasClass(animClass)){
 } $(this).addClass(animClassBlack);
 ```
 
+## Check for Touch Event (Mobile/Tablet)
+```javascript
+$(document).on('touchstart', '.skillbarWRAP', function(e) {
+  var xPos = e.originalEvent.touches[0].pageX;
+  console.log( 'xPos: ' + xPos );
+});
+```
+
 <br />
 <br />
 
