@@ -13,11 +13,11 @@ if($(this).hasClass(animClass)){
 ## Check for Touch Event (Mobile/Tablet)
 ```javascript
 
-    $(document).on('touchstart touchend', '.skillbarWRAP', function(e) {
+$(document).on('touchstart touchend', '.skillbarWRAP', function(e) {
 
 /*
-      var xPos = e.originalEvent.touches[0].pageX;
-      console.log( 'xPos: ' + xPos );
+var xPos = e.originalEvent.touches[0].pageX;
+console.log( 'xPos: ' + xPos );
 */
 
       if( e.type == 'touchstart' ) console.log( 'TOUCH START - .skillbarWRAP-sub-searchresults-wrap' );  
