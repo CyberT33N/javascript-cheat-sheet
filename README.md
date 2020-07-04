@@ -5,9 +5,9 @@ Javascript Cheat Sheet for the most common stuff..
 
 ## Class Modification
 ```javascript
-if($(this).hasClass(animClass)){
-   $(this).removeClass(animClass);
-} $(this).addClass(animClassBlack);
+if( $(this).hasClass(animClass) ){
+    $(this).removeClass(animClass);
+}   $(this).addClass(animClassBlack);
 ```
 
 ## Check for Touch Event (Mobile/Tablet)
