@@ -28,6 +28,20 @@ console.log( 'xPos: ' + xPos );
 
 ```
 
+## Import multiple internal scripts
+```javascript
+
+     $.when(
+         $.getScript( "js/headerbig.js" ),
+         $.getScript( "js/menubar.js" ),
+         $.Deferred(function( deferred ){
+             $( deferred.resolve );
+         })
+     ).done(function(){
+         console.log('Scripts Load was performed.');
+    }); //).done(function(){
+```
+
 <br />
 <br />
 
