@@ -39,7 +39,7 @@ console.log( 'xPos: ' + xPos );
          })
      ).done(function(){
          console.log('Scripts Load was performed.');
-    }); //).done(function(){
+    });
 ```
 
 <br />
