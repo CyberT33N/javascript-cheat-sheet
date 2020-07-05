@@ -42,6 +42,15 @@ console.log( 'xPos: ' + xPos );
 
 # Async
 
+## Create Async
+```javascript
+(async () => {
+ console.log( 'do some async stuff here..' );
+})().catch((e) => {
+ console.log('Error:' + JSON.stringify( e, null, 4) )
+}); //   })().catch((e) => {
+```
+
 ## Loops - In Parallel
 ```javascript
   await Promise.all(
