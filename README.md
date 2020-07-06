@@ -80,6 +80,12 @@ async function test(){
 ```
 
 
+## SetTimeout
+```javascript
+ await new Promise(resolve => setTimeout(resolve, 1000));
+```
+
+
 ## Loops - In Parallel
 ```javascript
   await Promise.all(
