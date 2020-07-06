@@ -141,6 +141,46 @@ console.log(second_promise);
 async_function();   
 ```
 
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
+# Promise
+
+## Nested Functions
+```javascript
+
+CheckScrollDirection().then( r => { 
+console.log( 'This should come as last message and will contain the value we get from the lowest child function: ' + r );
+});
+
+
+function CheckScrollDirection(){return new Promise(resolve => { 
+                scrollafterchangeDOWN().then( r => {  
+                      console.log( 'This should come as second message' );
+                      resolve(r); 
+                 });                      
+})};
+
+
+function scrollafterchangeDOWN(){return new Promise(resolve => { 
+                console.log( 'This should come as first message' );
+                resolve('direction is down..'); 
+})};
+
+```
+
+
 <br />
 <br />
 
