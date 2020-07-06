@@ -11,6 +11,33 @@ Javascript Cheat Sheet for the most common stuff..
   });
 ```
 
+## Get scroll direction
+```javascript
+// method 1 (for me only this worked stable)
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(window).scrollTop();
+   if (st > lastScrollTop){
+       // downscroll code
+   } else {
+      // upscroll code
+   }
+   lastScrollTop = $(window).scrollTop();
+});
+
+//method 2
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+       // downscroll code
+   } else {
+      // upscroll code
+   }
+   lastScrollTop = st;
+});
+```
+
 ## Class Modification
 ```javascript
 if( $(this).hasClass(animClass) ){
