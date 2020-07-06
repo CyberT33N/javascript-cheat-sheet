@@ -3,7 +3,7 @@ Javascript Cheat Sheet for the most common stuff..
 
 # jQuery
 
-## Event Listener
+## Event Listener (https://api.jquery.com/category/events/)
 ```javascript
   $(window).on("resize scroll click touchstart touchend mouseover mouseout",function(e){
   console.log( "Current event class: " + $(e.target).attr('class') );
