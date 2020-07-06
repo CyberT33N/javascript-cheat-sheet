@@ -107,8 +107,35 @@ for (let d of yourArrayHere) {
  }
 ```
 
+
 ## Loops - Chain Loop
 ```javascript
+//method 1
+
+               three();
+async function three(){
+  
+            await one();
+            console.log( 'FINISH one()' );
+            
+            await two();
+            console.log( 'FINISH two()' );
+}
+
+
+async function one(){
+            console.log( 'ENTER one()' );
+            await new Promise(resolve => setTimeout(resolve, 5000));
+}
+
+
+async function two(){
+            console.log( 'ENTER two()' );
+}
+
+//____________________________________________________________________
+
+// method 2
 //This function returns promise after 2 seconds
 var first_function = function() { 
 console.log("Entered first function"); 
