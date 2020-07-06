@@ -158,50 +158,7 @@ element.dispatchEvent(event);
 
 # Wait until scroll is finished
 ```javascript
-// https://codepen.io/familjenpersson/pen/bQeEBX
-/**
- * scroll smoothly to a element in the DOM.
- * @param elem element to scroll to
- * @param offset int offset pixels from element (default is 0)
- * @returns promise that gets resolved when scrolling is complete
- */
-function smoothScroll(elem, offset = 0) {
-  const rect = elem.getBoundingClientRect();
-  let targetPosition = rect.top + self.pageYOffset + offset;
-  window.scrollTo({
-    top: targetPosition,
-    behavior: 'smooth'
-  });
-  
-  return new Promise((resolve, reject) => {
-    const failed = setTimeout(() => {
-      reject();
-    }, 2000);
 
-    const scrollHandler = () => {
-      if (self.pageYOffset === targetPosition) {
-        window.removeEventListener("scroll", scrollHandler);
-        clearTimeout(failed);
-        resolve();
-      }
-    };
-    if (self.pageYOffset === targetPosition) {
-      clearTimeout(failed);
-      resolve();
-    } else {
-      window.addEventListener("scroll", scrollHandler);
-    }
-  });
-}
-
-//// Example: Function to test the smoothScroll ////
-function smoothScrollTest() {
-  var p = smoothScroll(document.querySelector("#greenDiv")).then(() => {
-    smoothScroll(document.querySelector("#redDiv")).then(() => {
-      alert("Scrolled down to the green div then back to the red. Cheers!");
-    });
-  });
-}
 ```
 
 
