@@ -66,11 +66,17 @@ console.log('scroll done..');
 
 ## Create Async
 ```javascript
+// Method 1
 (async () => {
  console.log( 'do some async stuff here..' );
 })().catch((e) => {
  console.log('Error:' + JSON.stringify( e, null, 4) )
 }); //   })().catch((e) => {
+
+// Method 2
+async function test(){
+ console.log( 'do some async stuff here..' );
+}
 ```
 
 
