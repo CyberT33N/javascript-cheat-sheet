@@ -3,6 +3,14 @@ Javascript Cheat Sheet for the most common stuff..
 
 # jQuery
 
+## Event Listener
+```javascript
+  $(window).on("resize scroll click",function(e){
+  console.log( "Current event class: " + $(e.target).attr('class') );
+  console.log( "Current catched event: " + e.type );
+  });
+```
+
 ## Class Modification
 ```javascript
 if( $(this).hasClass(animClass) ){
