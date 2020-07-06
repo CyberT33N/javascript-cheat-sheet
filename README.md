@@ -5,7 +5,7 @@ Javascript Cheat Sheet for the most common stuff..
 
 ## Event Listener
 ```javascript
-  $(window).on("resize scroll click",function(e){
+  $(window).on("resize scroll click touchstart touchend",function(e){
   console.log( "Current event class: " + $(e.target).attr('class') );
   console.log( "Current catched event: " + e.type );
   });
