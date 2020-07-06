@@ -36,7 +36,7 @@ console.log('scroll done..');
 ```
 
 
-## Import multiple internal scripts
+## Import scripts with callback
 ```javascript
 
      $.when(
