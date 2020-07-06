@@ -28,6 +28,14 @@ console.log( 'xPos: ' + xPos );
 
 ```
 
+# Wait until scroll is finished
+```javascript
+$('html,body').animate({scrollTop: $("layerone").offset().top},900, function() {
+console.log('scroll done..');
+});
+```
+
+
 ## Import multiple internal scripts
 ```javascript
 
@@ -154,11 +162,6 @@ var event = new MouseEvent('mouseover', {
 });
 
 element.dispatchEvent(event);
-```
-
-# Wait until scroll is finished
-```javascript
-
 ```
 
 
