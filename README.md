@@ -30,7 +30,7 @@ console.log( 'xPos: ' + xPos );
 
 ## Wait until scroll is finished
 ```javascript
-$('html').animate({scrollTop: $("layerone").offset().top},900, function() {
+$('html').animate({scrollTop: $("layerone").offset().top},250, function() {
 console.log('scroll done..');
 });
 ```
