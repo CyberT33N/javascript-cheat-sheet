@@ -253,6 +253,27 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 <br />
 
 
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
+# Anime.js
+
+## Remove Animation
+```javascript
+anime.remove( document.querySelector('#layertwo') )
+```
+
+
+<br />
+<br />
+
+
  _____________________________________________________
  _____________________________________________________
 
