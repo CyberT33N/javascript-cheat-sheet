@@ -155,68 +155,45 @@ for (let d of yourArrayHere) {
 
 ## Loops - Chain Loop
 ```javascript
-//method 1
+var doSomething;
+async function one(){
+console.log( 'ENTER one()' );
 
-               three();
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      doSomething = 69
+      console.log( 'doSomething: ' + doSomething );
+
+      // in async functions you dont have to resolve anything. When the functions reachs the end it will automatically resolve.      
+
+
+}
+
+async function two(){
+console.log( 'ENTER two()' );
+
+      // if you want you can resolve by yourself with return
+      if ( doSomething == 69 ) return true;
+
+}
+               
 async function three(){
-  
+console.log( 'ENTER three()' );
+
+      // Of course you can resolve aswell any strings, arrays, ...
+      return 'test'; 
+
+}
+
+
             await one();
             console.log( 'FINISH one()' );
             
-            await two();
-            console.log( 'FINISH two()' );
-}
+            let valuetwo = await two();
+            console.log( 'FINISH two() - valuetwo: ' + valuetwo );
 
+            let valuethree = await three();
+            console.log( 'FINISH three() - valuethree: ' + valuethree );
 
-async function one(){
-            console.log( 'ENTER one()' );
-            await new Promise(resolve => setTimeout(resolve, 5000));
-}
-
-
-async function two(){
-            console.log( 'ENTER two()' );
-}
-
-//____________________________________________________________________
-
-// method 2
-//This function returns promise after 2 seconds
-var first_function = function() { 
-console.log("Entered first function"); 
-return new Promise(resolve => { 
-    setTimeout(function() { 
-    resolve("\t\t This is first promise"); 
-    console.log("Returned first promise"); 
-    }, 2000); 
-}); 
-}; 
-//This function executes returns promise after 4 seconds
-var second_function = function() { 
-console.log("Entered second function"); 
-return new Promise(resolve => { 
-    setTimeout(function() { 
-    resolve("\t\t This is second promise"); 
-    console.log("Returned second promise"); 
-    }, 4000); 
-}); 
-}; 
-  
-var async_function = async function() { 
-console.log('async function called'); 
-  
-const first_promise= await first_function(); 
-console.log("After awaiting for 2 seconds," + 
-"the promise returned from first function is:"); 
-console.log(first_promise); 
-  
-const second_promise= await second_function(); 
-console.log("After awaiting for 4 seconds, the" +  
-"promise returned from second function is:"); 
-console.log(second_promise); 
-} 
-  
-async_function();   
 ```
 
 
