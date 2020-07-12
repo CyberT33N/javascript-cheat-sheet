@@ -117,7 +117,17 @@ async function test(){
 
 ## SetTimeout
 ```javascript
- await new Promise(resolve => setTimeout(resolve, 1000));
+await new Promise(resolve => setTimeout(resolve, 1000));
+```
+
+## SetInterval
+```javascript
+var countdownInterval = setInterval(async () => {
+
+    count++
+    if( count == 10 ) clearInterval( countdownInterval );
+                                
+}, 1000);
 ```
 
 
