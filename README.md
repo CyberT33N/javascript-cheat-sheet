@@ -160,7 +160,7 @@ async function one(){
 console.log( 'ENTER one()' );
 
       await new Promise(resolve => setTimeout(resolve, 5000));
-      doSomething = 69
+      doSomething = 69;
       console.log( 'doSomething: ' + doSomething );
 
       // in async functions you dont have to resolve anything. When the functions reachs the end it will automatically resolve.      
