@@ -285,6 +285,11 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 anime.remove( document.querySelector('#layertwo') )
 ```
 
+## Bouncing easing
+```javascript
+{duration: 2000, easing: 'easeOutElastic(1, .2)'} // <-- change .2 to higher value for slower bounce effect
+```
+
 
 <br />
 <br />
