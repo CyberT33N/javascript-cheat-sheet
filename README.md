@@ -351,6 +351,37 @@ elem[0].style.setProperty('z-index', '1', 'important');
 <br />
 <br />
 
+
+
+
+
+# Copy any text to clipboard
+```javascript
+  function textToClipboard(text) {
+      var dummy = document.createElement("textarea");
+      document.body.appendChild(dummy);
+      dummy.value = text;
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+  }
+```
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
+
+
 # Prevent redirect on input search with Enter
 ```javascript
                            // dont use input as selector or enter key will reload page.. Use always custom class/id
