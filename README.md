@@ -11,6 +11,14 @@ Javascript Cheat Sheet for the most common stuff..
   });
 ```
 
+## jQuery use !important with .css()
+```javascript
+let elem = $(".ui__downloadList__item.purple");
+elem[0].style.removeProperty('z-index');
+elem[0].style.setProperty('z-index', '1', 'important');
+```
+
+
 ## Get scroll direction
 ```javascript
 // method 1 (for me only this worked stable)
@@ -332,11 +340,13 @@ element.dispatchEvent(event);
 <br />
 <br />
 
-# jQuery use !important with .css()
+# document
+
+## remove text from url
 ```javascript
-let elem = $(".ui__downloadList__item.purple");
-elem[0].style.removeProperty('z-index');
-elem[0].style.setProperty('z-index', '1', 'important');
+// http://localhost/myresume/#image1
+document.location.hash = ""
+// http://localhost/myresume/#
 ```
 
 
