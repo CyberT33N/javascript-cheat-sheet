@@ -18,6 +18,13 @@ elem[0].style.removeProperty('z-index');
 elem[0].style.setProperty('z-index', '1', 'important');
 ```
 
+## Handle form submits
+```javascript
+$("#prospects_form").submit(function(e) {
+    e.preventDefault(); // prevent page reload on form submit
+});
+```
+
 
 ## Get scroll direction
 ```javascript
