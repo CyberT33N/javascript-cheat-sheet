@@ -363,15 +363,16 @@ $curl = curl_init($url);
 
   $json = json_decode($json);
 
-  $success = $json->success;
-  //echo "success: ".$success."\n\n";
-
-
 
 
 
   if(!empty($json)) {
   //echo $json['success'];
+  
+    $success = $json->success;
+  //echo "success: ".$success."\n\n";
+
+
 
 
              if( $success == 1 ){
