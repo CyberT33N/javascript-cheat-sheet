@@ -344,6 +344,11 @@ if( grecaptcha.getResponse().length == 0 ) {
 }
 ```
 
+## Simulate Captcha Fail
+```js
+//download extension like modheader and then change user agent to
+Googlebot/2.1
+```
 
 ## PHP Backend do verify of captcha
 ```php
