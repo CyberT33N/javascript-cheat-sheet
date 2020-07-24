@@ -358,9 +358,18 @@ grecaptcha.reset();
 
 ## Change width
 ```html
-<!-- data-size="compact" -->
+<!-- method 1# data-size="compact" -->
 <div class="g-recaptcha" data-size="compact"></div>
 ```
+
+```css
+/* method 2 */
+.g-recaptcha{
+     transform:scale(0.77);
+    transform-origin:0 0;
+ }
+```
+
 
 
 
