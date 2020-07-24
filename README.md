@@ -129,6 +129,32 @@ console.log( 'path: ' + $(".owl-carousel .owl-item").getSelector() );
 ```javascript
 $( ".owl-carousel .owl-item" ).each(function() { });
 ```
+
+
+
+
+## POST JSON to PHP file
+```javascript
+let json = {
+    email: emailInput,
+    subject: subjectInput,
+    message: messageInput,
+    token: grecaptcha.getResponse()
+};
+
+$.post("php/contact.php", json, function(r) {
+console.log('result after form submit:' + r);
+    if(r == 1) {
+        alert('Thanks for posting comment.')
+    } else {
+        alert('error..')
+    }
+});
+```
+
+
+
+
 <br />
 <br />
 
@@ -291,6 +317,90 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 
 <br />
 <br />
+
+
+# Google Recaptcha v2
+
+Sandbox keys for localhost testing:
+- Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+- Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
+
+```html
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!--  Place visible checkbox on your website  -->
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+```
+
+## Check if user filled Captcha
+```js
+// grecaptcha.getResponse() will contain the token which has to be sent to the google recaptcha for verify
+if( grecaptcha.getResponse().length == 0 ) {
+   alert("Please complete the I'm-not-a-robot widget before submitting your entry.");
+   return;
+}
+```
+
+
+## PHP Backend do verify of captcha
+```php
+
+$url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
+$curl = curl_init($url);
+
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Accept: application/json'));
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  $json = curl_exec($curl);
+  //echo "request data: ".$json."\n\n";
+
+/*
+    if(curl_errno($curl)){
+        echo 'Curl error: ' . curl_error($curl);
+    }
+*/
+
+
+
+
+  $json = json_decode($json);
+
+  $success = $json->success;
+  //echo "success: ".$success."\n\n";
+
+
+
+
+
+  if(!empty($json)) {
+  //echo $json['success'];
+
+
+             if( $success == 1 ){
+                  echo true;
+             } else{
+                  echo false;
+             }
+
+
+  } else {
+      echo "json empty";
+  }
+
+
+  curl_close($curl);
+  exit;
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 
 
 # Anime.js
