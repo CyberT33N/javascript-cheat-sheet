@@ -356,6 +356,13 @@ grecaptcha.reset();
 ```
 
 
+## Change width
+```html
+<!-- data-size="compact" -->
+<div class="g-recaptcha" data-size="compact"></div>
+```
+
+
 
 ## PHP Backend do verify of captcha
 ```php
