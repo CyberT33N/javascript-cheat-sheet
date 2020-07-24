@@ -319,11 +319,15 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 <br />
 
 
-# Google Recaptcha v2
+# Google reCAPTCHA v2
 
-Sandbox keys for localhost testing:
+Sandbox keys for localhost testing (will always return true):
 - Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
 - Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
+
+<br />
+<br />
+Alternative you can use **localhost** or **127.0.0.1** and create reCAPTCHA for localhost development
 
 ```html
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
