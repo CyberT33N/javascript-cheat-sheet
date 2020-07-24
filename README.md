@@ -350,6 +350,13 @@ if( grecaptcha.getResponse().length == 0 ) {
 Googlebot/2.1
 ```
 
+## Reset Captcha
+```js
+grecaptcha.reset();
+```
+
+
+
 ## PHP Backend do verify of captcha
 ```php
 
