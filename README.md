@@ -604,3 +604,6 @@ console.log( 'mobile/tablet check:' + mobileCheck );
 
 ## Immediately Invoked Function Expression (IIFE)
 - https://www.youtube.com/watch?v=eY7u388cvM4
+
+## Spread Operators
+- https://www.youtube.com/watch?v=I5AGSH8ROSU
