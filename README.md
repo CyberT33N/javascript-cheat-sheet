@@ -588,3 +588,19 @@ console.log( 'mobile/tablet check:' + mobileCheck );
 
 ```  
 
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# Tutorials
+
+## Immediately Invoked Function Expression (IIFE)
+- https://www.youtube.com/watch?v=eY7u388cvM4
