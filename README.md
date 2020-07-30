@@ -18,7 +18,7 @@ $('#element').trigger('touchend');
 
 $(this).trigger('touchend');
 
-## jQuery use !important with .css()
+## jQuery use !important
 ```javascript
 let elem = $(".ui__downloadList__item.purple");
 elem[0].style.removeProperty('z-index');
