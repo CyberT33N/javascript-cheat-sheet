@@ -442,6 +442,26 @@ $curl = curl_init($url);
 <br />
 
 
+## Add new style to :before and :after
+```javascript
+  let styleElem = document.head.appendChild(document.createElement("style"));
+      styleElem.innerHTML = ".bar:before {background-color: #fff;}";
+
+      styleElem = document.head.appendChild(document.createElement("style"));
+      styleElem.innerHTML = ".bar:after {background-color: #fff;}";
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 
 # Anime.js
 
