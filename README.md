@@ -11,6 +11,13 @@ Javascript Cheat Sheet for the most common stuff..
   });
 ```
 
+## Manually trigger event listener
+```javascript
+$('#element').trigger('touchend');
+```
+
+$(this).trigger('touchend');
+
 ## jQuery use !important with .css()
 ```javascript
 let elem = $(".ui__downloadList__item.purple");
