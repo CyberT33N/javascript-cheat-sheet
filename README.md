@@ -192,12 +192,20 @@ async function test(){
 ```
 
 
-## SetTimeout
+## setTimeout
 ```javascript
 await new Promise(resolve => setTimeout(resolve, 1000));
 ```
 
-## SetInterval
+## Sync setTimeout with async inside
+```javascript
+setTimeout( async () => {   await page.hover('video');    }, 5000);
+```
+
+ 
+
+
+## setInterval
 ```javascript
 var countdownInterval = setInterval(async () => {
 
