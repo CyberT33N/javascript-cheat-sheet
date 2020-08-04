@@ -93,6 +93,15 @@ console.log('scroll done..');
 ```
 
 
+## Scroll to bottom
+```javascript
+$("a[href='#bottom']").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});
+```
+
+
 ## Import scripts with callback
 ```javascript
 
