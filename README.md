@@ -353,7 +353,7 @@ arr2.push('d');  //Now, arr1 = ['a','b','c','d']
 
 In order to create unique clones check below..
 
-## clony array
+## clone array
 ```js
 var arr=[2,3,4,5];
 var copyArr=[...arr];
