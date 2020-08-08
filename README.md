@@ -5,10 +5,14 @@ Javascript Cheat Sheet for the most common stuff..
 
 ## Event Listener (https://api.jquery.com/category/events/)
 ```javascript
+// method 1 without css selector
   $(window).on("resize scroll click touchstart touchend mouseover mouseout",function(e){
   console.log( "Current event class: " + $(e.target).attr('class') );
   console.log( "Current catched event: " + e.type );
   });
+
+// method 2 with css selector
+$(document).on("click touchstart touchend", ".owl-dot", function (e) {  });
 ```
 
 ## Manually trigger event listener
