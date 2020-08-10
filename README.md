@@ -650,7 +650,7 @@ element.dispatchEvent(event);
 <br />
 <br />
 
-# document
+# document/window
 
 ## remove text from url
 ```javascript
@@ -663,6 +663,18 @@ document.location.hash = ""
 <br />
 <br />
 
+## Open something new window
+
+```javascript
+window.open('img/upwork/jobs/job1.jpg', '_blank', 'location=yes,height=$(window).height(),width=$(window).width(),scrollbars=yes,status=yes');
+```
+
+
+
+
+
+<br />
+<br />
 
  _____________________________________________________
  _____________________________________________________
