@@ -518,6 +518,8 @@ style.setProperty('--background', 'url(http://placekitten.com/200/300)');
 <br />
 
 
+
+
  _____________________________________________________
  _____________________________________________________
 
@@ -569,6 +571,7 @@ var carousel = $( '.owl-carousel' ).owlCarousel({
 ```
 
 
+
 <br />
 <br />
 
@@ -579,6 +582,43 @@ var carousel = $( '.owl-carousel' ).owlCarousel({
 
 <br />
 <br />
+
+# Navigator
+
+## Get Browser Language
+```javascript
+var userLang = navigator.language || navigator.userLanguage; 
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+## Embed pdf
+```javascript
+//method #1
+<object width="400" height="400" data="helloworld.pdf"></object>
+```
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 
 # Simulate Click
 ```javascript
