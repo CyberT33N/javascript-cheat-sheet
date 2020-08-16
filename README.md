@@ -427,6 +427,39 @@ grecaptcha.reset();
 ```
 
 
+```javascript
+/* method 3 */
+
+/*
+We create a container around the default .g-recaptcha div and then set the witdh where we later re-scale the iframe with scale
+.g-recaptcha-wrap{
+  width:15vmax;
+}
+*/
+          function scaleCaptcha() {
+          console.log( 'captchaScale();' );
+
+
+              let reCaptchaWidth = 300;
+              let containerWidth = $('.g-recaptcha-wrap').width();
+              let captchaScale = containerWidth / reCaptchaWidth;
+              console.log( 'captchaScale: ' + captchaScale + '\ncontainerWidth: ' + containerWidth );
+
+
+              $('.g-recaptcha').css( 'transform', 'scale('+captchaScale+')' )
+                                            .css( '-webkit-transform', 'scale('+captchaScale+')' )
+                                            .css( '-moz-transform', 'scale('+captchaScale+')' )
+                                            .css( '-ms-transform', 'scale('+captchaScale+')' )
+                                            .css( '-o-transform', 'scale('+captchaScale+')' );
+
+
+          } 
+
+
+            scaleCaptcha();
+            $(window).resize( scaleCaptcha );
+```
+
 
 
 ## PHP Backend do verify of captcha
