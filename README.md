@@ -443,6 +443,7 @@ We create a container around the default .g-recaptcha div and then set the witdh
               let reCaptchaWidth = 300;
               let containerWidth = $('.g-recaptcha-wrap').width();
               let captchaScale = containerWidth / reCaptchaWidth;
+	          captchaScale = Math.round(captchaScale * 100) / 100;
               console.log( 'captchaScale: ' + captchaScale + '\ncontainerWidth: ' + containerWidth );
 
 
