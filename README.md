@@ -296,6 +296,22 @@ console.log( 'ENTER three()' );
 
 
 
+## Combine Async with promise
+```javascript
+
+function one(){return new Promise(resolve => { 
+console.log( 'ENTER one()' );
+
+// do something
+resolve(true); 
+
+})};
+
+let result = await one();
+console.log( 'FINISH one() - result: ' + result );
+```
+
+
 <br />
 <br />
 
