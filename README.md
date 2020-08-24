@@ -5,7 +5,11 @@ Javascript Cheat Sheet for the most common stuff..
 
 ## Check browser (https://api.jquery.com/jQuery.browser/)
 ```javascript
+// method 1
 if ($.browser.mozilla) { ... }
+
+//method 2
+const isFirefoxBrowser = navigator.userAgent.includes('Firefox');
 ```
 
 ## Event Listener (https://api.jquery.com/category/events/)
