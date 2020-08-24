@@ -3,6 +3,11 @@ Javascript Cheat Sheet for the most common stuff..
 
 # jQuery
 
+## Check browser (https://api.jquery.com/jQuery.browser/)
+```javascript
+if ($.browser.mozilla) { ... }
+```
+
 ## Event Listener (https://api.jquery.com/category/events/)
 ```javascript
 // method 1 without css selector
