@@ -686,6 +686,7 @@ document.querySelector('.ui__downloadList__item.purple').click();
 
 # Simulate Hover
 ```javascript
+// Method #1
 var element = document.querySelector('.ui__downloadList__item.purple');
 
 var event = new MouseEvent('mouseover', {
@@ -695,6 +696,9 @@ var event = new MouseEvent('mouseover', {
 });
 
 element.dispatchEvent(event);
+
+// Method #2
+$("element").mousover();  
 ```
 
 
