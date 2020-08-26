@@ -108,10 +108,14 @@ console.log('scroll done..');
 
 ## Scroll to bottom
 ```javascript
+// method #1
 $("a[href='#bottom']").click(function() {
   $("html, body").animate({ scrollTop: $(document).height() }, "slow");
   return false;
 });
+
+// method #2
+document.querySelector(".chat").scrollTop = document.querySelector(".chat").scrollHeight;
 ```
 
 
