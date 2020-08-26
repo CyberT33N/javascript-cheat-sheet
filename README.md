@@ -701,6 +701,11 @@ element.dispatchEvent(event);
 $("element").mousover();  
 ```
 
+# Simulate Touch events
+```javascript
+var e = new Event('touchend');
+document.querySelector('#menubar-contact').dispatchEvent(e);
+```
 
 <br />
 <br />
