@@ -184,6 +184,15 @@ console.log('result after form submit:' + r);
 
 
 
+## clone
+```javascript
+  // you can clone a element and then you got the element duplicated in DOM. If needed you can delete the first one after..
+  $('#menubar-contact').clone(true).insertAfter($('#menubar-contact'));
+  // $('#menubar-contact').remove();
+```
+
+
+
 <br />
 <br />
 
