@@ -15,7 +15,7 @@ Javascript Cheat Sheet for the most common stuff..
 # API
 
 
-## Enter fullscreen
+## Enter fullscreen (https://developers.google.com/web/fundamentals/native-hardware/fullscreen/)
 
 
 ```html
@@ -24,6 +24,7 @@ Javascript Cheat Sheet for the most common stuff..
   var goFS = document.getElementById("goFS");
   goFS.addEventListener("click", function() {
       
+   // this works with scroll -  do not use document.body.requestFullscreen();	
    const elem = document.documentElement;
    if (elem.requestFullscreen) {elem.requestFullscreen()}
    
