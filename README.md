@@ -1,6 +1,53 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
+
+
+
+
+
+
+
+
+
+
+
+# API
+
+
+## Enter fullscreen
+
+
+```javascript
+<button id="goFS">Go fullscreen</button>
+<script>
+  var goFS = document.getElementById("goFS");
+  goFS.addEventListener("click", function() {
+      
+   const elem = document.documentElement;
+   if (elem.requestFullscreen) {elem.requestFullscreen()}
+   
+  }, false);
+</script>
+```
+
+
+
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
+
 # jQuery
 
 ## Check browser (https://api.jquery.com/jQuery.browser/)
