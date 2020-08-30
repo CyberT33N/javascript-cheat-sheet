@@ -18,7 +18,7 @@ Javascript Cheat Sheet for the most common stuff..
 ## Enter fullscreen
 
 
-```javascript
+```html
 <button id="goFS">Go fullscreen</button>
 <script>
   var goFS = document.getElementById("goFS");
