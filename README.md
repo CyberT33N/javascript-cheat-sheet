@@ -27,6 +27,12 @@ Javascript Cheat Sheet for the most common stuff..
    // this works with scroll -  do not use document.body.requestFullscreen();	
    const elem = document.documentElement;
    if (elem.requestFullscreen) {elem.requestFullscreen()}
+
+      if(screen.width === window.innerWidth){
+      console.log('fullscreen detected');
+      }
+
+
    
   }, false);
 </script>
