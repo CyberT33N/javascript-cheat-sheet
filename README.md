@@ -27,9 +27,7 @@ Javascript Cheat Sheet for the most common stuff..
    const elem = document.documentElement;
    if (elem.requestFullscreen) {elem.requestFullscreen()}
 
-      if(screen.width === window.innerWidth){
-      console.log('fullscreen detected');
-      }
+      if(document.fullscreenElement) console.log('fullscreen detected');
 
   
  });
