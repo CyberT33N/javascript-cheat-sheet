@@ -21,8 +21,7 @@ Javascript Cheat Sheet for the most common stuff..
 ```html
 <button id="goFS">Go fullscreen</button>
 <script>
-  var goFS = document.getElementById("goFS");
-  goFS.addEventListener("click", function() {
+ $("#goFS").on("click",function(){
       
    // this works with scroll -  do not use document.body.requestFullscreen();	
    const elem = document.documentElement;
@@ -32,9 +31,8 @@ Javascript Cheat Sheet for the most common stuff..
       console.log('fullscreen detected');
       }
 
-
-   
-  }, false);
+  
+ });
 </script>
 ```
 
