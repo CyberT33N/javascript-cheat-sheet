@@ -246,6 +246,14 @@ console.log('result after form submit:' + r);
 ```
 
 
+## focus & focusout
+```javascript
+  $('.searchbox-input').focus(function() {
+       $(this).attr('placeholder', '');
+  }).blur(function() {
+        $(this).attr('placeholder', 'Search Skill..');             
+  });
+```
 
 <br />
 <br />
