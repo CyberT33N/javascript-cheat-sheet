@@ -443,6 +443,36 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 <br />
 
 
+# loaded
+
+## Wait until document ready
+```javascript
+$(function(){ //.. })
+```
+
+## Wait until everything is fully loaded and loading icon is gone
+```javascript
+window.addEventListener('load', function () { //.. });
+```
+
+## Wait until element loaded
+```javascript
+ document.querySelector('.profile').onload = function(e){ //.. }
+```
+
+
+<br />
+<br />
+
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 # Clone unique
 For default javascript act like this:
 ```js
