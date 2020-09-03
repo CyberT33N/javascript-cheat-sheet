@@ -461,6 +461,14 @@ window.addEventListener('load', function () { //.. });
 ```
 
 
+## remove event listener from anonym function
+```javascript
+document.querySelector('.profile').addEventListener('load', function () { 
+  this.removeEventListener('load', arguments.callee);
+});
+```
+
+
 <br />
 <br />
 
