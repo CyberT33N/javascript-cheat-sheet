@@ -16,6 +16,7 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 ## Enter fullscreen (https://developers.google.com/web/fundamentals/native-hardware/fullscreen/)
+- Doesn´t work on ios..
 
 
 ```html
