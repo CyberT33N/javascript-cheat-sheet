@@ -65,13 +65,16 @@ const isFirefoxBrowser = navigator.userAgent.includes('Firefox');
 ## Event Listener (https://api.jquery.com/category/events/)
 ```javascript
 // method 1 without css selector
-  $(window).on("resize scroll click touchstart touchend mouseover mouseout",function(e){
+  $(window).on("resize scroll click touchstart touchend mouseover mouseout focus focusout",function(e){
   console.log( "Current event class: " + $(e.target).attr('class') );
   console.log( "Current catched event: " + e.type );
   });
 
 // method 2 with css selector
 $(document).on("click touchstart touchend", ".owl-dot", function (e) {  });
+
+// method 3
+$('input').on('focusout',function(){ //.. });
 ```
 
 ## Manually trigger event listener
@@ -243,16 +246,6 @@ console.log('result after form submit:' + r);
   // you can clone a element and then you got the element duplicated in DOM. If needed you can delete the first one after..
   $('#menubar-contact').clone(true).insertAfter($('#menubar-contact'));
   // $('#menubar-contact').remove();
-```
-
-
-## focus & focusout
-```javascript
-  $('.searchbox-input').focus(function() {
-       $(this).attr('placeholder', '');
-  }).blur(function() {
-        $(this).attr('placeholder', 'Search Skill..');             
-  });
 ```
 
 <br />
