@@ -3,14 +3,26 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 
+# Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
 
+```javascript
+let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?
+                 .querySelectorAll('.mdi-linkedin')[0]?
+                 .parentNode?.getAttribute('href');
+```
 
 
+<br />
+<br />
 
 
+ _____________________________________________________
+ _____________________________________________________
 
 
+<br />
+<br />
 
 # API
 
