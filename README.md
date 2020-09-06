@@ -266,7 +266,7 @@ console.log('result after form submit:' + r);
 ## Get parent
 ```javascript
 // vanilla javascript 
-document.querySelector('.mdi-link-variant').parentNode.getAttribute('href');
+document.querySelector('.mdi-link-variant')?.parentNode?.getAttribute('href');
 
 //jquery
 $( '.element' ).parent();
@@ -276,7 +276,7 @@ $( '.element' ).parent();
 ## Find element
 ```javascript
 // vanilla javascript 
-document.querySelector('.zp_7I-lw').querySelectorAll('.zp_3_fnL')[0].getAttribute('href')
+document.querySelector('.zp_7I-lw')?.querySelectorAll('.zp_3_fnL')[0]?.getAttribute('href')
 
 //jquery
 $( '.element' ).find( '.test' );
