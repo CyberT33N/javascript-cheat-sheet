@@ -249,6 +249,19 @@ console.log('result after form submit:' + r);
   // $('#menubar-contact').remove();
 ```
 
+
+## Get parent
+```javascript
+// vanilla javascript 
+document.querySelector('.mdi-link-variant').parentNode.getAttribute('href');
+
+//jquery
+$( '.element' ).parent();
+```
+
+
+.parentNode
+
 <br />
 <br />
 
