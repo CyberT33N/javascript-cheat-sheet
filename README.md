@@ -7,9 +7,7 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 ```javascript
-let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?
-                 .querySelectorAll('.mdi-linkedin')[0]?
-                 .parentNode?.getAttribute('href');
+let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
 ```
 
 
