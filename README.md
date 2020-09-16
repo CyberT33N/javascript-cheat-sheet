@@ -1012,6 +1012,15 @@ console.log( 'mobile/tablet check:' + mobileCheck );
 <br />
 
 
+## Check if Safari Browser
+```javascript
+function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);  } 
+```  
+
+<br />
+<br />
+
+
  _____________________________________________________
  _____________________________________________________
 
