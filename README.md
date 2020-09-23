@@ -2,6 +2,11 @@
 Javascript Cheat Sheet for the most common stuff..
 
 
+<br />
+<br />
+
+
+
 # Object-oriented Programming
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
 
