@@ -2,6 +2,25 @@
 Javascript Cheat Sheet for the most common stuff..
 
 
+# Object-oriented Programming
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
+
+# Functional Programming
+- https://opensource.com/article/17/6/functional-javascript
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
 
 # Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
