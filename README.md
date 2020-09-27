@@ -345,8 +345,8 @@ $( '.element' ).find( '.test' );
 (async () => {
  console.log( 'do some async stuff here..' );
 })().catch((e) => {
- console.log('Error:' + JSON.stringify( e, null, 4) )
-}); //   })().catch((e) => {
+ console.log('Error:' +  e )
+}); 
 
 // Method 2
 async function test(){
