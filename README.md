@@ -1075,3 +1075,4 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 
 ## Spread Operators
 - https://www.youtube.com/watch?v=I5AGSH8ROSU
+- https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab
