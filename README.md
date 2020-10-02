@@ -323,8 +323,6 @@ $( '.element' ).find( '.test' );
 ```
 
 
-.parentNode
-
 <br />
 <br />
 
