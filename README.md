@@ -313,6 +313,16 @@ $( '.element' ).parent();
 ```
 
 
+## Get next
+```javascript
+// vanilla javascript 
+document.getElementById("item1").nextElementSibling
+
+//jquery
+$( '.element' ).next();
+```
+
+
 ## Find element
 ```javascript
 // vanilla javascript 
