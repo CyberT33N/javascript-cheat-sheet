@@ -571,9 +571,16 @@ In order to create unique clones check below..
 
 ## clone array
 ```js
-var arr=[2,3,4,5];
-var copyArr=[...arr];
+var arr = [2,3,4,5];
+var copyArr = [...arr];
 ```
+
+## clone array with objects inside
+```js
+var arr = [{"a":1}, {"b":2}];
+var copyArr = JSON.parse(JSON.stringify(arr));
+```
+
 
 <br />
 <br />
