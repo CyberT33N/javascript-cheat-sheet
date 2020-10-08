@@ -582,6 +582,12 @@ var copyArr = JSON.parse(JSON.stringify(arr));
 ```
 
 
+
+## get random item from array
+```js
+var rndval=items[Math.floor(Math.random()*items.length)];
+```
+
 <br />
 <br />
 
