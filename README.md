@@ -390,7 +390,28 @@ var countdownInterval = setInterval(async () => {
 
 ## Functions - In Parallel
 ```javascript
-await Promise.all([someCall(), anotherCall()]);
+async function a (){
+  console.log('a');
+};
+
+
+async function b (){
+  console.log('b');
+  await new Promise(resolve => setTimeout(resolve, 3000));
+  console.log('b later');
+};
+
+
+
+(async () => {
+
+  await Promise.all([a(), b()]);
+  console.log('c');
+
+})().catch((e) => {
+   console.log('Error:' +  e )
+}); 
+
 ```
 
 ## Loops (Array) - In Parallel
