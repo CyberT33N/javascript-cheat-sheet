@@ -411,7 +411,11 @@ async function b (){
   /*
   // to store the results you can use this..
   let [someResult, anotherResult] = await Promise.all([someCall(), anotherCall()]);  
-  */
+  
+ // ** IMPORTANT **
+ // When any promise gets rejected then all other calls after this will get rejected too.. Use instead Promise.allSettled() which will wait for all functions to get finished if resolved or rejected
+
+*/
 
 })().catch((e) => {
    console.log('Error:' +  e )
