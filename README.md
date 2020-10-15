@@ -407,6 +407,11 @@ async function b (){
 
   await Promise.all([a(), b()]);
   console.log('c');
+  
+  /*
+  // to store the results you can use this..
+  let [someResult, anotherResult] = await Promise.all([someCall(), anotherCall()]);  
+  */
 
 })().catch((e) => {
    console.log('Error:' +  e )
