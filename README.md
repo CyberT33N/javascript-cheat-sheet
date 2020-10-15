@@ -387,7 +387,13 @@ var countdownInterval = setInterval(async () => {
 ```
 
 
-## Loops - In Parallel
+
+## Functions - In Parallel
+```javascript
+await Promise.all([someCall(), anotherCall()]);
+```
+
+## Loops (Array) - In Parallel
 ```javascript
   await Promise.all(
       yourArrayHere.map(async d => {
