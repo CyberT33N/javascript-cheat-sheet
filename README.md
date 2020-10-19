@@ -62,6 +62,30 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 <br />
 <br />
 
+
+# Get current link
+```javascript
+// method #1
+location.href
+
+// method #2
+window.location.href
+
+// method #3
+document.location.href
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 # API
 
 
