@@ -62,8 +62,9 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 <br />
 <br />
 
+# Link
 
-# Get current link
+## Get current link
 ```javascript
 // method #1
 location.href
@@ -74,6 +75,7 @@ window.location.href
 // method #3
 document.location.href
 ```
+
 
 <br />
 <br />
@@ -997,6 +999,29 @@ document.location.hash = ""
 window.open('img/upwork/jobs/job1.jpg', '_blank', 'location=yes,height=$(window).height(),width=$(window).width(),scrollbars=yes,status=yes');
 ```
 
+
+## Get link params from oauth popup window
+```javascript
+//https://gist.github.com/CyberT33N/b6077d75d25e1d728d68caeac6914dd4
+oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
+   console.log( 'code: ' + JSON.stringify(code, null, 4) );
+});
+```
+
+```html
+<html>
+  <body>
+
+    <div>Authorize OAuth Test App?</div>
+
+    <form action="/code" method="POST">
+      <button type="submit">OK</button>
+    </form>
+
+  </body>
+</html>
+
+```
 
 
 
