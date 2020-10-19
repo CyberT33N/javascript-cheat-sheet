@@ -1031,7 +1031,8 @@ window.open('img/upwork/jobs/job1.jpg', '_blank', 'location=yes,height=$(window)
 
 ## Get link params from oauth popup window
 ```javascript
-//https://gist.github.com/CyberT33N/b6077d75d25e1d728d68caeac6914dd4
+// https://gist.github.com/CyberT33N/b6077d75d25e1d728d68caeac6914dd4
+// https://www.npmjs.com/package/oauth-open
 oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
    console.log( 'code: ' + JSON.stringify(code, null, 4) );
 });
