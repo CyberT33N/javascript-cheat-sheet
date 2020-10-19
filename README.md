@@ -50,6 +50,25 @@ Javascript Cheat Sheet for the most common stuff..
 let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
 ```
 
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# Cookie
+
+## Get value of specific cookie
+```javascript
+var regex = /MyCookie=(.[^;]*)/ig;
+var match = regex.exec(document.cookie);
+var value = match[1];
+```
 
 <br />
 <br />
