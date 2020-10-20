@@ -70,6 +70,29 @@ var match = regex.exec(document.cookie);
 var value = match[1];
 ```
 
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# Object
+
+## Check if Object is empty
+```javascript
+var obj = {};
+if( Object.entries(obj).length < 1 ) console.log('empty');
+
+var obj = {"not": "empty"};
+if( Object.entries(obj).length > 0 ) console.log('not empty');
+```
+
 <br />
 <br />
 
