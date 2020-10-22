@@ -61,6 +61,96 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 <br />
 <br />
 
+# Sort
+
+## Sort Array by Numbers ASC
+```javascript
+var r = [
+  {
+    "id": 2,
+    "name": "Hardware",
+    "sorting": 2,
+    "parent_id": 0
+  },
+  {
+    "id": 1,
+    "name": "Games",
+    "sorting": 1,
+    "parent_id": 0
+  }
+];
+r.sort((a, b) => a.sorting - b.sorting );
+```
+
+
+## Sort Array by String ASC
+```javascript
+var r = [
+  {
+    "id": 2,
+    "name": "Hardware",
+    "sorting": 2,
+    "parent_id": 0
+  },
+  {
+    "id": 1,
+    "name": "Games",
+    "sorting": 1,
+    "parent_id": 0
+  }
+];
+r.sort((a, b) => a.name.localeCompare(b.name) );
+```
+
+
+## Sort Array by two values ASC
+The first value got always priority in order. The second value will only count if the first value sort gets not destroyed.
+```javascript
+var r = [
+  {
+    "id": 1,
+    "name": "Games",
+    "sorting": 1,
+    "parent_id": 0
+  },
+  {
+    "id": 2,
+    "name": "Hardware",
+    "sorting": 2,
+    "parent_id": 0
+  },
+  {
+    "id": 4,
+    "name": "XBOX One",
+    "sorting": 1,
+    "parent_id": 1
+  },
+  {
+    "id": 5,
+    "name": "Playstation",
+    "sorting": 3,
+    "parent_id": 1
+  }
+];
+r.sort((a, b) => a.sorting - b.sorting || a.name.localeCompare(b.name));
+```
+
+
+      
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
 # Cookie
 
 ## Get value of specific cookie
