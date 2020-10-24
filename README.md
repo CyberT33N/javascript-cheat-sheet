@@ -528,6 +528,17 @@ document.getElementById("item1").nextElementSibling
 $( '.element' ).next();
 ```
 
+## Append HTML to current element
+```javascript
+$('.right .top').append`<div class="chat" data-chat="${currentPerson}"></div>`);
+```
+
+
+## Insert HTML after specific element
+```javascript
+$('.right .top').after(`<div class="chat" data-chat="${currentPerson}"></div>`);
+```
+
 
 ## Find element
 ```javascript
