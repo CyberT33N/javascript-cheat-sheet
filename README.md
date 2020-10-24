@@ -7,61 +7,6 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 
-# Object-oriented Programming
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
-
-# Functional Programming
-- https://opensource.com/article/17/6/functional-javascript
-
-
-<br />
-<br />
-
-
- _____________________________________________________
- _____________________________________________________
-
-
-<br />
-<br />
-
-# Microservices
-
-## Object-oriented
-- https://nodesource.com/blog/microservices-in-nodejs
-
-
-
-<br />
-<br />
-
-
- _____________________________________________________
- _____________________________________________________
-
-
-<br />
-<br />
-
-# Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-
-
-```javascript
-let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
-```
-
-
-
-<br />
-<br />
-
-
- _____________________________________________________
- _____________________________________________________
-
-
-<br />
-<br />
 
 # filter
 
@@ -1401,6 +1346,58 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 <br />
 
 # Tutorials
+
+
+
+
+# Object-oriented Programming
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
+
+# Functional Programming
+- https://opensource.com/article/17/6/functional-javascript
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# Microservices
+
+## Object-oriented
+- https://nodesource.com/blog/microservices-in-nodejs
+
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+
+
+```javascript
+let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
+```
+
+
+
+<br />
+<br />
+
 
 ## Immediately Invoked Function Expression (IIFE)
 - https://www.youtube.com/watch?v=eY7u388cvM4
