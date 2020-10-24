@@ -326,6 +326,16 @@ window.location.search
 
 # jQuery
 
+## Check for click
+```javascript
+$(".some_class").on("click", function(e) {
+  console.log("Event: ", e);
+  console.log("Current Target of Event: ", e.currentTarget);
+  console.log("this: ", this);
+  console.log("$(this): ", $(this));
+})
+```
+
 ## Check browser (https://api.jquery.com/jQuery.browser/)
 ```javascript
 // method 1
