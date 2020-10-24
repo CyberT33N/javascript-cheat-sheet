@@ -50,6 +50,41 @@ Javascript Cheat Sheet for the most common stuff..
 let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
 ```
 
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# filter
+
+## compare 2 arrays of objects and remove duplicates
+```javascript
+var cars1 = [
+    {id: 2, make: "Honda", model: "Civic", year: 2001},
+    {id: 1, make: "Ford",  model: "F150",  year: 2002},
+    {id: 3, make: "Chevy", model: "Tahoe", year: 2003},
+];
+    
+var cars2 = [
+    {id: 3, make: "Kia",    model: "Optima",  year: 2001},
+    {id: 4, make: "Nissan", model: "Sentra",  year: 1982},
+    {id: 2, make: "Toyota", model: "Corolla", year: 1980},
+];
+
+let res = cars1.concat(cars2.filter(({id}) => !cars1.find(x => x.id === id)))
+             //.sort((a, b) => a.id - b.id);
+
+console.log(res);
+```
+
 <br />
 <br />
 
