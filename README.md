@@ -21,7 +21,18 @@ function formatAMPM(date) {
   var strTime = hours + ':' + minutes + ' ' + ampm;
   return strTime;
 }
-console.log(formatAMPM(new Date));
+console.log(formatAMPM(new Date)); // <-- 8:23 pm
+```
+
+## get current Date
+```javascript
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+console.log(today) // <-- 10/25/2020
 ```
 
 
