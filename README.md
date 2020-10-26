@@ -313,12 +313,19 @@ window.location.search
 
 ## Check for click
 ```javascript
+// method #1
 $(".some_class").on("click", function(e) {
   console.log("Event: ", e);
   console.log("Current Target of Event: ", e.currentTarget);
   console.log("this: ", this);
   console.log("$(this): ", $(this));
 })
+
+// method #2
+$("#clicker").click(function () { /*..*/ });
+
+// method #3
+$(document).on('click', '#yourid', function() { /*..*/ });
 ```
 
 ## Check browser (https://api.jquery.com/jQuery.browser/)
