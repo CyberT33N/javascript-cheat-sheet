@@ -2,8 +2,8 @@
 Javascript Cheat Sheet for the most common stuff..
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -36,16 +36,16 @@ console.log(today) // <-- 10/25/2020
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # filter
@@ -70,16 +70,16 @@ let res = cars1.concat(cars2.filter(({id}) => !cars1.find(x => x.id === id)))
 console.log(res);
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Sort
 
@@ -159,16 +159,16 @@ r.sort((a, b) => a.sorting - b.sorting || a.name.localeCompare(b.name));
       
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # Cookie
@@ -181,16 +181,16 @@ var value = match[1];
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Object
 
@@ -203,16 +203,16 @@ var obj = {"not": "empty"};
 if( Object.entries(obj).length > 0 ) console.log('not empty');
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Link
 
@@ -258,16 +258,16 @@ window.location.search
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # API
 
@@ -281,7 +281,7 @@ window.location.search
 <script>
  $("#goFS").on("click",function(){
       
-   // this works with scroll -  do not use document.body.requestFullscreen();	
+   // this works with scroll -  do not use document.body.requestFullscreen();   
    const elem = document.documentElement;
    if (elem.requestFullscreen) {elem.requestFullscreen()}
 
@@ -296,16 +296,16 @@ window.location.search
 
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -568,16 +568,16 @@ $( '.element' ).find( '.test' );
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # Async
@@ -741,16 +741,16 @@ console.log( 'FINISH one() - result: ' + result );
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # Promise
@@ -779,8 +779,8 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -788,8 +788,8 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # loaded
@@ -818,8 +818,8 @@ document.querySelector('.profile').addEventListener('load', function () {
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -827,8 +827,8 @@ document.querySelector('.profile').addEventListener('load', function () {
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Clone unique
 For default javascript act like this:
@@ -859,16 +859,16 @@ var copyArr = JSON.parse(JSON.stringify(arr));
 var rndval=items[Math.floor(Math.random()*items.length)];
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # Google reCAPTCHA v2
@@ -877,8 +877,8 @@ Sandbox keys for localhost testing (will always return true):
 - Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
 - Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
 
-<br />
-<br />
+<br>
+<br>
 Alternative you can use **localhost** or **127.0.0.1** and create reCAPTCHA for localhost development
 
 ```html
@@ -939,7 +939,7 @@ We create a container around the default .g-recaptcha div and then set the witdh
               let reCaptchaWidth = 300;
               let containerWidth = $('.g-recaptcha-wrap').width();
               let captchaScale = containerWidth / reCaptchaWidth;
-	          captchaScale = Math.round(captchaScale * 100) / 100;
+              captchaScale = Math.round(captchaScale * 100) / 100;
               console.log( 'captchaScale: ' + captchaScale + '\ncontainerWidth: ' + containerWidth );
 
 
@@ -1009,16 +1009,16 @@ $curl = curl_init($url);
   exit;
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 ## Add new style to :before and :after
@@ -1044,8 +1044,8 @@ style.setProperty('--background', 'url(http://placekitten.com/200/300)');
 */
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -1054,8 +1054,8 @@ style.setProperty('--background', 'url(http://placekitten.com/200/300)');
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # Anime.js
@@ -1072,27 +1072,27 @@ anime.remove( document.querySelector('#layertwo') )
 
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Owl Carousel
 
 ## Fix auto width problems / resize on width/height change
 ```javascript
 var carousel = $( '.owl-carousel' ).owlCarousel({
-	margin: 25,
-	loop: true,
-	dots: false,
-	autoWidth: true,
-	items: 3
+    margin: 25,
+    loop: true,
+    dots: false,
+    autoWidth: true,
+    items: 3
 });
 
 //carousel.trigger( 'refresh.owl.carousel' );
@@ -1102,16 +1102,16 @@ var carousel = $( '.owl-carousel' ).owlCarousel({
 
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Navigator
 
@@ -1120,16 +1120,16 @@ var carousel = $( '.owl-carousel' ).owlCarousel({
 var userLang = navigator.language || navigator.userLanguage; 
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 ## Embed pdf
 ```javascript
@@ -1138,16 +1138,16 @@ var userLang = navigator.language || navigator.userLanguage;
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # Simulate Click
@@ -1178,16 +1178,16 @@ var e = new Event('touchend');
 document.querySelector('#menubar-contact').dispatchEvent(e);
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # document/window
 
@@ -1199,8 +1199,8 @@ document.location.hash = ""
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 ## Open something new window
 
@@ -1236,15 +1236,15 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 
 
 
-<br />
-<br />
+<br>
+<br>
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -1263,16 +1263,16 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 ```
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -1298,16 +1298,16 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 ```  
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 # Viewport
@@ -1322,16 +1322,16 @@ viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwid
 
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 ## Do something when current page / popup windows was closed
 ```javascript
@@ -1340,16 +1340,16 @@ const popup = window.open('oauth-dialog.html', '_blank', 'width=500,height=500')
 popup.onbeforeunload = function(){ /* .. */ };
 ```
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 
@@ -1383,8 +1383,8 @@ console.log( 'mobile/tablet check:' + mobileCheck );
     console.log( 'iosCheck check:' + iosCheck );
 ```  
 
-<br />
-<br />
+<br>
+<br>
 
 
 ## Check if Safari Browser
@@ -1392,16 +1392,16 @@ console.log( 'mobile/tablet check:' + mobileCheck );
 function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);  } 
 ```  
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Tutorials
 
@@ -1415,16 +1415,16 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 - https://opensource.com/article/17/6/functional-javascript
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Microservices
 
@@ -1433,16 +1433,16 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 
 
 
-<br />
-<br />
+<br>
+<br>
 
 
  _____________________________________________________
  _____________________________________________________
 
 
-<br />
-<br />
+<br>
+<br>
 
 # Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
@@ -1453,8 +1453,8 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 
 
 
-<br />
-<br />
+<br>
+<br>
 
 
 ## Immediately Invoked Function Expression (IIFE)
