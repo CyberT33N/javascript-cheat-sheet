@@ -7,6 +7,8 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 
+
+
 # time
 
 ## format time to AM/PM
@@ -1425,6 +1427,25 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 
 <br>
 <br>
+
+
+# Clean Code
+- https://github.com/ryanmcdermott/clean-code-javascript
+
+
+
+<br>
+<br>
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br>
+<br>
+
+
 
 # Microservices
 
