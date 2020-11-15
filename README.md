@@ -1432,6 +1432,7 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 ## Spread Operators
 - https://www.youtube.com/watch?v=I5AGSH8ROSU
 - https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab
+- https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
 
 ## Scope and Closures
 - https://css-tricks.com/javascript-scope-closures/
