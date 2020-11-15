@@ -1437,7 +1437,10 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 - https://css-tricks.com/javascript-scope-closures/
 
 ## Difference between let, var & const
-https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e
+- https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e
+
+## Destruction
+- https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
 
 <br>
 <br>
