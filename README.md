@@ -1457,6 +1457,9 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 
 <br><br>
 
+## CJS vs ESM
+https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1
+
 
  _____________________________________________________
  _____________________________________________________
