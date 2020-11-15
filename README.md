@@ -1416,35 +1416,46 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 ## Functional Programming
 - https://opensource.com/article/17/6/functional-javascript
 
+<br><br>
+
 ## Clean Code
 - https://github.com/ryanmcdermott/clean-code-javascript
 
+<br><br>
 
 ## Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 ```javascript
 let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
 ```
 
+<br><br>
 
 ## Immediately Invoked Function Expression (IIFE)
 - https://www.youtube.com/watch?v=eY7u388cvM4
 
+<br><br>
+
 ## Spread Operators
 - https://www.youtube.com/watch?v=I5AGSH8ROSU
-- https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab
+- https://dev.to/livecodestream/how-to-use-the-spread-operator-in-javascript-35bn
 - https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
+
+<br><br>
 
 ## Scope and Closures
 - https://css-tricks.com/javascript-scope-closures/
 
+<br><br>
+
 ## Difference between let, var & const
 - https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e
+
+<br><br>
 
 ## Destruction
 - https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
 
-<br>
-<br>
+<br><br>
 
 
  _____________________________________________________
