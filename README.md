@@ -1410,29 +1410,32 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 
 
 
-# Object-oriented Programming
+## Object-oriented Programming
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
 
-# Functional Programming
+## Functional Programming
 - https://opensource.com/article/17/6/functional-javascript
 
-
-<br>
-<br>
-
-
- _____________________________________________________
- _____________________________________________________
-
-
-<br>
-<br>
-
-
-# Clean Code
+## Clean Code
 - https://github.com/ryanmcdermott/clean-code-javascript
 
 
+## Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+```javascript
+let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
+```
+
+
+## Immediately Invoked Function Expression (IIFE)
+- https://www.youtube.com/watch?v=eY7u388cvM4
+
+## Spread Operators
+- https://www.youtube.com/watch?v=I5AGSH8ROSU
+- https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab
+
+## Scope and Closures
+- https://css-tricks.com/javascript-scope-closures/
+
 
 <br>
 <br>
@@ -1440,11 +1443,6 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
-
 
 
 # Microservices
@@ -1454,33 +1452,3 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 
 
 
-<br>
-<br>
-
-
- _____________________________________________________
- _____________________________________________________
-
-
-<br>
-<br>
-
-# Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-
-
-```javascript
-let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
-```
-
-
-
-<br>
-<br>
-
-
-## Immediately Invoked Function Expression (IIFE)
-- https://www.youtube.com/watch?v=eY7u388cvM4
-
-## Spread Operators
-- https://www.youtube.com/watch?v=I5AGSH8ROSU
-- https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab
