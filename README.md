@@ -7,6 +7,9 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 # Prototypes
+- A Beginner's Guide to JavaScript's Prototype (https://www.youtube.com/watch?v=XskMWBXNbp0)
+- Prototypes Example (https://dev.to/karataev/javascript-prototypes-by-example-15jh)
+
 
 ## create prototype with Object.create (**OLD METHOD**)
 ```javascript
@@ -1611,13 +1614,6 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 
 ## CJS vs ESM
 - https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1
-
-
-<br><br>
-
-## Prototypes
-- A Beginner's Guide to JavaScript's Prototype (https://www.youtube.com/watch?v=XskMWBXNbp0)
-- https://dev.to/karataev/javascript-prototypes-by-example-15jh
 
  _____________________________________________________
  _____________________________________________________
