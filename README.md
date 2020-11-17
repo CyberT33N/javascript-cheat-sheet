@@ -48,6 +48,21 @@ export default function add(a, b) {
 // app.js
 import add from './add';
 ```
+<br>
+<br>
+
+## No require, exports, module.exports, __filename, __dirname (https://nodejs.org/api/esm.html#esm_no_require_exports_module_exports_filename_dirname)
+```javascript
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+```
+
+<br>
+<br>
+
  _____________________________________________________
  _____________________________________________________
  
