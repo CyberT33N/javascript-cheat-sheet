@@ -47,11 +47,20 @@ console.log(leo.play(5));
 <br>
 <br>
 
-## getPrototypeOf (This will show all prototypes)
+## getPrototypeOf (This will show all prototypes from instance)
 ```javascript
 const prototype = Object.getPrototypeOf(leo);
 ```
 
+
+<br>
+<br>
+## Iterate over all keys incl. prototypes
+```javascript
+for(const key in leo){
+  console.log(``Key: ${key} - Value: ${leo[key]}`);
+}
+```
 
 
 <br>
