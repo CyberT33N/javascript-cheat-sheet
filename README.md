@@ -5,6 +5,31 @@ Javascript Cheat Sheet for the most common stuff..
 <br>
 <br>
 
+# ESM (es-modules) and CJS (commonjs)
+CJS vs ESM (https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1)
+
+
+## Examples
+```javascript
+// ### CJS ##
+module.exports.sum = (x, y) => x + y; // @filename: util.js
+const {sum} = require('./util.js');
+
+// ### ESM ##
+export const sum = (x, y) => x + y; // @filename: util.js
+import {sum} from './util.js'
+```
+
+
+<br>
+<br>
+
+ _____________________________________________________
+ _____________________________________________________
+ 
+
+<br>
+<br>
 
 # Prototypes
 - A Beginner's Guide to JavaScript's Prototype (https://www.youtube.com/watch?v=XskMWBXNbp0)
@@ -124,6 +149,9 @@ const leo = new Animal();
 ```
 
 
+
+<br>
+<br>
 
  _____________________________________________________
  _____________________________________________________
@@ -1609,11 +1637,6 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 
 ## Destruction
 - https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
-
-<br><br>
-
-## CJS vs ESM
-- https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1
 
  _____________________________________________________
  _____________________________________________________
