@@ -61,7 +61,7 @@ import add from './add.mjs';
 /* ## Option 2.5 ##
 Use the export default syntax. As example for controller files*/
 
-// controler.mjs
+// controller.mjs
 import {startBROWSER, openLink} from '../services/bot.mjs';
 export default {
   startBROWSER: async ()=>{ return await startBROWSER(); },
@@ -70,7 +70,7 @@ export default {
 
 
 // app.mjs
-import bot from './controler.mjs';
+import bot from './controller.mjs';
 await bot.startBROWSER();
 ```
 <br>
