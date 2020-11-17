@@ -23,7 +23,8 @@ Animal.prototype.play = function (length) {
 };
 
 leo = Animal('Leo', 7);
-console.log('leo:' + leo.play());
+console.log('leo name:' + leo.name);
+console.log(leo.play());
 ```
 
 ## new
@@ -38,7 +39,8 @@ Animal.prototype.play = function (length) {
 };
 
 leo = new Animal('Leo', 7);
-console.log('leo:' + leo.play());
+console.log('leo name:' + leo.name);
+console.log(leo.play());
 ```
 
 
