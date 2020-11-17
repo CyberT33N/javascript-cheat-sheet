@@ -8,7 +8,6 @@ Javascript Cheat Sheet for the most common stuff..
 # ESM (es-modules) and CJS (commonjs)
 CJS vs ESM (https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1)
 
-
 ## Examples
 ```javascript
 // ### CJS ##
@@ -24,7 +23,17 @@ import {sum} from './util.js'
 <br>
 <br>
 
-## Export
+## ESM
+
+#### How to enable?
+```javascript
+// package.json
+"type": "module"
+
+// Also rename all files where you use ESM to .mjs
+```
+
+#### Export
 ```javascript
 /* ## Option 1 ##
 Name your export instead of using default. It should look like this */
@@ -51,7 +60,7 @@ import add from './add';
 <br>
 <br>
 
-## No require, exports, module.exports, __filename, __dirname (https://nodejs.org/api/esm.html#esm_no_require_exports_module_exports_filename_dirname)
+#### No require, exports, module.exports, __filename, __dirname (https://nodejs.org/api/esm.html#esm_no_require_exports_module_exports_filename_dirname)
 ```javascript
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
