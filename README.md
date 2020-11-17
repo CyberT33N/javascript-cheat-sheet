@@ -8,12 +8,12 @@ Javascript Cheat Sheet for the most common stuff..
 
 # Prototypes
 
-## without new
+## Object.create
 ```javascript
 function Animal (name, energy){
   let animal = Object.create(Animal.prototype);
-  this.name = name;
-  this.energy = energy;
+  animal.name = name;
+  animal.energy = energy;
   return animal
 };
 
@@ -26,7 +26,7 @@ leo = Animal('Leo', 7);
 console.log('leo:' + leo.play());
 ```
 
-## Using new
+## new
 ```javascript
 function Animal (name, energy){
   this.name = name;
