@@ -6,6 +6,49 @@ Javascript Cheat Sheet for the most common stuff..
 <br>
 
 
+# Prototypes
+
+## without new
+```javascript
+function Animal (name, energy){
+  let animal = Object.create(Animal.prototype);
+  this.name = name;
+  this.energy = energy;
+  return animal
+};
+
+
+Animal.prototype.play = function (length) {
+  console.log(`${this.name} is playing`);
+};
+
+leo = Animal('Leo', 7);
+console.log('leo:' + leo.play());
+```
+
+## Using new
+```javascript
+function Animal (name, energy){
+  this.name = name;
+  this.energy = energy;
+};
+
+Animal.prototype.play = function (length) {
+  console.log(`${this.name} is playing`);
+};
+
+leo = new Animal('Leo', 7);
+console.log('leo:' + leo.play());
+```
+
+
+<br>
+<br>
+ _____________________________________________________
+ _____________________________________________________
+
+<br>
+<br>
 
 
 
@@ -40,11 +83,8 @@ console.log(today) // <-- 10/25/2020
 
 <br>
 <br>
-
-
  _____________________________________________________
  _____________________________________________________
-
 
 <br>
 <br>
