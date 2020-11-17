@@ -24,6 +24,30 @@ import {sum} from './util.js'
 <br>
 <br>
 
+## Export
+```javascript
+/* ## Option 1 ##
+Name your export instead of using default. It should look like this */
+// add.js
+export const add =  (a, b) =>  a + b;
+// OR
+// export const add = function(a, b) { return a+b };
+
+// app.js
+import { add } from './add';
+
+
+/* ## Option 2 ##
+Use the export default syntax. It looks like this */
+
+// add.js
+export default function add(a, b) {
+  return a + b;
+}
+
+// app.js
+import add from './add';
+```
  _____________________________________________________
  _____________________________________________________
  
