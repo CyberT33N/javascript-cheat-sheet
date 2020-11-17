@@ -47,7 +47,8 @@ console.log(leo.play(5));
 <br>
 <br>
 
-## getPrototypeOf (This will show all prototypes from instance)
+## getPrototypeOf
+- This will show all prototypes from instance
 ```javascript
 const prototype = Object.getPrototypeOf(leo);
 //prototype
@@ -56,6 +57,14 @@ const prototype = Object.getPrototypeOf(leo);
 
 <br>
 <br>
+
+## hasOwnProperty
+- Check for objects own properties and ignore prototypes
+```javascript
+leo.hasOwnProperty('name'); // true
+leo.hasOwnProperty('play'); // true
+```
+
 
 ## Iterate over all keys incl. prototypes
 ```javascript
@@ -66,6 +75,23 @@ for(const key in leo){
 Key: name - Value: Leo
 Key: energy - Value: 7
 Key: play - Value: function (length) {
+  console.log(`${this.name} is playing ${length} hours`);
+}
+*/
+```
+
+
+## Iterate only over own properties and ignore prototypes
+```javascript
+for(const key in leo){
+  if(leo.hasOwnProperty(key)){
+   console.log(`OWN - Key: ${key} - Value: ${leo[key]}`);
+  } else console.log(`NOT OWN - Key: ${key} - Value: ${leo[key]}`);
+}
+/*
+OWN - Key: name - Value: Leo
+OWN - Key: energy - Value: 7
+NOT OWN - Key: play - Value: function (length) {
   console.log(`${this.name} is playing ${length} hours`);
 }
 */
