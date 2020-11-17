@@ -1458,13 +1458,14 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 <br><br>
 
 ## CJS vs ESM
-https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1
+- https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1
 
 
 <br><br>
 
 ## Prototypes
-https://dev.to/karataev/javascript-prototypes-by-example-15jh
+- A Beginner's Guide to JavaScript's Prototype (https://www.youtube.com/watch?v=XskMWBXNbp0)
+- https://dev.to/karataev/javascript-prototypes-by-example-15jh
 
  _____________________________________________________
  _____________________________________________________
