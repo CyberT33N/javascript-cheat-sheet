@@ -54,6 +54,39 @@ console.log(leo.play(5));
 <br>
 <br>
 
+# Classes
+```javascript
+class Animal {
+
+  constructor(name, energy){
+    this.name = name;
+    this.energy = energy;
+  }
+
+  play(length) {
+  	console.log(`${this.name} is playing ${length} hours`);
+  }
+
+}; // class Animal {
+
+leo = new Animal('Leo', 7);
+console.log('leo name:' + leo.name);
+console.log(leo.play(5));
+```
+
+
+
+<br>
+<br>
+
+ _____________________________________________________
+ _____________________________________________________
+ 
+
+<br>
+<br>
+
+
 
 
 # time
