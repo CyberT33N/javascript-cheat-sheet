@@ -37,25 +37,41 @@ import {sum} from './util.js'
 ```javascript
 /* ## Option 1 ##
 Name your export instead of using default. It should look like this */
-// add.js
+// add.mjs
 export const add =  (a, b) =>  a + b;
 // OR
 // export const add = function(a, b) { return a+b };
 
-// app.js
-import { add } from './add';
+// app.mjs
+import { add } from './add.mjs';
 
 
 /* ## Option 2 ##
 Use the export default syntax. It looks like this */
 
-// add.js
+// add.,js
 export default function add(a, b) {
   return a + b;
 }
 
-// app.js
-import add from './add';
+// app.,js
+import add from './add.mjs';
+
+
+/* ## Option 2.5 ##
+Use the export default syntax. As example for controller files*/
+
+// controler.mjs
+import {startBROWSER, openLink} from '../services/bot.mjs';
+export default {
+  startBROWSER: async ()=>{ return await startBROWSER(); },
+  openLink: async (page, link)=>{ return await openLink(page, link); }
+}
+
+
+// app.mjs
+import bot from './controler.mjs';
+await bot.startBROWSER();
 ```
 <br>
 <br>
