@@ -101,6 +101,27 @@ NOT OWN - Key: play - Value: function (length) {
 <br>
 <br>
 
+## instanceof
+- Check if object is an instance of a specific class
+```javascript
+function sample(){};
+leo instanceof Animal // true
+leo instanceof sample // false
+```
+
+
+<br>
+<br>
+
+## Arrow functions do not have prototypes
+```javascript
+const Animal = ()=>{};
+const leo = new Animal();
+/* Uncaught TypeError: Animal is not a constructor at <anonymous>:2:13 */
+```
+
+
+
  _____________________________________________________
  _____________________________________________________
  
