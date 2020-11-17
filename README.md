@@ -8,7 +8,7 @@ Javascript Cheat Sheet for the most common stuff..
 
 # Prototypes
 
-## Object.create
+## create prototype with Object.create (**OLD METHOD**)
 ```javascript
 function Animal (name, energy){
   let animal = Object.create(Animal.prototype);
@@ -27,7 +27,7 @@ console.log('leo name:' + leo.name);
 console.log(leo.play(5));
 ```
 
-## new
+## create prototype with new (**NEW METHOD**)
 ```javascript
 function Animal (name, energy){
   this.name = name;
@@ -42,6 +42,16 @@ leo = new Animal('Leo', 7);
 console.log('leo name:' + leo.name);
 console.log(leo.play(5));
 ```
+
+
+<br>
+<br>
+
+## getPrototypeOf (This will show all prototypes)
+```javascript
+const prototype = Object.getPrototypeOf(leo);
+```
+
 
 
 <br>
