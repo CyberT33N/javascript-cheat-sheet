@@ -19,12 +19,12 @@ function Animal (name, energy){
 
 
 Animal.prototype.play = function (length) {
-  console.log(`${this.name} is playing`);
+  console.log(`${this.name} is playing ${length} hours`);
 };
 
 leo = Animal('Leo', 7);
 console.log('leo name:' + leo.name);
-console.log(leo.play());
+console.log(leo.play(5));
 ```
 
 ## new
@@ -35,12 +35,12 @@ function Animal (name, energy){
 };
 
 Animal.prototype.play = function (length) {
-  console.log(`${this.name} is playing`);
+  console.log(`${this.name} is playing ${length} hours`);
 };
 
 leo = new Animal('Leo', 7);
 console.log('leo name:' + leo.name);
-console.log(leo.play());
+console.log(leo.play(5));
 ```
 
 
