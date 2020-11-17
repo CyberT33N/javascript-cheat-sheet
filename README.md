@@ -55,6 +55,7 @@ const prototype = Object.getPrototypeOf(leo);
 
 <br>
 <br>
+
 ## Iterate over all keys incl. prototypes
 ```javascript
 for(const key in leo){
