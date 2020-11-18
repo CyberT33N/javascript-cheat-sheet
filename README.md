@@ -20,14 +20,15 @@ import {sum} from './util.js'
 ```
 
 
-<br>
-<br>
+<br><br>
 
 ## ESM
 
-#Features
-- No need for "use strict"
+#### Features
+- No need for **"use strict"**
 - async
+
+<br><br>
 
 #### How to enable?
 ```javascript
