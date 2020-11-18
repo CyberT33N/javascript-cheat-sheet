@@ -8,7 +8,7 @@ Javascript Cheat Sheet for the most common stuff..
 # ESM (es-modules) and CJS (commonjs)
 CJS vs ESM (https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1)
 
-## Examples
+## Examples for difference
 ```javascript
 // ### CJS ##
 module.exports.sum = (x, y) => x + y; // @filename: util.js
@@ -46,6 +46,7 @@ export const add =  (a, b) =>  a + b;
 import { add } from './add.mjs';
 
 
+
 /* ## Option 2 ##
 Use the export default syntax. It looks like this */
 
@@ -58,7 +59,8 @@ export default function add(a, b) {
 import add from './add.mjs';
 
 
-/* ## Option 2.5 ##
+
+/* ## Option 3 ##
 Use the export default syntax. As example for controller files*/
 
 // controller.mjs
@@ -72,6 +74,18 @@ export default {
 // app.mjs
 import bot from './controller.mjs';
 await bot.startBROWSER();
+
+
+
+/* ## Option 4 ##
+Use export on specific functions and import all available*/
+
+// bot.mjs
+export const getUserDetails = async (req, res)=>{ /*..*/ });
+export const getRoomDetails = async (req, res)=>{ /*..*/ });
+
+// app.mjs
+import * as mongodb from '../services/bot.mjs';
 ```
 <br>
 <br>
