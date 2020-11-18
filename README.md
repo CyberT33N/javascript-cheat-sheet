@@ -78,14 +78,15 @@ await bot.startBROWSER();
 
 
 /* ## Option 4 ##
-Use export on specific functions and import all available*/
+Use export on specific functions and import all available to object*/
 
 // bot.mjs
 export const getUserDetails = async (req, res)=>{ /*..*/ });
 export const getRoomDetails = async (req, res)=>{ /*..*/ });
 
 // app.mjs
-import * as mongodb from '../services/bot.mjs';
+import * as bot from '../services/bot.mjs';
+bot.getUserDetails(req, res);
 ```
 <br>
 <br>
