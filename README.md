@@ -25,6 +25,10 @@ import {sum} from './util.js'
 
 ## ESM
 
+#Features
+- No need for "use strict"
+- async
+
 #### How to enable?
 ```javascript
 // package.json
