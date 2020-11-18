@@ -33,7 +33,7 @@ import {sum} from './util.js'
 // Also rename all files where you use ESM to .mjs
 ```
 
-#### Export
+#### Export / Import
 ```javascript
 /* ## Option 1 ##
 Name your export instead of using default. It should look like this */
