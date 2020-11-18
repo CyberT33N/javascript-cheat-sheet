@@ -86,7 +86,7 @@ export const getRoomDetails = async (req, res)=>{ /*..*/ });
 
 // app.mjs
 import * as bot from '../services/bot.mjs';
-bot.getUserDetails(req, res);
+await bot.getUserDetails(req, res);
 ```
 <br>
 <br>
