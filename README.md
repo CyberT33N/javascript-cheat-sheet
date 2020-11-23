@@ -96,6 +96,18 @@ await bot.getUserDetails(req, res);
 <br>
 <br>
 
+
+#### Client Side
+```html
+  <script type="module">
+    import * as web from '/js/main.mjs';
+  </script>
+```
+
+<br>
+<br>
+
+
 #### No require, exports, module.exports, __filename, __dirname (https://nodejs.org/api/esm.html#esm_no_require_exports_module_exports_filename_dirname)
 ```javascript
 import { fileURLToPath } from 'url';
