@@ -98,10 +98,20 @@ await bot.getUserDetails(req, res);
 
 
 #### Client Side
+- In order to use client side ESM we use **type="module"**
 ```html
-  <script type="module">
-    import * as web from '/js/main.mjs';
-  </script>
+<!-- method #1 -->
+<script type="module" src="js/utils/test.main.mjs"></script>
+
+<!-- method #2 -->
+<script type="module">
+  import web from '/js/main.mjs';
+</script>
+
+<!-- method #3 -->
+<script type="module">
+  import '/js/main.mjs';
+</script>
 ```
 
 <br>
