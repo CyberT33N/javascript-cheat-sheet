@@ -1069,27 +1069,38 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
  _____________________________________________________
 
 
-<br>
-<br>
+<br><br>
 
 
 # loaded
+
+## Wait until object is loaded
+```javascript
+// async with promise resolve
+const load = name => new Promise( resolve => {
+  name.onload = () => resolve(true);
+});
+await load(window);
+```
+<br><br>
 
 ## Wait until document ready
 ```javascript
 $(function(){ //.. })
 ```
+<br><br>
 
 ## Wait until everything is fully loaded and loading icon is gone
 ```javascript
 window.addEventListener('load', function () { //.. });
 ```
+<br><br>
 
 ## Wait until element loaded
 ```javascript
  document.querySelector('.profile').onload = function(e){ //.. }
 ```
-
+<br><br>
 
 ## remove event listener from anonym function
 ```javascript
@@ -1099,17 +1110,12 @@ document.querySelector('.profile').addEventListener('load', function () {
 ```
 
 
-<br>
-<br>
-
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
 
+<br><br>
 
-<br>
-<br>
 
 # Clone unique
 For default javascript act like this:
