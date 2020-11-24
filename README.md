@@ -1036,6 +1036,14 @@ console.log( 'FINISH one() - result: ' + result );
 
 # Promise
 
+## async await for promise resolve
+```javascript
+const load = name => new Promise( resolve => {
+  name.onload = () => resolve(true);
+});
+await load(window);
+```
+
 ## Nested Functions
 ```javascript
 
