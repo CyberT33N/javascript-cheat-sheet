@@ -9,15 +9,16 @@ Javascript Cheat Sheet for the most common stuff..
 
 ## function to String and back to function
 ```javascript
-function test(){
-  return true;
-}
-
-const script = test.toString();
-console.log( script );
-
-var func = new Function(script);
-func();
+var myFunction = function() {
+  // Any codes here
+  console.log('This is myFunction');
+};
+ 
+var fString = myFunction.toString();
+console.log(fString);
+ 
+var fn = new Function('return ' + fString)(); 
+fn();
 ```
 
  <br><br>
