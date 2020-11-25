@@ -875,14 +875,19 @@ $( '.element' ).find( '.test' );
 
 ## Create Async
 ```javascript
-// Method 1
+// Method 1 - Catch error
 (async () => {
  console.log( 'do some async stuff here..' );
 })().catch((e) => {
  console.log('Error:' +  e )
 }); 
 
-// Method 2
+// Method 3 - Do not catch error - you muste use then try inside or wrap another method 1 async function around this
+(async () => {
+ console.log( 'do some async stuff here..' );
+})();
+
+// Method 3 - Do not catch error - you muste use then try inside or wrap another method 1 async function around this
 async function test(){
  console.log( 'do some async stuff here..' );
 }
@@ -891,11 +896,10 @@ async function test(){
 
 ## setTimeout
 ```javascript
+// async
 await new Promise(resolve => setTimeout(resolve, 1000));
-```
 
-## Sync setTimeout with async inside
-```javascript
+// non blocking sync with async inside
 setTimeout( async () => {   await page.hover('video');    }, 5000);
 ```
 
@@ -904,6 +908,7 @@ setTimeout( async () => {   await page.hover('video');    }, 5000);
 
 ## setInterval
 ```javascript
+var count = 0;
 var countdownInterval = setInterval(async () => {
 
     count++
@@ -951,97 +956,44 @@ async function b (){
 
 ## Loops (Array) - In Parallel
 ```javascript
-  await Promise.all(
-      yourArrayHere.map(async d => {
-      log( 'Current array item we process: ' + d );
-
-          let currenturl = await redirectChecker(d);
-          log( 'Final url after redirect: ' + currenturl );
-
-          tmpARtwo.push(currenturl);
-      }) 
-    );
+await Promise.all(
+  yourArrayHere.map(async d => {
+    console.log( 'Current array item we process: ' + d );
+     //.. do something
+  })    
+);
 ```
 
 ## Loops - Sequential (For Loop)
 ```javascript
-for (let d of yourArrayHere) {
+for (const d of yourArrayHere) {
     await redirectChecker(d);
  }
 ```
 
 
-## Loops - Chain Loop
-```javascript
-var doSomething;
-async function one(){
-console.log( 'ENTER one()' );
-
-      await new Promise(resolve => setTimeout(resolve, 5000));
-      doSomething = 69;
-      console.log( 'doSomething: ' + doSomething );
-
-      // in async functions you dont have to resolve anything. When the functions reachs the end it will automatically resolve.      
-
-
-}
-
-async function two(){
-console.log( 'ENTER two()' );
-
-      // if you want you can resolve by yourself with return
-      if ( doSomething == 69 ) return true;
-
-}
-               
-async function three(){
-console.log( 'ENTER three()' );
-
-      // Of course you can resolve aswell any strings, arrays, ...
-      return 'test'; 
-
-}
-
-
-            await one();
-            console.log( 'FINISH one()' );
-            
-            let valuetwo = await two();
-            console.log( 'FINISH two() - valuetwo: ' + valuetwo );
-
-            let valuethree = await three();
-            console.log( 'FINISH three() - valuethree: ' + valuethree );
-
-```
-
-
-
 ## Combine Async with promise
 ```javascript
-
+// example #1 - await for promise resolve
 function one(){return new Promise(resolve => { 
-console.log( 'ENTER one()' );
-
-// do something
-resolve(true); 
-
+  // do something
+  resolve(true); 
 })};
 
-let result = await one();
-console.log( 'FINISH one() - result: ' + result );
+const result = await one();
+
+// example #2 - async function inside of promise
+return new Promise(async resolve => {
+  // do something async
+  resolve(true); 
+})
 ```
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 
 # Promise
