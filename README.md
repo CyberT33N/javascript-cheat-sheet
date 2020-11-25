@@ -5,6 +5,27 @@ Javascript Cheat Sheet for the most common stuff..
 <br>
 <br>
 
+# functions
+
+## function to String and back to function
+```javascript
+function test(){
+  return true;
+}
+
+const script = test.toString();
+console.log( script );
+
+var func = new Function(script);
+func();
+```
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+ <br><br>
+
+
 # ESM (es-modules) and CJS (commonjs)
 CJS vs ESM (https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1)
 
@@ -127,15 +148,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 ```
 
-<br>
-<br>
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
- 
-
-<br>
-<br>
+ <br><br>
 
 # Prototypes
 - A Beginner's Guide to JavaScript's Prototype (https://www.youtube.com/watch?v=XskMWBXNbp0)
