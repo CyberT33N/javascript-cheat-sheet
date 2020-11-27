@@ -604,20 +604,28 @@ window.location.search
 
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 
 
 # jQuery
+
+## load (https://api.jquery.com/load/)
+
+#### Insert all contents of another same origin HTML file to current page
+```javascript
+$( "#a" ).load( "article.html" );
+```
+
+#### Insert specific element of another same origin HTML file to current page
+```javascript
+$( "#a" ).load( "article.html #example" );
+```
+
+<br><br>
 
 ## Check for click
 ```javascript
