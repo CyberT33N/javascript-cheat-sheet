@@ -1777,21 +1777,18 @@ console.log( 'mobile/tablet check:' + mobileCheck );
 function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);  } 
 ```  
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # Tutorials
 
 
+## The Conditional (Ternary) Operator Explained
+https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff
 
+<br><br>
 
 ## Object-oriented Programming
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
