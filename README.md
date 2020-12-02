@@ -12,8 +12,8 @@ Javascript Cheat Sheet for the most common stuff..
 
 <br><br>
 
-```javascript
 ## Add a section that will alert("Neither") if fruits is neither "banana" nor "apple".
+```javascript
 switch("Ice") {
   case "Banana":
     alert("Hello")
