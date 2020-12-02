@@ -1789,6 +1789,17 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff
 
 ```javascript
+// -- Example 1 --
+// without ternary
+if (person.age >= 16) {
+  person.driver = 'Yes';
+} else {
+  person.driver = 'No';
+}
+// with ternary
+person.driver = person.age >=16 ? 'Yes' : 'No';
+
+// -- Example 2 --
 let person = {
   name: 'tony',
   age: 20,
