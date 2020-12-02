@@ -4,8 +4,17 @@ Javascript Cheat Sheet for the most common stuff..
 
 <br><br>
 
-# For Loop
 
+
+
+# Switch
+- https://www.w3schools.com/js/js_switch.asp
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
 <br><br>
 
 
