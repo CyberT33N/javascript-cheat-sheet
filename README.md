@@ -5,6 +5,35 @@ Javascript Cheat Sheet for the most common stuff..
 <br>
 <br>
 
+
+# For Loop
+
+## Do for loop based on length of array
+```javascript
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i = 0;
+var text = "";
+
+for (;cars[i];) {
+  text += cars[i] + "<br>";
+  i++;
+} console.log('text: ' + text); // text: BMW<br>Volvo<br>Saab<br>Ford<br>
+```
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+ <br><br>
+
+ # While
+ - https://www.w3schools.com/js/js_loop_while.asp
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+ <br><br>
+
+
 # functions
 
 ## function to String and back to function
