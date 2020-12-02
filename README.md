@@ -10,7 +10,21 @@ Javascript Cheat Sheet for the most common stuff..
 # Switch
 - https://www.w3schools.com/js/js_switch.asp
 
+<br><br>
 
+```javascript
+## Add a section that will alert("Neither") if fruits is neither "banana" nor "apple".
+switch("Ice") {
+  case "Banana":
+    alert("Hello")
+    break;
+  case "Apple":
+    alert("Welcome")
+    break;
+  default:
+    alert("Neither");
+}
+```
 
  <br><br>
  _____________________________________________________
