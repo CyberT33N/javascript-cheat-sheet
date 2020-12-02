@@ -1856,14 +1856,42 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 ## Destruction
 - https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
+<br><br>
 
 # Microservices
 
 ## Object-oriented
 - https://nodesource.com/blog/microservices-in-nodejs
 
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
 
+## YAML
+https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
+```yml
+--- 
+ doe: "a deer, a female deer"
+ ray: "a drop of golden sun"
+ pi: 3.14159
+ xmas: true
+ french-hens: 3
+ calling-birds: 
+   - huey
+   - dewey
+   - louie
+   - fred
+ xmas-fifth-day: 
+   calling-birds: four
+   french-hens: 3
+   golden-rings: 5
+   partridges: 
+     count: 1
+     location: "a pear tree"
+   turtle-doves: two
+```
 
