@@ -1788,6 +1788,16 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 ## The Conditional (Ternary) Operator Explained
 https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff
 
+```javascript
+let person = {
+  name: 'tony',
+  age: 20,
+  driver: null
+};
+person.driver = person.age >=16 ? 'Yes' : 'No';
+```
+
+
 <br><br>
 
 ## Object-oriented Programming
