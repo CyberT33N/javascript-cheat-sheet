@@ -2,13 +2,14 @@
 Javascript Cheat Sheet for the most common stuff..
 
 
-<br>
-<br>
-
+<br><br>
 
 # For Loop
 
-## Do for loop based on length of array
+<br><br>
+
+
+## Do loop based on length of array
 ```javascript
 var cars = ["BMW", "Volvo", "Saab", "Ford"];
 var i = 0;
@@ -25,8 +26,26 @@ for (;cars[i];) {
  _____________________________________________________
  <br><br>
 
+
+
  # While
  - https://www.w3schools.com/js/js_loop_while.asp
+
+<br><br>
+
+## Do loop based on length of array
+```javascript
+
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i = 0;
+var text = "";
+
+while (cars[i]) {
+  text += cars[i] + "<br>";
+  i++;
+}
+console.log('text: ' + text);
+```
 
  <br><br>
  _____________________________________________________
