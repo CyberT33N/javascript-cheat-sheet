@@ -21,6 +21,26 @@ for (;cars[i];) {
 } console.log('text: ' + text); // text: BMW<br>Volvo<br>Saab<br>Ford<br>
 ```
 
+<br>
+
+## Make the loop jump to the next iteration when i is 5.
+```javascript
+for (i = 0; i < 10; i++) {
+  if (i == 5) continue;
+  console.log(i);
+}
+```
+
+<br>
+
+## break the loop when i is 5.
+```javascript
+for (i = 0; i < 10; i++) {
+  if (i == 5) break;
+  console.log(i);
+}
+```
+
  <br><br>
  _____________________________________________________
  _____________________________________________________
