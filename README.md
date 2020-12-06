@@ -1,6 +1,9 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
+
+<br><br>
+
 # Summary
 <details><summary>Click to expand..</summary>
   
@@ -60,9 +63,7 @@ switch("Ice") {
 
 </details>
 
- <br><br>
- _____________________________________________________
- _____________________________________________________
+
 <br><br>
 
 # For loop
@@ -102,9 +103,7 @@ for (i = 0; i < 10; i++) {
 
 </details>
 
- <br><br>
- _____________________________________________________
- _____________________________________________________
+
  <br><br>
 
 
@@ -134,9 +133,7 @@ console.log('text: ' + text);
 
 </details>
 
- <br><br>
- _____________________________________________________
- _____________________________________________________
+
  <br><br>
 
 
@@ -159,9 +156,6 @@ fn();
 
 </details>
 
- <br><br>
- _____________________________________________________
- _____________________________________________________
  <br><br>
 
 
@@ -292,9 +286,7 @@ const __dirname = dirname(__filename);
 
 </details>
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
+
  <br><br>
 
 # Prototypes
@@ -551,9 +543,7 @@ const leo = new Animal();
 
 </details>
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
+
 <br><br>
 
 # Classes
@@ -667,9 +657,6 @@ console.log('getDetails: ' + getDetails);
 
 
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
 
 
 
@@ -706,9 +693,6 @@ console.log(today) // <-- 10/25/2020
 </details>
 
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
 
 <br><br>
 
@@ -738,9 +722,7 @@ console.log(res);
 
 </details>
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
+
 <br><br>
 
 # Sort
@@ -823,9 +805,6 @@ r.sort((a, b) => a.sorting - b.sorting || a.name.localeCompare(b.name));
 
 
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
 
 
 # Cookie
@@ -839,9 +818,7 @@ var value = match[1];
 ```
 </details><
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
+
 <br><br>
 
 # Object
@@ -858,9 +835,7 @@ if( Object.entries(obj).length > 0 ) console.log('not empty');
 
 </details>
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
+
 <br><br>
 
 # Link
@@ -911,9 +886,6 @@ window.location.search
 
 
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
 
 # API
 <details><summary>Click to expand..</summary>
@@ -942,9 +914,6 @@ window.location.search
 </details>
 
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
 <br><br>
 
 # jQuery
@@ -1225,9 +1194,6 @@ $( '.element' ).find( '.test' );
 
 
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
 
 
 # Async
@@ -1353,9 +1319,6 @@ return new Promise(async resolve => {
 
 
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
 
 
 # Promise
@@ -1395,9 +1358,6 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 </details>
 
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
 <br><br>
 
 # Wait
@@ -1465,11 +1425,12 @@ document.querySelector('.profile').addEventListener('load', function () {
 </details>
 
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
+
 
 <br><br>
+
+
+
 
 # array
 <details><summary>Click to expand..</summary>
@@ -1508,10 +1469,9 @@ var rndval=items[Math.floor(Math.random()*items.length)];
 
 
 
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
 
 
 
@@ -1658,10 +1618,11 @@ $curl = curl_init($url);
 </details>
 
 
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
 
 
 # :before & :after
@@ -1693,11 +1654,13 @@ style.setProperty('--background', 'url(http://placekitten.com/200/300)');
 </details>
 
 
-<br><br>
- _____________________________________________________
- _____________________________________________________
+
+
 
 <br><br>
+
+
+
 
 
 # Anime.js
@@ -1716,10 +1679,13 @@ anime.remove( document.querySelector('#layertwo') )
 </details>
 
 
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
 
 # Owl Carousel
 <details><summary>Click to expand..</summary>
@@ -1743,10 +1709,14 @@ var carousel = $( '.owl-carousel' ).owlCarousel({
 </details>
 
 
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
 
 # Navigator
 <details><summary>Click to expand..</summary>
@@ -1761,10 +1731,11 @@ var userLang = navigator.language || navigator.userLanguage;
 
 
 
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
 
 # iframe / object
 <details><summary>Click to expand..</summary>
@@ -1780,10 +1751,13 @@ var userLang = navigator.language || navigator.userLanguage;
 </details>
 
 
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
 
 # Simulate
 <details><summary>Click to expand..</summary>
@@ -1820,10 +1794,15 @@ document.querySelector('#menubar-contact').dispatchEvent(e);
 </details>
 
 
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
+
 
 # document/window
 <details><summary>Click to expand..</summary>
@@ -1875,10 +1854,15 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 </details>
 
 
+
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
 
 # clipboard
 <details><summary>Click to expand..</summary>
@@ -1899,10 +1883,16 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 </details>
 
 
+
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
+
 
 # Redirect
 <details><summary>Click to expand..</summary>
@@ -1930,10 +1920,15 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 </details>
 
 
+
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
 
 
 # Viewport
@@ -1950,10 +1945,15 @@ viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwid
 </details>
 
 
+
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
 
 # Before unload
 <details><summary>Click to expand..</summary>
@@ -1970,10 +1970,14 @@ popup.onbeforeunload = function(){ /* .. */ };
 </details>
 
 
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
+
 
 # Os/Device Detect
 <details><summary>Click to expand..</summary>
@@ -2021,10 +2025,14 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 </details>
 
 
+
+
+
 <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
 
 # Tutorials
 <details><summary>Click to expand..</summary>
