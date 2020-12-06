@@ -77,7 +77,7 @@ Javascript Cheat Sheet for the most common stuff..
 1. load
   <br>1.1 Insert all contents of another same origin HTML file to current page
   <br>1.2 Insert specific element of another same origin HTML file to current page
-<br><br>
+<br>
 2. Check for click
 3. Check browser
 4. Event Listener
@@ -149,8 +149,50 @@ Javascript Cheat Sheet for the most common stuff..
 # [Navigator](#navigator)
 1. Get Browser Language
 
+# [Iframe / Object Tag](#iframe--object)
+1. Embed pdf
 
+# [Simulate](#simulate)
+1. Simulate Click
+2. Simulate Hover
+3. Simulate Touch events
 
+# [document/window](#documentwindow)
+1. remove text from url
+2. Open something new window
+3. Get link params from oauth popup window
+
+# [Clipboard](#clipboard)
+1. Copy any text to clipboard
+
+# [Redirect](#redirect)
+1. Prevent redirect on input search with Enter
+
+# [Viewport](#viewport)
+1. Stop viewport resize when soft keyboard is activating on mobile
+
+# [Before unload](#before-unload)
+1. Do something when current page / popup windows was closed
+
+# [Os/Device Detect](#osdevice-detect)
+1. Check if tablet/smartphone
+2. Check if iOS
+3. Check if Safari Browser
+
+# [Tutorials](#tutorials)
+1. The Conditional (Ternary) Operator Explained
+2. Object-oriented Programming (OOP)
+3. Functional Programming
+4. Clean Code
+5. Optional Chaining
+6. Immediately Invoked Function Expression (IIFE)
+7. Spread Operators
+8. Scope and Closures
+9. Difference between let, var & const
+10. Destruction
+11. Microservices
+  <br>11.1 Object-oriented
+<br>12. YAML
 
 </details>
 
