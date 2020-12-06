@@ -579,10 +579,16 @@ console.log('getDetails():' + Animal.getDetails());
 ## subclasses (extends)
 ```javascript
 class Animal {
+
   constructor(name, energy){
     this.name = name;
     this.energy = energy;
   }
+
+  getDetails(){
+    return `${this.name} has ${this.energy} energy left` ;
+  }
+
 };
 
 class Zoo extends Animal {
@@ -594,6 +600,10 @@ class Zoo extends Animal {
 
 var zooGermany = new Zoo('Leo', 1, 'Germany');
 console.log(zooGermany);
+
+// compared to es5 we can now use functions of the original constructor without manually inherit the object
+var getDetails = zooGermany.getDetails();
+console.log('getDetails: ' + getDetails);
 ```
 
 
