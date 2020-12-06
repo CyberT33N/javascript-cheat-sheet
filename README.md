@@ -254,6 +254,7 @@ const __dirname = dirname(__filename);
 
 ## create prototype with Object.create (**OLD METHOD**)
 ```javascript
+// METHOD #1
 function Animal (name, energy){
   let animal = Object.create(Animal.prototype);
   animal.name = name;
@@ -269,6 +270,25 @@ Animal.prototype.play = function (length) {
 leo = Animal('Leo', 7);
 console.log('leo name:' + leo.name);
 console.log(leo.play(5));
+
+
+
+// METHOD #2
+const Animal = {
+
+  play: function (length) {
+    console.log(`${this.name} is playing ${length} hours`);
+  },
+
+  eat: function (length) {
+    console.log(`${this.name} is eating ${length} hours`);
+  }
+
+};
+
+var leo = Object.create(Animal);
+leo.name = 'Leo';
+leo.play(2);
 ```
 
 ## create prototype with new (**NEW METHOD**)
