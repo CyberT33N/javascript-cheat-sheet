@@ -336,6 +336,39 @@ console.log(`${ZooGermany.name} is sleeping ${ZooGermany.sleep} minutes and has 
 <br>
 
 
+## How to access other constructor prototypes
+```javascript
+function Animal (name, energy){
+  this.name = name;
+  this.energy = energy;
+};
+
+Animal.prototype.eat = function (seconds){
+  this.eat = seconds;
+  console.log(`${this.name} is eating for ${seconds} seconds`);
+};
+
+function Zoo (name, energy, country){
+  Animal.call(this, name, energy);
+  this.country = country;
+};
+
+var Peter = new Animal('Peter', 1);
+
+Zoo.prototype = Object.create(Animal.prototype); // get prototypes from Animal constructor
+var ZooGermany = new Zoo('Peter', 1, 'Germany');
+
+Peter.eat(1); // <-- will work
+ZooGermany.eat(1); // will result in error if we delete the Object.create line cause eat prototype not avaible
+
+
+```
+<br>
+<br>
+
+
+
+
 
 ## getPrototypeOf
 - This will show all prototypes from instance
