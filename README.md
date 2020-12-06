@@ -1812,8 +1812,9 @@ person.driver = person.age >=16 ? 'Yes' : 'No';
 
 <br><br>
 
-## Object-oriented Programming
+## Object-oriented Programming (OOP)
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
+- JavaScript OOP Crash Course (ES5 & ES6) (https://www.youtube.com/watch?v=vDJpGenyHaA)
 
 ## Functional Programming
 - https://opensource.com/article/17/6/functional-javascript
