@@ -516,13 +516,38 @@ class Animal {
   	console.log(`${this.name} is playing ${length} hours`);
   }
 
-}; // class Animal {
+};
 
-leo = new Animal('Leo', 7);
+var leo = new Animal('Leo', 7);
 console.log('leo name:' + leo.name);
 console.log(leo.play(5));
 ```
 
+
+
+## Change/add constructor value
+```javascript
+class Animal {
+
+  constructor(name, energy){
+    this.name = name;
+    this.energy = energy;
+  }
+
+  changeName(name, lastName) {
+    this.name = name;
+    this.lastName = lastName;
+  }
+
+};
+
+var leo = new Animal('Leo', 7);
+console.log('name before:' + leo.name);
+
+leo.changeName('Peter', 'Doe');
+console.log('name after:' + leo.name);
+console.log('added last name:' + leo.lastName);
+```
 
 
 <br>
