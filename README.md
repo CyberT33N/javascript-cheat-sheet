@@ -1,7 +1,36 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
+# Summary
+<details><summary>Click to expand..</summary>
+  
+# [Switch](#switch)
+1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
+# [For loop](#for-loop)
+1. Do loop based on length of array
+2. Make the loop jump to the next iteration when i is 5
+3. break the loop when i is 5
+
+# [While](#while)
+1. Do loop based on length of array
+
+# [Functions](#functions)
+1. function to String and back to function
+
+# [ESM (es-modules) and CJS (commonjs)](#esm-es-modules-and-cjs-commonjs)
+1. Examples for difference
+2. ESM
+
+
+
+</details>
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
 <br><br>
 
 
