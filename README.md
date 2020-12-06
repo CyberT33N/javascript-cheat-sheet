@@ -336,7 +336,7 @@ console.log(`${ZooGermany.name} is sleeping ${ZooGermany.sleep} minutes and has 
 <br>
 
 
-## How to access other constructor prototypes
+## Inherit Prototype (How to access other constructor prototypes)
 ```javascript
 function Animal (name, energy){
   this.name = name;
