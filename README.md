@@ -24,8 +24,84 @@ Javascript Cheat Sheet for the most common stuff..
 # [ESM (es-modules) and CJS (commonjs)](#esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
 2. ESM
+  2.1 Features
+  2.2 How to enable?
+  2.3 Export / Import
+  2.4 Client Side
+  2.5 No require, exports, module.exports, __filename, __dirname
+
+# [Prototypes](#prototypes)
+1. Instantiate Object with Object.create (OLD METHOD)
+2. Instantiate Object with new keyword (NEW METHOD)
+3. change/add constructor value
+4. Call another constructor
+5. Inherit Prototype (How to access other constructor prototypes)
+6. Change constructor
+7. getPrototypeOf
+8. hasOwnProperty
+9. Iterate over all keys incl. prototypes
+10. Iterate only over own properties and ignore prototypes
+11. instanceof
+12. Arrow functions do not have prototypes
+
+# [Classes](#classes)
+1. Change/add constructor value
+2. static (isolated function)
+3. subclasses (extends)
+
+# [Time/Date](#time)
+1. format time to AM/PM
+2. get current Date
+
+# [Filter](#filter)
+1. compare 2 arrays of objects and remove duplicates
+
+# [Sort](#sort)
+1. Sort Array by Numbers ASC
+2. Sort Array by String ASC
+3. Sort Array by two values ASC
+
+# [Cookie](#cookie)
+1. Get value of specific cookie
+
+# [Object](#object)
+1. Check if Object is empty
+
+# [Link](#link)
+1. Get current link / domain
+
+# [API](#api)
+1. Enter fullscreen
+
+# [jQuery](#jquery)
+1. load
+  1.1 Insert all contents of another same origin HTML file to current page
+  1.2 Insert specific element of another same origin HTML file to current page
+2. Check for click
+3. Check browser
+4. Event Listener
+4.1 Manually trigger event listener
+5. jQuery use !important
+6. Handle form submits
+7. Get scroll direction
+8. Class Modification
+9. Check for Touch Event (Mobile/Tablet)
+10. Wait until scroll is finished
+11. Scroll to bottom
+12. Import scripts with callback
+13. Get path of element
+14. each loop
+15. POST JSON to PHP file
+16. clone
+17. Get parent
+18. Get next
+19. Append HTML to current element
+20. Insert HTML after specific element
+21. Find element
 
 
+# [Async](#async)
+1. Create Async
 
 </details>
 
@@ -816,7 +892,7 @@ var regex = /MyCookie=(.[^;]*)/ig;
 var match = regex.exec(document.cookie);
 var value = match[1];
 ```
-</details><
+</details>
 
 
 <br><br>
@@ -959,6 +1035,9 @@ if ($.browser.mozilla) { ... }
 const isFirefoxBrowser = navigator.userAgent.includes('Firefox');
 ```
 
+
+<br><br>
+
 # Event Listener (https://api.jquery.com/category/events/)
 ```javascript
 // method 1 without css selector
@@ -974,12 +1053,12 @@ $(document).on("click touchstart touchend", ".owl-dot", function (e) {  });
 $('input').on('focusout',function(){ //.. });
 ```
 
-# Manually trigger event listener
+## Manually trigger event listener
 ```javascript
 $('#element').trigger('touchend');
 ```
 
-$(this).trigger('touchend');
+<br><br>
 
 # jQuery use !important
 ```javascript
