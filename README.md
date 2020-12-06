@@ -573,6 +573,30 @@ console.log('getDetails():' + Animal.getDetails());
 ```
 
 
+<br><br>
+
+
+## subclasses (extends)
+```javascript
+class Animal {
+  constructor(name, energy){
+    this.name = name;
+    this.energy = energy;
+  }
+};
+
+class Zoo extends Animal {
+  constructor(name, energy, location){
+    super(name, energy);
+    this.location = location;
+  }
+};
+
+var zooGermany = new Zoo('Leo', 1, 'Germany');
+console.log(zooGermany);
+```
+
+
 <br>
 <br>
 
