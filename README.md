@@ -316,6 +316,27 @@ console.log(`${leo.name} is sleeping ${leo.sleep} minutes and is eating ${leo.ea
 <br>
 <br>
 
+## Call another constructor 
+
+```javascript
+function Animal (name, energy){
+  this.name = name;
+  this.energy = energy;
+};
+
+function Zoo (name, energy, sleep){
+  Animal.call(this, name, energy);
+  this.sleep = sleep;
+};
+
+var ZooGermany = new Zoo('Leo', 1, 2);
+console.log(`${ZooGermany.name} is sleeping ${ZooGermany.sleep} minutes and has ${ZooGermany.energy} energy.`);
+```
+<br>
+<br>
+
+
+
 ## getPrototypeOf
 - This will show all prototypes from instance
 ```javascript
