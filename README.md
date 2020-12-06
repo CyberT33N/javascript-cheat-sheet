@@ -281,11 +281,37 @@ Animal.prototype.play = function (length) {
   console.log(`${this.name} is playing ${length} hours`);
 };
 
-leo = new Animal('Leo', 7);
+const leo = new Animal('Leo', 7);
 console.log('leo name:' + leo.name);
 console.log(leo.play(5));
 ```
 
+<br>
+<br>
+
+## change/add constructor value
+```javascript
+function Animal (name, energy, minute){
+  this.name = name;
+  this.energy = energy;
+  this.sleep = minute;
+};
+
+Animal.prototype.changeSleep = function (minute) {
+  this.sleep = minute;
+};
+
+Animal.prototype.addEat = function (seconds) {
+  this.eat = seconds;
+};
+
+var leo = new Animal('Leo', 7, 2);
+console.log(`${leo.name} is sleeping ${leo.sleep} minutes and is eating ${leo.eat} seconds.`);
+
+leo.changeSleep(3);
+leo.addEat(4);
+console.log(`${leo.name} is sleeping ${leo.sleep} minutes and is eating ${leo.eat} seconds.`);
+```
 
 <br>
 <br>
