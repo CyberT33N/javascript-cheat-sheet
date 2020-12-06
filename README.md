@@ -369,6 +369,25 @@ ZooGermany.eat(1); // will result in error if we delete the Object.create line c
 
 
 
+## Change constructor
+```javascript
+function Animal (name, energy){
+  this.name = name;
+  this.energy = energy;
+};
+
+function Zoo (name, energy, country){
+  Animal.call(this, name, energy);
+  this.country = country;
+};
+
+var ZooGermany = new Zoo('Peter', 1, 'Germany');
+Zoo.prototype.constructor = Zoo; // <-- for default constructor Zoo will use the Animal constructor.
+console.log(ZooGermany);
+```
+<br>
+<br>
+
 
 
 ## getPrototypeOf
