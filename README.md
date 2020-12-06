@@ -252,7 +252,7 @@ const __dirname = dirname(__filename);
 - OOP / Explain Prototype (https://www.youtube.com/watch?v=vDJpGenyHaA)
 
 
-## create prototype with Object.create (**OLD METHOD**)
+## Instantiate Object with Object.create (**OLD METHOD**)
 ```javascript
 // METHOD #1
 function Animal (name, energy){
@@ -270,6 +270,9 @@ Animal.prototype.play = function (length) {
 leo = Animal('Leo', 7);
 console.log('leo name:' + leo.name);
 console.log(leo.play(5));
+
+
+
 
 
 
@@ -299,7 +302,7 @@ const leo = Object.create(Animal, {
 leo.play(2);
 ```
 
-## create prototype with new (**NEW METHOD**)
+## Instantiate Object with new keyword (**NEW METHOD**)
 ```javascript
 function Animal (name, energy){
   this.name = name;
