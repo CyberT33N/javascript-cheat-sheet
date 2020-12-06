@@ -5,14 +5,17 @@ Javascript Cheat Sheet for the most common stuff..
 <br><br>
 
 
-
-
 # Switch
-- https://www.w3schools.com/js/js_switch.asp
-
 <details><summary>Click to expand..</summary>
   
-## Add a section that will alert("Neither") if fruits is neither "banana" nor "apple".
+<br><br>
+
+# Guides
+- https://www.w3schools.com/js/js_switch.asp
+
+<br><br>
+
+# Add a section that will alert("Neither") if fruits is neither "banana" nor "apple".
 ```javascript
 switch("Ice") {
   case "Banana":
@@ -33,8 +36,10 @@ switch("Ice") {
  _____________________________________________________
 <br><br>
 
-
-## Do loop based on length of array
+# For loop
+<details><summary>Click to expand..</summary>
+  
+# Do loop based on length of array
 ```javascript
 var cars = ["BMW", "Volvo", "Saab", "Ford"];
 var i = 0;
@@ -48,7 +53,7 @@ for (;cars[i];) {
 
 <br>
 
-## Make the loop jump to the next iteration when i is 5.
+# Make the loop jump to the next iteration when i is 5.
 ```javascript
 for (i = 0; i < 10; i++) {
   if (i == 5) continue;
@@ -58,13 +63,15 @@ for (i = 0; i < 10; i++) {
 
 <br>
 
-## break the loop when i is 5.
+# break the loop when i is 5.
 ```javascript
 for (i = 0; i < 10; i++) {
   if (i == 5) break;
   console.log(i);
 }
 ```
+
+</details>
 
  <br><br>
  _____________________________________________________
@@ -74,11 +81,14 @@ for (i = 0; i < 10; i++) {
 
 
  # While
+ <details><summary>Click to expand..</summary>
+  
+ # Guides
  - https://www.w3schools.com/js/js_loop_while.asp
 
 <br><br>
 
-## Do loop based on length of array
+# Do loop based on length of array
 ```javascript
 
 var cars = ["BMW", "Volvo", "Saab", "Ford"];
@@ -92,6 +102,9 @@ while (cars[i]) {
 console.log('text: ' + text);
 ```
 
+
+</details>
+
  <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -99,8 +112,9 @@ console.log('text: ' + text);
 
 
 # functions
-
-## function to String and back to function
+<details><summary>Click to expand..</summary>
+  
+# function to String and back to function
 ```javascript
 var myFunction = function() {
   // Any codes here
@@ -114,6 +128,8 @@ var fn = new Function('return ' + fString)();
 fn();
 ```
 
+</details>
+
  <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -121,9 +137,12 @@ fn();
 
 
 # ESM (es-modules) and CJS (commonjs)
+<details><summary>Click to expand..</summary>
+  
+# Guides
 CJS vs ESM (https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1)
 
-## Examples for difference
+# Examples for difference
 ```javascript
 // ### CJS ##
 module.exports.sum = (x, y) => x + y; // @filename: util.js
@@ -137,15 +156,15 @@ import {sum} from './util.js'
 
 <br><br>
 
-## ESM
+# ESM
 
-#### Features
+## Features
 - No need for **"use strict"**
 - async
 
 <br><br>
 
-#### How to enable?
+## How to enable?
 ```javascript
 // package.json
 "type": "module"
@@ -153,7 +172,7 @@ import {sum} from './util.js'
 // Also rename all files where you use ESM to .mjs
 ```
 
-#### Export / Import
+## Export / Import
 ```javascript
 /* ## Option 1 ##
 Name your export instead of using default. It should look like this */
@@ -212,7 +231,7 @@ await bot.getUserDetails(req, res);
 <br>
 
 
-#### Client Side
+## Client Side
 - In order to use client side ESM we use **type="module"**
 ```html
 <!-- method #1 -->
@@ -233,7 +252,7 @@ await bot.getUserDetails(req, res);
 <br>
 
 
-#### No require, exports, module.exports, __filename, __dirname (https://nodejs.org/api/esm.html#esm_no_require_exports_module_exports_filename_dirname)
+## No require, exports, module.exports, __filename, __dirname (https://nodejs.org/api/esm.html#esm_no_require_exports_module_exports_filename_dirname)
 ```javascript
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -241,6 +260,8 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 ```
+
+</details>
 
 <br><br>
  _____________________________________________________
