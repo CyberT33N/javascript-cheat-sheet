@@ -496,15 +496,10 @@ const leo = new Animal();
 
 
 
-<br>
-<br>
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
- 
-
-<br>
-<br>
+<br><br>
 
 # Classes
 ```javascript
@@ -526,6 +521,7 @@ console.log('leo name:' + leo.name);
 console.log(leo.play(5));
 ```
 
+<br><br>
 
 
 ## Change/add constructor value
@@ -550,6 +546,30 @@ console.log('name before:' + leo.name);
 leo.changeName('Peter', 'Doe');
 console.log('name after:' + leo.name);
 console.log('added last name:' + leo.lastName);
+```
+
+
+
+<br><br>
+
+
+## static (isolated function)
+```javascript
+class Animal {
+
+  constructor(name, energy){
+    this.name = name;
+    this.energy = energy;
+  }
+
+  static getDetails(){
+    const r = 'API_results'; // do as example some api calls here
+    return `Details about your pet: ${r}`;
+  }
+
+};
+
+console.log('getDetails():' + Animal.getDetails());
 ```
 
 
