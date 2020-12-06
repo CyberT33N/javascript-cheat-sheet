@@ -248,6 +248,7 @@ const __dirname = dirname(__filename);
 # Prototypes
 - A Beginner's Guide to JavaScript's Prototype (https://www.youtube.com/watch?v=XskMWBXNbp0)
 - Prototypes Example (https://dev.to/karataev/javascript-prototypes-by-example-15jh)
+- New keyword in Javascript (https://www.youtube.com/watch?v=Uhp9xPCILno)
 
 
 ## create prototype with Object.create (**OLD METHOD**)
