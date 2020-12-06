@@ -288,6 +288,14 @@ const Animal = {
 
 var leo = Object.create(Animal);
 leo.name = 'Leo';
+
+/*
+// alternative this works too
+const leo = Object.create(Animal, {
+  name: {value: 'Leo'}
+});
+*/
+
 leo.play(2);
 ```
 
