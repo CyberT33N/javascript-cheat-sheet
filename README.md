@@ -24,11 +24,11 @@ Javascript Cheat Sheet for the most common stuff..
 # [ESM (es-modules) and CJS (commonjs)](#esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
 2. ESM
-  2.1 Features
-  2.2 How to enable?
-  2.3 Export / Import
-  2.4 Client Side
-  2.5 No require, exports, module.exports, __filename, __dirname
+  <br>2.1 Features
+  <br>2.2 How to enable?
+  <br>2.3 Export / Import
+  <br>2.4 Client Side
+  <br>2.5 No require, exports, module.exports, __filename, __dirname
 
 # [Prototypes](#prototypes)
 1. Instantiate Object with Object.create (OLD METHOD)
@@ -75,8 +75,9 @@ Javascript Cheat Sheet for the most common stuff..
 
 # [jQuery](#jquery)
 1. load
-  1.1 Insert all contents of another same origin HTML file to current page
-  1.2 Insert specific element of another same origin HTML file to current page
+  <br>1.1 Insert all contents of another same origin HTML file to current page
+  <br>1.2 Insert specific element of another same origin HTML file to current page
+<br><br>
 2. Check for click
 3. Check browser
 4. Event Listener
@@ -99,9 +100,57 @@ Javascript Cheat Sheet for the most common stuff..
 20. Insert HTML after specific element
 21. Find element
 
-
 # [Async](#async)
 1. Create Async
+2. setTimeout
+3. setInterval
+4. Functions - In Parallel
+5. Loops (Array) - In Parallel
+6. Loops - Sequential (For Loop)
+7. Combine Async with promise
+
+# [Promise](#promise)
+1. async await for promise resolve
+2. Nested Functions
+
+# [Wait](#wait)
+1. Wait until some condition is true
+
+# [Loaded](#loaded)
+1. Wait until object is loaded
+2. Wait until document ready
+3. Wait until everything is fully loaded and loading icon is gone
+4. Wait until element loaded
+5. remove event listener from anonym function
+
+# [Array](#array)
+1. Clone unique
+2. clone array
+3. clone array with objects inside
+4. get random item from array
+
+# [Google reCAPTCHA v2](#google-recaptcha-v2)
+1. Check if user filled Captcha
+2. Simulate Captcha Fail
+3. Reset Captcha
+4. Change width
+5. PHP Backend do verify of captcha
+
+# [:before & :after](#before--after)
+1. Add new style to :before and :after
+
+# [Anime.js](#animejs)
+1. Remove Animation
+2. Bouncing easing
+
+# [Owl Carousel](#owl-carousel)
+1. Fix auto width problems / resize on width/height change
+
+# [Navigator](#navigator)
+1. Get Browser Language
+
+
+
 
 </details>
 
