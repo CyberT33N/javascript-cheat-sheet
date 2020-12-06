@@ -269,13 +269,16 @@ const __dirname = dirname(__filename);
  <br><br>
 
 # Prototypes
+<details><summary>Click to expand..</summary>
+  
+# Guides
 - A Beginner's Guide to JavaScript's Prototype (https://www.youtube.com/watch?v=XskMWBXNbp0)
 - Prototypes Example (https://dev.to/karataev/javascript-prototypes-by-example-15jh)
 - New keyword in Javascript (https://www.youtube.com/watch?v=Uhp9xPCILno)
 - OOP / Explain Prototype (https://www.youtube.com/watch?v=vDJpGenyHaA)
 
 
-## Instantiate Object with Object.create (**OLD METHOD**)
+# Instantiate Object with Object.create (**OLD METHOD**)
 ```javascript
 // METHOD #1
 function Animal (name, energy){
@@ -325,7 +328,7 @@ const leo = Object.create(Animal, {
 leo.play(2);
 ```
 
-## Instantiate Object with new keyword (**NEW METHOD**)
+# Instantiate Object with new keyword (**NEW METHOD**)
 ```javascript
 function Animal (name, energy){
   this.name = name;
@@ -344,7 +347,7 @@ console.log(leo.play(5));
 <br>
 <br>
 
-## change/add constructor value
+# change/add constructor value
 ```javascript
 function Animal (name, energy, minute){
   this.name = name;
@@ -371,7 +374,7 @@ console.log(`${leo.name} is sleeping ${leo.sleep} minutes and is eating ${leo.ea
 <br>
 <br>
 
-## Call another constructor 
+# Call another constructor 
 
 ```javascript
 function Animal (name, energy){
@@ -391,7 +394,7 @@ console.log(`${ZooGermany.name} is sleeping ${ZooGermany.sleep} minutes and has 
 <br>
 
 
-## Inherit Prototype (How to access other constructor prototypes)
+# Inherit Prototype (How to access other constructor prototypes)
 ```javascript
 function Animal (name, energy){
   this.name = name;
@@ -423,7 +426,7 @@ ZooGermany.eat(1); // will result in error if we delete the Object.create line c
 
 
 
-## Change constructor
+# Change constructor
 ```javascript
 function Animal (name, energy){
   this.name = name;
@@ -444,7 +447,7 @@ console.log(ZooGermany);
 
 
 
-## getPrototypeOf
+# getPrototypeOf
 - This will show all prototypes from instance
 ```javascript
 const prototype = Object.getPrototypeOf(leo);
@@ -455,7 +458,7 @@ const prototype = Object.getPrototypeOf(leo);
 <br>
 <br>
 
-## hasOwnProperty
+# hasOwnProperty
 - Check for objects own properties and ignore prototypes
 ```javascript
 leo.hasOwnProperty('name'); // true
@@ -463,7 +466,7 @@ leo.hasOwnProperty('play'); // true
 ```
 
 
-## Iterate over all keys incl. prototypes
+# Iterate over all keys incl. prototypes
 ```javascript
 for(const key in leo){
   console.log(`Key: ${key} - Value: ${leo[key]}`);
@@ -478,7 +481,7 @@ Key: play - Value: function (length) {
 ```
 
 
-## Iterate only over own properties and ignore prototypes
+# Iterate only over own properties and ignore prototypes
 ```javascript
 for(const key in leo){
   if(leo.hasOwnProperty(key)){
@@ -498,7 +501,7 @@ NOT OWN - Key: play - Value: function (length) {
 <br>
 <br>
 
-## instanceof
+# instanceof
 - Check if object is an instance of a specific class
 ```javascript
 function sample(){};
@@ -510,14 +513,14 @@ leo instanceof sample // false
 <br>
 <br>
 
-## Arrow functions do not have prototypes
+# Arrow functions do not have prototypes
 ```javascript
 const Animal = ()=>{};
 const leo = new Animal();
 /* Uncaught TypeError: Animal is not a constructor at <anonymous>:2:13 */
 ```
 
-
+</details>
 
 <br><br>
  _____________________________________________________
@@ -525,6 +528,8 @@ const leo = new Animal();
 <br><br>
 
 # Classes
+<details><summary>Click to expand..</summary>
+
 ```javascript
 class Animal {
 
@@ -547,7 +552,7 @@ console.log(leo.play(5));
 <br><br>
 
 
-## Change/add constructor value
+# Change/add constructor value
 ```javascript
 class Animal {
 
@@ -576,7 +581,7 @@ console.log('added last name:' + leo.lastName);
 <br><br>
 
 
-## static (isolated function)
+# static (isolated function)
 ```javascript
 class Animal {
 
@@ -599,7 +604,7 @@ console.log('getDetails():' + Animal.getDetails());
 <br><br>
 
 
-## subclasses (extends)
+# subclasses (extends)
 ```javascript
 class Animal {
 
@@ -629,23 +634,21 @@ var getDetails = zooGermany.getDetails();
 console.log('getDetails: ' + getDetails);
 ```
 
+</details>
 
-<br>
-<br>
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
- 
-
-<br>
-<br>
+<br><br>
 
 
 
 
 # time
-
-## format time to AM/PM
+<details><summary>Click to expand..</summary>
+  
+# format time to AM/PM
 ```javascript
 function formatAMPM(date) {
   var hours = date.getHours();
@@ -660,7 +663,7 @@ function formatAMPM(date) {
 console.log(formatAMPM(new Date)); // <-- 8:23 pm
 ```
 
-## get current Date
+# get current Date
 ```javascript
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -671,19 +674,20 @@ today = mm + '/' + dd + '/' + yyyy;
 console.log(today) // <-- 10/25/2020
 ```
 
+</details>
 
-<br>
-<br>
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
 
-<br>
-<br>
+<br><br>
 
 
 # filter
-
-## compare 2 arrays of objects and remove duplicates
+<details><summary>Click to expand..</summary>
+  
+# compare 2 arrays of objects and remove duplicates
 ```javascript
 var cars1 = [
     {id: 2, make: "Honda", model: "Civic", year: 2001},
@@ -703,20 +707,17 @@ let res = cars1.concat(cars2.filter(({id}) => !cars1.find(x => x.id === id)))
 console.log(res);
 ```
 
-<br>
-<br>
+</details>
 
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # Sort
+<details><summary>Click to expand..</summary>
 
-## Sort Array by Numbers ASC
+# Sort Array by Numbers ASC
 ```javascript
 var r = [
   {
@@ -736,7 +737,7 @@ r.sort((a, b) => a.sorting - b.sorting );
 ```
 
 
-## Sort Array by String ASC
+# Sort Array by String ASC
 ```javascript
 var r = [
   {
@@ -756,7 +757,7 @@ r.sort((a, b) => a.name.localeCompare(b.name) );
 ```
 
 
-## Sort Array by two values ASC
+# Sort Array by two values ASC
 The first value got always priority in order. The second value will only count if the first value sort gets not destroyed.
 ```javascript
 var r = [
@@ -789,45 +790,35 @@ r.sort((a, b) => a.sorting - b.sorting || a.name.localeCompare(b.name));
 ```
 
 
-      
+ </details> 
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 
 # Cookie
-
+<details><summary>Click to expand..</summary>
+  
 ## Get value of specific cookie
 ```javascript
 var regex = /MyCookie=(.[^;]*)/ig;
 var match = regex.exec(document.cookie);
 var value = match[1];
 ```
+</details><
 
-
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # Object
+<details><summary>Click to expand..</summary>
 
-## Check if Object is empty
+# Check if Object is empty
 ```javascript
 var obj = {};
 if( Object.entries(obj).length < 1 ) console.log('empty');
@@ -836,20 +827,17 @@ var obj = {"not": "empty"};
 if( Object.entries(obj).length > 0 ) console.log('not empty');
 ```
 
-<br>
-<br>
+</details>
 
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # Link
+<details><summary>Click to expand..</summary>
 
-## Get current link / domain
+# Get current link / domain
 ```javascript
 // method #1
 location.href
@@ -890,22 +878,18 @@ window.location.protocol
 window.location.search
 ```
 
-
-<br>
-<br>
+</details>
 
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # API
+<details><summary>Click to expand..</summary>
 
-
-## Enter fullscreen (https://developers.google.com/web/fundamentals/native-hardware/fullscreen/)
+# Enter fullscreen (https://developers.google.com/web/fundamentals/native-hardware/fullscreen/)
 - Doesn´t work on ios..
 
 
@@ -926,33 +910,32 @@ window.location.search
 ```
 
 
-
+</details>
 
 
 <br><br>
  _____________________________________________________
  _____________________________________________________
 <br><br>
-
-
 
 # jQuery
+<details><summary>Click to expand..</summary>
+  
+# load (https://api.jquery.com/load/)
 
-## load (https://api.jquery.com/load/)
-
-#### Insert all contents of another same origin HTML file to current page
+## Insert all contents of another same origin HTML file to current page
 ```javascript
 $( "#a" ).load( "article.html" );
 ```
 
-#### Insert specific element of another same origin HTML file to current page
+## Insert specific element of another same origin HTML file to current page
 ```javascript
 $( "#a" ).load( "article.html #example" );
 ```
 
 <br><br>
 
-## Check for click
+# Check for click
 ```javascript
 // method #1
 $(".some_class").on("click", function(e) {
@@ -969,7 +952,7 @@ $("#clicker").click(function () { /*..*/ });
 $(document).on('click', '#yourid', function() { /*..*/ });
 ```
 
-## Check browser (https://api.jquery.com/jQuery.browser/)
+# Check browser (https://api.jquery.com/jQuery.browser/)
 ```javascript
 // method 1
 if ($.browser.mozilla) { ... }
@@ -978,7 +961,7 @@ if ($.browser.mozilla) { ... }
 const isFirefoxBrowser = navigator.userAgent.includes('Firefox');
 ```
 
-## Event Listener (https://api.jquery.com/category/events/)
+# Event Listener (https://api.jquery.com/category/events/)
 ```javascript
 // method 1 without css selector
   $(window).on("resize scroll click touchstart touchend mouseover mouseout focus focusout",function(e){
@@ -993,21 +976,21 @@ $(document).on("click touchstart touchend", ".owl-dot", function (e) {  });
 $('input').on('focusout',function(){ //.. });
 ```
 
-## Manually trigger event listener
+# Manually trigger event listener
 ```javascript
 $('#element').trigger('touchend');
 ```
 
 $(this).trigger('touchend');
 
-## jQuery use !important
+# jQuery use !important
 ```javascript
 let elem = $(".ui__downloadList__item.purple");
 elem[0].style.removeProperty('z-index');
 elem[0].style.setProperty('z-index', '1', 'important');
 ```
 
-## Handle form submits
+# Handle form submits
 ```javascript
 $("#prospects_form").submit(function(e) {
     e.preventDefault(); // prevent page reload on form submit
@@ -1015,7 +998,7 @@ $("#prospects_form").submit(function(e) {
 ```
 
 
-## Get scroll direction
+# Get scroll direction
 ```javascript
 // method 1 (for me only this worked stable)
 var lastScrollTop = 0;
@@ -1042,14 +1025,14 @@ $(window).scroll(function(event){
 });
 ```
 
-## Class Modification
+# Class Modification
 ```javascript
 if( $(this).hasClass(animClass) ){
     $(this).removeClass(animClass);
 }   $(this).addClass(animClassBlack);
 ```
 
-## Check for Touch Event (Mobile/Tablet)
+# Check for Touch Event (Mobile/Tablet)
 ```javascript
 
 $(document).on('touchstart touchend', '.skillbarWRAP', function(e) {
@@ -1067,7 +1050,7 @@ console.log( 'xPos: ' + xPos );
 
 ```
 
-## Wait until scroll is finished
+# Wait until scroll is finished
 ```javascript
 $('html').animate({scrollTop: $("layerone").offset().top}, 'slow', function() {
 console.log('scroll done..');
@@ -1075,7 +1058,7 @@ console.log('scroll done..');
 ```
 
 
-## Scroll to bottom
+# Scroll to bottom
 ```javascript
 // method #1
 $("a[href='#bottom']").click(function() {
@@ -1088,7 +1071,7 @@ document.querySelector(".chat").scrollTop = document.querySelector(".chat").scro
 ```
 
 
-## Import scripts with callback
+# Import scripts with callback
 ```javascript
 
      $.when(
@@ -1102,7 +1085,7 @@ document.querySelector(".chat").scrollTop = document.querySelector(".chat").scro
     });
 ```
 
-## Get path of element
+# Get path of element
 ```javascript
 jQuery.fn.getSelector = function() {
 
@@ -1127,7 +1110,7 @@ console.log( 'path: ' + $(".owl-carousel .owl-item").getSelector() );
 
 ```
 
-## each loop
+# each loop
 ```javascript
 $( ".owl-carousel .owl-item" ).each(function() { });
 ```
@@ -1135,7 +1118,7 @@ $( ".owl-carousel .owl-item" ).each(function() { });
 
 
 
-## POST JSON to PHP file
+# POST JSON to PHP file
 ```javascript
 let json = {
     email: emailInput,
@@ -1157,7 +1140,7 @@ console.log('result after form submit:' + r);
 
 
 
-## clone
+# clone
 ```javascript
   // you can clone a element and then you got the element duplicated in DOM. If needed you can delete the first one after..
   $('#menubar-contact').clone(true).insertAfter($('#menubar-contact'));
@@ -1168,7 +1151,7 @@ console.log('result after form submit:' + r);
 
 
 
-## Get parent
+# Get parent
 ```javascript
 // vanilla javascript 
 document.querySelector('.mdi-link-variant')?.parentNode?.getAttribute('href');
@@ -1178,7 +1161,7 @@ $( '.element' ).parent();
 ```
 
 
-## Get next
+# Get next
 ```javascript
 // vanilla javascript 
 document.getElementById("item1").nextElementSibling
@@ -1187,19 +1170,19 @@ document.getElementById("item1").nextElementSibling
 $( '.element' ).next();
 ```
 
-## Append HTML to current element
+# Append HTML to current element
 ```javascript
 $('.right .top').append`<div class="chat" data-chat="${currentPerson}"></div>`);
 ```
 
 
-## Insert HTML after specific element
+# Insert HTML after specific element
 ```javascript
 $('.right .top').after(`<div class="chat" data-chat="${currentPerson}"></div>`);
 ```
 
 
-## Find element
+# Find element
 ```javascript
 // vanilla javascript 
 document.querySelector('.zp_7I-lw')?.querySelectorAll('.zp_3_fnL')[0]?.getAttribute('href')
@@ -1208,22 +1191,20 @@ document.querySelector('.zp_7I-lw')?.querySelectorAll('.zp_3_fnL')[0]?.getAttrib
 $( '.element' ).find( '.test' );
 ```
 
-
-<br>
-<br>
+</details>
 
 
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 
 # Async
-
-## Create Async
+<details><summary>Click to expand..</summary>
+  
+# Create Async
 ```javascript
 // Method 1 - Catch error
 (async () => {
@@ -1244,7 +1225,7 @@ async function test(){
 ```
 
 
-## setTimeout
+# setTimeout
 ```javascript
 // async
 await new Promise(resolve => setTimeout(resolve, 1000));
@@ -1253,10 +1234,9 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 setTimeout( async () => {   await page.hover('video');    }, 5000);
 ```
 
- 
 
 
-## setInterval
+# setInterval
 ```javascript
 var count = 0;
 var countdownInterval = setInterval(async () => {
@@ -1269,7 +1249,7 @@ var countdownInterval = setInterval(async () => {
 
 
 
-## Functions - In Parallel
+# Functions - In Parallel
 ```javascript
 async function a (){
   console.log('a');
@@ -1304,7 +1284,7 @@ async function b (){
 
 ```
 
-## Loops (Array) - In Parallel
+# Loops (Array) - In Parallel
 ```javascript
 await Promise.all(
   yourArrayHere.map(async d => {
@@ -1314,7 +1294,7 @@ await Promise.all(
 );
 ```
 
-## Loops - Sequential (For Loop)
+# Loops - Sequential (For Loop)
 ```javascript
 for (const d of yourArrayHere) {
     await redirectChecker(d);
@@ -1322,7 +1302,7 @@ for (const d of yourArrayHere) {
 ```
 
 
-## Combine Async with promise
+# Combine Async with promise
 ```javascript
 // example #1 - await for promise resolve
 function one(){return new Promise(resolve => { 
@@ -1339,6 +1319,9 @@ return new Promise(async resolve => {
 })
 ```
 
+</details>
+
+
 
 <br><br>
  _____________________________________________________
@@ -1347,8 +1330,9 @@ return new Promise(async resolve => {
 
 
 # Promise
+<details><summary>Click to expand..</summary>
 
-## async await for promise resolve
+# async await for promise resolve
 ```javascript
 const load = name => new Promise( resolve => {
   name.onload = () => resolve(true);
@@ -1356,7 +1340,7 @@ const load = name => new Promise( resolve => {
 await load(window);
 ```
 
-## Nested Functions
+# Nested Functions
 ```javascript
 
 CheckScrollDirection().then( r => { 
@@ -1379,6 +1363,8 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 
 ```
 
+</details>
+
 
 <br><br>
  _____________________________________________________
@@ -1386,6 +1372,7 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 <br><br>
 
 # Wait
+<details><summary>Click to expand..</summary>
 
 ## Wait until some condition is true
 ```javascript
@@ -1399,14 +1386,19 @@ const checkElement = async selector => {
 await checkElement('.top .name');
 ```
 
+</details>
+
+
 <br><br>
  _____________________________________________________
  _____________________________________________________
 <br><br>
 
 # loaded
+<details><summary>Click to expand..</summary>
 
-## Wait until object is loaded
+
+# Wait until object is loaded
 ```javascript
 // async with promise resolve
 const load = name => new Promise( resolve => {
@@ -1416,37 +1408,42 @@ await load(window);
 ```
 <br><br>
 
-## Wait until document ready
+# Wait until document ready
 ```javascript
 $(function(){ //.. })
 ```
 <br><br>
 
-## Wait until everything is fully loaded and loading icon is gone
+# Wait until everything is fully loaded and loading icon is gone
 ```javascript
 window.addEventListener('load', function () { //.. });
 ```
 <br><br>
 
-## Wait until element loaded
+# Wait until element loaded
 ```javascript
  document.querySelector('.profile').onload = function(e){ //.. }
 ```
 <br><br>
 
-## remove event listener from anonym function
+# remove event listener from anonym function
 ```javascript
 document.querySelector('.profile').addEventListener('load', function () { 
   this.removeEventListener('load', arguments.callee);
 });
 ```
 
+</details>
+
 
 <br><br>
  _____________________________________________________
  _____________________________________________________
 
 <br><br>
+
+# array
+<details><summary>Click to expand..</summary>
 
 
 # Clone unique
@@ -1459,13 +1456,13 @@ arr2.push('d');  //Now, arr1 = ['a','b','c','d']
 
 In order to create unique clones check below..
 
-## clone array
+# clone array
 ```js
 var arr = [2,3,4,5];
 var copyArr = [...arr];
 ```
 
-## clone array with objects inside
+# clone array with objects inside
 ```js
 var arr = [{"a":1}, {"b":2}];
 var copyArr = JSON.parse(JSON.stringify(arr));
@@ -1473,24 +1470,24 @@ var copyArr = JSON.parse(JSON.stringify(arr));
 
 
 
-## get random item from array
+# get random item from array
 ```js
 var rndval=items[Math.floor(Math.random()*items.length)];
 ```
 
-<br>
-<br>
+</details>
 
 
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
-
-<br>
-<br>
 
 
 # Google reCAPTCHA v2
+<details><summary>Click to expand..</summary>
 
 Sandbox keys for localhost testing (will always return true):
 - Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
@@ -1506,7 +1503,7 @@ Alternative you can use **localhost** or **127.0.0.1** and create reCAPTCHA for 
 <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 ```
 
-## Check if user filled Captcha
+# Check if user filled Captcha
 ```js
 // grecaptcha.getResponse() will contain the token which has to be sent to the google recaptcha for verify
 if( grecaptcha.getResponse().length == 0 ) {
@@ -1515,19 +1512,19 @@ if( grecaptcha.getResponse().length == 0 ) {
 }
 ```
 
-## Simulate Captcha Fail
+# Simulate Captcha Fail
 ```js
 //download extension like modheader and then change user agent to
 Googlebot/2.1
 ```
 
-## Reset Captcha
+# Reset Captcha
 ```js
 grecaptcha.reset();
 ```
 
 
-## Change width
+# Change width
 ```html
 <!-- method 1# data-size="compact" -->
 <div class="g-recaptcha" data-size="compact"></div>
@@ -1578,7 +1575,7 @@ We create a container around the default .g-recaptcha div and then set the witdh
 
 
 
-## PHP Backend do verify of captcha
+# PHP Backend do verify of captcha
 ```php
 
 $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
@@ -1628,19 +1625,20 @@ $curl = curl_init($url);
   exit;
 ```
 
-<br>
-<br>
+
+</details>
 
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
 
-<br>
-<br>
-
-
-## Add new style to :before and :after
+# :before & :after
+<details><summary>Click to expand..</summary>
+  
+# Add new style to :before and :after
 ```javascript
 // method #1
   let styleElem = document.head.appendChild(document.createElement("style"));
@@ -1663,48 +1661,42 @@ style.setProperty('--background', 'url(http://placekitten.com/200/300)');
 */
 ```
 
-<br>
-<br>
+</details>
 
 
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
 
-
-<br>
-<br>
+<br><br>
 
 
 # Anime.js
+<details><summary>Click to expand..</summary>
 
-## Remove Animation
+# Remove Animation
 ```javascript
 anime.remove( document.querySelector('#layertwo') )
 ```
 
-## Bouncing easing
+# Bouncing easing
 ```javascript
 {duration: 2000, easing: 'easeOutElastic(1, .2)'} // <-- change .2 to higher value for slower bounce effect
 ```
 
+</details>
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # Owl Carousel
+<details><summary>Click to expand..</summary>
 
-## Fix auto width problems / resize on width/height change
+
+# Fix auto width problems / resize on width/height change
 ```javascript
 var carousel = $( '.owl-carousel' ).owlCarousel({
     margin: 25,
@@ -1719,54 +1711,53 @@ var carousel = $( '.owl-carousel' ).owlCarousel({
 
 ```
 
+</details>
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # Navigator
+<details><summary>Click to expand..</summary>
+
 
 ## Get Browser Language
 ```javascript
 var userLang = navigator.language || navigator.userLanguage; 
 ```
 
-<br>
-<br>
+</details>
 
 
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
+
+# iframe / object
+<details><summary>Click to expand..</summary>
 
 
-<br>
-<br>
-
-## Embed pdf
+# Embed pdf
 ```javascript
 //method #1
 <object width="400" height="400" data="helloworld.pdf"></object>
 ```
 
 
-<br>
-<br>
+</details>
 
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
-
-<br>
-<br>
+# Simulate
+<details><summary>Click to expand..</summary>
 
 
 # Simulate Click
@@ -1797,20 +1788,19 @@ var e = new Event('touchend');
 document.querySelector('#menubar-contact').dispatchEvent(e);
 ```
 
-<br>
-<br>
+</details>
 
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 # document/window
+<details><summary>Click to expand..</summary>
 
-## remove text from url
+
+# remove text from url
 ```javascript
 // http://localhost/myresume/#image1
 document.location.hash = ""
@@ -1821,14 +1811,14 @@ document.location.hash = ""
 <br>
 <br>
 
-## Open something new window
+# Open something new window
 
 ```javascript
 window.open('img/upwork/jobs/job1.jpg', '_blank', 'location=yes,height=$(window).height(),width=$(window).width(),scrollbars=yes,status=yes');
 ```
 
 
-## Get link params from oauth popup window
+# Get link params from oauth popup window
 ```javascript
 // https://gist.github.com/CyberT33N/b6077d75d25e1d728d68caeac6914dd4
 // https://www.npmjs.com/package/oauth-open
@@ -1853,19 +1843,16 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 ```
 
 
+</details>
 
 
-<br>
-<br>
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
-
-<br>
-<br>
-
-
+# clipboard
+<details><summary>Click to expand..</summary>
 
 
 
@@ -1880,20 +1867,16 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
       document.body.removeChild(dummy);
   }
 ```
+</details>
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
-
-<br>
-<br>
-
-
+# Redirect
+<details><summary>Click to expand..</summary>
 
 
 # Prevent redirect on input search with Enter
@@ -1915,21 +1898,17 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
                           });
 
 ```  
+</details>
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br>
-<br>
+<br><br>
 
 
 # Viewport
+<details><summary>Click to expand..</summary>
 
 ## Stop viewport resize when soft keyboard is activating on mobile
 ```javascript
@@ -1939,18 +1918,18 @@ let viewport = document.querySelector("meta[name=viewport]");
 viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui");
 ```  
 
+</details>
 
 
-<br>
-<br>
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
+
+# Before unload
+<details><summary>Click to expand..</summary>
 
 
-<br>
-<br>
 
 ## Do something when current page / popup windows was closed
 ```javascript
@@ -1959,17 +1938,16 @@ const popup = window.open('oauth-dialog.html', '_blank', 'width=500,height=500')
 popup.onbeforeunload = function(){ /* .. */ };
 ```
 
-<br>
-<br>
+</details>
 
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
-
-<br>
-<br>
-
+# Os/Device Detect
+<details><summary>Click to expand..</summary>
 
 
 # Check if tablet/smartphone
@@ -1984,7 +1962,7 @@ console.log( 'mobile/tablet check:' + mobileCheck );
 ```  
 
 
-## Check if iOS
+# Check if iOS
 ```javascript
   function iOS() {
       return [
@@ -2006,10 +1984,13 @@ console.log( 'mobile/tablet check:' + mobileCheck );
 <br>
 
 
-## Check if Safari Browser
+# Check if Safari Browser
 ```javascript
 function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);  } 
 ```  
+
+</details>
+
 
 <br><br>
  _____________________________________________________
@@ -2017,9 +1998,10 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 <br><br>
 
 # Tutorials
+<details><summary>Click to expand..</summary>
 
 
-## The Conditional (Ternary) Operator Explained
+# The Conditional (Ternary) Operator Explained
 https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff
 
 ```javascript
@@ -2045,50 +2027,50 @@ person.driver = person.age >=16 ? 'Yes' : 'No';
 
 <br><br>
 
-## Object-oriented Programming (OOP)
+# Object-oriented Programming (OOP)
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
 - JavaScript OOP Crash Course (ES5 & ES6) (https://www.youtube.com/watch?v=vDJpGenyHaA)
 
-## Functional Programming
+# Functional Programming
 - https://opensource.com/article/17/6/functional-javascript
 
 <br><br>
 
-## Clean Code
+# Clean Code
 - https://github.com/ryanmcdermott/clean-code-javascript
 
 <br><br>
 
-## Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+# Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 ```javascript
 let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
 ```
 
 <br><br>
 
-## Immediately Invoked Function Expression (IIFE)
+# Immediately Invoked Function Expression (IIFE)
 - https://www.youtube.com/watch?v=eY7u388cvM4
 
 <br><br>
 
-## Spread Operators
+# Spread Operators
 - https://www.youtube.com/watch?v=I5AGSH8ROSU
 - https://dev.to/livecodestream/how-to-use-the-spread-operator-in-javascript-35bn
 - https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
 
 <br><br>
 
-## Scope and Closures
+# Scope and Closures
 - https://css-tricks.com/javascript-scope-closures/
 
 <br><br>
 
-## Difference between let, var & const
+# Difference between let, var & const
 - https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e
 
 <br><br>
 
-## Destruction
+# Destruction
 - https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
 
 <br><br>
@@ -2106,7 +2088,7 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
  _____________________________________________________
 <br><br>
 
-## YAML
+# YAML
 https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
 ```yml
 --- 
@@ -2129,4 +2111,6 @@ https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
      location: "a pear tree"
    turtle-doves: two
 ```
+
+</details>
 
