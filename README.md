@@ -899,7 +899,12 @@ class Animal {
 };
 
 class Zoo extends Animal {
-  // you can also remove the constructor and you are still able to access class Animal strings
+  /* 
+    you can also remove the constructor and you are still able to access the sub class because we will use the subclass constructor in this case.
+
+    If you want to use the parent class constructor your have to use super();
+    https://www.w3schools.com/jsref/jsref_class_super.asp
+  */
   constructor(name, energy, location){
     super(name, energy);
     this.location = location;
