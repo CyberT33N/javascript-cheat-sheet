@@ -8,21 +8,21 @@ Javascript Cheat Sheet for the most common stuff..
 # Summary
 <details><summary>Click to expand..</summary>
 
-[<h1>Switch</h1>](#switch)
+# [Switch](#_switch)
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
-# [For loop](#for-loop)
+# [For loop](#_for-loop)
 1. Do loop based on length of array
 2. Make the loop jump to the next iteration when i is 5
 3. break the loop when i is 5
 
-# [While](#while)
+# [While](#_while)
 1. Do loop based on length of array
 
-# [Functions](#functions)
+# [Functions](#_functions)
 1. function to String and back to function
 
-# [ESM (es-modules) and CJS (commonjs)](#esm-es-modules-and-cjs-commonjs)
+# [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
 2. ESM
   <br>2.1 Features
@@ -31,7 +31,7 @@ Javascript Cheat Sheet for the most common stuff..
   <br>2.4 Client Side
   <br>2.5 No require, exports, module.exports, __filename, __dirname
 
-# [Prototypes](#prototypes)
+# [Prototypes](#_prototypes)
 1. Instantiate Object with Object.create (OLD METHOD)
 2. Instantiate Object with new keyword (NEW METHOD)
 3. change/add constructor value
@@ -45,36 +45,36 @@ Javascript Cheat Sheet for the most common stuff..
 11. instanceof
 12. Arrow functions do not have prototypes
 
-# [Classes](#classes)
+# [Classes](#_classes)
 1. Change/add constructor value
 2. static (isolated function)
 3. subclasses (extends)
 
-# [Time/Date](#time)
+# [Time/Date](#_time)
 1. format time to AM/PM
 2. get current Date
 
-# [Filter](#filter)
+# [Filter](#_filter)
 1. compare 2 arrays of objects and remove duplicates
 
-# [Sort](#sort)
+# [Sort](#_sort)
 1. Sort Array by Numbers ASC
 2. Sort Array by String ASC
 3. Sort Array by two values ASC
 
-# [Cookie](#cookie)
+# [Cookie](#_cookie)
 1. Get value of specific cookie
 
-# [Object](#object)
+# [Object](#_object)
 1. Check if Object is empty
 
-# [Link](#link)
+# [Link](#_link)
 1. Get current link / domain
 
-# [API](#api)
+# [API](#_api)
 1. Enter fullscreen
 
-# [jQuery](#jquery)
+# [jQuery](#_jquery)
 1. load
   <br>1.1 Insert all contents of another same origin HTML file to current page
   <br>1.2 Insert specific element of another same origin HTML file to current page
@@ -101,7 +101,7 @@ Javascript Cheat Sheet for the most common stuff..
 20. Insert HTML after specific element
 21. Find element
 
-# [Async](#async)
+# [Async](#_async)
 1. Create Async
 2. setTimeout
 3. setInterval
@@ -110,77 +110,77 @@ Javascript Cheat Sheet for the most common stuff..
 6. Loops - Sequential (For Loop)
 7. Combine Async with promise
 
-# [Promise](#promise)
+# [Promise](#_promise)
 1. async await for promise resolve
 2. Nested Functions
 
-# [Wait](#wait)
+# [Wait](#_wait)
 1. Wait until some condition is true
 
-# [Loaded](#loaded)
+# [Loaded](#_loaded)
 1. Wait until object is loaded
 2. Wait until document ready
 3. Wait until everything is fully loaded and loading icon is gone
 4. Wait until element loaded
 5. remove event listener from anonym function
 
-# [Array](#array)
+# [Array](#_array)
 1. Clone unique
 2. clone array
 3. clone array with objects inside
 4. get random item from array
 
-# [Google reCAPTCHA v2](#google-recaptcha-v2)
+# [Google reCAPTCHA v2](#_google-recaptcha-v2)
 1. Check if user filled Captcha
 2. Simulate Captcha Fail
 3. Reset Captcha
 4. Change width
 5. PHP Backend do verify of captcha
 
-# [:before & :after](#before--after)
+# [:before & :after](#_before--after)
 1. Add new style to :before and :after
 
-# [Anime.js](#animejs)
+# [Anime.js](#_animejs)
 1. Remove Animation
 2. Bouncing easing
 
-# [Owl Carousel](#owl-carousel)
+# [Owl Carousel](#_owl-carousel)
 1. Fix auto width problems / resize on width/height change
 
-# [Navigator](#navigator)
+# [Navigator](#_navigator)
 1. Get Browser Language
 
-# [Iframe / Object Tag](#iframe--object)
+# [Iframe / Object Tag](#_iframe--object)
 1. Embed pdf
 
-# [Simulate](#simulate)
+# [Simulate](#_simulate)
 1. Simulate Click
 2. Simulate Hover
 3. Simulate Touch events
 
-# [document/window](#documentwindow)
+# [document/window](#_documentwindow)
 1. remove text from url
 2. Open something new window
 3. Get link params from oauth popup window
 
-# [Clipboard](#clipboard)
+# [Clipboard](#_clipboard)
 1. Copy any text to clipboard
 
-# [Redirect](#redirect)
+# [Redirect](#_redirect)
 1. Prevent redirect on input search with Enter
 
-# [Viewport](#viewport)
+# [Viewport](#_viewport)
 1. Stop viewport resize when soft keyboard is activating on mobile
 
-# [Before unload](#before-unload)
+# [Before unload](#_before-unload)
 1. Do something when current page / popup windows was closed
 
-# [Os/Device Detect](#osdevice-detect)
+# [Os/Device Detect](#_osdevice-detect)
 1. Check if tablet/smartphone
 2. Check if iOS
 3. Check if Safari Browser
 
-# [Tutorials](#tutorials)
+# [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
 2. Object-oriented Programming (OOP)
 3. Functional Programming
@@ -204,7 +204,7 @@ Javascript Cheat Sheet for the most common stuff..
  _____________________________________________________
 <br><br>
 
-# Switch
+<a name="switch"># Switch</a>
 <details><summary>Click to expand..</summary>
   
 <br><br>
