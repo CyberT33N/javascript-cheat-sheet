@@ -32,12 +32,15 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
-2. ESM
-  <br>2.1 Features
-  <br>2.2 How to enable?
-  <br>2.3 Export / Import
-  <br>2.4 Client Side
-  <br>2.5 No require, exports, module.exports, __filename, __dirname
+2. CJS
+  <br>3.1 export all functions
+  <br>3.2 export specific function
+3. ESM
+  <br>3.1 Features
+  <br>3.2 How to enable?
+  <br>3.3 Export / Import
+  <br>3.4 Client Side
+  <br>3.5 No require, exports, module.exports, __filename, __dirname
 
 # [Prototypes](#_prototypes)
 1. Instantiate Object with Object.create (OLD METHOD)
@@ -86,11 +89,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. load
   <br>1.1 Insert all contents of another same origin HTML file to current page
   <br>1.2 Insert specific element of another same origin HTML file to current page
-<br>
 2. Check for click
 3. Check browser
 4. Event Listener
-4.1 Manually trigger event listener
+  <br>4.1 Manually trigger event listener
 5. jQuery use !important
 6. Handle form submits
 7. Get scroll direction
@@ -382,7 +384,29 @@ export const sum = (x, y) => x + y; // @filename: util.js
 import {sum} from './util.js'
 ```
 
+<br><br>
+______________________________________________________
+<br><br>
 
+
+# CJS
+
+## export all functions
+```javascript
+module.exports = {
+    foo: ()=>{/*..*/},
+    bar: ()=>{/*..*/}
+};
+```
+
+## export specific function
+```javascript
+// example #1
+module.exports.anyname = ()=>{/*..*/};
+```
+
+<br><br>
+______________________________________________________
 <br><br>
 
 # ESM
