@@ -204,7 +204,7 @@ Javascript Cheat Sheet for the most common stuff..
  _____________________________________________________
 <br><br>
 
-<a name="switch"># Switch</a>
+<a name="switch"><h1>Switch</h1></a>
 <details><summary>Click to expand..</summary>
   
 <br><br>
