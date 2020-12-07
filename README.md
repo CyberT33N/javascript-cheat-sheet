@@ -7,8 +7,8 @@ Javascript Cheat Sheet for the most common stuff..
 <br><br>
 
 # Summary
-- Open all sections
 ```javascript
+// open all sections in this readme
 for(const d of document.querySelectorAll('#readme details')){d.setAttribute('open', '');}
 ```
 <details><summary>Click to expand..</summary>
