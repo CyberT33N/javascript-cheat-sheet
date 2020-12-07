@@ -2,12 +2,13 @@
 Javascript Cheat Sheet for the most common stuff..
 
 
+
 <br><br>
 
 # Summary
 <details><summary>Click to expand..</summary>
-  
-# [Switch](#switch-data)
+
+[<h1>Switch</h1>](#switch)
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
 # [For loop](#for-loop)
@@ -203,9 +204,7 @@ Javascript Cheat Sheet for the most common stuff..
  _____________________________________________________
 <br><br>
 
-<a name="switch-DATA">
 # Switch
-</a>
 <details><summary>Click to expand..</summary>
   
 <br><br>
