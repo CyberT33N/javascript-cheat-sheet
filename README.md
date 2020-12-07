@@ -899,6 +899,7 @@ class Animal {
 };
 
 class Zoo extends Animal {
+  // you can also remove the constructor and you are still able to access class Animal strings
   constructor(name, energy, location){
     super(name, energy);
     this.location = location;
