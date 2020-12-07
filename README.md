@@ -8,8 +8,11 @@ Javascript Cheat Sheet for the most common stuff..
 
 # Summary
 ```javascript
-// open all sections in this readme
+// open all sections
 for(const d of document.querySelectorAll('#readme details')){d.setAttribute('open', '');}
+
+// close all sections
+for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('open', '');}
 ```
 <details><summary>Click to expand..</summary>
 
