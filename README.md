@@ -479,6 +479,11 @@ export const getRoomDetails = async (req, res)=>{ /*..*/ });
 // app.mjs
 import * as bot from '../services/bot.mjs';
 await bot.getUserDetails(req, res);
+
+
+
+/* ## Option 5 - export classes ##
+export class startBROWSER {/*..*/};
 ```
 <br>
 <br>
