@@ -231,9 +231,17 @@ switch("Ice") {
 </details>
 
 
+
+
+
 <br><br>
 
-# For loop
+
+
+
+
+<a name="_for-loop"><h1>For loop</h1></a>
+
 <details><summary>Click to expand..</summary>
   
 # Do loop based on length of array
@@ -271,11 +279,19 @@ for (i = 0; i < 10; i++) {
 </details>
 
 
+
+
+
+
+
  <br><br>
 
 
 
- # While
+
+
+<a name="_while"><h1>While</h1></a>
+  
  <details><summary>Click to expand..</summary>
   
  # Guides
@@ -301,10 +317,18 @@ console.log('text: ' + text);
 </details>
 
 
+
+
+
  <br><br>
 
 
-# functions
+
+
+
+
+<a name="_functions"><h1>functions</h1></a>
+  
 <details><summary>Click to expand..</summary>
   
 # function to String and back to function
@@ -323,10 +347,17 @@ fn();
 
 </details>
 
+
+
+
+
  <br><br>
 
 
-# ESM (es-modules) and CJS (commonjs)
+
+
+<a name="_esm-es-modules-and-cjs-commonjs"><h1>ESM (es-modules) and CJS (commonjs)</h1></a>
+  
 <details><summary>Click to expand..</summary>
   
 # Guides
@@ -454,9 +485,19 @@ const __dirname = dirname(__filename);
 </details>
 
 
+
+
+
+
+
  <br><br>
 
-# Prototypes
+
+
+
+
+<a name="_prototypes"><h1>Prototypes</h1></a>
+
 <details><summary>Click to expand..</summary>
   
 # Guides
@@ -711,9 +752,24 @@ const leo = new Animal();
 </details>
 
 
+
+
+
+
+
+
 <br><br>
 
-# Classes
+
+
+
+
+
+
+
+
+
+<a name="_classes"><h1>Classes</h1></a>
 <details><summary>Click to expand..</summary>
 
 ```javascript
@@ -823,12 +879,17 @@ console.log('getDetails: ' + getDetails);
 </details>
 
 
+
+
+
+
 <br><br>
 
 
 
 
-# time
+<a name="_time"><h1>time</h1></a>
+  
 <details><summary>Click to expand..</summary>
   
 # format time to AM/PM
@@ -861,10 +922,16 @@ console.log(today) // <-- 10/25/2020
 
 
 
+
+
+
 <br><br>
 
 
-# filter
+
+
+
+<a name="_filter"><h1>filter</h1></a>
 <details><summary>Click to expand..</summary>
   
 # compare 2 arrays of objects and remove duplicates
@@ -890,9 +957,20 @@ console.log(res);
 </details>
 
 
+
+
+
+
+
 <br><br>
 
-# Sort
+
+
+
+
+
+
+<a name="_sort"><h1>Sort</h1></a>
 <details><summary>Click to expand..</summary>
 
 # Sort Array by Numbers ASC
@@ -971,10 +1049,19 @@ r.sort((a, b) => a.sorting - b.sorting || a.name.localeCompare(b.name));
  </details> 
 
 
+
+
+
+
+
 <br><br>
 
 
-# Cookie
+
+
+
+
+<a name="_cookie"><h1>Cookie</h1></a>
 <details><summary>Click to expand..</summary>
   
 ## Get value of specific cookie
@@ -986,9 +1073,17 @@ var value = match[1];
 </details>
 
 
+
+
+
 <br><br>
 
-# Object
+
+
+
+
+
+<a name="_object"><h1>Object</h1></a>
 <details><summary>Click to expand..</summary>
 
 # Check if Object is empty
@@ -1003,9 +1098,18 @@ if( Object.entries(obj).length > 0 ) console.log('not empty');
 </details>
 
 
+
+
+
+
 <br><br>
 
-# Link
+
+
+
+
+
+<a name="_link"><h1>Link</h1></a>
 <details><summary>Click to expand..</summary>
 
 # Get current link / domain
@@ -1052,9 +1156,18 @@ window.location.search
 </details>
 
 
+
+
+
+
 <br><br>
 
-# API
+
+
+
+
+
+<a name="_api"><h1>API</h1></a>
 <details><summary>Click to expand..</summary>
 
 # Enter fullscreen (https://developers.google.com/web/fundamentals/native-hardware/fullscreen/)
@@ -1081,9 +1194,17 @@ window.location.search
 </details>
 
 
+
+
+
+
 <br><br>
 
-# jQuery
+
+
+
+
+<a name="_jquery"><h1>jQuery</h1></a>
 <details><summary>Click to expand..</summary>
   
 # load (https://api.jquery.com/load/)
@@ -1363,10 +1484,20 @@ $( '.element' ).find( '.test' );
 
 
 
+
+
+
+
+
 <br><br>
 
 
-# Async
+
+
+
+
+
+<a name="_async"><h1>Async</h1></a>
 <details><summary>Click to expand..</summary>
   
 # Create Async
@@ -1488,10 +1619,22 @@ return new Promise(async resolve => {
 
 
 
+
+
+
+
+
 <br><br>
 
 
-# Promise
+
+
+
+
+
+
+
+<a name="_promise"><h1>Promise</h1></a>
 <details><summary>Click to expand..</summary>
 
 # async await for promise resolve
@@ -1528,9 +1671,17 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 </details>
 
 
+
+
+
+
 <br><br>
 
-# Wait
+
+
+
+
+<a name="_wait"><h1>Wait</h1></a>
 <details><summary>Click to expand..</summary>
 
 ## Wait until some condition is true
@@ -1550,12 +1701,18 @@ await checkElement('.top .name');
 
 
 
+
+
+
 <br><br>
 
 
 
 
-# loaded
+
+
+
+<a name="_loaded"><h1>loaded</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -1599,12 +1756,18 @@ document.querySelector('.profile').addEventListener('load', function () {
 
 
 
+
+
+
 <br><br>
 
 
 
 
-# array
+
+
+
+<a name="_array"><h1>Array</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -1642,12 +1805,19 @@ var rndval=items[Math.floor(Math.random()*items.length)];
 
 
 
+
+
+
+
 <br><br>
 
 
 
 
-# Google reCAPTCHA v2
+
+
+
+<a name="_google-recaptcha-v2"><h1>Google reCAPTCHA v2</h1></a>
 <details><summary>Click to expand..</summary>
 
 Sandbox keys for localhost testing (will always return true):
@@ -1792,12 +1962,19 @@ $curl = curl_init($url);
 
 
 
+
+
+
+
 <br><br>
 
 
 
 
-# :before & :after
+
+
+
+<a name="_before--after"><h1>:before & :after</h1></a>
 <details><summary>Click to expand..</summary>
   
 # Add new style to :before and :after
@@ -1829,13 +2006,19 @@ style.setProperty('--background', 'url(http://placekitten.com/200/300)');
 
 
 
+
+
+
 <br><br>
 
 
 
 
 
-# Anime.js
+
+
+
+<a name="_animejs"><h1>Anime.js</h1></a>
 <details><summary>Click to expand..</summary>
 
 # Remove Animation
@@ -1854,12 +2037,19 @@ anime.remove( document.querySelector('#layertwo') )
 
 
 
+
+
+
 <br><br>
 
 
 
 
-# Owl Carousel
+
+
+
+
+<a name="_owl-carousel"><h1>Owl Carousel</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -1884,13 +2074,18 @@ var carousel = $( '.owl-carousel' ).owlCarousel({
 
 
 
+
+
+
 <br><br>
 
 
 
 
 
-# Navigator
+
+
+<a name="_navigator"><h1>Navigator</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -1904,12 +2099,19 @@ var userLang = navigator.language || navigator.userLanguage;
 
 
 
+
+
+
+
 <br><br>
 
 
 
 
-# iframe / object
+
+
+
+<a name="_iframe--object"><h1>iframe / object</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -1925,13 +2127,20 @@ var userLang = navigator.language || navigator.userLanguage;
 
 
 
+
+
+
+
 <br><br>
 
 
 
 
 
-# Simulate
+
+
+
+<a name="_simulate"><h1>Simulate</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -1969,6 +2178,12 @@ document.querySelector('#menubar-contact').dispatchEvent(e);
 
 
 
+
+
+
+
+
+
 <br><br>
 
 
@@ -1976,7 +2191,10 @@ document.querySelector('#menubar-contact').dispatchEvent(e);
 
 
 
-# document/window
+
+
+
+<a name="_documentwindow"><h1>document/window</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -2030,13 +2248,21 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 
 
 
+
+
+
+
 <br><br>
 
 
 
 
 
-# clipboard
+
+
+
+
+<a name="_clipboard"><h1>clipboard</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -2059,6 +2285,10 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 
 
 
+
+
+
+
 <br><br>
 
 
@@ -2066,7 +2296,10 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 
 
 
-# Redirect
+
+
+
+<a name="_redirect"><h1>Redirect</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -2096,6 +2329,11 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 
 
 
+
+
+
+
+
 <br><br>
 
 
@@ -2103,7 +2341,11 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 
 
 
-# Viewport
+
+
+
+
+<a name="_viewport"><h1>Viewport</h1></a>
 <details><summary>Click to expand..</summary>
 
 ## Stop viewport resize when soft keyboard is activating on mobile
@@ -2121,13 +2363,20 @@ viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwid
 
 
 
+
+
+
 <br><br>
 
 
 
 
 
-# Before unload
+
+
+
+
+<a name="_before-unload"><h1>Before unload</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -2144,6 +2393,12 @@ popup.onbeforeunload = function(){ /* .. */ };
 
 
 
+
+
+
+
+
+
 <br><br>
 
 
@@ -2151,7 +2406,12 @@ popup.onbeforeunload = function(){ /* .. */ };
 
 
 
-# Os/Device Detect
+
+
+
+
+
+<a name="_osdevice-detect"><h1>Os/Device Detect</h1></a>
 <details><summary>Click to expand..</summary>
 
 
@@ -2200,13 +2460,23 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 
 
 
+
+
+
+
+
 <br><br>
 
 
 
 
 
-# Tutorials
+
+
+
+
+
+<a name="_tutorials"><h1>Tutorials</h1></a>
 <details><summary>Click to expand..</summary>
 
 
