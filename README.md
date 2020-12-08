@@ -59,7 +59,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Classes](#_classes)
 1. Change/add constructor value
 2. static (isolated function)
-3. subclasses (extends)
+3. subclasses (inheritance)
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -883,7 +883,7 @@ console.log('getDetails():' + Animal.getDetails());
 <br><br>
 
 
-# subclasses (extends)
+# subclasses (inheritance)
 ```javascript
 class Animal {
 
