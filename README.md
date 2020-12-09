@@ -200,7 +200,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. Spread Operators
 8. Scope and Closures
 9. Difference between let, var & const
-10. Destruction
+10. Destructuring
 11. Microservices
   <br>11.1 Object-oriented
 <br>12. YAML
@@ -2592,7 +2592,7 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 
 <br><br>
 
-# Destruction
+# Destructuring
 - https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
 
 <br><br>
