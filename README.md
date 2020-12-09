@@ -16,6 +16,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 ```
 <details><summary>Click to expand..</summary>
 
+
+# [Destructure](#_destructure)
+1. Destructure instance/member variables
+
 # [Switch](#_switch)
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
@@ -206,6 +210,55 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <br>12. YAML
 
 </details>
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+<a name="_destructure"><h1>Destructure</h1></a>
+<details><summary>Click to expand..</summary>
+  
+<br><br>
+
+# Guides
+- https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
+
+<br><br>
+
+# Destructure instance/member variables
+```javascript
+// Method #1
+class Foo {
+  constructor(options) {
+    ({one: this.one, two: this.two} = options);
+    // Do something else with the other options here
+  }
+}
+
+
+// Method 2
+class Foo {
+  constructor(options) {
+    const {one, two} = options;
+    Object.assign(this, {one, two});
+    // Do something else with the other options here
+  }
+}
+
+
+// Method 3
+// If you want to apply all your options to the instance, you could use Object.assign without destructuring:
+class Foo {
+  constructor(options) {
+    Object.assign(this, options);
+  }
+}
+```
+
+</details>
+
 
 
 
@@ -2590,10 +2643,6 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 # Difference between let, var & const
 - https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e
 
-<br><br>
-
-# Destructuring
-- https://dev.to/quantumsheep/all-you-need-to-know-about-destructuring-in-javascript-1hla
 
 <br><br>
  _____________________________________________________
