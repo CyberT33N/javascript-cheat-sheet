@@ -980,7 +980,28 @@ console.log('getDetails: ' + getDetails);
 
 # Multiple Inheritance (Mixins)
 ```javascript
+class Animal {
+  constructor(){ 
+    Object.assign(this, new Shark(), new Clock());
+  };
+};
 
+class Shark {
+  // only what's in constructor will be on the object, ence the weird this.bite = this.bite.
+  constructor(){ this.color = "black"; this.bite = this.bite };
+  bite(){ console.log("bite") };
+  eat(){ console.log('eat') };
+};
+
+class Clock{
+  constructor(){ this.tick = this.tick; };
+  tick(){ console.log("tick"); };
+};
+
+let animal = new Animal();
+animal.bite();
+console.log(animal.color);
+animal.tick();
 ```
 
 
