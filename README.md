@@ -980,35 +980,7 @@ console.log('getDetails: ' + getDetails);
 
 # Multiple Inheritance (Mixins)
 ```javascript
-class A {
-  constructor(){
-    this.a = 'a'  
-  };
-};
 
-class B {
-  constructor(){
-    this.b = 'b'  
-  };
-};
-
-
-class Main {
-  constructor(){
-    console.log('a: ' + this.a);
-    console.log('b: ' + this.b); 
-  };
-};
-
-Object.assign(Main, A, B);
-/*
-class Main {
-  constructor(){
-    console.log('a: ' + this.a);
-    console.log('b: ' + this.b); 
-  };
-}
-*/
 ```
 
 
