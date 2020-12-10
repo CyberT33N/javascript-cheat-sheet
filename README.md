@@ -62,8 +62,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Classes](#_classes)
 1. Change/add constructor value
-2. static (isolated function)
-3. subclasses (inheritance)
+2. Static (isolated function)
+3. Subclasses (Inheritance)
+4. Multiple Inheritance (Mixins)
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -971,6 +972,46 @@ console.log(zooGermany);
 var getDetails = zooGermany.getDetails();
 console.log('getDetails: ' + getDetails);
 ```
+
+
+
+<br><br>
+
+
+# Multiple Inheritance (Mixins)
+```javascript
+class A {
+  constructor(){
+    this.a = 'a'  
+  };
+};
+
+class B {
+  constructor(){
+    this.b = 'b'  
+  };
+};
+
+
+class Main {
+  constructor(){
+    console.log('a: ' + this.a);
+    console.log('b: ' + this.b); 
+  };
+};
+
+Object.assign(Main, A, B);
+/*
+class Main {
+  constructor(){
+    console.log('a: ' + this.a);
+    console.log('b: ' + this.b); 
+  };
+}
+*/
+```
+
+
 
 </details>
 
