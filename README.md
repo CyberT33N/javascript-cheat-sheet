@@ -231,17 +231,14 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <a name="_design-pattern"><h1>Design Pattern</h1></a>
 <details><summary>Click to expand..</summary>
 
-
-
-
-<br><br>
-
 # Singleton
 
-<br><br>
+<br>
 
 ## Guides
 - https://www.youtube.com/watch?v=sJ-c3BA-Ypo
+
+<br><br>
 
 ## Singleton with Classes
 ```javascript
