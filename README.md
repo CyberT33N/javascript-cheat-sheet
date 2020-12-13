@@ -17,6 +17,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <details><summary>Click to expand..</summary>
 
 
+# [DOM](#_dom)
+1. Console clear assignment and variables
+
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
 
@@ -211,6 +214,37 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <br>12. YAML
 
 </details>
+
+
+
+
+
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+<a name="_dom"><h1>DOM</h1></a>
+<details><summary>Click to expand..</summary>
+
+
+<br><br>
+
+# Console clear assignment and variables
+- Method #1: Reload page (Manually or use window.location.reload();)
+- Method #2: In ES6 you can use blocks (so long as you use let instead of var):
+```javascript
+{
+    let example = true;
+}
+```
+
+
+
+
 
 
  <br><br>
