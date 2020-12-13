@@ -17,6 +17,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <details><summary>Click to expand..</summary>
 
 
+# [Design Pattern](#_design-pattern)
+1. Singleton
+
 # [DOM](#_dom)
 1. Console clear assignment and variables
 
@@ -220,6 +223,46 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 
 
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+<a name="_design-pattern"><h1>Design Pattern</h1></a>
+<details><summary>Click to expand..</summary>
+
+
+<br><br>
+
+# Singleton
+- Method #1: Reload page (Manually or use window.location.reload();)
+- Method #2: In ES6 you can use blocks (so long as you use let instead of var):
+```javascript
+{
+    let example = true;
+}
+```
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  <br><br>
@@ -233,17 +276,53 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 <br><br>
 
-# Console clear assignment and variables
-- Method #1: Reload page (Manually or use window.location.reload();)
-- Method #2: In ES6 you can use blocks (so long as you use let instead of var):
+# Singleton
+
+<br><br>
+
+## Guides
+- https://www.youtube.com/watch?v=sJ-c3BA-Ypo
+
+## Singleton with Classes
 ```javascript
-{
-    let example = true;
-}
+class test {
+  constructor(){
+    if(test.instance == null){
+      test.instance = this;
+    }
+    return test.instance;
+  };
+
+
+  createData(data){
+    this.example = data;
+  };
+};
+
+
+let a = new test();
+a.createData('a')
+console.log('a: ' + a.example); // <-- will print a
+
+let b = new test();
+console.log('b: ' + a.example); // <-- will print a
 ```
 
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
