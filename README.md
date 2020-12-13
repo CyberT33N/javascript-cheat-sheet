@@ -243,7 +243,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 ```
 
 
-
+</details>
 
 
 
