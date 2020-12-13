@@ -232,46 +232,6 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <details><summary>Click to expand..</summary>
 
 
-<br><br>
-
-# Singleton
-- Method #1: Reload page (Manually or use window.location.reload();)
-- Method #2: In ES6 you can use blocks (so long as you use let instead of var):
-```javascript
-{
-    let example = true;
-}
-```
-
-
-</details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
-
-<a name="_dom"><h1>DOM</h1></a>
-<details><summary>Click to expand..</summary>
 
 
 <br><br>
@@ -308,6 +268,44 @@ let b = new test();
 console.log('b: ' + a.example); // <-- will print a
 ```
 
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+<a name="_dom"><h1>DOM</h1></a>
+<details><summary>Click to expand..</summary>
+
+# Console clear assignment and variables
+```javascript
+- Method #1: Reload page (Manually or use window.location.reload();)
+- Method #2: In ES6 you can use blocks (so long as you use let instead of var):
+
+{
+    let example = true;
+}
+```
 
 </details>
 
