@@ -262,7 +262,7 @@ a.createData('a')
 console.log('a: ' + a.example); // <-- will print a
 
 let b = new test();
-console.log('b: ' + a.example); // <-- will print a
+console.log('b: ' + b.example); // <-- will print a
 ```
 
 </details>
@@ -1113,6 +1113,32 @@ animal.tick();
 ```
 
 
+<br><br>
+
+## Use always same instance (singleton)
+```javascript
+class test {
+  constructor(){
+    if(test.instance == null){
+      test.instance = this;
+    }
+    return test.instance;
+  };
+
+
+  createData(data){
+    this.example = data;
+  };
+};
+
+
+let a = new test();
+a.createData('a')
+console.log('a: ' + a.example); // <-- will print a
+
+let b = new test();
+console.log('b: ' + b.example); // <-- will print a
+```
 
 </details>
 
@@ -1121,8 +1147,28 @@ animal.tick();
 
 
 
-<br><br>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
 
 
 
