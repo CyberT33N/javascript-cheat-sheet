@@ -646,6 +646,11 @@ await bot.getUserDetails(req, res);
 
 /* ## Option 5 - export classes ##
 export class startBROWSER {/*..*/};
+
+
+
+/* ## Option 6 - export variable ##
+export let pptr;
 ```
 <br>
 <br>
