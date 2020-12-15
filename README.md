@@ -269,10 +269,13 @@ console.log('b: ' + b.example); // <-- will print a
 
 
 
+
  <br><br>
  _____________________________________________________
  _____________________________________________________
 <br><br>
+
+
 
 
 
@@ -294,13 +297,17 @@ console.log('b: ' + b.example); // <-- will print a
  
  {age, city, country} = {} <-- If no params were set we set the object to empty. If
  we would not do this we would get error when using only: let Bob = new User('Bob');
+
+ Instead of undefined we can also set a default value for our params if we do not include them at the creation process.
+ So in this case scope will be always 1. (scope = 1)
 */
 class User {
-  constructor(name, {age, city, country} = {}){
+  constructor(name, {age, city, country, scope = 1} = {}){
     this.name = name;
     this.age = age;
     this.city = city;
     this.country = country; // <-- will be undefined because we do not include this param
+    this.scope = scope; // <-- will be 1
   };
 };
 
