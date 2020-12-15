@@ -19,6 +19,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Design Pattern](#_design-pattern)
 1. Singleton
+2. Builder
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -265,17 +266,53 @@ let b = new test();
 console.log('b: ' + b.example); // <-- will print a
 ```
 
+
+
+
+<br><br>
+ 
+ 
+# Builder
+
+<br>
+
+## Guides
+- https://www.youtube.com/watch?v=M7Xi1yO_s8E
+
+<br><br>
+
+## Builder with Classes
+```javascript
+/**
+ * Create User by passing optional data as option object (builder pattern)
+ This is usefully when params are not set and you do not have to manually define this scenario.
+ 
+ {age, city, country} = {} <-- If no params were set we set the object to empty. If
+ we would not do this we would get error when using only: let Bob = new User('Bob');
+*/
+class User {
+  constructor(name, {age, city, country} = {}){
+    this.name = name;
+    this.age = age;
+    this.city = city;
+    this.country = country; // <-- will be undefined because we do not include this param
+  };
+};
+
+let Bob = new User('Bob', {
+  age: 21,
+  city: 'Berlin',
+});
+console.log(Bob);
+```
+
+
+
+
+
+
+
 </details>
-
-
-
-
-
-
-
-
-
-
 
 
 
