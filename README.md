@@ -31,6 +31,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Switch](#_switch)
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
+# [forEach](#_foreach)
+1. Iterate through all keys of nested object
+
 # [For loop](#_for-loop)
 1. Do loop based on length of array
 2. Make the loop jump to the next iteration when i is 5
@@ -535,6 +538,50 @@ switch("Ice") {
 <br><br>
 
 
+
+<a name="_foreach"><h1>forEach</h1></a>
+
+<details><summary>Click to expand..</summary>
+  
+# Iterate through all keys of nested object
+```javascript
+function resetValuesToZero (obj) {
+    Object.keys(obj).forEach(function (key) {
+        if (typeof obj[key] === 'object') {
+            return resetValuesToZero(obj[key]);
+        }
+        obj[key] = 0;
+    });
+}
+
+var stats = {
+     bookServed: {
+         redis: 90,
+         s3: 90,
+         signedUrl: 70
+     },
+     errors: {
+         redis: {
+             bookService: 70,
+             mapi: 50,
+             capi: 30
+         },
+         AWS: {
+             signedUrl: 70,
+             downloadBook: 50,
+             searchBook: 10
+         },
+         decryption: 60
+     }
+ };
+
+console.log(stats.errors.AWS.signedUrl); // 70
+resetValuesToZero(stats);
+console.log(stats.errors.AWS.signedUrl); // 0
+```
+</details>
+
+<br><br>
 
 
 
