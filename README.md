@@ -93,7 +93,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Get value of specific cookie
 
 # [Object Class](#_object-class)
-
+1. Object.keys()
 
 # [object](#_object)
 1. Check if object is empty
@@ -1553,6 +1553,22 @@ var value = match[1];
 # Guides
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 
+
+<br><br>
+
+
+# Object.keys()
+- The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
+```javascript
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+```
 
 </details>
 
