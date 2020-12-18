@@ -92,8 +92,18 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Cookie](#_cookie)
 1. Get value of specific cookie
 
-# [Object](#_object)
-1. Check if Object is empty
+# [Object Class](#_object-class)
+
+
+# [object](#_object)
+1. Check if object is empty
+
+# [Array](#_array)
+1. Clone unique
+2. clone array
+3. clone array with objects inside
+4. get random item from array
+
 
 # [Link](#_link)
 1. Get current link / domain
@@ -149,12 +159,6 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Wait until everything is fully loaded and loading icon is gone
 4. Wait until element loaded
 5. remove event listener from anonym function
-
-# [Array](#_array)
-1. Clone unique
-2. clone array
-3. clone array with objects inside
-4. get random item from array
 
 # [Google reCAPTCHA v2](#_google-recaptcha-v2)
 1. Check if user filled Captcha
@@ -1543,12 +1547,32 @@ var value = match[1];
 
 
 
-
-
-<a name="_object"><h1>Object</h1></a>
+<a name="_object-class"><h1>Object Class</h1></a>
 <details><summary>Click to expand..</summary>
 
-# Check if Object is empty
+# Guides
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+
+</details>
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+<a name="_object"><h1>object</h1></a>
+<details><summary>Click to expand..</summary>
+
+# Check if object is empty
 ```javascript
 var obj = {};
 if( Object.entries(obj).length < 1 ) console.log('empty');
@@ -1565,6 +1589,58 @@ if( Object.entries(obj).length > 0 ) console.log('not empty');
 
 
 <br><br>
+
+
+
+
+
+
+<a name="_array"><h1>Array</h1></a>
+<details><summary>Click to expand..</summary>
+
+
+# Clone unique
+For default javascript act like this:
+```js
+var arr1 = ['a','b','c'];
+var arr2 = arr1;
+arr2.push('d');  //Now, arr1 = ['a','b','c','d']
+```
+
+In order to create unique clones check below..
+
+# clone array
+```js
+var arr = [2,3,4,5];
+var copyArr = [...arr];
+```
+
+# clone array with objects inside
+```js
+var arr = [{"a":1}, {"b":2}];
+var copyArr = JSON.parse(JSON.stringify(arr));
+```
+
+
+
+# get random item from array
+```js
+var rndval=items[Math.floor(Math.random()*items.length)];
+```
+
+</details>
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
 
 
 
@@ -2226,43 +2302,6 @@ document.querySelector('.profile').addEventListener('load', function () {
 
 
 
-
-
-
-<a name="_array"><h1>Array</h1></a>
-<details><summary>Click to expand..</summary>
-
-
-# Clone unique
-For default javascript act like this:
-```js
-var arr1 = ['a','b','c'];
-var arr2 = arr1;
-arr2.push('d');  //Now, arr1 = ['a','b','c','d']
-```
-
-In order to create unique clones check below..
-
-# clone array
-```js
-var arr = [2,3,4,5];
-var copyArr = [...arr];
-```
-
-# clone array with objects inside
-```js
-var arr = [{"a":1}, {"b":2}];
-var copyArr = JSON.parse(JSON.stringify(arr));
-```
-
-
-
-# get random item from array
-```js
-var rndval=items[Math.floor(Math.random()*items.length)];
-```
-
-</details>
 
 
 
