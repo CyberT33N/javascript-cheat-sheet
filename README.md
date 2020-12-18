@@ -35,9 +35,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Iterate through all keys of nested object
 
 # [For loop](#_for-loop)
-1. Do loop based on length of array
-2. Make the loop jump to the next iteration when i is 5
-3. break the loop when i is 5
+1. Iterate through all keys of nested object
+2. Do loop based on length of array
+3. Make the loop jump to the next iteration when i is 5
+4. break the loop when i is 5
 
 # [While](#_while)
 1. Do loop based on length of array
@@ -592,6 +593,45 @@ console.log(stats.errors.AWS.signedUrl); // 0
 <a name="_for-loop"><h1>For loop</h1></a>
 
 <details><summary>Click to expand..</summary>
+
+
+
+# Iterate through all keys of nested object
+```javascript
+function checkNPE(obj) {
+  for(const name in obj){console.log('name: ' + JSON.stringify(name, null, 4));
+    if (typeof obj[name] === 'object') {console.log('object name: ' + JSON.stringify(name, null, 4));
+      checkNPE(obj[name]);
+    } // if (typeof obj[name] === 'object') {
+  } // for(const name in obj){
+}; // function checkNPE (obj) {
+
+var stats = {
+     bookServed: {
+         redis: 90,
+         s3: 90,
+         signedUrl: 70
+     },
+     errors: {
+         redis: {
+             bookService: 70,
+             mapi: 50,
+             capi: 30
+         },
+         AWS: {
+             signedUrl: 70,
+             downloadBook: 'a',
+             searchBook: 10
+         },
+         decryption: 60
+     }
+ };
+checkNPE(stats);
+```
+
+
+<br><br>
+
   
 # Do loop based on length of array
 ```javascript
@@ -605,7 +645,7 @@ for (;cars[i];) {
 } console.log('text: ' + text); // text: BMW<br>Volvo<br>Saab<br>Ford<br>
 ```
 
-<br>
+<br><br>
 
 # Make the loop jump to the next iteration when i is 5.
 ```javascript
