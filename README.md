@@ -137,6 +137,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 19. Append HTML to current element
 20. Insert HTML after specific element
 21. Find element
+22. Draggable
+  <br>22.1 Exclude element
 
 # [Async](#_async)
 1. Create Async
@@ -2064,6 +2066,7 @@ $('.right .top').append`<div class="chat" data-chat="${currentPerson}"></div>`);
 $('.right .top').after(`<div class="chat" data-chat="${currentPerson}"></div>`);
 ```
 
+<br><br>
 
 # Find element
 ```javascript
@@ -2073,6 +2076,24 @@ document.querySelector('.zp_7I-lw')?.querySelectorAll('.zp_3_fnL')[0]?.getAttrib
 //jquery
 $( '.element' ).find( '.test' );
 ```
+
+
+<br><br>
+
+# Draggable
+- https://code.jquery.com/ui/
+```javascript
+<script src="js/jquery.min.js"> </script>
+<script src="js/jquery-ui.min.js"> </script>
+```
+
+<br><br>
+
+## Exclude element
+```html
+$(".cardWrap").draggable({ handle: '.cardDescription', cancel: '.cloudimage-360' });
+```
+
 
 </details>
 
