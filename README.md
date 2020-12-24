@@ -26,6 +26,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Console clear assignment and variables
 2. Add element
 3. Difference between .innerText & .textContent
+4. Add HTML
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -465,6 +466,22 @@ body.append(div);
 const data = document.querySelector('div');
 console.log(data.innerText);
 console.log(data.textContent); // will only print Hello because it only shows visible text
+```
+
+<br><br>
+
+# Add HTML
+```javascript
+const body = document.body;
+const div = document.createElement('div');
+
+// method #1
+body.innerHTML = '<strong>Example..</strong>';
+
+// method #2
+const strong = document.createElement('strong');
+strong.innerHTML = 'Example..';
+div.append(strong);
 ```
 
 
