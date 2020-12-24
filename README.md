@@ -24,6 +24,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
+2. Add element
+3. Difference between .innerText & .textContent
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -439,6 +441,33 @@ function printUser(id) {
     let example = true;
 }
 ```
+
+<br><br>
+
+# Add element
+```javascript
+const body = document.body;
+const div = document.createElement('div');
+body.append(div);
+```
+
+<br><br>
+
+# Difference between .innerText & .textContent
+- https://youtu.be/y17RuWkWdn8?t=253
+```html
+<div>
+  <span>Hello</span>
+  <span style="display:none">Bye</span>
+</div>
+```
+
+```js
+const data = document.querySelector('div');
+console.log(data.innerText);
+console.log(data.textContent); // will only print Hello because it only shows visible text
+```
+
 
 </details>
 
