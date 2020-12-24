@@ -433,10 +433,9 @@ function printUser(id) {
 <details><summary>Click to expand..</summary>
 
 # Console clear assignment and variables
-```javascript
 - Method #1: Reload page (Manually or use window.location.reload();)
 - Method #2: In ES6 you can use blocks (so long as you use let instead of var):
-
+```javascript
 {
     let example = true;
 }
@@ -1233,7 +1232,7 @@ class Animal {
   }
 
   play(length) {
-  	console.log(`${this.name} is playing ${length} hours`);
+    console.log(`${this.name} is playing ${length} hours`);
   }
 
 };
