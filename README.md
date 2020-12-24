@@ -25,8 +25,17 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [DOM](#_dom)
 1. Console clear assignment and variables
 2. Add element
-3. Difference between .innerText & .textContent
-4. Add HTML
+3. Remove element
+4. Difference between .innerText & .textContent
+5. Add HTML
+6. Get Attribute
+7. Set Attribute
+8. Remove Attribute
+9. Data Attribute
+10. Classes
+  <br> 10.1 toggle (switch) class
+11. Styles
+
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -451,6 +460,16 @@ const div = document.createElement('div');
 body.append(div);
 ```
 
+
+<br><br>
+
+# Remove element
+```javascript
+const div = document.createElement('div');
+div.remove();
+```
+
+
 <br><br>
 
 # Difference between .innerText & .textContent
@@ -483,6 +502,118 @@ const strong = document.createElement('strong');
 strong.innerHTML = 'Example..';
 div.append(strong);
 ```
+
+
+<br><br>
+
+# Get Attribute
+```html
+<div title="example" id="test"></div>
+```
+
+```js
+// method #1
+const attribute = document.querySelector('#test').getAttribute('title');
+console.log(attribute);
+
+// method #2
+const test = document.querySelector('#test');
+console.log(test.title);
+```
+
+
+<br><br>
+
+# Set Attribute
+```html
+<div id="test"></div>
+```
+
+```js
+// method #1
+document.querySelector('#test').setAttribute('title', 'example');
+
+// method #2
+const test = document.querySelector('#test');
+test.title = 'example';
+```
+
+
+
+<br><br>
+
+# Remove Attribute
+```html
+<div id="test" title="example"></div>
+```
+
+```js
+document.querySelector('#test').removeAttribute('title');
+```
+
+
+
+<br><br>
+
+# Data Attribute
+```html
+<div id="test" data-blue="blue" data-yellow-black="yellow"></div>
+```
+
+```js
+const data = document.querySelector('#test').dataset;
+
+// list all data attributes
+console.log(data);
+
+// get specific data attribute
+console.log(data.blue);
+console.log(data.yellowBlack);
+
+// define new data attribute
+data.green = 'green';
+```
+
+
+
+<br><br>
+
+# Classes
+```html
+<div class="test1 test2"></div>
+```
+
+```js
+// add new class
+document.querySelector('.test1').classList.add('test3'); // <div class="test1 test2 test3"></div>
+
+// remove class
+document.querySelector('.test1').classList.remove('test2'); // <div class="test1"></div>
+```
+<br>
+
+## toggle (switch) class
+```html
+<div class="test1"></div>
+```
+
+```js
+document.querySelector('.test1').toggle('test2'); // <div class="test2"></div>
+```
+
+
+<br><br>
+
+# Styles
+```html
+<div id="test"></div>
+```
+
+```js
+document.querySelector('#test').style.color = 'red'; // #test {color: red}
+```
+
+
 
 
 </details>
