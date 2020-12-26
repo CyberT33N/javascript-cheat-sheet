@@ -89,6 +89,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Static (isolated function)
 3. Subclasses (Inheritance)
 4. Multiple Inheritance (Mixins)
+5. Event listener this inside of method
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -1539,6 +1540,33 @@ console.log('a: ' + a.example); // <-- will print a
 let b = new test();
 console.log('b: ' + b.example); // <-- will print a
 ```
+
+
+
+
+<br><br>
+
+
+
+## Event listener this inside of method
+- Instead of this we can use even.target (http://www.w3.org/TR/DOM-Level-2-Events/events.html)
+```javascript
+export class User {
+  personClick() {
+    $(document).on('click', '.person', function(event) {
+      const elem = event.target;
+      $(elem).attr('data-active', 'true');
+    });
+  };
+};
+```
+
+
+
+
+
+
+
 
 </details>
 
