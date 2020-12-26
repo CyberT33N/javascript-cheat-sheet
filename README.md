@@ -1549,7 +1549,7 @@ console.log('b: ' + b.example); // <-- will print a
 
 
 ## Event listener this inside of method
-- Instead of this we can use even.target (http://www.w3.org/TR/DOM-Level-2-Events/events.html)
+- Instead of this we can use event.target (http://www.w3.org/TR/DOM-Level-2-Events/events.html)
 ```javascript
 export class User {
   personClick() {
