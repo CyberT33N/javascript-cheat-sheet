@@ -287,6 +287,9 @@ _____________________________________________________
 // if under 18 voteable will be "Too young"
 // if over 18 votable will be "Old enough"
 voteable = (age < 18) ? "Too young":"Old enough";
+
+// alternative you can write it like this
+voteable = age < 18 ? "Too young":"Old enough";
 ```
 </details>
 
