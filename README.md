@@ -16,6 +16,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 ```
 <details><summary>Click to expand..</summary>
 
+# [Operators](#_operators)
+1. Ternary
 
 # [Design Pattern](#_design-pattern)
 1. Singleton
@@ -242,6 +244,58 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <br>12. YAML
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+_____________________________________________________
+_____________________________________________________
+<br><br>
+
+<a name="_operators"><h1>Operators</h1></a>
+- https://www.w3schools.com/js/js_operators.asp
+<details><summary>Click to expand..</summary>
+
+# Conditional Operators
+
+<br><br>
+
+## Ternary Operator
+- https://www.w3schools.com/js/tryit.asp?filename=tryjs_comparison
+
+```javascript
+// if under 18 voteable will be "Too young"
+// if over 18 votable will be "Old enough"
+voteable = (age < 18) ? "Too young":"Old enough";
+```
+</details>
+
+
+
+
+
+
+
+
 
 
 
