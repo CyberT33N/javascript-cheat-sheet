@@ -17,7 +17,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <details><summary>Click to expand..</summary>
 
 # [Operators](#_operators)
-1. Ternary
+1. Conditional Operators
+  <br> 1.1 Ternary
 
 # [Design Pattern](#_design-pattern)
 1. Singleton
