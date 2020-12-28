@@ -38,6 +38,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 10. Classes
   <br> 10.1 toggle (switch) class
 11. Styles
+12. Event Listener
+  <br> 12.1 addEventListener()
+  <br> 12.2 Listen to multiple elements with same CSS Selector
 
 
 # [Destructure](#_destructure)
@@ -674,6 +677,37 @@ document.querySelector('#test').style.color = 'red'; // #test {color: red}
 
 
 
+<br><br>
+
+
+
+# Event Listener
+
+## addEventListener()
+```js
+// method #1 - directly include function
+document.querySelector('.person').addEventListener('click', event=>{
+  const person = event.target; // same like jquery this
+});
+
+// method 2 - call external function
+document.getElementById("myBtn").addEventListener("click", yourFunctionHere);
+```
+
+<br><br>
+
+## Listen to multiple elements with same CSS Selector
+```js
+// method 1
+document.querySelectorAll("whatever").forEach(elem => elem.addEventListener("input", fn))
+
+// method 2
+document.addEventListener('click', function(e){
+  if(e.target.tagName=="BUTTON"){
+   alert('BUTTON CLICKED');
+  }
+})
+```
 
 </details>
 
