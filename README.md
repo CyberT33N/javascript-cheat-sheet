@@ -41,7 +41,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 12. Event Listener
   <br> 12.1 addEventListener()
   <br> 12.2 Listen to multiple elements with same CSS Selector
-
+  <br> 12.3 Difference between event.target & event.currentTarget
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -708,6 +708,13 @@ document.addEventListener('click', function(e){
   }
 })
 ```
+
+<br><br>
+
+## Difference between event.target & event.currentTarget
+- https://stackoverflow.com/questions/10086427/what-is-the-exact-difference-between-currenttarget-property-and-target-property
+- target = element that triggered event; currentTarget = element that listens to event. 
+
 
 </details>
 
