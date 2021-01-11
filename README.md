@@ -1057,8 +1057,6 @@ console.log(gen.next().value);
 
 
 // example #2 It can also break the for loop and then return at the next iteration at the new line
-var test;
-
 function* generator(i) {
   
   for(let d=0;d<10;d++){
