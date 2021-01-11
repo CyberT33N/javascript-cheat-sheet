@@ -16,9 +16,12 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 ```
 <details><summary>Click to expand..</summary>
 
+
 # [Operators](#_operators)
 1. Conditional Operators
   <br> 1.1 Ternary
+2. Spread Operator
+  <br> 2.1 convert array to paramater
 
 # [Design Pattern](#_design-pattern)
 1. Singleton
@@ -45,7 +48,17 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
-
+# Spread Operators
+3437
+- https://www.youtube.com/watch?v=I5AGSH8ROSU
+3438
+- https://dev.to/livecodestream/how-to-use-the-spread-operator-in-javascript-35bn
+3439
+- https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
+3440
+​
+3441
+<br><br>
 # [Switch](#_switch)
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
@@ -293,6 +306,28 @@ voteable = (age < 18) ? "Too young":"Old enough";
 
 // alternative you can write it like this
 voteable = age < 18 ? "Too young":"Old enough";
+```
+
+
+# Spread Operator
+
+## Guides
+- https://www.youtube.com/watch?v=I5AGSH8ROSU
+- https://dev.to/livecodestream/how-to-use-the-spread-operator-in-javascript-35bn
+- https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
+
+<br><br>
+
+## convert array to paramater
+```javascript
+let ar = [1,2]
+
+function test(a, b) {
+  console.log('a:' + a);
+  console.log('b:' + b);
+}
+
+test(...ar);
 ```
 </details>
 
@@ -3410,13 +3445,6 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 
 # Immediately Invoked Function Expression (IIFE)
 - https://www.youtube.com/watch?v=eY7u388cvM4
-
-<br><br>
-
-# Spread Operators
-- https://www.youtube.com/watch?v=I5AGSH8ROSU
-- https://dev.to/livecodestream/how-to-use-the-spread-operator-in-javascript-35bn
-- https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
 
 <br><br>
 
