@@ -48,17 +48,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
-# Spread Operators
-3437
-- https://www.youtube.com/watch?v=I5AGSH8ROSU
-3438
-- https://dev.to/livecodestream/how-to-use-the-spread-operator-in-javascript-35bn
-3439
-- https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
-3440
-​
-3441
-<br><br>
+
 # [Switch](#_switch)
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
@@ -76,6 +66,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Functions](#_functions)
 1. function to String and back to function
+2. Generator functions
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -1045,6 +1036,47 @@ console.log(fString);
  
 var fn = new Function('return ' + fString)(); 
 fn();
+```
+
+# Generator functions
+```javascript
+// example #1
+function* generator(i) {
+  yield i;
+  yield i + 10;
+}
+
+const gen = generator(10);
+
+console.log(gen.next().value);
+// expected output: 10
+
+console.log(gen.next().value);
+// expected output: 20
+
+
+
+// example #2 It can also break the for loop and then return at the next iteration at the new line
+var test;
+
+function* generator(i) {
+  
+  for(let d=0;d<10;d++){
+    yield d;
+    yield d + 100;
+  }
+}
+
+var gen = generator(10);
+
+console.log(gen.next().value);
+// expected output: 10
+
+console.log(gen.next().value);
+// expected output: 100
+
+console.log(gen.next().value);
+// expected output: 1
 ```
 
 </details>
