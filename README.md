@@ -22,6 +22,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 1.1 Ternary
 2. Spread Operator
   <br> 2.1 convert array to paramater
+  
 
 # [Design Pattern](#_design-pattern)
 1. Singleton
@@ -49,7 +50,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
 
-# [Switch](#_switch)
+# [Switch](#_switch)Conditional Operators
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
 # [forEach](#_foreach)
@@ -127,6 +128,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. clone array
 3. clone array with objects inside
 4. get random item from array
+5. Map
+  <br> 5.1 Convert Array to Array with Objects
 
 
 # [Link](#_link)
@@ -321,6 +324,81 @@ function test(a, b) {
 test(...ar);
 ```
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2035,11 +2113,14 @@ arr2.push('d');  //Now, arr1 = ['a','b','c','d']
 
 In order to create unique clones check below..
 
+<br><br>
+
 # clone array
 ```js
 var arr = [2,3,4,5];
 var copyArr = [...arr];
 ```
+<br><br>
 
 # clone array with objects inside
 ```js
@@ -2047,11 +2128,52 @@ var arr = [{"a":1}, {"b":2}];
 var copyArr = JSON.parse(JSON.stringify(arr));
 ```
 
-
+<br><br>
 
 # get random item from array
 ```js
 var rndval=items[Math.floor(Math.random()*items.length)];
+```
+<br><br>
+
+# Map
+- https://www.w3schools.com/jsref/jsref_map.asp
+
+## Convert Array to Array with Objects
+```javascript
+var years = [
+  1990,
+  1991,
+  1992,
+  1993,
+];
+
+let docs = years.map((year, idx) => ({
+  title: `Mega Man ${idx + 1}`,
+  year,
+}));
+
+console.log(docs);
+/*
+[
+  {
+    "title": "Mega Man 1",
+    "year": 1990
+  },
+  {
+    "title": "Mega Man 2",
+    "year": 1991
+  },
+  {
+    "title": "Mega Man 3",
+    "year": 1992
+  },
+  {
+    "title": "Mega Man 4",
+    "year": 1993
+  }
+]
+*/
 ```
 
 </details>
