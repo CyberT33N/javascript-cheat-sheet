@@ -1329,10 +1329,21 @@ console.log(gen.next().value);
 # Immediately Invoked Function Expression (IIFE)
 ```javascript
 // sync
-(() => {/*..*/})();
+;(() => {/*..*/})();
 
 // async
-(async () => {/*..*/})();
+;(async () => {/*..*/})();
+
+
+/* // we use a leading semicolon in front of our IIFE to prevent broken functions like as example:
+mybrokenfunction = function(){
+
+} //no semicolon here
+(function(g){
+
+
+})(this);
+*/
 ```
 
 
