@@ -940,11 +940,15 @@ console.log(foo) // gibt 'hello' aus
 console.log(bar) // gibt 'world' aus
 
 
+
+
 // Object Destructure - with variable
 const test = { foo: 'hello', bar: 'world'}
 const { foo, bar } = test
 console.log(foo) // gibt 'hello' aus
 console.log(bar) // gibt 'world' aus
+
+
 
 
 // Object Destructure - with default value
@@ -953,16 +957,22 @@ console.log(foo) // gibt 'hello' aus
 console.log(bar) // gibt 'myworld' aus
 
 
+
+
 // Object Destructure - with default value that gets overwritten
 const { foo, bar='myworld' } = { foo: 'hello', bar: 'mybetterworld'}
 console.log(foo) // gibt 'hello' aus
 console.log(bar) // gibt 'mybetterworld' aus
 
 
+
+
 // Object Destructure - with default value and empty object if no param was passed
 const { foo='hey', bar='myworld' } = {}
 console.log(foo) // gibt 'hey' aus
 console.log(bar) // gibt 'myworld' aus
+
+
 
 
 // Object Destructure - with function
@@ -974,6 +984,8 @@ const result = add({ x:2, y:3 })
 console.log(result) // gibt 5 aus
 
 
+
+
 // Object Destructure - with function and empty param z return NaN
 function add({x,y,z}) {
     return x+y+z
@@ -983,6 +995,8 @@ const result = add({ x:2, y:3 })
 console.log(result) // gibt NaN aus, weil z nicht definiert wurde
 
 
+
+
 // Object Destructure - with function and default params
 function add({x=0,y=0,z=0}) {
     return x+y+z
@@ -990,6 +1004,8 @@ function add({x=0,y=0,z=0}) {
 
 const result = add({ x:2, y:3 })
 console.log(result) // gibt 5 aus
+
+
 
 
 
@@ -1003,27 +1019,32 @@ const result = add()
 
 
 
-// Object Destructure - with function and default params but no params are passed
+
+
+// Object Destructure - with function and default params but no params are passed. We use empty object to solve this problem
 function add({x=0,y=0,z=0}={}) {
     return x+y+z
 }
 
 const result = add()
 console.log(result) // gibt 0 aus
-​
-# Function parameters mit object destructuring und default values im object destructuring und Leerem Objekt als default parameter - (Vom Prinzip das gleiche wie bei Lösung Problem 2)
-​
+
+
+
+
+
+// same like above but more advanced example
 function drawChart({size = 'big', coords = {x: 0, y: 0}, radius = 25} = {}) {
   console.log(size);
   console.log(coords);
   console.log(radius);
 }
-​
+
 drawChart({
   coords: {x: 18, y: 30},
   radius: 30
 })
-​
+
 // gibt folgende drei Zeilen aus:
 big
 { x: 18, y: 30 }
