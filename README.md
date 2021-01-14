@@ -27,6 +27,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Design Pattern](#_design-pattern)
 1. Singleton
 2. Builder
+  <br> 2.1 Default function parameter
 3. Null Object Pattern
 
 # [DOM](#_dom)
@@ -509,6 +510,57 @@ console.log(Bob);
 
 
 
+<br><br>
+
+## Default function parameter (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+```javascript
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5, 2));
+// expected output: 10
+
+console.log(multiply(5));
+// expected output: 5
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -518,11 +570,6 @@ console.log(Bob);
 <br><br>
 
 
-
-
-
-
- 
 # Null Object Pattern
 
 <br>
