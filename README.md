@@ -929,6 +929,116 @@ class Foo {
 }
 ```
 
+## Destructure Examples
+```javascript
+# Object desctructuring - einfach
+const { foo, bar } = { foo: 'hello', bar: 'world'}
+console.log(foo) // gibt 'hello' aus
+console.log(bar) // gibt 'world' aus
+​
+​
+# Object desctcucturing - mit variable
+const test = { foo: 'hello', bar: 'world'}
+const { foo, bar } = test
+console.log(foo) // gibt 'hello' aus
+console.log(bar) // gibt 'world' aus
+​
+# Object desctcucturing - mit default value
+const { foo, bar='myworld' } = { foo: 'hello'}
+console.log(foo) // gibt 'hello' aus
+console.log(bar) // gibt 'myworld' aus
+​
+# Object desctcucturing - mit default value, der überschrieben wird
+const { foo, bar='myworld' } = { foo: 'hello', bar: 'mybetterworld'}
+console.log(foo) // gibt 'hello' aus
+console.log(bar) // gibt 'mybetterworld' aus
+​
+# Object desctcucturing - mit default values und leerem objekt
+const { foo='hey', bar='myworld' } = {}
+console.log(foo) // gibt 'hey' aus
+console.log(bar) // gibt 'myworld' aus
+​
+# Default function parameters - einfach
+​
+function add(x=0, y=10) {
+    return x+y
+}
+const result1 = add()
+const result2 = add(3)
+const result3 = add(4,5)
+​
+console.log(result1) // gibt 10 aus
+console.log(result2) // gibt 13 aus
+console.log(result3) // gibt 9 aus
+​
+# Function parameters mit object destructuring
+​
+function add({x,y}) {
+    return x+y
+}
+​
+const result = add({ x:2, y:3 })
+console.log(result) // gibt 5 aus
+​
+​
+# Function parameters mit object destructuring - Problem1
+​
+function add({x,y,z}) {
+    return x+y+z
+}
+​
+const result = add({ x:2, y:3 })
+console.log(result) // gibt NaN aus, weil z nicht definiert wurde
+​
+​
+# Function parameters mit object destructuring - Lösung Problem 1 - default values im object destructuring
+​
+function add({x=0,y=0,z=0}) {
+    return x+y+z
+}
+​
+const result = add({ x:2, y:3 })
+console.log(result) // gibt 5 aus
+​
+​
+# Function parameters mit object destructuring und default values im object destructuring - Problem 2
+​
+function add({x=0,y=0,z=0}) {
+    return x+y+z
+}
+​
+const result = add()
+// wirft direkt einen Fehler "Uncaught TypeError: (destructured parameter) is undefined"
+​
+​
+# Function parameters mit object destructuring und default values im object destructuring - Lösung Problem 2 - Leeres Objekt als default parameter
+​
+function add({x=0,y=0,z=0}={}) {
+    return x+y+z
+}
+​
+const result = add()
+console.log(result) // gibt 0 aus
+​
+# Function parameters mit object destructuring und default values im object destructuring und Leerem Objekt als default parameter - (Vom Prinzip das gleiche wie bei Lösung Problem 2)
+​
+function drawChart({size = 'big', coords = {x: 0, y: 0}, radius = 25} = {}) {
+  console.log(size);
+  console.log(coords);
+  console.log(radius);
+}
+​
+drawChart({
+  coords: {x: 18, y: 30},
+  radius: 30
+})
+​
+// gibt folgende drei Zeilen aus:
+big
+{ x: 18, y: 30 }
+30
+```
+
 </details>
 
 
