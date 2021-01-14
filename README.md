@@ -70,6 +70,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Functions](#_functions)
 1. function to String and back to function
 2. Generator functions
+3. Immediately Invoked Function Expression (IIFE)
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -247,14 +248,13 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Functional Programming
 4. Clean Code
 5. Optional Chaining
-6. Immediately Invoked Function Expression (IIFE)
-7. Spread Operators
-8. Scope and Closures
-9. Difference between let, var & const
-10. Destructuring
-11. Microservices
-  <br>11.1 Object-oriented
-<br>12. YAML
+6. Spread Operators
+7. Scope and Closures
+8. Difference between let, var & const
+9. Destructuring
+10. Microservices
+  <br>10.1 Object-oriented
+<br>11. YAML
 
 </details>
 
@@ -1324,7 +1324,85 @@ console.log(gen.next().value);
 // expected output: 1
 ```
 
+
+
+# Immediately Invoked Function Expression (IIFE)
+```javascript
+// sync
+(() => {/*..*/})();
+
+// async
+(async () => {/*..*/})();
+```
+
+
+
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3762,10 +3840,6 @@ person.driver = person.age >=16 ? 'Yes' : 'No';
 let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-linkedin')[0]?.parentNode?.getAttribute('href');
 ```
 
-<br><br>
-
-# Immediately Invoked Function Expression (IIFE)
-- https://www.youtube.com/watch?v=eY7u388cvM4
 
 <br><br>
 
