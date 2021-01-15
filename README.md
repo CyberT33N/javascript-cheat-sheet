@@ -48,8 +48,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 12.2 Listen to multiple elements with same CSS Selector
   <br> 12.3 Difference between event.target & event.currentTarget
   <br> 12.4 Event bubbling
-    <br> 12.4.1 Guides
-    <br> 12.4.2 event.target does not bubble
+     <br> 12.4.1 Guides
+     <br> 12.4.2 event.target does not bubble
+     <br> 12.4.3 Stop bubbling
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -838,6 +839,8 @@ document.querySelector('#test').style.color = 'red'; // #test {color: red}
 
 # Event Listener
 
+
+
 ## addEventListener() / Dispatching custom events 
 ```js
 // method #1 - directly include function
@@ -877,12 +880,49 @@ document.addEventListener('click', function(e){
 
 
 
-<br><br>
+<br><br><br><br>
+
+## Phases of event propagation (https://javascript.info/bubbling-and-capturing#capturing)
+1. Capturing phase – the event goes down to the element.
+2. Target phase – the event reached the target element.
+3. Bubbling phase – the event bubbles up from the element.
+```html
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+
+<form>FORM
+  <div>DIV
+    <p>P</p>
+  </div>
+</form>
+
+<script>
+  for(let elem of document.querySelectorAll('*')) {
+    elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+    elem.addEventListener("click", e => alert(`Bubbling: ${elem.tagName}`));
+  }
+</script>
+
+<!--
+The code sets click handlers on every element in the document to see which ones are working.
+
+If you click on <p>, then the sequence is:
+
+HTML → BODY → FORM → DIV (capturing phase, the first listener):
+P (target phase, triggers two times, as we’ve set two listeners: capturing and bubbling)
+DIV → FORM → BODY → HTML (bubbling phase, the second listener).
+There’s a property event.eventPhase that tells us the number of the phase on which the event was caught. But it’s rarely used, because we usually know it in the handler.
+-->
+```
 
 <br><br>
 
 ## Event Bubbling
-- The process is called “bubbling”, because events “bubble” from the inner element up through parents like a bubble in the water. If
+- The process is called “bubbling”, because events “bubble” from the inner element up through parents like a bubble in the water. Normally it goes upwards till <html>, and then to document object, and some events even reach window, calling all handlers on the path.
 ```html
 <style>
   body * {
@@ -896,7 +936,10 @@ document.addEventListener('click', function(e){
     <p onclick="alert('1')">P</p>
   </div>
 </form>
+```
 
+
+```javascript
 <!--  will alert the following in this oder when p tag would be clicked:
 1
 2
@@ -905,9 +948,11 @@ document.addEventListener('click', function(e){
 ```
 <br><br>
 
+
 #### Guides
 - https://javascript.info/bubbling-and-capturing
 
+<br><br>
 
 #### event.target does not bubble (https://javascript.info/bubbling-and-capturing#event-target)
 - event.target – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
@@ -932,9 +977,54 @@ If form is clicked then: event.target = form | this = form
 */
 ```
 
+<br><br>
+
+#### Stop bubbling (.stopPropagation())
+- event.stopPropagation() stops the move upwards, but on the current element all other handlers will run.
+```js
+// body.onclick doesn’t work if you click on <button>
+<body onclick="alert(`the bubbling doesn't reach here`)">
+  <button onclick="event.stopPropagation()">Click me</button>
+</body>
+```
+
+<br><br>
+
+#### Stop all other handler execution on the same element (.stopImmediatePropagation())
+- To stop the bubbling and prevent handlers on the current element from running, there’s a method event.stopImmediatePropagation(). After it no other handlers execute.
+```js
+<body onclick="alert(`the bubbling doesn't reach here`)">
+  <button onclick="event.stopImmediatePropagation()">Click me</button>
+</body>
+```
 
 
 
+
+<br><br><br><br>
+
+
+## Capturing
+- Goes down from window to the event listener. So opposity of bubbling.
+```javascript
+// method #1
+elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+
+// method #2
+elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), {capture: true});
+```
+
+<br><br>
+
+#### To remove the handler, removeEventListener needs the same phase
+```javascript
+// method #1
+element.removeEventListener("click", true);
+
+// method 2
+element.removeEventListener("click", {capture: true});  
+```
+<br><br>
 
 </details>
 
