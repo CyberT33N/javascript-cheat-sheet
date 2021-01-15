@@ -835,7 +835,7 @@ document.querySelector('#test').style.color = 'red'; // #test {color: red}
 
 # Event Listener
 
-## addEventListener() / Dispatching custom events
+## addEventListener() / Dispatching custom events 
 ```js
 // method #1 - directly include function
 document.querySelector('.person').addEventListener('click', event=>{
@@ -847,7 +847,7 @@ document.getElementById("myBtn").addEventListener("click", yourFunctionHere);
 
 // method 3 - event constructor
 let event = new Event("click");
-elem.dispatchEvent(event);
+document.getElementById("myBtn").dispatchEvent(event);
 ```
 
 <br><br>
