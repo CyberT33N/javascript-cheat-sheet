@@ -47,6 +47,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 12.1 addEventListener() / Dispatching custom events
   <br> 12.2 Listen to multiple elements with same CSS Selector
   <br> 12.3 Difference between event.target & event.currentTarget
+  <br> 12.4 Event bubbling
+    <br> 12.4.1 Guides
+    <br> 12.4.2 event.target does not bubble
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -870,6 +873,66 @@ document.addEventListener('click', function(e){
 ## Difference between event.target & event.currentTarget
 - https://stackoverflow.com/questions/10086427/what-is-the-exact-difference-between-currenttarget-property-and-target-property
 - target = element that triggered event; currentTarget = element that listens to event. 
+
+
+
+
+<br><br>
+
+<br><br>
+
+## Event Bubbling
+- The process is called “bubbling”, because events “bubble” from the inner element up through parents like a bubble in the water. If
+```html
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+
+<form onclick="alert('3')">FORM
+  <div onclick="alert('2')">DIV
+    <p onclick="alert('1')">P</p>
+  </div>
+</form>
+
+<!--  will alert the following in this oder when p tag would be clicked:
+1
+2
+3
+-->
+```
+<br><br>
+
+#### Guides
+- https://javascript.info/bubbling-and-capturing
+
+
+#### event.target does not bubble (https://javascript.info/bubbling-and-capturing#event-target)
+- event.target – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
+- this – is the “current” element, the one that has a currently running handler on it.
+```html
+<form id="form">FORM
+  <div>DIV
+    <p>P</p>
+  </div>
+</form>
+```
+
+```js
+form.onclick = function(event) {
+  alert("target = " + event.target.tagName + ", this=" + this.tagName);
+};
+
+/*
+If p is clicked then: event.target = p | this = form
+If div is clicked then: event.target = div | this = form
+If form is clicked then: event.target = form | this = form
+*/
+```
+
+
 
 
 
