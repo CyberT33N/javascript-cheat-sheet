@@ -44,7 +44,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 10.1 toggle (switch) class
 11. Styles
 12. Event Listener
-  <br> 12.1 addEventListener()
+  <br> 12.1 addEventListener() / Dispatching custom events
   <br> 12.2 Listen to multiple elements with same CSS Selector
   <br> 12.3 Difference between event.target & event.currentTarget
 
@@ -835,7 +835,7 @@ document.querySelector('#test').style.color = 'red'; // #test {color: red}
 
 # Event Listener
 
-## addEventListener()
+## addEventListener() / Dispatching custom events
 ```js
 // method #1 - directly include function
 document.querySelector('.person').addEventListener('click', event=>{
@@ -844,6 +844,10 @@ document.querySelector('.person').addEventListener('click', event=>{
 
 // method 2 - call external function
 document.getElementById("myBtn").addEventListener("click", yourFunctionHere);
+
+// method 3 - event constructor
+let event = new Event("click");
+elem.dispatchEvent(event);
 ```
 
 <br><br>
@@ -866,6 +870,7 @@ document.addEventListener('click', function(e){
 ## Difference between event.target & event.currentTarget
 - https://stackoverflow.com/questions/10086427/what-is-the-exact-difference-between-currenttarget-property-and-target-property
 - target = element that triggered event; currentTarget = element that listens to event. 
+
 
 
 </details>
