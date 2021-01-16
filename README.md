@@ -3046,9 +3046,6 @@ async function test(){
 ```javascript
 // async
 await new Promise(resolve => setTimeout(resolve, 1000));
-
-// non blocking sync with async inside
-setTimeout( async () => {   await page.hover('video');    }, 5000);
 ```
 
 
