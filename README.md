@@ -17,6 +17,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <details><summary>Click to expand..</summary>
 
 
+# [Math](#_math)
+1. Generate random number between two numbers
+
+
 # [Operators](#_operators)
 1. Conditional Operators
   <br> 1.1 Ternary
@@ -261,6 +265,114 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 <br>11. YAML
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+_____________________________________________________
+_____________________________________________________
+<br><br>
+
+<a name="_math"><h1>Math</h1></a>
+<details><summary>Click to expand..</summary>
+
+# Generate random number between two numbers
+```javascript
+// generate random number between 1-50
+Math.round(Math.random() * 50 + 1
+```
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
