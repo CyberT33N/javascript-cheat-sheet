@@ -318,7 +318,7 @@ _____________________________________________________
 # Generate random number between two numbers
 ```javascript
 // generate random number between 1-50
-Math.round(Math.random() * 50 + 1
+Math.round(Math.random() * 50 + 1);
 ```
 
 </details>
