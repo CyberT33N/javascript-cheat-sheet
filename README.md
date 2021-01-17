@@ -3163,16 +3163,49 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 
 
 # setInterval
+- setInterval can be **NOT** used with await. For endless loop you can use while or for
 ```javascript
-var count = 0;
-var countdownInterval = setInterval(async () => {
+// method #1
+async function loop() {
+  while (true) {
+    // click yes button
+    document.querySelector('span[data-automation-id="vote-yes-button"]').click();
 
-    count++
-    if( count == 10 ) clearInterval( countdownInterval );
-                                
-}, 1000);
+    // create random break
+    const rnd = Math.round(Math.random() * 50 + 1);
+    const longBreak = 500000;
+    const loopDelay = Math.round(Math.random() * 1000 + 1)
+    if (rnd == 1) await new Promise(resolve => setTimeout(resolve, longBreak));
+    console.log(rnd);
+
+    await new Promise(resolve => setTimeout(resolve, loopDelay));
+  }
+}
+
+loop();
+
+
+// method #2
+async function loop() {
+  for (;;) {
+    // click yes button
+    document.querySelector('span[data-automation-id="vote-yes-button"]').click();
+
+    // create random break
+    const rnd = Math.round(Math.random() * 50 + 1);
+    const longBreak = 500000;
+    const loopDelay = Math.round(Math.random() * 1000 + 1)
+    if (rnd == 1) await new Promise(resolve => setTimeout(resolve, longBreak));
+    console.log(rnd);
+
+    await new Promise(resolve => setTimeout(resolve, loopDelay));
+  }
+}
+
+loop();
 ```
 
+<br><br>
 
 
 # Functions - In Parallel
