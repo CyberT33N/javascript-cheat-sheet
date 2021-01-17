@@ -3156,8 +3156,13 @@ async function test(){
 
 # setTimeout
 ```javascript
-// async
+// method #1
 await new Promise(resolve => setTimeout(resolve, 1000));
+
+// method #2
+setTimeout(async ()=>
+ // some async stuff here..
+});
 ```
 
 
