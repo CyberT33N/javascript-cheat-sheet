@@ -19,6 +19,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Math](#_math)
 1. Generate random number between two numbers
+2. parseFloat()
 
 
 # [Operators](#_operators)
@@ -319,6 +320,19 @@ _____________________________________________________
 ```javascript
 // generate random number between 1-50
 Math.round(Math.random() * 50 + 1);
+```
+
+<br><br>
+
+# parseFloat()
+```javascript
+var a = parseFloat("10") // 10
+var b = parseFloat("10.00") // 10
+var c = parseFloat("10.33") // 10.33
+var d = parseFloat("34 45 66") // 34
+var e = parseFloat(" 60 ") // 60
+var f = parseFloat("40 years") // 40
+var g = parseFloat("He was 40") // NaN
 ```
 
 </details>
