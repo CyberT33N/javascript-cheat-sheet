@@ -22,13 +22,14 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. parseFloat()
 3. parseInt()
 
-
 # [Operators](#_operators)
 1. Conditional Operators
   <br> 1.1 Ternary
 2. Spread Operator
   <br> 2.1 convert array to paramater
-  
+ 
+# [Constructors](#_constructors)
+1. Set()
 
 # [Design Pattern](#_design-pattern)
 1. Singleton
@@ -492,6 +493,95 @@ test(...ar);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+_____________________________________________________
+_____________________________________________________
+<br><br>
+
+<a name="_constructors"><h1>Constructors</h1></a>
+- https://www.w3schools.com/js/js_object_constructors.asp
+<details><summary>Click to expand..</summary>
+
+## Set()
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set
+```javascript
+const set1 = new Set([1, 2, 3, 4, 5]);
+
+console.log(set1.has(1));
+// expected output: true
+
+console.log(set1.has(5));
+// expected output: true
+
+console.log(set1.has(6));
+// expected output: false
+```
+
+</details>
 
 
 
