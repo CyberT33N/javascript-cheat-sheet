@@ -77,6 +77,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [While](#_while)
 1. Do loop based on length of array
+2. do/while statement
 
 # [Functions](#_functions)
 1. function to String and back to function
@@ -1648,6 +1649,34 @@ while (cars[i]) {
   i++;
 }
 console.log('text: ' + text);
+```
+
+
+
+
+
+<br><br>
+
+# do/while statement
+
+Syntax:
+```javascript
+do {
+  code block to be executed
+}
+while (condition);
+```
+
+<br><br>
+
+```javascript
+var text = "";
+var i = 0;
+do {
+  text += "The number is " + i;
+  i++;
+}
+while (i < 5);
 ```
 
 
