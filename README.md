@@ -27,6 +27,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 1.1 Ternary
 2. Spread Operator
   <br> 2.1 convert array to paramater
+3. Logical Operator
+  <br> Nullish Coalescing Operator
  
 # [Constructors](#_constructors)
 1. Set()
@@ -460,6 +462,7 @@ voteable = (age < 18) ? "Too young":"Old enough";
 voteable = age < 18 ? "Too young":"Old enough";
 ```
 
+<br><br>
 
 # Spread Operator
 
@@ -480,6 +483,56 @@ function test(a, b) {
 }
 
 test(...ar);
+```
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+# Logical Operator
+
+## Guides
+- https://www.javascripttutorial.net/javascript-logical-operators/
+
+<br><br>
+
+## Nullish Coalescing Operator
+
+- Syntax:
+```javascript
+leftExpression ?? rightExpression
+```
+
+- Example:
+```javascript
+/* ---- EXAMPLE #1 ---- */
+
+// result will be 1 and is not what we want..
+let count = 0;
+let result = count || 1;
+console.log(result); // 1
+
+// The nullish coalescing operator helps you to avoid this pitfall. It only returns the second operand when the first one evaluates to either null or undefined.
+let count = 0;
+let result = count ?? 1;
+console.log(result); // 0
+
+
+
+
+
+/* ---- EXAMPLE #2 ---- */
+const result = null || undefined ?? 'OK'; // SyntaxError
+
+const result = (null || undefined) ?? 'OK'; 
+console.log(result); // 'OK'
 ```
 </details>
 
