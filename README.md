@@ -236,6 +236,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. remove text from url
 2. Open something new window
 3. Get link params from oauth popup window
+4. localStorage
 
 # [Clipboard](#_clipboard)
 1. Copy any text to clipboard
@@ -4002,6 +4003,9 @@ document.location.hash = ""
 window.open('img/upwork/jobs/job1.jpg', '_blank', 'location=yes,height=$(window).height(),width=$(window).width(),scrollbars=yes,status=yes');
 ```
 
+<br>
+<br>
+
 
 # Get link params from oauth popup window
 ```javascript
@@ -4026,6 +4030,33 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 </html>
 
 ```
+
+
+<br>
+<br>
+
+# localStorage (https://www.w3schools.com/jsref/prop_win_localstorage.asp)
+
+```javascript
+/* ---- EXAMPLE #1 ----*/
+
+// Store
+localStorage.setItem("lastname", "Smith");
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+
+
+
+/* ---- EXAMPLE #2 ----*/
+if (localStorage.clickcount) {
+  localStorage.clickcount = Number(localStorage.clickcount) + 1;
+} else {
+  localStorage.clickcount = 1;
+}
+document.getElementById("result").innerHTML = "You have clicked the button " +
+localStorage.clickcount + " time(s).";
+```
+
 
 
 </details>
