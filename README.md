@@ -147,6 +147,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 4. get random item from array
 5. Map
   <br> 5.1 Convert Array to Array with Objects
+6. .flat()
 
 
 # [Link](#_link)
@@ -2872,6 +2873,8 @@ var copyArr = JSON.parse(JSON.stringify(arr));
 ```js
 var rndval=items[Math.floor(Math.random()*items.length)];
 ```
+
+
 <br><br>
 
 # Map
@@ -2914,8 +2917,33 @@ console.log(docs);
 */
 ```
 
-</details>
+<br><br>
 
+
+
+# .flat()
+- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+```javascript
+var arr1 = [1, 2, [3, 4]];
+arr1.flat();
+// [1, 2, 3, 4]
+
+var arr2 = [1, 2, [3, 4, [5, 6]]];
+arr2.flat();
+// [1, 2, 3, 4, [5, 6]]
+
+var arr3 = [1, 2, [3, 4, [5, 6]]];
+arr3.flat(2);
+// [1, 2, 3, 4, 5, 6]
+```
+
+
+
+
+
+
+
+</details>
 
 
 
