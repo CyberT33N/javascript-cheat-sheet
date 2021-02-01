@@ -1419,6 +1419,13 @@ console.log(bar) // gibt 'mybetterworld' aus
 
 
 
+// Object Destructure - rename key value to new variable
+let obj = {a: true, b: false};
+let {a: lena} = obj;
+console.log(lena); // true
+
+
+
 
 // Object Destructure - with default value and empty object if no param was passed
 const { foo='hey', bar='myworld' } = {}
