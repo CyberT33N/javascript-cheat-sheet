@@ -27,6 +27,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 1.1 Ternary
 2. Spread Operator
   <br> 2.1 convert array to paramater
+  <br> 2.2 Object destructuring
 3. Logical Operator
   <br> Nullish Coalescing Operator
  
@@ -484,6 +485,23 @@ function test(a, b) {
 }
 
 test(...ar);
+```
+
+
+
+<br><br>
+
+## Object destructuring
+```javascript
+let obj1 = {a: true};
+let obj2 = {b: true};
+
+function test({a = false, b = false}){
+  console.log(a);
+  console.log(b);
+};
+
+test({...obj1, ...obj2});
 ```
 
 
@@ -1442,6 +1460,19 @@ function add({x,y}) {
 
 const result = add({ x:2, y:3 })
 console.log(result) // gibt 5 aus
+
+
+
+// Object Destructure - with function and spread operator
+let obj1 = {a: true};
+let obj2 = {b: true};
+
+function test({a = false, b = false}){
+  console.log(a);
+  console.log(b);
+};
+
+test({...obj1, ...obj2});
 
 
 
