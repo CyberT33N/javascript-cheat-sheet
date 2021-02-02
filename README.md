@@ -140,6 +140,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [object](#_object)
 1. Check if object is empty
+2. Custom name of function chain
 
 # [Array](#_array)
 1. Clone unique
@@ -2861,6 +2862,20 @@ if( Object.entries(obj).length < 1 ) console.log('empty');
 var obj = {"not": "empty"};
 if( Object.entries(obj).length > 0 ) console.log('not empty');
 ```
+
+
+<br><br>
+
+
+# Custom name of function chain
+```javascript
+// default
+banane(true).read(false).write(true)
+
+// custom
+banane(true)[customName](false).write(true)
+```
+
 
 </details>
 
