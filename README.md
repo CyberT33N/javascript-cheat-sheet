@@ -141,7 +141,14 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [object](#_object)
 1. Check if object is empty
 2. Custom name of function chain
-
+3. Object is not equal Object
+4. Object constructor
+  <br> 4.1 .assign()
+  <br> 4.2 .create()
+  <br> 4.3 .defineProperties()
+  <br> 4.4 .entries()
+  <br> 4.5 .fromEntries()
+  
 # [Array](#_array)
 1. Clone unique
 2. clone array
@@ -2875,6 +2882,181 @@ banane(true).read(false).write(true)
 // custom
 banane(true)[customName](false).write(true)
 ```
+
+
+
+
+
+<br><br>
+
+
+# Object is not equal Object
+- Objects got own instances and this means they are not equal if you compare them with conditions.
+- In order to verify that the content of two objects is the same you must do a deep check.
+```javascript
+var notEqual = {a: true} === {a: true};
+console.log(notEqual); // false
+
+var notEqual = Object.is({a: true}, {a: true})
+console.log(notEqual);
+
+var equal = JSON.stringify({a: true}) === JSON.stringify({a: true});
+console.log(notEqual); // true
+```
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+
+# Object constructor
+- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+
+<br><br>
+
+
+# .assign() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+- The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
+```javascript
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
+```
+
+
+
+
+
+
+<br><br>
+
+
+# .create() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+- The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
+```javascript
+const person = {
+  isHuman: false,
+  printIntroduction: function() {
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+  }
+};
+
+const me = Object.create(person);
+
+me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // inherited properties can be overwritten
+
+me.printIntroduction();
+// expected output: "My name is Matthew. Am I human? true"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+# .defineProperties() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties)
+- The Object.defineProperties() method defines new or modifies existing properties directly on an object, returning the object.
+```javascript
+const object1 = {};
+
+Object.defineProperties(object1, {
+  property1: {
+    value: 42,
+    writable: true
+  },
+  property2: {}
+});
+
+console.log(object1.property1);
+// expected output: 42
+```
+
+
+
+
+
+
+<br><br>
+
+
+# .defineProperty() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+- The static method Object.defineProperty() defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
+```javascript
+const object1 = {};
+
+Object.defineProperty(object1, 'property1', {
+  value: 42,
+  writable: false
+});
+
+object1.property1 = 77;
+// throws an error in strict mode
+
+console.log(object1.property1);
+// expected output: 42
+```
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+# .entries() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
+- The Object.entries() method returns an array of a given object's own enumerable string-keyed property [key, value] pairs, in the same order as that provided by a for...in loop. (The only important difference is that a for...in loop enumerates properties in the prototype chain as well). 
+```javascript
+const object1 = {
+  a: 'somestring',
+  b: 42
+};
+
+for (const [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
+// expected output:
+// "a: somestring"
+// "b: 42"
+// order is not guaranteed
+```
+
+
 
 
 </details>
