@@ -30,6 +30,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 2.2 Object destructuring
 3. Logical Operator
   <br> Nullish Coalescing Operator
+4. Condition at variable decleration
  
 # [Constructors](#_constructors)
 1. Set()
@@ -561,6 +562,28 @@ const result = null || undefined ?? 'OK'; // SyntaxError
 const result = (null || undefined) ?? 'OK'; 
 console.log(result); // 'OK'
 ```
+
+
+
+
+
+
+
+
+
+<br><br>
+
+## Condition at variable decleration
+```javascript
+const a = 1;
+const b = 2;
+const example = a > b
+console.log(example); // false
+```
+
+
+
+
 </details>
 
 
