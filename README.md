@@ -16,7 +16,6 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 ```
 <details><summary>Click to expand..</summary>
 
-
 # [Math](#_math)
 1. Generate random number between two numbers
 2. parseFloat()
@@ -67,7 +66,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Destructure instance/member variables
 2. Destructure Examples
 
-# [Switch](#_switch)Conditional Operators
+# [Switch](#_switch)
 1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
 
 # [forEach](#_foreach)
@@ -138,6 +137,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Object Class](#_object-class)
 1. Object.keys()
+
+# [String](#_string)
+1. .includes()
 
 # [object](#_object)
 1. Check if object is empty
@@ -2871,6 +2873,99 @@ console.log(Object.keys(object1));
 
 
 <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="_string"><h1>String</h1></a>
+<details><summary>Click to expand..</summary>
+
+# .includes()
+```javascript
+var str = "Hello world, welcome to the universe.";
+var n = str.includes("world");
+console.log(n); // true
+```
+
+</details>
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
