@@ -2884,6 +2884,25 @@ console.log(Object.keys(object1));
 <a name="_object"><h1>object</h1></a>
 <details><summary>Click to expand..</summary>
 
+# Naming
+```javascript
+// name is key
+
+// Peter is key value and also a property
+const obj = {
+  name: 'Peter',
+  age: 23
+};
+```
+
+
+<br><br>
+
+
+
+
+
+
 # Check if object is empty
 ```javascript
 var obj = {};
