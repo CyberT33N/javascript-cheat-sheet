@@ -3258,6 +3258,67 @@ var rndval=items[Math.floor(Math.random()*items.length)];
 
 
 
+
+<br><br>
+
+## .findIndex() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+- The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+```javascript
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
+```
+
+
+<br><br>
+
+## .find() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- The find() method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfies the testing function, undefined is returned.
+```javascript
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find(element => element > 10);
+
+console.log(found);
+// expected output: 12
+```
+
+<br><br>
+
+## .filter() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+```javascript
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+```
+
+<br><br>
+
+## .fill() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+- The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index (default array.length). It returns the modified array.
+```javascript
+const array1 = [1, 2, 3, 4];
+
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+```
+
+
 <br><br>
 
 ## .every() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
