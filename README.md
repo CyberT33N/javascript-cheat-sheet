@@ -135,8 +135,6 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Cookie](#_cookie)
 1. Get value of specific cookie
 
-# [Object Class](#_object-class)
-1. Object.keys()
 
 # [String](#_string)
 1. .includes()
@@ -149,8 +147,16 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 4.1 .assign()
   <br> 4.2 .create()
   <br> 4.3 .defineProperties()
-  <br> 4.4 .entries()
+  <br> 4.4 .freeze()
   <br> 4.5 .fromEntries()
+  <br> 4.6 .getOwnPropertyNames()
+  <br> 4.7 .hasOwnProperty()
+  <br> 4.8 .is()
+  <br> 4.9 .isExtensible()
+  <br> 4.10 .isFrozen()
+  <br> 4.11 .isPrototypeOf()
+  <br> 4.12 .keys()
+  <br> 4.13 .values()
   
 # [Array](#_array)
 1. Clone unique
@@ -2867,35 +2873,6 @@ var value = match[1];
 
 
 
-<br><br>
-
-
-
-
-<a name="_object-class"><h1>Object Class</h1></a>
-<details><summary>Click to expand..</summary>
-
-# Guides
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-
-<br><br>
-
-
-# Object.keys()
-- The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
-```javascript
-const object1 = {
-  a: 'somestring',
-  b: 42,
-  c: false
-};
-
-console.log(Object.keys(object1));
-// expected output: Array ["a", "b", "c"]
-```
-
-</details>
 
 
 
@@ -3088,6 +3065,8 @@ console.log(notEqual); // true
 - https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object
 
 
+
+
 <br><br>
 
 
@@ -3105,8 +3084,6 @@ console.log(target);
 console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
 ```
-
-
 
 
 
@@ -3223,7 +3200,315 @@ for (const [key, value] of Object.entries(object1)) {
 
 
 
+<br><br>
+
+
+# .freeze() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
+- The Object.freeze() method freezes an object. A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed. In addition, freezing an object also prevents its prototype from being changed. freeze() returns the same object that was passed in.
+```javascript
+const obj = {
+  prop: 42
+};
+
+Object.freeze(obj);
+
+obj.prop = 33;
+// Throws an error in strict mode
+
+console.log(obj.prop);
+// expected output: 42
+```
+
+
+
+
+<br><br>
+
+
+# .fromEntries() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+- The Object.fromEntries() method transforms a list of key-value pairs into an object.
+```javascript
+const entries = new Map([
+  ['foo', 'bar'],
+  ['baz', 42]
+]);
+
+const obj = Object.fromEntries(entries);
+
+console.log(obj);
+// expected output: Object { foo: "bar", baz: 42 }
+```
+
+
+
+
+
+<br><br>
+
+
+# .getOwnPropertyNames() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
+- The Object.getOwnPropertyNames() method returns an array of all properties (including non-enumerable properties except for those which use Symbol) found directly in a given object.
+```javascript
+const object1 = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+console.log(Object.getOwnPropertyNames(object1));
+// expected output: Array ["a", "b", "c"]
+```
+
+
+
+
+<br><br>
+
+
+# .hasOwnProperty() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+- The hasOwnProperty() method returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it).
+```javascript
+const object1 = {};
+object1.property1 = 42;
+
+console.log(object1.hasOwnProperty('property1'));
+// expected output: true
+
+console.log(object1.hasOwnProperty('toString'));
+// expected output: false
+
+console.log(object1.hasOwnProperty('hasOwnProperty'));
+// expected output: false
+```
+
+
+
+<br><br>
+
+
+# .is() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)
+- The Object.is() method determines whether two values are the same value.
+```javascript
+Object.is('foo', 'foo');     // true
+Object.is(window, window);   // true
+
+Object.is('foo', 'bar');     // false
+Object.is([], []);           // false
+
+var foo = { a: 1 };
+var bar = { a: 1 };
+Object.is(foo, foo);         // true
+Object.is(foo, bar);         // false
+
+Object.is(null, null);       // true
+
+// Special Cases
+Object.is(0, -0);            // false
+Object.is(0n, -0n);          // true
+Object.is(-0, -0);           // true
+Object.is(NaN, 0/0);         // true
+```
+
+
+
+
+
+<br><br>
+
+
+# .isExtensible() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible)
+- The Object.isExtensible() method determines if an object is extensible (whether it can have new properties added to it).
+```javascript
+const object1 = {};
+
+console.log(Object.isExtensible(object1));
+// expected output: true
+
+Object.preventExtensions(object1);
+
+console.log(Object.isExtensible(object1));
+// expected output: false
+```
+
+
+
+<br><br>
+
+
+# .isFrozen() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen)
+- The Object.isFrozen() determines if an object is frozen.
+```javascript
+const object1 = {
+  property1: 42
+};
+
+console.log(Object.isFrozen(object1));
+// expected output: false
+
+Object.freeze(object1);
+
+console.log(Object.isFrozen(object1));
+// expected output: true
+```
+
+
+<br><br>
+
+
+# .isPrototypeOf() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
+- The isPrototypeOf() method checks if an object exists in another object's prototype chain.
+```javascript
+function object1() {}
+function object2() {}
+
+object1.prototype = Object.create(object2.prototype);
+
+const object3 = new object1();
+
+console.log(object1.prototype.isPrototypeOf(object3));
+// expected output: true
+
+console.log(object2.prototype.isPrototypeOf(object3));
+// expected output: true
+```
+
+
+
+<br><br>
+
+# .keys() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+- The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
+```javascript
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+```
+
+
+
+
+
+<br><br>
+
+# .values (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
+- The Object.values() method returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop. (The only difference is that a for...in loop enumerates properties in the prototype chain as well.)
+```javascript
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.values(object1));
+// expected output: Array ["somestring", 42, false]
+```
+
+
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
