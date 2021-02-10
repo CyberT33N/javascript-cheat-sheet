@@ -185,7 +185,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 6.24 .concat()
   <br> 6.25 .copyWithin()
   <br> 6.26 Map
-    <br><br> 6.26.1 Convert Array to Array with Objects
+      <br> 6.26.1 Convert Array to Array with Objects
 7. .flat()
 
 
