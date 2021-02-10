@@ -157,9 +157,36 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. clone array
 3. clone array with objects inside
 4. get random item from array
-5. Map
-  <br> 5.1 Convert Array to Array with Objects
-6. .flat()
+5. .from()
+6. prototype
+  <br> 6.1 .values()
+  <br> 6.2 .unshift()
+  <br> 6.3 .splice()
+  <br> 6.4 .sort()
+  <br> 6.5 .some()
+  <br> 6.6 .slice()
+  <br> 6.7 .shift()
+  <br> 6.8 .reverse()
+  <br> 6.9 .reduce()
+  <br> 6.10 .push()
+  <br> 6.11 .pop()
+  <br> 6.12 .keys()
+  <br> 6.13 .join()
+  <br> 6.14 .indexOf()
+  <br> 6.15 .includes()
+  <br> 6.16 .forEach()
+  <br> 6.17 .flat()
+  <br> 6.18 .flatIndex()
+  <br> 6.19 .find()
+  <br> 6.20 .filter()
+  <br> 6.21 .fill()
+  <br> 6.22 .every()
+  <br> 6.23 .entries()
+  <br> 6.24 .concat()
+  <br> 6.25 .copyWithin()
+  <br> 6.26 Map
+    <br> 6.26.1 Convert Array to Array with Objects
+7. .flat()
 
 
 # [Link](#_link)
@@ -3249,6 +3276,8 @@ var rndval=items[Math.floor(Math.random()*items.length)];
 
 
 
+
+
 <br><br>
 
 ## .from() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
@@ -3262,10 +3291,198 @@ console.log(Array.from([1, 2, 3], x => x + x));
 ```
 
 
+
+
+
+
 <br><br>
 
 # prototype
 
+
+<br><br>
+
+## .values() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
+- The values() method returns a new Array Iterator object that contains the values for each index in the array.
+```javascript
+const array1 = ['a', 'b', 'c'];
+const iterator = array1.values();
+
+for (const value of iterator) {
+  console.log(value);
+}
+
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
+```
+
+<br><br>
+
+## .unshift() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+- The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+```javascript
+const array1 = [1, 2, 3];
+
+console.log(array1.unshift(4, 5));
+// expected output: 5
+
+console.log(array1);
+// expected output: Array [4, 5, 1, 2, 3]
+```
+
+<br><br>
+
+## .splice() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+- The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+```javascript
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+```
+
+<br><br>
+
+## .sort() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+- The sort() method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+```javascript
+const months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+console.log(months);
+// expected output: Array ["Dec", "Feb", "Jan", "March"]
+
+const array1 = [1, 30, 4, 21, 100000];
+array1.sort();
+console.log(array1);
+// expected output: Array [1, 100000, 21, 30, 4]
+```
+
+<br><br>
+
+## .some() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+- The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+```javascript
+const array = [1, 2, 3, 4, 5];
+
+// checks whether an element is even
+const even = (element) => element % 2 === 0;
+
+console.log(array.some(even));
+// expected output: true
+```
+
+<br><br>
+
+## .slice() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+- The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.
+```javascript
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+```
+
+<br><br>
+
+## .shift() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+- The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.
+```javascript
+const array1 = [1, 2, 3];
+
+const firstElement = array1.shift();
+
+console.log(array1);
+// expected output: Array [2, 3]
+
+console.log(firstElement);
+// expected output: 1
+```
+
+<br><br>
+
+## .reverse() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+- The reverse() method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
+```javascript
+const array1 = ['one', 'two', 'three'];
+console.log('array1:', array1);
+// expected output: "array1:" Array ["one", "two", "three"]
+
+const reversed = array1.reverse();
+console.log('reversed:', reversed);
+// expected output: "reversed:" Array ["three", "two", "one"]
+
+// Careful: reverse is destructive -- it changes the original array.
+console.log('array1:', array1);
+// expected output: "array1:" Array ["three", "two", "one"]
+```
+
+
+<br><br>
+
+## .reduce() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+- The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
+```javascript
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
+```
+
+<br><br>
+
+## .push() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+- The push() method adds one or more elements to the end of an array and returns the new length of the array.
+```javascript
+const animals = ['pigs', 'goats', 'sheep'];
+
+const count = animals.push('cows');
+console.log(count);
+// expected output: 4
+console.log(animals);
+// expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+animals.push('chickens', 'cats', 'dogs');
+console.log(animals);
+// expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+```
+
+<br><br>
+
+## .pop() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+- The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+```javascript
+const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+console.log(plants.pop());
+// expected output: "tomato"
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+plants.pop();
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage"]
+```
 
 <br><br>
 
@@ -3509,6 +3726,20 @@ const map1 = array1.map(x => x * 2);
 console.log(map1);
 // expected output: Array [2, 8, 18, 32]
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <br><br>
