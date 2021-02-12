@@ -806,6 +806,17 @@ console.log(set1.has(6));
 
 <a name="_design-pattern"><h1>Design Pattern</h1></a>
 <details><summary>Click to expand..</summary>
+  
+  
+
+## Guides
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/
+  
+<br><br>
+
+
+
+
 
 # Singleton
 
