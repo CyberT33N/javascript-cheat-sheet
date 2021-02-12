@@ -35,10 +35,11 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Set()
 
 # [Design Pattern](#_design-pattern)
-1. Singleton
-2. Builder
+1. Singleton Pattern
+2. Builder Pattern
   <br> 2.1 Default function parameter
 3. Null Object Pattern
+4. Factory Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -966,6 +967,120 @@ console.log(multiply(5));
 <br><br>
 
 
+# Factory Design Pattern
+- Is in the **creation** category of design patterns which means providing object creation mechanism for flexibility and reusability. This is usefully when you want to create many types of different objects.
+
+<br>
+
+## Guides
+- https://www.youtube.com/watch?v=kuirGzhGhyw
+
+<br><br>
+
+```javascript
+function developer(name) {
+  this.name = name;
+  this.type = 'Developer';
+};
+
+function tester(name) {
+  this.name = name;
+  this.type = 'Tester';
+};
+
+function employeeFactory() {
+  this.create = (name, type) => {
+    switch (type) {
+      case 1:
+        return new developer(name);
+        break;
+      case 2:
+        return new tester(name);
+        break;
+    }
+  }
+};
+
+function say() {
+  console.log(`Hi, I am ${this.name} and I am a ${this.type}`);
+};
+
+const factory = new employeeFactory();
+const employees = [];
+
+employees.push(factory.create("Lisa", 1)) // <-- Creates new Developer
+employees.push(factory.create("Julia", 2)) // <-- Creates new Tester
+
+for(const emp of employees){
+  say.call(emp);
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+
 # Null Object Pattern
 
 <br>
@@ -1033,6 +1148,77 @@ function printUser(id) {
 
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
