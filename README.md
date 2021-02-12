@@ -77,6 +77,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Do loop based on length of array
 3. Make the loop jump to the next iteration when i is 5
 4. break the loop when i is 5
+5. Use array as variable
 
 # [While](#_while)
 1. Do loop based on length of array
@@ -1755,7 +1756,7 @@ for (;cars[i];) {
 
 <br><br>
 
-# Make the loop jump to the next iteration when i is 5.
+# Make the loop jump to the next iteration when i is 5
 ```javascript
 for (i = 0; i < 10; i++) {
   if (i == 5) continue;
@@ -1765,12 +1766,33 @@ for (i = 0; i < 10; i++) {
 
 <br>
 
-# break the loop when i is 5.
+# break the loop when i is 5
 ```javascript
 for (i = 0; i < 10; i++) {
   if (i == 5) break;
   console.log(i);
 }
+```
+
+
+
+<br>
+
+# Use array as variable
+```javascript
+const object1 = {
+  a: 'somestring',
+  b: 42
+};
+
+for (const [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
+// expected output:
+// "a: somestring"
+// "b: 42"
+// order is not guaranteed
 ```
 
 </details>
