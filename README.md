@@ -88,6 +88,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. function to String and back to function
 2. Generator functions
 3. Immediately Invoked Function Expression (IIFE)
+4. .call()
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -2089,6 +2090,9 @@ var fn = new Function('return ' + fString)();
 fn();
 ```
 
+<br><br>
+
+
 # Generator functions
 ```javascript
 // example #1
@@ -2130,6 +2134,9 @@ console.log(gen.next().value);
 
 
 
+
+<br><br>
+
 # Immediately Invoked Function Expression (IIFE)
 ```javascript
 // sync
@@ -2150,7 +2157,28 @@ mybrokenfunction = function(){
 */
 ```
 
+<br><br>
 
+# .call()
+- The call() method is a predefined JavaScript method. It can be used to invoke (call) a method with an owner object as an argument (parameter).
+```javascript
+var person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+var person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
+person.fullName.call(person1);  // Will return "John Doe"
+```
+
+<br><br>
 
 </details>
 
