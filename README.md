@@ -95,6 +95,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. CJS
   <br>3.1 export all functions
   <br>3.2 export specific function
+  <br>3.3 export class
 3. ESM
   <br>3.1 Features
   <br>3.2 How to enable?
@@ -2289,10 +2290,40 @@ module.exports = {
 };
 ```
 
+<br><br>
+
 ## export specific function
 ```javascript
 // example #1
 module.exports.anyname = ()=>{/*..*/};
+```
+
+<br><br>
+
+## export class
+```javascript
+// person.js
+'use strict';
+
+module.exports = class Person {
+   constructor(firstName, lastName) {
+       this.firstName = firstName;
+       this.lastName = lastName;
+   }
+
+   display() {
+       console.log(this.firstName + " " + this.lastName);
+   }
+}
+
+
+// index.js
+'use strict';
+
+var Person = require('./person.js');
+
+var someone = new Person("First name", "Last name");
+someone.display();
 ```
 
 <br><br>
