@@ -162,6 +162,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 4.11 .isPrototypeOf()
   <br> 4.12 .keys()
   <br> 4.13 .values()
+5. Object instances
   
 # [Array](#_array)
 1. Clone unique
@@ -3372,7 +3373,7 @@ console.log(notEqual); // true
 <br><br>
 
 
-# .assign() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+## .assign() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 - The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
 ```javascript
 const target = { a: 1, b: 2 };
@@ -3393,7 +3394,7 @@ console.log(returnedTarget);
 <br><br>
 
 
-# .create() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+## .create() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 - The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
 ```javascript
 const person = {
@@ -3426,7 +3427,7 @@ me.printIntroduction();
 <br><br>
 
 
-# .defineProperties() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties)
+## .defineProperties() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties)
 - The Object.defineProperties() method defines new or modifies existing properties directly on an object, returning the object.
 ```javascript
 const object1 = {};
@@ -3451,7 +3452,7 @@ console.log(object1.property1);
 <br><br>
 
 
-# .defineProperty() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+## .defineProperty() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 - The static method Object.defineProperty() defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
 ```javascript
 const object1 = {};
@@ -3481,7 +3482,7 @@ console.log(object1.property1);
 <br><br>
 
 
-# .entries() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
+## .entries() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
 - The Object.entries() method returns an array of a given object's own enumerable string-keyed property [key, value] pairs, in the same order as that provided by a for...in loop. (The only important difference is that a for...in loop enumerates properties in the prototype chain as well). 
 ```javascript
 const object1 = {
@@ -3505,7 +3506,7 @@ for (const [key, value] of Object.entries(object1)) {
 <br><br>
 
 
-# .freeze() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
+## .freeze() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
 - The Object.freeze() method freezes an object. A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed. In addition, freezing an object also prevents its prototype from being changed. freeze() returns the same object that was passed in.
 ```javascript
 const obj = {
@@ -3527,7 +3528,7 @@ console.log(obj.prop);
 <br><br>
 
 
-# .fromEntries() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
+## .fromEntries() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
 - The Object.fromEntries() method transforms a list of key-value pairs into an object.
 ```javascript
 const entries = new Map([
@@ -3548,7 +3549,7 @@ console.log(obj);
 <br><br>
 
 
-# .getOwnPropertyNames() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
+## .getOwnPropertyNames() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
 - The Object.getOwnPropertyNames() method returns an array of all properties (including non-enumerable properties except for those which use Symbol) found directly in a given object.
 ```javascript
 const object1 = {
@@ -3567,7 +3568,7 @@ console.log(Object.getOwnPropertyNames(object1));
 <br><br>
 
 
-# .hasOwnProperty() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+## .hasOwnProperty() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
 - The hasOwnProperty() method returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it).
 ```javascript
 const object1 = {};
@@ -3588,7 +3589,7 @@ console.log(object1.hasOwnProperty('hasOwnProperty'));
 <br><br>
 
 
-# .is() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)
+## .is() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is)
 - The Object.is() method determines whether two values are the same value.
 ```javascript
 Object.is('foo', 'foo');     // true
@@ -3618,7 +3619,7 @@ Object.is(NaN, 0/0);         // true
 <br><br>
 
 
-# .isExtensible() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible)
+## .isExtensible() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible)
 - The Object.isExtensible() method determines if an object is extensible (whether it can have new properties added to it).
 ```javascript
 const object1 = {};
@@ -3637,7 +3638,7 @@ console.log(Object.isExtensible(object1));
 <br><br>
 
 
-# .isFrozen() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen)
+## .isFrozen() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen)
 - The Object.isFrozen() determines if an object is frozen.
 ```javascript
 const object1 = {
@@ -3657,7 +3658,7 @@ console.log(Object.isFrozen(object1));
 <br><br>
 
 
-# .isPrototypeOf() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
+## .isPrototypeOf() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
 - The isPrototypeOf() method checks if an object exists in another object's prototype chain.
 ```javascript
 function object1() {}
@@ -3678,7 +3679,7 @@ console.log(object2.prototype.isPrototypeOf(object3));
 
 <br><br>
 
-# .keys() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+## .keys() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 - The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
 ```javascript
 const object1 = {
@@ -3697,7 +3698,7 @@ console.log(Object.keys(object1));
 
 <br><br>
 
-# .values (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
+## .values (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
 - The Object.values() method returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop. (The only difference is that a for...in loop enumerates properties in the prototype chain as well.)
 ```javascript
 const object1 = {
@@ -3710,6 +3711,26 @@ console.log(Object.values(object1));
 // expected output: Array ["somestring", 42, false]
 ```
 
+
+
+
+
+
+
+<br><br>
+
+# Object instances
+- When you pass an object as parameter and change it inside of your function then your main object will get re-assigned aswell. This is because of the object instance
+```javascript
+let obj = {anyvalue: true};
+
+function test(a) {
+  a.anyvalue = false;
+  console.log(obj); {anyvalue: false}
+};
+
+test(obj);
+```
 
 </details>
 
