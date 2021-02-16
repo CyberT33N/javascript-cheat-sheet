@@ -89,6 +89,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Generator functions
 3. Immediately Invoked Function Expression (IIFE)
 4. .call()
+5. .bind()
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -2177,6 +2178,29 @@ var person2 = {
   lastName: "Doe"
 }
 person.fullName.call(person1);  // Will return "John Doe"
+```
+
+
+<br><br>
+
+# .bind() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+```javascript
+const module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+};
+
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// expected output: 42
+
 ```
 
 <br><br>
