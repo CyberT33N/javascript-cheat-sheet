@@ -3871,10 +3871,27 @@ test(obj);
 # Mutability
 - Objects and arrays, on the other hand, allow mutation, meaning the data structure can be changed.
 ```javascript
+/*---- EXAMPLE #1 ----*/
 let user = { name: "James Doe", location: "Lagos" }
 let newUser = user
 user.location = "Abia"
 console.log(newUser.location) // "Abia"
+
+
+
+
+/*---- EXAMPLE #2 ----*/
+let obj = {
+  a: {
+    name: 'Peter'
+  }
+}
+
+let test1 = obj
+test1.a.name = 'Lisa'
+
+console.log(obj.a.name);
+console.log(test1.a.name);
 ```
 
 </details>
