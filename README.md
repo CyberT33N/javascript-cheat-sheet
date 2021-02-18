@@ -96,7 +96,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. CJS
   <br>3.1 export all functions
   <br>3.2 export specific function
-  <br>3.3 export class
+  <br>3.3 include parameter
+  <br>3.4 export class
 3. ESM
   <br>3.1 Features
   <br>3.2 How to enable?
@@ -2323,6 +2324,27 @@ module.exports = {
 // example #1
 module.exports.anyname = ()=>{/*..*/};
 ```
+
+<br><br>
+
+## include parameter
+```javascript
+// index.js
+(async () => {
+    await browserWrapper.connect()
+})().catch(e => {
+    console.error(new Error(e))
+})
+
+module.exports = require('./thumbnail')(browserWrapper)
+
+
+// thumbnail.js
+module.exports = (browserWrapper) => {
+  //..
+};
+```
+
 
 <br><br>
 
