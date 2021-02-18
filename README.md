@@ -90,6 +90,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Immediately Invoked Function Expression (IIFE)
 4. .call()
 5. .bind()
+6. Use Function as variable
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -2210,6 +2211,29 @@ console.log(boundGetX());
 ```
 
 <br><br>
+
+
+
+
+# Use Function as variable
+```javascript
+/*---- EXAMPLE #1 ----*/
+async _onDisconnect() {
+    console.log('disconnect..');
+}
+
+createDisconnectListener() {
+    this.browser.on('disconnected', this._onDisconnect )
+}
+
+
+
+/*---- EXAMPLE #2 ----*/
+function greet(){
+  alert('Howdy!');
+}
+setTimeout(greet, 2000);
+```
 
 </details>
 
