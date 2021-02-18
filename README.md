@@ -124,6 +124,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Subclasses (Inheritance)
 4. Multiple Inheritance (Mixins)
 5. Event listener this inside of method
+6. Bind this to other method
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -2952,6 +2953,24 @@ export class User {
 
 
 
+
+
+<br><br>
+
+
+
+## Bind **this** to other method
+- When you call a method with this you do not have access to this anymore. To solve this problem we use **.bind()**
+```javascript
+createDisconnectListener() {
+    this.browser.on('disconnected', this._onDisconnect.bind(this) )
+}
+
+async _onDisconnect() {
+    console.log('_onDisconnect')
+    await this.connect()
+}
+```
 
 
 
