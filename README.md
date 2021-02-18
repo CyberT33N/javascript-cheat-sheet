@@ -167,6 +167,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 4.12 .keys()
   <br> 4.13 .values()
 5. Object instances
+6. Mutability
   
 # [Array](#_array)
 1. Clone unique
@@ -3834,6 +3835,22 @@ function test(a) {
 };
 
 test(obj);
+```
+
+
+
+
+
+
+<br><br>
+
+# Mutability
+- Objects and arrays, on the other hand, allow mutation, meaning the data structure can be changed.
+```javascript
+let user = { name: "James Doe", location: "Lagos" }
+let newUser = user
+user.location = "Abia"
+console.log(newUser.location) // "Abia"
 ```
 
 </details>
