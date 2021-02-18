@@ -2928,7 +2928,7 @@ animal.tick();
 
 <br><br>
 
-## Use always same instance (singleton)
+# Use always same instance (singleton)
 ```javascript
 class test {
   constructor(){
@@ -2960,7 +2960,7 @@ console.log('b: ' + b.example); // <-- will print a
 
 
 
-## Event listener this inside of method
+# Event listener this inside of method
 - Instead of this we can use event.target (http://www.w3.org/TR/DOM-Level-2-Events/events.html)
 ```javascript
 export class User {
@@ -2982,7 +2982,7 @@ export class User {
 
 
 
-## Bind this to other method
+# Bind this to other method
 - When you call a method with this you do not have access to this anymore. To solve this problem we use **.bind()**
 ```javascript
 createDisconnectListener() {
@@ -3005,7 +3005,7 @@ async _onDisconnect() {
 
 
 
-## Private and public methods 
+# Private and public methods 
 - In this example private methods are still public accessable but you can tell other developer which methods are used outside by other files (public) and which methods are only used internal (private) in this class
 ```javascript
 class BrowserWrapper {
