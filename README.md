@@ -126,6 +126,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 4. Multiple Inheritance (Mixins)
 5. Event listener this inside of method
 6. Bind this to other method
+7. Private and public methods
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -2981,7 +2982,7 @@ export class User {
 
 
 
-## Bind **this** to other method
+## Bind this to other method
 - When you call a method with this you do not have access to this anymore. To solve this problem we use **.bind()**
 ```javascript
 createDisconnectListener() {
@@ -2995,6 +2996,34 @@ async _onDisconnect() {
 ```
 
 
+
+
+
+
+
+<br><br>
+
+
+
+## Private and public methods 
+- In this example private methods are still public accessable but you can tell other developer which methods are used outside by other files (public) and which methods are only used internal (private) in this class
+```javascript
+class BrowserWrapper {
+    constructor(){
+        this.example = true
+    }
+
+    // public
+    async connect() {
+        this.browser = true
+    }
+
+    // private
+    async _disconnect() {
+        this.browser = false
+    }
+}
+```
 
 
 </details>
