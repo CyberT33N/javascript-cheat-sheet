@@ -127,6 +127,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 5. Event listener this inside of method
 6. Bind this to other method
 7. Private and public methods
+8. Service classes
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -3022,6 +3023,39 @@ class BrowserWrapper {
     async _disconnect() {
         this.browser = false
     }
+}
+```
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+# Service classes
+- Service classes can be an extended subclass or you completly outsource them to a new file. The idea behind this is to outsource service function into a seperate space.
+```javascript
+// BrowserWrapper.js
+const BrowserConnectionService = require('./BrowserConnectionService')
+
+class BrowserWrapper {
+  constructor(host, port){
+      this.connectionService = new BrowserConnectionService(host, port)
+  }
+}
+
+
+// BrowserConnectionService.js
+module.exports = class BrowserConnectionService {
+  constructor(host = process.env.CHROME_HOST, port = process.env.CHROME_PORT){
+      this.chromeHost = host
+      this.chromePort = port
+  }
 }
 ```
 
