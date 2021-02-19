@@ -91,6 +91,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 4. .call()
 5. .bind()
 6. Use Function as variable
+7. Higher-order functions
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -2233,6 +2234,35 @@ function greet(){
   alert('Howdy!');
 }
 setTimeout(greet, 2000);
+```
+
+
+<br><br>
+
+
+
+
+
+
+# Higher-order Functions
+- Higher-order functions are functions that take other functions as arguments or return functions as their results.
+
+<br><br>
+
+Taking an other function as an argument is often referred as a callback function, because it is called back by the higher-order function. This is a concept that Javascript uses a lot.
+
+<br><br>
+
+For example, the map function on arrays is a higher order function. The map function takes a function as an argument.
+```javascript
+const double = n => n * 2
+[1, 2, 3, 4].map(double) // [ 2, 4, 6, 8 ]
+
+
+// Or, with an anonymous function:
+[1, 2, 3, 4].map(function(n){
+    return n * 2
+}) // [ 2, 4, 6, 8 ]
 ```
 
 </details>
