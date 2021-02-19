@@ -15,11 +15,13 @@ for(const d of document.querySelectorAll('#readme details')){d.setAttribute('ope
 for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('open', '');}
 ```
 <details><summary>Click to expand..</summary>
+  
+# [General](#_general)
+1. strict mode
 
 # [Scope](#_scope)
 1. You can not access variables which are defined within a function
 2. Child Objects share this of parent Object
-
 
 # [Math](#_math)
 1. Generate random number between two numbers
@@ -369,6 +371,86 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 
 
+<br><br>
+_____________________________________________________
+_____________________________________________________
+<br><br>
+
+<a name="_general"><h1>General</h1></a>
+<details><summary>Click to expand..</summary>
+
+# strict mode
+The short and most important answer here is that use strict is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. In general, it is a good practice.
+
+<br><br>
+Some of the key benefits of strict mode include:
+- Makes debugging easier. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions, alerting you sooner to problems in your code and directing you more quickly to their source.
+
+- Prevents accidental globals. Without strict mode, assigning a value to an undeclared variable automatically creates a global variable with that name. This is one of the most common errors in JavaScript. In strict mode, attempting to do so throws an error.
+
+- Eliminates this coercion. Without strict mode, a reference to a this value of null or undefined is automatically coerced to the global. This can cause many headfakes and pull-out-your-hair kind of bugs. In strict mode, referencing a a this value of null or undefined throws an error.
+
+- Disallows duplicate parameter values. Strict mode throws an error when it detects a duplicate named argument for a function (e.g., function foo(val1, val2, val1){}), thereby catching what is almost certainly a bug in your code that you might otherwise have wasted lots of time tracking down.
+<br><br>
+Note: It used to be (in ECMAScript 5) that strict mode would disallow duplicate property names (e.g. var object = {foo: "bar", foo: "baz"};) but as of ECMAScript 2015 this is no longer the case.
+
+- Makes eval() safer. There are some differences in the way eval() behaves in strict mode and in non-strict mode. Most significantly, in strict mode, variables and functions declared inside of an eval() statement are not created in the containing scope (they are created in the containing scope in non-strict mode, which can also be a common source of problems).
+
+- Throws error on invalid usage of delete. The delete operator (used to remove properties from objects) cannot be used on non-configurable properties of the object. Non-strict code will fail silently when an attempt is made to delete a non-configurable property, whereas strict mode will throw an error in such a case.
+question badge
+
+
+
+</details>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -442,6 +524,62 @@ myObject.func();
 </details>
 
 <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
