@@ -18,6 +18,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Scope](#_scope)
 1. You can not access variables which are defined within a function
+2. Child Objects share this of parent Object
 
 
 # [Math](#_math)
@@ -407,6 +408,35 @@ console.log(a);
 
 console.log(a);
 console.log(b); // 3
+```
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+# Child Objects share this of parent Object
+```javascript
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo); // bar
+        console.log("outer func:  self.foo = " + self.foo); // bar
+
+        (function() {
+            console.log("inner func:  this.foo = " + this.foo); // undefined because of new function
+            console.log("inner func:  self.foo = " + self.foo); // bar
+        }());
+    }
+};
+myObject.func();
 ```
 
 </details>
