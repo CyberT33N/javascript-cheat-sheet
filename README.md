@@ -16,6 +16,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 ```
 <details><summary>Click to expand..</summary>
 
+# [Scope](#_scope)
+1. You can not access variables which are defined within a function
+
+
 # [Math](#_math)
 1. Generate random number between two numbers
 2. parseFloat()
@@ -33,7 +37,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
  
 # [Constructors](#_constructors)
 1. Set()
-
+2. 
 # [Design Pattern](#_design-pattern)
 1. Singleton Pattern
 2. Builder Pattern
@@ -367,6 +371,115 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 
 
+<br><br>
+_____________________________________________________
+_____________________________________________________
+<br><br>
+
+<a name="_scope"><h1>Scope</h1></a>
+<details><summary>Click to expand..</summary>
+
+# You can not access variables which are defined within a function
+```javascript
+(function(){
+  var a = 3;
+})();
+
+console.log(a);
+
+
+
+// to access a you must define it outside of the function
+let a;
+(function(){
+  a = 3;
+})();
+
+console.log(a);
+
+
+
+
+// create global variable inside of function without declare it before
+(function(){
+  var a = b = 3;
+})();
+
+console.log(a);
+console.log(b); // 3
+```
+
+</details>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -425,6 +538,47 @@ var l = parseInt("10", 16) // 16
 
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
