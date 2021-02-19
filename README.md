@@ -40,6 +40,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 2.1 Default function parameter
 3. Null Object Pattern
 4. Factory Pattern
+5. Proxy Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -972,13 +973,131 @@ console.log(multiply(5));
 
 
 
+
+
  <br><br>
  _____________________________________________________
  _____________________________________________________
 <br><br>
 
 
-# Factory Design Pattern
+# Null Object Pattern
+
+<br>
+
+## Guides
+- https://www.youtube.com/watch?v=D4Dja5WSZoA
+
+<br><br>
+
+## Null Object with Classes
+```javascript
+class User {
+  constructor(id, name) {
+    this.id = id
+    this.name = name
+  }
+
+  hasAccess() {
+    return this.name === 'Bob'
+  }
+}
+
+class NullUser {
+  constructor() {
+    this.id = -1
+    this.name = 'Guest'
+  }
+
+  hasAccess() {
+    return false
+  }
+}
+
+const users = [
+  new User(1, 'Bob'),
+  new User(2, 'John')
+]
+
+function getUser(id) {
+  const user = users.find(user => user.id === id)
+  /*
+    We are now checking if the user is null before returning, and instead returning a NullUser object if the user is null. This means that we no longer need to check for null users later in the code and can treat all users that are returned from this function the same whether they exist or not.
+  */
+  if (user == null) {
+    return new NullUser()
+  } else {
+    return user
+  }
+}
+
+function printUser(id) {
+  const user = getUser(id)
+  console.log('Hello ' + user.name)
+
+  if (user.hasAccess()) {
+    console.log('You have access')
+  } else {
+    console.log('You are not allowed here')
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+
+# Factory Pattern
 - Is in the **creation** category of design patterns which means providing object creation mechanism for flexibility and reusability. This is usefully when you want to create many types of different objects.
 
 <br>
@@ -1077,85 +1196,83 @@ for(const emp of employees){
 
 
 
-
-
-
-
-
-
-
-
-
  <br><br>
  _____________________________________________________
  _____________________________________________________
 <br><br>
 
 
-# Null Object Pattern
+# Proxy Pattern
+- Use 1 Object (known as the proxy) as Placeholder for another Object
 
 <br>
 
 ## Guides
-- https://www.youtube.com/watch?v=D4Dja5WSZoA
+- https://www.youtube.com/watch?v=SFTpSFQNPts
 
 <br><br>
 
-## Null Object with Classes
 ```javascript
-class User {
-  constructor(id, name) {
-    this.id = id
-    this.name = name
-  }
+/*
+    Proxy Design Pattern -> https://www.youtube.com/watch?v=SFTpSFQNPts
+    Author: DevSage (Youtube) -> https://www.youtube.com/DevSage
+*/
 
-  hasAccess() {
-    return this.name === 'Bob'
+// External API Service
+function CryptocurrencyAPI()
+{
+  this.getValue = function(coin)
+  {
+    console.log("Calling External API...")
+    switch(coin)
+    {
+      case "Bitcoin":
+        return "$8,500"
+      case "Litecoin":
+        return "$50"
+      case "Ethereum":
+        return "$175"
+       default:
+        return "NA"
+    }
+  }
+}
+//////////////////////////
+
+const api = new CryptocurrencyAPI()
+console.log("----------Without Proxy----------")
+console.log(api.getValue("Bitcoin"))
+console.log(api.getValue("Litecoin"))
+console.log(api.getValue("Ethereum"))
+console.log(api.getValue("Bitcoin"))
+console.log(api.getValue("Litecoin"))
+console.log(api.getValue("Ethereum"))
+
+
+function CryptocurrencyProxy()
+{
+  this.api = new CryptocurrencyAPI()
+  this.cache = {}
+
+  this.getValue = function(coin)
+  {
+    if(this.cache[coin] == null)
+    {
+      this.cache[coin] = this.api.getValue(coin)
+    }
+    return this.cache[coin]
   }
 }
 
-class NullUser {
-  constructor() {
-    this.id = -1
-    this.name = 'Guest'
-  }
-
-  hasAccess() {
-    return false
-  }
-}
-
-const users = [
-  new User(1, 'Bob'),
-  new User(2, 'John')
-]
-
-function getUser(id) {
-  const user = users.find(user => user.id === id)
-  /*
-    We are now checking if the user is null before returning, and instead returning a NullUser object if the user is null. This means that we no longer need to check for null users later in the code and can treat all users that are returned from this function the same whether they exist or not.
-  */
-  if (user == null) {
-    return new NullUser()
-  } else {
-    return user
-  }
-}
-
-function printUser(id) {
-  const user = getUser(id)
-  console.log('Hello ' + user.name)
-
-  if (user.hasAccess()) {
-    console.log('You have access')
-  } else {
-    console.log('You are not allowed here')
-  }
-}
+console.log("----------With Proxy----------")
+const proxy = new CryptocurrencyProxy()
+console.log(proxy.getValue("Bitcoin"))
+console.log(proxy.getValue("Litecoin"))
+console.log(proxy.getValue("Ethereum"))
+console.log(proxy.getValue("Bitcoin"))
+console.log(proxy.getValue("Litecoin"))
+console.log(proxy.getValue("Ethereum"))
 ```
-
-
-
 
 
 </details>
