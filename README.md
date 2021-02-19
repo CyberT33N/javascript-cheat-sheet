@@ -2997,12 +2997,21 @@ animal.tick();
 // ---- EXAMPLE #2 (Real Mixin) -----
 let MyMixin = (superclass) => class extends superclass {
   foo() {
-    console.log('foo from MyMixin');
+    console.log('Name: ' + this.name);
   }
 };
+
+class MyBaseClass {
+  constructor(){
+  this.name = 'Laura'
+  }
+}
+
 class MyClass extends MyMixin(MyBaseClass) {
   /* ... */
 }
+
+
 let c = new MyClass();
 c.foo(); // prints "foo from MyMixin"
 ```
