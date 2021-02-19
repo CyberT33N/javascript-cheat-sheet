@@ -2663,6 +2663,7 @@ person.fullName.call(person1);  // Will return "John Doe"
 <br> The call() method takes arguments separately.
 <br> The apply() method takes arguments as an array.
 ```javascript
+// ---- EXAMPLE #1 - with Arguments ----
 var person = {
   fullName: function(city, country) {
     return this.firstName + " " + this.lastName + "," + city + "," + country;
@@ -2673,6 +2674,21 @@ var person1 = {
   lastName: "Doe"
 }
 person.fullName.apply(person1, ["Oslo", "Norway"]);
+
+
+
+
+// ---- EXAMPLE #2 - with Objects ----
+var person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person1 = {
+  firstName: "Mary",
+  lastName: "Doe"
+}
+person.fullName.apply(person1);  // Will return "Mary Doe"
 ```
 
 
