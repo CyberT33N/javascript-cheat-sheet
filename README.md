@@ -2957,6 +2957,7 @@ console.log('getDetails: ' + getDetails);
 
 # Multiple Inheritance (Mixins)
 ```javascript
+// ---- EXAMPLE #1 -----
 class Animal {
   constructor(){ 
     Object.assign(this, new Shark(), new Clock());
@@ -2979,6 +2980,31 @@ let animal = new Animal();
 animal.bite();
 console.log(animal.color);
 animal.tick();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---- EXAMPLE #2 (Real Mixin) -----
+let MyMixin = (superclass) => class extends superclass {
+  foo() {
+    console.log('foo from MyMixin');
+  }
+};
+class MyClass extends MyMixin(MyBaseClass) {
+  /* ... */
+}
+let c = new MyClass();
+c.foo(); // prints "foo from MyMixin"
 ```
 
 
