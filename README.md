@@ -98,9 +98,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Generator functions
 3. Immediately Invoked Function Expression (IIFE)
 4. .call()
-5. .bind()
-6. Use Function as variable
-7. Higher-order functions
+5. .apply
+6. .bind()
+7. Use Function as variable
+8. Higher-order functions
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -2652,6 +2653,28 @@ var person2 = {
 }
 person.fullName.call(person1);  // Will return "John Doe"
 ```
+
+
+
+<br><br>
+
+# .apply()
+- The Difference Between call() and apply() is:
+<br> The call() method takes arguments separately.
+<br> The apply() method takes arguments as an array.
+```javascript
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.apply(person1, ["Oslo", "Norway"]);
+```
+
 
 
 <br><br>
