@@ -171,6 +171,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br> 4.13 .values()
 5. Object instances
 6. Mutability
+7. Null is an object too
   
 # [Array](#_array)
 1. Clone unique
@@ -4074,6 +4075,37 @@ test1.a.name = 'Lisa'
 
 console.log(obj.a.name);
 console.log(test1.a.name);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+# Null is an object too
+```javascript
+var bar = null;
+console.log(typeof bar === "object");  // logs true!
+
+// solution
+console.log((bar !== null) && (typeof bar === "object"));  // logs false
 ```
 
 </details>
