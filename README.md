@@ -141,6 +141,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 6. Bind this to other method
 7. Private and public methods
 8. Service classes
+9. Get class name
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -3677,6 +3678,31 @@ module.exports = class BrowserConnectionService {
       this.chromePort = port
   }
 }
+```
+
+
+<br><br>
+
+
+
+# Get class name
+```javascript
+class Rectangle {
+    // Class constructor
+    constructor(length, width) {
+        this.length = length;
+        this.width = width;
+    }
+    
+    // Class method
+    getArea() {
+        return this.length * this.width;
+    }
+}
+    
+var rectObj = new Rectangle(5, 10);
+console.log(rectObj.getArea()); // Outputs: 50
+console.log(rectObj.constructor.name) // Outputs: Rectangle
 ```
 
 
