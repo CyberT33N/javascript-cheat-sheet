@@ -182,6 +182,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 5. Object instances
 6. Mutability
 7. Null is an object too
+8. Get name of object
   
 # [Array](#_array)
 1. Clone unique
@@ -4518,6 +4519,32 @@ console.log(typeof bar === "object");  // logs true!
 // solution
 console.log((bar !== null) && (typeof bar === "object"));  // logs false
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+# Get name of object
+```javascript
+var crazyObject = {a: true}
+Object.keys({crazyObject})[0] // crazyObject
+```
+
 
 </details>
 
