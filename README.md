@@ -102,6 +102,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 6. .bind()
 7. Use Function as variable
 8. Higher-order functions
+9. Get name of function
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -2767,6 +2768,30 @@ const double = n => n * 2
 [1, 2, 3, 4].map(function(n){
     return n * 2
 }) // [ 2, 4, 6, 8 ]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+# Get name of function
+```javascript
+function test(){};
+console.log(test.name); // test
 ```
 
 </details>
