@@ -93,6 +93,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Do loop based on length of array
 2. do/while statement
 
+# [With](#_with)
+1. Include modules
+
 # [Functions](#_functions)
 1. function to String and back to function
 2. Generator functions
@@ -2545,6 +2548,168 @@ while (i < 5);
 
 
  <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="_with"><h1>With</h1></a>
+  
+<details><summary>Click to expand..</summary>
+  
+# Guides
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with
+
+  
+# Include modules
+```javascript
+// app.js
+const rp = require('request-promise')
+const rpn = require('request-promise-native')
+const axios = require('axios')
+
+module.exports = {
+  axios, rp, rpn
+}
+
+
+
+// sample.js
+const requirements = require('./app')
+
+with (testRequirements) {
+  async function getUser() {
+    try {
+      const response = await axios.get('/user?ID=12345');
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+```
+
+<br><br>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
