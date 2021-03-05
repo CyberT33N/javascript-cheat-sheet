@@ -187,6 +187,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 6. Mutability
 7. Null is an object too
 8. Get name of object
+9. Create new variable from object
   
 # [Array](#_array)
 1. Clone unique
@@ -4729,11 +4730,13 @@ console.log((bar !== null) && (typeof bar === "object"));  // logs false
 
 
 
+<br><br>
 
-
-
-
-
+# Get name of object
+```javascript
+var crazyObject = {a: true}
+Object.keys({crazyObject})[0] // crazyObject
+```
 
 
 
@@ -4743,12 +4746,12 @@ console.log((bar !== null) && (typeof bar === "object"));  // logs false
 
 <br><br>
 
-# Get name of object
+# Create new variable from object
 ```javascript
-var crazyObject = {a: true}
-Object.keys({crazyObject})[0] // crazyObject
+var test = {body: "test"}
+var {body: testbody} = test
+console.log(testbody) // "test"
 ```
-
 
 </details>
 
