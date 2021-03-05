@@ -877,6 +877,9 @@ voteable = (age < 18) ? "Too young":"Old enough";
 voteable = age < 18 ? "Too young":"Old enough";
 ```
 
+
+
+
 <br><br>
 
 # Spread Operator
@@ -968,6 +971,16 @@ console.log(result); // 'OK'
 ```
 
 
+## Logical OR
+- It is important to know that javascript will execute all stuff that is listed with those logical OR operators when something has a higher priority. This means that when you pass a Ternary Operator then it will get executed even when the first case is true because it has higher priority. You can use brackets to prevent this.
+
+- Example:
+```javascript
+const res = name || lastname
+
+// Use brackets to prevent execution of the Ternary Operator part
+const res = name || (lastname || (name.startsWith('Lisa') ? await checkName() : 0))
+```
 
 
 
