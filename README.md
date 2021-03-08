@@ -49,6 +49,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Null Object Pattern
 4. Factory Pattern
 5. Proxy Pattern
+6. Dependency Injection Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -1643,6 +1644,58 @@ console.log(proxy.getValue("Litecoin"))
 console.log(proxy.getValue("Ethereum"))
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+
+# Dependency Injection Pattern
+
+<br>
+
+## Guides
+- https://www.youtube.com/watch?v=0X1Ns2NRfks
+
+<br><br>
+
+```javascript
+
+```
 
 </details>
 
