@@ -31,21 +31,22 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Operators](#_operators)
 1. Conditional Operators
-  <br> 1.1 Ternary
+  - 1.1 Ternary
 2. Spread Operator
-  <br> 2.1 convert array to paramater
-  <br> 2.2 Object destructuring
+  - 2.1 convert array to paramater
+  - 2.2 Object destructuring
 3. Logical Operator
-  <br> Nullish Coalescing Operator
+  - Nullish Coalescing Operator
 4. Condition at variable decleration
  
 # [Constructors](#_constructors)
 1. Set()
-2. 
+
+
 # [Design Pattern](#_design-pattern)
 1. Singleton Pattern
 2. Builder Pattern
-  <br> 2.1 Default function parameter
+  - 2.1 Default function parameter
 3. Null Object Pattern
 4. Factory Pattern
 5. Proxy Pattern
@@ -63,16 +64,16 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 8. Remove Attribute
 9. Data Attribute
 10. Classes
-  <br> 10.1 toggle (switch) class
+  - 10.1 toggle (switch) class
 11. Styles
 12. Event Listener
-  <br> 12.1 addEventListener() / Dispatching custom events
-  <br> 12.2 Listen to multiple elements with same CSS Selector
-  <br> 12.3 Difference between event.target & event.currentTarget
-  <br> 12.4 Event bubbling
-     <br> 12.4.1 Guides
-     <br> 12.4.2 event.target does not bubble
-     <br> 12.4.3 Stop bubbling
+  - 12.1 addEventListener() / Dispatching custom events
+  - 12.2 Listen to multiple elements with same CSS Selector
+  - 12.3 Difference between event.target & event.currentTarget
+  - 12.4 Event bubbling
+     - 12.4.1 Guides
+     - 12.4.2 event.target does not bubble
+     - 12.4.3 Stop bubbling
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -112,16 +113,16 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
 2. CJS
-  <br>3.1 export all functions
-  <br>3.2 export specific function
-  <br>3.3 include parameter
-  <br>3.4 export class
+  - 3.1 export all functions
+  - 3.2 export specific function
+  - 3.3 include parameter
+  - 3.4 export class
 3. ESM
-  <br>3.1 Features
-  <br>3.2 How to enable?
-  <br>3.3 Export / Import
-  <br>3.4 Client Side
-  <br>3.5 No require, exports, module.exports, __filename, __dirname
+  - 3.1 Features
+  - 3.2 How to enable?
+  - 3.3 Export / Import
+  - 3.4 Client Side
+  - 3.5 No require, exports, module.exports, __filename, __dirname
 
 # [Prototypes](#_prototypes)
 1. Instantiate Object with Object.create (OLD METHOD)
@@ -172,19 +173,19 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Custom name of function chain
 3. Object is not equal Object
 4. Object constructor
-  <br> 4.1 .assign()
-  <br> 4.2 .create()
-  <br> 4.3 .defineProperties()
-  <br> 4.4 .freeze()
-  <br> 4.5 .fromEntries()
-  <br> 4.6 .getOwnPropertyNames()
-  <br> 4.7 .hasOwnProperty()
-  <br> 4.8 .is()
-  <br> 4.9 .isExtensible()
-  <br> 4.10 .isFrozen()
-  <br> 4.11 .isPrototypeOf()
-  <br> 4.12 .keys()
-  <br> 4.13 .values()
+  - 4.1 .assign()
+  - 4.2 .create()
+  - 4.3 .defineProperties()
+  - 4.4 .freeze()
+  - 4.5 .fromEntries()
+  - 4.6 .getOwnPropertyNames()
+  - 4.7 .hasOwnProperty()
+  - 4.8 .is()
+  - 4.9 .isExtensible()
+  - 4.10 .isFrozen()
+  - 4.11 .isPrototypeOf()
+  - 4.12 .keys()
+  - 4.13 .values()
 5. Object instances
 6. Mutability
 7. Null is an object too
@@ -200,33 +201,33 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 4. get random item from array
 5. .from()
 6. prototype
-  <br> 6.1 .values()
-  <br> 6.2 .unshift()
-  <br> 6.3 .splice()
-  <br> 6.4 .sort()
-  <br> 6.5 .some()
-  <br> 6.6 .slice()
-  <br> 6.7 .shift()
-  <br> 6.8 .reverse()
-  <br> 6.9 .reduce()
-  <br> 6.10 .push()
-  <br> 6.11 .pop()
-  <br> 6.12 .keys()
-  <br> 6.13 .join()
-  <br> 6.14 .indexOf()
-  <br> 6.15 .includes()
-  <br> 6.16 .forEach()
-  <br> 6.17 .flat()
-  <br> 6.18 .flatIndex()
-  <br> 6.19 .find()
-  <br> 6.20 .filter()
-  <br> 6.21 .fill()
-  <br> 6.22 .every()
-  <br> 6.23 .entries()
-  <br> 6.24 .concat()
-  <br> 6.25 .copyWithin()
-  <br> 6.26 Map
-      <br> 6.26.1 Convert Array to Array with Objects
+  - 6.1 .values()
+  - 6.2 .unshift()
+  - 6.3 .splice()
+  - 6.4 .sort()
+  - 6.5 .some()
+  - 6.6 .slice()
+  - 6.7 .shift()
+  - 6.8 .reverse()
+  - 6.9 .reduce()
+  - 6.10 .push()
+  - 6.11 .pop()
+  - 6.12 .keys()
+  - 6.13 .join()
+  - 6.14 .indexOf()
+  - 6.15 .includes()
+  - 6.16 .forEach()
+  - 6.17 .flat()
+  - 6.18 .flatIndex()
+  - 6.19 .find()
+  - 6.20 .filter()
+  - 6.21 .fill()
+  - 6.22 .every()
+  - 6.23 .entries()
+  - 6.24 .concat()
+  - 6.25 .copyWithin()
+  - 6.26 Map
+      - 6.26.1 Convert Array to Array with Objects
 7. .flat()
 
 
@@ -349,8 +350,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 8. Difference between let, var & const
 9. Destructuring
 10. Microservices
-  <br>10.1 Object-oriented
-<br>11. YAML
+  - 10.1 Object-oriented
+- 11. YAML
 
 </details>
 
