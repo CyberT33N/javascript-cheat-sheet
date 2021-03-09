@@ -189,6 +189,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. Null is an object too
 8. Get name of object
 9. Create new variable from object
+10. Usage of this
   
 # [Array](#_array)
 1. Clone unique
@@ -4843,6 +4844,28 @@ var test = {body: "test"}
 var {body: testbody} = test
 console.log(testbody) // "test"
 ```
+
+
+
+
+
+
+<br><br>
+
+# Usage of this
+```javascript
+const obj = {
+    multiply(x, y) {
+        return x * y;
+    },
+    squared(x) {
+        return this.multiply(x, x);
+    },
+};
+
+console.log(obj.squared(2)); // 4
+```
+
 
 </details>
 
