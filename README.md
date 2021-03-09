@@ -42,7 +42,6 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Constructors](#_constructors)
 1. Set()
 
-
 # [Design Pattern](#_design-pattern)
 1. Singleton Pattern
 2. Builder Pattern
@@ -144,7 +143,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Static (isolated function)
 3. Subclasses (Inheritance)
 4. Multiple Inheritance (Mixins)
-5. Event listener this inside of method
+5. Event listener
 6. Bind this to other method
 7. Private and public methods
 8. Service classes
@@ -3830,9 +3829,10 @@ console.log('b: ' + b.example); // <-- will print a
 
 
 
-# Event listener this inside of method
+# Event listener
 - Instead of this we can use event.target (http://www.w3.org/TR/DOM-Level-2-Events/events.html)
 ```javascript
+// example #1
 export class User {
   personClick() {
     $(document).on('click', '.person', function(event) {
@@ -3841,6 +3841,21 @@ export class User {
     });
   };
 };
+
+
+// example #2
+class Cat extends EventEmitter {
+  constructor() {
+    super();
+    this.on('wave', this.onWave);
+  }
+  onWave() {
+    console.log('prototype wave');
+  }
+}
+
+var cat = new Cat();
+cat.emit('wave');
 ```
 
 
