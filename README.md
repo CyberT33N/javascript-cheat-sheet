@@ -193,6 +193,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 9. Create new variable from object
 10. Usage of this
 11. Intercepting method calls
+12. Object Accessors
+  - 12.1 get
+  - 12.2 set
   
 # [Array](#_array)
 1. Clone unique
@@ -4864,6 +4867,70 @@ tracedObj.multiply(2,7)
 // multiply[2,7] -> 14
 // 14
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+# Object Accessors (https://www.w3schools.com/js/js_object_accessors.asp)
+
+<br><br>
+
+## get
+- This example uses a lang property to get the value of the language property.
+```javascript
+// Create an object:
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  language : "en",
+  get lang() {
+    return this.language;
+  }
+};
+
+// Display data from the object using a getter:
+document.getElementById("demo").innerHTML = person.lang;
+```
+
+<br><br>
+
+## set
+- This example uses a lang property to set the value of the language property.
+```javascript
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  language : "",
+  set lang(lang) {
+    this.language = lang;
+  }
+};
+
+// Set an object property using a setter:
+person.lang = "en";
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.language;
+```
+
+
+
 
 
 </details>
