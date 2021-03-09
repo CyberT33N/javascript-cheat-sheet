@@ -190,6 +190,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 8. Get name of object
 9. Create new variable from object
 10. Usage of this
+11. Intercepting method calls
   
 # [Array](#_array)
 1. Clone unique
@@ -4864,6 +4865,55 @@ const obj = {
 };
 
 console.log(obj.squared(2)); // 4
+```
+
+
+
+
+
+
+
+
+
+<br><br>
+
+# Intercepting method calls
+- If you want to intercept method calls via a proxy, there is one challenge: you can intercept the operation get (getting property values) and you can intercept the operation apply (calling a function), but there is no single operation for method calls that you could intercept. That’s because method calls are viewed as two separate operations: First a get to retrieve a function, then an apply to call that function.
+- 
+<br><br>
+
+Therefore, you must intercept get and return a function that intercepts the function call. The following code demonstrates how that is done.
+```javascript
+function traceMethodCalls(obj) {
+    const handler = {
+        get(target, propKey, receiver) {
+            const origMethod = target[propKey];
+            return function (...args) {
+                const result = origMethod.apply(this, args);
+                console.log(propKey + JSON.stringify(args)
+                    + ' -> ' + JSON.stringify(result));
+                return result;
+            };
+        }
+    };
+    return new Proxy(obj, handler);
+}
+
+
+const obj = {
+    multiply(x, y) {
+        return x * y;
+    },
+    squared(x) {
+        return this.multiply(x, x);
+    },
+};
+
+
+const tracedObj = traceMethodCalls(obj);
+tracedObj.multiply(2,7)
+// multiply[2,7] -> 14
+// 14
 ```
 
 
