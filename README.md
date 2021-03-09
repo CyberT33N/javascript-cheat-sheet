@@ -50,6 +50,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 4. Factory Pattern
 5. Proxy Pattern
 6. Dependency Injection Pattern
+7. PubSub Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -1203,7 +1204,10 @@ console.log(set1.has(6));
 
 
 
-# Singleton
+
+
+
+# Singleton Pattern
 
 <br>
 
@@ -1241,17 +1245,21 @@ console.log('b: ' + b.example); // <-- will print a
 
 
 
- <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
+
+
+
+
+
+
+
+
 
 
 
 
 
  
-# Builder
+# Builder Pattern
 
 <br>
 
@@ -1326,34 +1334,7 @@ console.log(multiply(5));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
-
-
-# Null Object Pattern
+## Null Object Pattern
 
 <br>
 
@@ -1430,46 +1411,7 @@ function printUser(id) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
-
-
-# Factory Pattern
+## Factory Pattern
 - Is in the **creation** category of design patterns which means providing object creation mechanism for flexibility and reusability. This is usefully when you want to create many types of different objects.
 
 <br>
@@ -1532,49 +1474,7 @@ for(const emp of employees){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
-
-
-# Proxy Pattern
+## Proxy Pattern
 - Use 1 Object (known as the proxy) as Placeholder for another Object
 
 <br>
@@ -1658,35 +1558,7 @@ console.log(proxy.getValue("Ethereum"))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <br><br>
- _____________________________________________________
- _____________________________________________________
-<br><br>
-
-
-# Dependency Injection Pattern
+## Dependency Injection Pattern
 
 <br>
 
@@ -1735,6 +1607,82 @@ describe('getAnimals', () => {
       })
   })
 })
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## PubSub Pattern
+
+<br>
+
+## Guides
+- https://www.youtube.com/watch?v=nQRXi1SVOow
+
+<br><br>
+
+```javascript
+//events - a super-basic Javascript (publish subscribe) pattern
+
+var events = {
+  events: {},
+  on: function (eventName, fn) {
+    this.events[eventName] = this.events[eventName] || [];
+    this.events[eventName].push(fn);
+  },
+  off: function(eventName, fn) {
+    if (this.events[eventName]) {
+      for (var i = 0; i < this.events[eventName].length; i++) {
+        if (this.events[eventName][i] === fn) {
+          this.events[eventName].splice(i, 1);
+          break;
+        }
+      };
+    }
+  },
+  emit: function (eventName, data) {
+    if (this.events[eventName]) {
+      this.events[eventName].forEach(function(fn) {
+        fn(data);
+      });
+    }
+  }
+};
 ```
 
 </details>
