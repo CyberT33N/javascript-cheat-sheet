@@ -74,6 +74,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
      - 12.4.1 Guides
      - 12.4.2 event.target does not bubble
      - 12.4.3 Stop bubbling
+  - 12.5 on and once
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -247,7 +248,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Check for click
 3. Check browser
 4. Event Listener
-  <br>4.1 Manually trigger event listener
+  - 4.1 Manually trigger event listener
 5. jQuery use !important
 6. Handle form submits
 7. Get scroll direction
@@ -2144,6 +2145,29 @@ element.removeEventListener("click", true);
 element.removeEventListener("click", {capture: true});  
 ```
 <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+## .on and .once
+```javascript
+// .on (every time the listener gets fired)
+browser.on('disconnected', coolFunctionHere)
+
+// .once (the listener will only 1 time get fired)
+browser.once('disconnected', coolFunctionHere)
+```
+
 
 </details>
 
