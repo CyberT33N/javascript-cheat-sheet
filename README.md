@@ -54,6 +54,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. PubSub Pattern
 8. Module Pattern
 9. Revealing Module Pattern
+10. Constructor Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -1909,6 +1910,76 @@ import ShoppingDataType from 'libs/module';
 
 var shopping = new ShoppingDataType;
 console.log(shopping.getShoppingList());
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Constructor Pattern
+- In classical object-oriented programming languages, a constructor is a special method used to initialize a newly created object once memory has been allocated for it. In JavaScript, as almost everything is an object, we're most often interested in object constructors.
+
+<br>
+
+## Guides
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#constructorpatternjavascript
+
+<br><br>
+```javascript
+function Car( model, year, miles ) {
+ 
+  this.model = model;
+  this.year = year;
+  this.miles = miles;
+ 
+  this.toString = function () {
+    return this.model + " has done " + this.miles + " miles";
+  };
+}
+ 
+// Usage:
+ 
+// We can create new instances of the car
+var civic = new Car( "Honda Civic", 2009, 20000 );
+var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
+ 
+// and then open our browser console to view the
+// output of the toString() method being called on
+// these objects
+console.log( civic.toString() );
+console.log( mondeo.toString() );
 ```
 
 </details>
