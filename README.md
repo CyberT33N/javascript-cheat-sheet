@@ -51,7 +51,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 5. Proxy Pattern
 6. Dependency Injection Pattern
 7. PubSub Pattern
-8. Module Pattern
+8. Revealing Module Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -1710,7 +1710,7 @@ var events = {
 
 
 
-## Module Pattern
+## Revealing Module Pattern
 
 <br>
 
