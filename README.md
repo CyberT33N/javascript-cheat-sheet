@@ -1986,6 +1986,7 @@ console.log( mondeo.toString() );
 <br><br><br><br>
 
 ## Observer Pattern
+- Define a one to many dependency relationship. From subject object to many other objects (observers). These observers are functions which watch the subject and wait for trigger before they run. It may reminder you to event listener.
 
 <br><br>
 
