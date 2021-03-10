@@ -51,7 +51,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 5. Proxy Pattern
 6. Dependency Injection Pattern
 7. PubSub Pattern
-8. Revealing Module Pattern
+8. Module Pattern
+9. Revealing Module Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -1706,11 +1707,75 @@ var events = {
 
 
 
+## Module Pattern
+- Modules are an integral piece of any robust application's architecture and typically help in keeping the units of code for a project both cleanly separated and organized.
+
+<br>
+
+## Guides
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+
+<br><br>
+```javascript
+var myObjectLiteral = {
+ 
+    variableKey: variableValue,
+ 
+    functionKey: function () {
+      // ...
+    }
+};
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 ## Revealing Module Pattern
+- The main Goal of this design pattern is to isolate variabels/functions that you can not access them from outside. The only way to access/change them is by returning them.
 
 <br>
 
@@ -1718,73 +1783,48 @@ var events = {
 - https://www.youtube.com/watch?v=SKBmJ9P6OAk
 
 <br><br>
-
-```html
-<div id="peopleModule"><h1>People</h1>
-    <input placeholder="name" type="text">
-    <button id="addPerson">Add Person</button>
-    <ul id="people">
-	<script id="people-template" type="text/template">
-	    {{#people}}
-		<li>
-		    <span>{{.}}</span>
-		    <i class="del">X</i>
-		</li>
-	    {{/people}}
-	</script>
-    </ul>
-</div>
-```
-
 ```javascript
-var people = (function(){
-    var people = ['Will', 'Steve'];
+// Before ES6
+(function() {
 
-    //cache DOM
-    var $el = $('#peopleModule');
-    var $button = $el.find('button');
-    var $input = $el.find('input');
-    var $ul = $el.find('ul');
-    var template = $el.find('#people-template').html();
-
-    //bind events
-    $button.on('click', addPerson);
-    $ul.delegate('i.del', 'click', deletePerson);
-
-    _render();
-
-    function _render() {
-       $ul.html(Mustache.render(template, {people: people}));
-    }
-
-    function addPerson(value) {
-        var name = (typeof value === "string") ? value : $input.val();
-        people.push(name);
-        _render();
-        $input.val('');
-    }
-
-    function deletePerson(event) {
-        var i;
-        if (typeof event === "number") {
-            i = event;
-        } else {
-            var $remove = $(event.target).closest('li');
-            i = $ul.find('li').index($remove);
-        }
-        people.splice(i, 1);
-        _render();
-    }
+    // declare private variables and/or functions
 
     return {
-        addPerson: addPerson,
-        deletePerson: deletePerson
-    };
+      // declare public variables and/or functions
+    }
 
 })();
 
-//people.addPerson("Jake");
-//people.deletePerson(0);
+
+
+
+// After ES6
+/* lib/module.js */
+
+class ShoppingDataType {
+  constructor() {
+    // private properties.
+    this.shoppingList = ['coffee', 'chicken', 'pizza']
+  }
+
+  // public methods
+  getShoppingList() {
+    return this.shoppingList.join(", ")
+  }
+
+  addItem(item) {
+   this.shoppingList.push(item)
+  }
+}
+
+export default ShoppingDataType;
+
+
+/* main.js */
+import ShoppingDataType from 'libs/module';
+
+var shopping = new ShoppingDataType;
+console.log(shopping.getShoppingList());
 ```
 
 </details>
