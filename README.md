@@ -55,6 +55,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 8. Module Pattern
 9. Revealing Module Pattern
 10. Constructor Pattern
+11. Observer Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -1707,7 +1708,7 @@ var events = {
 
 
 
-
+<br><br><br><br>
 
 ## Module Pattern
 - Modules are an integral piece of any robust application's architecture and typically help in keeping the units of code for a project both cleanly separated and organized.
@@ -1719,52 +1720,6 @@ var events = {
 
 <br><br>
 ```javascript
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
 var myModule = {
  
   myProperty: "someValue",
@@ -1782,7 +1737,7 @@ var myModule = {
   },
  
   // output a value based on the current configuration
-  reportMyConfig: function () {
+  reportMyConfig: function () {​
     console.log( "Caching is: " + ( this.myConfig.useCaching ? "enabled" : "disabled") );
   },
  
@@ -1857,7 +1812,7 @@ myModule.reportMyConfig();
 
 
 
-
+<br><br><br><br>
 
 ## Revealing Module Pattern
 - The main Goal of this design pattern is to isolate variabels/functions that you can not access them from outside. The only way to access/change them is by returning them.
@@ -1944,7 +1899,7 @@ console.log(shopping.getShoppingList());
 
 
 
-
+<br><br><br><br>
 
 
 
@@ -1980,6 +1935,112 @@ var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
 // these objects
 console.log( civic.toString() );
 console.log( mondeo.toString() );
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+## Observer Pattern
+
+<br><br>
+
+## Guides
+- https://www.youtube.com/watch?v=45TeJEmcqk8
+
+<br><br>
+```javascript
+/*
+    Observer Design Pattern -> https://www.youtube.com/watch?v=45TeJEmcqk8
+    Author: DevSage (Youtube) -> https://www.youtube.com/DevSage
+*/
+
+function Subject()
+{
+  this.observers = [] // array of observer functions
+}
+
+Subject.prototype = {
+  subscribe: function(fn)
+  {
+    this.observers.push(fn)
+  },
+  unsubscribe: function(fnToRemove)
+  {
+    this.observers = this.observers.filter( fn => {
+      if(fn != fnToRemove)
+        return fn
+    })
+  },
+  fire: function()
+  {
+    this.observers.forEach( fn => {
+      fn.call()
+    })
+  }
+}
+
+const subject = new Subject()
+
+function Observer1()
+{
+  console.log("Observer 1 Firing!")
+}
+
+function Observer2()
+{
+  console.log("Observer 2 Firing!")
+}
+
+subject.subscribe(Observer1)
+subject.subscribe(Observer2)
+subject.fire() 
+
+subject.unsubscribe(Observer1)
+subject.fire()
 ```
 
 </details>
