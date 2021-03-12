@@ -79,7 +79,6 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
      - 12.4.1 Guides
      - 12.4.2 event.target does not bubble
      - 12.4.3 Stop bubbling
-  - 12.5 on and once
 
 # [Destructure](#_destructure)
 1. Destructure instance/member variables
@@ -2612,19 +2611,6 @@ element.removeEventListener("click", {capture: true});
 
 
 
-
-
-
-<br><br>
-
-## .on and .once
-```javascript
-// .on (every time the listener gets fired)
-browser.on('disconnected', coolFunctionHere)
-
-// .once (the listener will only 1 time get fired)
-browser.once('disconnected', coolFunctionHere)
-```
 
 
 </details>
