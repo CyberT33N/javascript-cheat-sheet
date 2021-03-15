@@ -4,7 +4,7 @@ Javascript Cheat Sheet for the most common stuff..
 
 
 
-
+ 
 <br><br>
 
 # Summary
