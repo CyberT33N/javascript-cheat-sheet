@@ -89,7 +89,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Destructure Examples
 
 # [Switch](#_switch)
-1. Add a section that will alert("Neither") if fruits is neither "banana" nor "apple"
+1. Use unique scope for each case
 
 # [forEach](#_foreach)
 1. Iterate through all keys of nested object
@@ -3326,9 +3326,8 @@ big
 
 <br><br>
 
-# Add a section that will alert("Neither") if fruits is neither "banana" nor "apple".
 ```javascript
-switch("Ice") {
+switch("Banana") {
   case "Banana":
     alert("Hello")
     break;
@@ -3340,7 +3339,112 @@ switch("Ice") {
 }
 ```
 
+<br><br>
+
+
+# Use unique scope for each case
+```javascript
+// This will not work because result is already definied. (Uncaught SyntaxError: Identifier 'result' has already been declared)
+switch("Banana") {
+  case "Banana":
+    const result = true
+    console.log("Banana");
+    break;
+  case "Apple":
+    const result = true
+    console.log("Apple");
+    break;
+  default:
+    alert("Neither");
+}
+
+
+
+// This will will work because each case got now his own scope.
+switch("Banana") {
+  case "Banana": {
+    const result = true
+    console.log("Banana");
+    break;
+  }
+  case "Apple": {
+    const result = true
+    console.log("Apple");
+    break;
+  }
+  default:
+    alert("Neither");
+}
+```
+
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
