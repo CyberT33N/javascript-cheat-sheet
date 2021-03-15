@@ -4168,6 +4168,17 @@ function printName(allDetails, name, age){
 const name = 'Laura'
 const age = 20
 printName`${name}${age}`
+
+
+
+// ---- EXAMPLE #3 - Multiple Param but use Array ----
+function printName(allDetails, ...array){
+  console.log(`HI my name is ${array[0]} and I am ${array[1]}`);
+};
+
+const name = 'Laura'
+const age = 20
+printName`${name}${age}`
 ```
 
 </details>
