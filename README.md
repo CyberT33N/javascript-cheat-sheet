@@ -204,6 +204,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 12. Object Accessors
   - 12.1 get
   - 12.2 set
+13. Sub-classing
   
 # [Array](#_array)
 1. Clone unique
@@ -5750,6 +5751,89 @@ document.getElementById("demo").innerHTML = person.language;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+# Sub-classing
+- Sub-classing is a term that refers to inheriting properties for a new object from a base or superclass object. In traditional object-oriented programming, a class B is able to extend another class A. Here we consider A a superclass and B a subclass of A. As such, all instances of B inherit the methods from A. B is however still able to define its own methods, including those that override methods originally defined by A.
+
+## Guide
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#mixinpatternjavascript
+
+<br><br>
+
+```javascript
+var Person = function( firstName, lastName ){
+ 
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.gender = "male";
+ 
+};
+
+
+// a new instance of Person can then easily be created as follows:
+var clark = new Person( "Clark", "Kent" );
+ 
+ 
+// Define a subclass constructor for for "Superhero":
+var Superhero = function( firstName, lastName, powers ){
+ 
+    // Invoke the superclass constructor on the new object
+    // then use .call() to invoke the constructor as a method of
+    // the object to be initialized.
+ 
+    Person.call( this, firstName, lastName );
+ 
+    // Finally, store their powers, a new array of traits not found in a normal "Person"
+    this.powers = powers;
+};
+ 
+Superhero.prototype = Object.create( Person.prototype );
+var superman = new Superhero( "Clark", "Kent", ["flight","heat-vision"] );
+console.log( superman );
+ 
+// Outputs Person attributes as well as powers
+```
 
 </details>
 
