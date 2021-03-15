@@ -4161,13 +4161,13 @@ printName`Laura`
 
 
 // ---- EXAMPLE #2 - Multiple Param ----
-function printName(info){
-  console.log(`HI my name is ${info[0]} and I am ${info[1]}`);
+function printName(allDetails, name, age){
+  console.log(`HI my name is ${name} and I am ${age}`);
 };
 
 const name = 'Laura'
 const age = 20
-printName`Laura${''}20`
+printName`${name}${age}`
 ```
 
 </details>
