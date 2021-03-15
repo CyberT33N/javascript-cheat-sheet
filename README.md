@@ -59,6 +59,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 12. Mediator Pattern
 13. Prototype Pattern
 14. Command Pattern
+15. Facade Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -2372,6 +2373,114 @@ class AddThenMultiplyCommand {
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+## Facade Pattern
+- When we put up a facade, we present an outward appearance to the world which may conceal a very different reality. This was the inspiration for the name behind the next pattern we're going to review - the Facade pattern. This pattern provides a convenient higher-level interface to a larger body of code, hiding its true underlying complexity. Think of it as simplifying the API being presented to other developers, something which almost always improves usability.
+
+
+
+<br><br>
+
+## Guides
+- https://www.youtube.com/watch?v=fHPa5xzbpaA
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#facadepatternjavascript
+
+<br><br>
+```javascript
+function getUsers() {
+  return getFetch('https://jsonplaceholder.typicode.com/users')
+}
+
+function getUserPosts(userId) {
+  return getFetch('https://jsonplaceholder.typicode.com/posts', {
+    userId: userId
+  })
+}
+
+getUsers().then(users => {
+  users.forEach(user => {
+    getUserPosts(user.id).then(posts => {
+      console.log(user.name)
+      console.log(posts.length)
+    })
+  })
+})
+
+// function getFetch(url, params = {}) {
+//   const queryString = Object.entries(params).map(param => {
+//     return `${param[0]}=${param[1]}`
+//   }).join('&')
+//   return fetch(`${url}?${queryString}`, {
+//     method: "GET",
+//     headers: { "Content-Type": "application/json" }
+//   }).then(res => res.json())
+// }
+
+function getFetch(url, params = {}) {
+  return axios({
+    url: url,
+    method: "GET",
+    params: params
+  }).then(res => res.data)
+}
+```
 </details>
 
 
