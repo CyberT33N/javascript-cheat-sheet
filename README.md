@@ -57,6 +57,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 10. Constructor Pattern
 11. Observer Pattern
 12. Mediator Pattern
+13. Prototype Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -2147,6 +2148,81 @@ bob.send("Hey, John", john)
 john.send("What's up, Bob", bob)
 tim.send("John, are you ok?", john)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+## Prototype Pattern
+
+<br><br>
+
+## Guides
+- https://www.youtube.com/watch?v=doXpW5AD60Q
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#prototypepatternjavascript
+
+<br><br>
+```javascript
+var myCar = {
+ 
+  name: "Ford Escort",
+ 
+  drive: function () {
+    console.log( "Weeee. I'm driving!" );
+  },
+ 
+  panic: function () {
+    console.log( "Wait. How do you stop this thing?" );
+  }
+ 
+};
+ 
+// Use Object.create to instantiate a new car
+var yourCar = Object.create( myCar );
+ 
+// Now we can see that one is a prototype of the other
+console.log( yourCar.name );
+```
+
+
+
 </details>
 
 
