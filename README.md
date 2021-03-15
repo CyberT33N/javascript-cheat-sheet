@@ -120,6 +120,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 8. Higher-order functions
 9. Get name of function
 10. Pass Params without braces
+11. Generator Functions
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -4181,6 +4182,73 @@ const age = 20
 printName`${name}${age}`
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+# Generator Functions (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/function*)
+- The function* declaration (function keyword followed by an asterisk) defines a generator function, which returns a Generator object.
+- In easy words *yield* almost act like return. It will make the function stop. Then we you call in future time *.next()* it will start at the last yield where we finished the function last time and then continue with the code inside of this function.
+
+```javascript
+function* generator(i) {
+  yield i;
+  yield i + 10;
+}
+
+const gen = generator(10);
+
+console.log(gen.next().value);
+// expected output: 10
+
+console.log(gen.next().value);
+// expected output: 20
+```
 </details>
 
 
