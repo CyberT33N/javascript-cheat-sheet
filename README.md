@@ -39,6 +39,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Logical Operator
   - Nullish Coalescing Operator
 4. Condition at variable decleration
+5. in Operator
  
 # [Constructors](#_constructors)
 1. Set()
@@ -883,50 +884,6 @@ _____________________________________________________
 # Conditional Operators
 
 
-
-
-
-<br><br>
-
-## in Operator (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/in)
-- The in operator returns true if the specified property is in the specified object or its prototype chain.
-
-```javascript
-/* ---- EXAMPLE #1 ----*/
-const car = { make: 'Honda', model: 'Accord', year: 1998 };
-
-if('make' in car) console.log(true);
-else console.log(false);
-
-
-
-
-
-
-
-/* ---- EXAMPLE #2 ----*/
-const car = { make: 'Honda', model: 'Accord', year: 1998 };
-
-console.log('make' in car);
-// expected output: true
-
-delete car.make;
-if ('make' in car === false) {
-  car.make = 'Suzuki';
-}
-
-console.log(car.make);
-// expected output: "Suzuki"
-```
-
-
-
-
-
-
-
-
-
 <br><br>
 
 ## Ternary Operator
@@ -1061,6 +1018,58 @@ const b = 2;
 const example = a > b
 console.log(example); // false
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+## in Operator (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/in)
+- The in operator returns true if the specified property is in the specified object or its prototype chain.
+
+```javascript
+/* ---- EXAMPLE #1 ----*/
+const car = { make: 'Honda', model: 'Accord', year: 1998 };
+
+if('make' in car) console.log(true);
+else console.log(false);
+
+
+
+
+
+
+
+/* ---- EXAMPLE #2 ----*/
+const car = { make: 'Honda', model: 'Accord', year: 1998 };
+
+console.log('make' in car);
+// expected output: true
+
+delete car.make;
+if ('make' in car === false) {
+  car.make = 'Suzuki';
+}
+
+console.log(car.make);
+// expected output: "Suzuki"
+```
+
+
 
 
 
