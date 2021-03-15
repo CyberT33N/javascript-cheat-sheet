@@ -119,6 +119,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. Use Function as variable
 8. Higher-order functions
 9. Get name of function
+10. Pass Params without braces
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -4127,13 +4128,46 @@ const double = n => n * 2
 
 
 
-
-
-
 # Get name of function
 ```javascript
 function test(){};
 console.log(test.name); // test
+```
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+# Pass Params without braces
+```javascript
+// ---- EXAMPLE #1 - Single Param ----
+function printName(name){
+  console.log('HI my name is: ' + name);
+};
+
+printName`Laura`
+
+
+
+// ---- EXAMPLE #2 - Multiple Param ----
+function printName(info){
+  console.log(`HI my name is ${info[0]} and I am ${info[1]}`);
+};
+
+const name = 'Laura'
+const age = 20
+printName`Laura${''}20`
 ```
 
 </details>
