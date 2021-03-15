@@ -58,6 +58,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 11. Observer Pattern
 12. Mediator Pattern
 13. Prototype Pattern
+14. Command Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -2191,6 +2192,7 @@ tim.send("John, are you ok?", john)
 <br><br><br><br>
 
 ## Prototype Pattern
+- The GoF refer to the prototype pattern as one which creates objects based on a template of an existing object through cloning.
 
 <br><br>
 
@@ -2221,6 +2223,153 @@ var yourCar = Object.create( myCar );
 console.log( yourCar.name );
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+## Command Pattern
+- The Command pattern aims to encapsulate method invocation, requests or operations into a single object and gives us the ability to both parameterize and pass method calls around that can be executed at our discretion. In addition, it enables us to decouple objects invoking the action from the objects which implement them, giving us a greater degree of overall flexibility in swapping out concrete classes (objects).
+
+<br><br>
+
+## Guides
+- https://www.youtube.com/watch?v=GQzfF5EMD7o
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#commandpatternjavascript
+
+<br><br>
+```javascript
+class Calculator {
+  constructor() {
+    this.value = 0
+    this.history = []
+  }
+
+  executeCommand(command) {
+    this.value = command.execute(this.value)
+    this.history.push(command)
+  }
+
+  undo() {
+    const command = this.history.pop()
+    this.value = command.undo(this.value)
+  }
+}
+
+class AddCommand {
+  constructor(valueToAdd) {
+    this.valueToAdd = valueToAdd
+  }
+
+  execute(currentValue) {
+    return currentValue + this.valueToAdd
+  }
+
+  undo(currentValue) {
+    return currentValue - this.valueToAdd
+  }
+}
+
+class SubtractCommand {
+  constructor(valueToSubtract) {
+    this.valueToSubtract = valueToSubtract
+  }
+
+  execute(currentValue) {
+    return currentValue - this.valueToSubtract
+  }
+
+  undo(currentValue) {
+    return currentValue + this.valueToSubtract
+  }
+}
+
+class MultiplyCommand {
+  constructor(valueToMultiply) {
+    this.valueToMultiply = valueToMultiply
+  }
+
+  execute(currentValue) {
+    return currentValue * this.valueToMultiply
+  }
+
+  undo(currentValue) {
+    return currentValue / this.valueToMultiply
+  }
+}
+
+class DivideCommand {
+  constructor(valueToDivide) {
+    this.valueToDivide = valueToDivide
+  }
+
+  execute(currentValue) {
+    return currentValue / this.valueToDivide
+  }
+
+  undo(currentValue) {
+    return currentValue * this.valueToDivide
+  }
+}
+
+class AddThenMultiplyCommand {
+  constructor(valueToAdd, valueToMultiply) {
+    this.addCommand = new AddCommand(valueToAdd)
+    this.multiplyCommand = new MultiplyCommand(valueToMultiply)
+  }
+
+  execute(currentValue) {
+    const newValue = this.addCommand.execute(currentValue)
+    return this.multiplyCommand.execute(newValue)
+  }
+
+  undo(currentValue) {
+    const newValue = this.multiplyCommand.undo(currentValue)
+    return this.addCommand.undo(newValue)
+  }
+}
+```
 
 
 </details>
