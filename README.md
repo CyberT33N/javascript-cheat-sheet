@@ -1038,7 +1038,7 @@ console.log(example); // false
 
 <br><br>
 
-## in Operator (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/in)
+# in Operator (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/in)
 - The in operator returns true if the specified property is in the specified object or its prototype chain.
 
 ```javascript
