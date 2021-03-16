@@ -7545,6 +7545,23 @@ return new Promise(async resolve => {
 <a name="_promise"><h1>Promise</h1></a>
 <details><summary>Click to expand..</summary>
 
+
+
+
+```javascript
+const promise1 = new Promise((resolve, reject) => {
+  throw 'Uh-oh!';
+});
+
+promise1.then( r => { 
+  // ..
+}).catch((error) => {
+  console.error(error);
+});
+```
+
+
+
 # async await for promise resolve
 ```javascript
 const load = name => new Promise( resolve => {
