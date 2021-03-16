@@ -291,8 +291,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. Combine Async with promise
 
 # [Promise](#_promise)
-1. async await for promise resolve
-2. Nested Functions
+1. Use then & catch with async functions where we resolve promise
+2. async await for promise resolve
+3. Nested Functions
 
 # [Wait](#_wait)
 1. Wait until some condition is true
@@ -7562,6 +7563,24 @@ promise1.then( r => {
 
 
 
+<br><br>
+
+# Use then & catch with async functions where we resolve promise
+```javascript
+async ensureConnected() {
+  const connection = await this.checkConnection()
+}
+
+this.ensureConnected().then( r => {
+  // ..
+}).catch((e) => {
+  throw new RuntimeError(e, undefined, {httpStatus: 500})
+});
+```
+
+<br><br>
+
+
 # async await for promise resolve
 ```javascript
 const load = name => new Promise( resolve => {
@@ -7569,6 +7588,8 @@ const load = name => new Promise( resolve => {
 });
 await load(window);
 ```
+
+<br><br>
 
 # Nested Functions
 ```javascript
