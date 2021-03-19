@@ -209,6 +209,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 12.1 get
   - 12.2 set
 13. Sub-classing
+14. Find the count of duplicate property values in an object
   
 # [Array](#_array)
 1. Clone unique
@@ -6260,6 +6261,71 @@ var superman = new Superhero( "Clark", "Kent", ["flight","heat-vision"] );
 console.log( superman );
  
 // Outputs Person attributes as well as powers
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+# Find the count of duplicate property values in an object
+```javascript
+var db = [
+  {Id: "201" , Player: "Nugent",Position: "Defenders"},
+  {Id: "202", Player: "Ryan",Position: "Forwards"},
+  {Id: "203" ,Player: "Sam",Position: "Forwards"},
+  {Id: "204", Player: "Bill",Position: "Midfielder"},
+  {Id: "205" ,Player: "Dave",Position: "Forwards"},
+];
+
+var counter = {};
+for (var i = 0; i < db.length; i += 1) {
+    counter[db[i].Position] = (counter[db[i].Position] || 0) + 1;
+}
+
+for (var key in counter) {
+    if (counter[key] > 1) {
+        console.log("we have ", key, " duplicated ", counter[key], " times");
+    }
+}
 ```
 
 </details>
