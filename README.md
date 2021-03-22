@@ -246,6 +246,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 6.26 Map
       - 6.26.1 Convert Array to Array with Objects
 7. .flat()
+8. remove all duplicates from an array of objects by property
 
 
 # [Link](#_link)
@@ -7010,6 +7011,22 @@ arr3.flat(2);
 
 
 
+<br><br>
+
+
+# remove all duplicates from an array of objects by property
+- https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects
+```javascript
+# Find unique id's in an array.
+arr.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
+
+# Unique by multiple properties ( place and name )
+arr.filter((v,i,a)=>a.findIndex(t=>(t.place === v.place && t.name===v.name))===i)
+
+# Unique by all properties (This will be slow for large arrays)
+arr.filter((v,i,a)=>a.findIndex(t=>(JSON.stringify(t) === JSON.stringify(v)))===i)
+```
+
 
 
 </details>
@@ -7019,7 +7036,68 @@ arr3.flat(2);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
