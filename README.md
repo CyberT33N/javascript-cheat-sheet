@@ -210,6 +210,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 12.2 set
 13. Sub-classing
 14. Find the count of duplicate property values in an object
+15. Beautify object
   
 # [Array](#_array)
 1. Clone unique
@@ -6327,6 +6328,27 @@ for (var key in counter) {
         console.log("we have ", key, " duplicated ", counter[key], " times");
     }
 }
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+# Beautify object
+```javascript
+JSON.stringify(obj, null, 4))
 ```
 
 </details>
