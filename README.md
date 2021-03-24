@@ -359,6 +359,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Check if iOS
 3. Check if Safari Browser
 
+# [Regex](#_regex)
+1. .replace() with regex
+
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
 2. Object-oriented Programming (OOP)
@@ -8560,6 +8563,117 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 ```  
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="_regex"><h1>Regex</h1></a>
+<details><summary>Click to expand..</summary>
+
+
+# .replace() with regex
+https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff
+
+```javascript
+var url = 'lolfoo';
+url = url.replace( new RegExp("foo","g"),"");
+console.log(url);
+```
+
+</details>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
