@@ -361,6 +361,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Regex](#_regex)
 1. .replace() with regex
+2. Capturing groups
 
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
@@ -8609,10 +8610,29 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff
 
 ```javascript
+// method #1
 var url = 'lolfoo';
-url = url.replace( new RegExp("foo","g"),"");
+url = url.replace( /foo/g, "");
+console.log(url);
+
+// method #2
+var url = 'lolfoo';
+url = url.replace( new RegExp("foo","g"), "");
 console.log(url);
 ```
+
+
+<br><br>
+
+# Capturing groups
+```javascript
+let re = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/u;
+let result = re.exec('2015-01-02');
+// result.groups.year === '2015';
+// result.groups.month === '01';
+// result.groups.day === '02';
+```
+
 
 </details>
 
