@@ -8858,7 +8858,7 @@ function myStopFunction() {
   clearTimeout(myVar);
 }
 ```
-
+Log/h1>
 </details>
 
 <br><br>
@@ -8955,7 +8955,7 @@ function myStopFunction() {
 
 
 
-<a name="_log"><h1>Log/h1></a>
+<a name="_log"><h1>Log</h1></a>
 <details><summary>Click to expand..</summary>
 
 
