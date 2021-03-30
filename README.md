@@ -8965,7 +8965,11 @@ Log/h1>
 
 ## Use CSS
 ```javascript
+// ---- EXAMPLE #1 ----
 console.log('%cHello..', 'font-weight: bold; color: red')
+
+// ---- EXAMPLE #2 ----
+console.log('%cHello..%cNew Color here..', 'font-weight: bold; color: red', 'font-weight: bold; color: green')
 ```
 
 
