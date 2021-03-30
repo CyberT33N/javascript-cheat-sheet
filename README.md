@@ -40,6 +40,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - Nullish Coalescing Operator
 4. Condition at variable decleration
 5. in Operator
+6. typeof Operator
  
 # [Constructors](#_constructors)
 1. Set()
@@ -1080,6 +1081,24 @@ console.log(car.make);
 ```
 
 
+
+
+
+
+
+
+
+
+
+<br><br>
+
+# typeof Operator (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/typeof)
+- The typeof operator returns a string indicating the type of the unevaluated operand.
+
+```javascript
+var test = 'aaa'
+if(typeof test === 'string') console.log(true)
+```
 
 
 
