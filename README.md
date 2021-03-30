@@ -366,6 +366,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. .replace() with regex
 2. Capturing groups
 
+# [Javascript Internal](#_javascriptinternal)
+1. .setTimeout
+
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
 2. Object-oriented Programming (OOP)
@@ -8712,6 +8715,191 @@ let result = re.exec('2015-01-02');
 </details>
 
 <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+<a name="_javascriptinternal"><h1>Javascript Internal</h1></a>
+<details><summary>Click to expand..</summary>
+
+
+# .setTimeout (https://www.w3schools.com/jsref/met_win_settimeout.asp)
+```javascript
+// -- Example 1 --
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(alertFunc, 3000);
+}
+
+function alertFunc() {
+  alert("Hello!");
+}
+
+
+
+// -- Example 2 --
+setTimeout(() => {
+  // do something..
+}, 3000)
+```
+
+
+<br><br>
+
+# .clearTimeout (https://www.w3schools.com/jsref/met_win_cleartimeout.asp)
+```javascript
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(function(){ alert("Hello"); }, 3000);
+}
+
+function myStopFunction() {
+  clearTimeout(myVar);
+}
+```
+
+</details>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
