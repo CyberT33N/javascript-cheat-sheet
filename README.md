@@ -122,6 +122,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 9. Get name of function
 10. Pass Params without braces
 11. Generator Functions
+12. Lambda Function
+13.  Anonymous Function
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -4276,6 +4278,60 @@ console.log(gen.next().value);
 console.log(gen.next().value);
 // expected output: 20
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+# Lambda Function
+- https://medium.com/@chineketobenna/lambda-expressions-vs-anonymous-functions-in-javascript-3aa760c958ae
+```javascript
+function traverseArray(arr, func) {
+//..
+}
+```
+
+
+
+<br><br>
+
+
+
+# Anonymous Function
+- https://medium.com/@chineketobenna/lambda-expressions-vs-anonymous-functions-in-javascript-3aa760c958ae
+- An anonymous function is, as its name implies, a function without a name (no pun intended). They are most popularly used to define function expressions. An example of such usage is shown below.
+
+<br><br>
+
+
+These function expressions are created at runtime and must be declared/defined before they can be called i.e. they are not hoisted, unlike function declarations that are hoisted as soon as program execution begins and can be called before its actual declaration.
+```javascript
+//printName("Tom");     
+//ReferenceError: printName is not defined
+const printName = function (name){ 
+   console.log(name);
+}
+printName("Tom");      
+//result: Tom
+```
+
 </details>
 
 
