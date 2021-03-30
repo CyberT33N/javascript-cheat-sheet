@@ -252,6 +252,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
       - 6.26.1 Convert Array to Array with Objects
 7. .flat()
 8. remove all duplicates from an array of objects by property
+9. Destructuring
 
 
 # [Link](#_link)
@@ -7158,6 +7159,21 @@ arr.filter((v,i,a)=>a.findIndex(t=>(JSON.stringify(t) === JSON.stringify(v)))===
 ```
 
 
+
+
+
+<br><br>
+
+
+# Destructuring
+```javascript
+let ar = ['banana', 'apple']
+
+let [a, b] = ar
+
+console.log(a); // banana
+console.log(b); // apple
+```
 
 </details>
 
