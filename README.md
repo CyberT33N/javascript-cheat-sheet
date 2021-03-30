@@ -214,6 +214,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 13. Sub-classing
 14. Find the count of duplicate property values in an object
 15. Beautify object
+16. Object shorthand
   
 # [Array](#_array)
 1. Clone unique
@@ -6435,6 +6436,27 @@ for (var key in counter) {
 # Beautify object
 ```javascript
 JSON.stringify(obj, null, 4))
+```
+
+
+
+
+
+
+<br><br><br><br>
+
+# Object shorthand
+- You can insert variables to objects without defining the Property name because for default js will detect the name and set it. This means for the example below you would not have to do **banana: banana**
+```javascript
+var banana = true
+var apple = false
+
+var obj = {
+  banana,
+  apple
+}
+
+console.log(obj); // {banana: true, apple: false}
 ```
 
 </details>
