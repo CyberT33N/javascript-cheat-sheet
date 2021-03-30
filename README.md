@@ -46,7 +46,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Set()
 
 # [Design Pattern](#_design-pattern)
-1. Singleton Patternconsole.log('%cHello..', 'font-weight: bold; color: red')
+1. Singleton Pattern
 2. Builder Pattern
   - 2.1 Default function parameter
 3. Null Object Pattern
