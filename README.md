@@ -76,7 +76,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 9. Data Attribute
 10. Classes
   - 10.1 toggle (switch) class
-11. Stylesconsole.log('%cHello..', 'font-weight: bold; color: red')
+11. Styles
 12. Event Listener
   - 12.1 addEventListener() / Dispatching custom events
   - 12.2 Listen to multiple elements with same CSS Selector
