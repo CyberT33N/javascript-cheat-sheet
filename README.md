@@ -215,6 +215,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 14. Find the count of duplicate property values in an object
 15. Beautify object
 16. Object shorthand
+17. Overwrite properties
   
 # [Array](#_array)
 1. Clone unique
@@ -6460,6 +6461,47 @@ var obj = {
 console.log(obj); // {banana: true, apple: false}
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+# Overwrite properties
+- When you define the same property then the last one will stay.
+```javascript
+// ---- EXAMPLE #1 ----
+var b = {
+  "path": false,
+  "path": true
+}
+
+console.log(b)
+
+
+
+// ---- EXAMPLE #2 ----
+var a = {
+  "path": false,
+  "html": false
+}
+
+var b = {
+  ...a,
+  "path": true
+}
+
+console.log(b)
+```
 </details>
 
 
