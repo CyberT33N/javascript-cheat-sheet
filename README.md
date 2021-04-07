@@ -36,6 +36,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Spread Operator
   - 2.1 convert array to paramater
   - 2.2 Object destructuring
+  - 2.3 Conditions
 3. Logical Operator
   - Nullish Coalescing Operator
 4. Condition at variable decleration
@@ -966,6 +967,15 @@ test({...obj1, ...obj2});
 
 
 
+<br><br>
+
+## Conditions
+```javascript
+{
+  apple: true,
+  ...(cfg.path && typeof cfg.path === 'object' ? cfg.path : {})
+}
+```
 
 
 <br><br>
