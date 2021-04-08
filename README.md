@@ -96,6 +96,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [forEach](#_foreach)
 1. Iterate through all keys of nested object
+2. Pass Function
 
 # [For loop](#_for-loop)
 1. Iterate through all keys of nested object
@@ -3599,7 +3600,104 @@ console.log(stats.errors.AWS.signedUrl); // 70
 resetValuesToZero(stats);
 console.log(stats.errors.AWS.signedUrl); // 0
 ```
+
+
+
+
+# Pass function
+```javascript
+var fruit = ['banana', 'apple']
+
+const whatIeat = fruit => {
+  console.log(`I eat ${fruit}`)
+}
+
+fruit.forEach(whatIeat)
+```
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br><br>
 
