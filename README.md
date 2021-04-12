@@ -165,6 +165,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. Private and public methods
 8. Service classes
 9. Get class name
+10. Object Destructuring with this
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -5373,6 +5374,39 @@ class Rectangle {
 var rectObj = new Rectangle(5, 10);
 console.log(rectObj.getArea()); // Outputs: 50
 console.log(rectObj.constructor.name) // Outputs: Rectangle
+```
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+# Object Destructuring with this
+```javascript
+class getThumbnailCfg {
+
+  constructor(overrideCfg = {}){
+    ({ banana: this.banana = false, apple: this.apple = {} } = overrideCfg)
+    console.log(this.banana);
+  }
+
+}
+
+var obj = {
+  "banana": true,
+  "apple": true
+}
+var test = new getThumbnailCfg(obj)
 ```
 
 
