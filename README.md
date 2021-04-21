@@ -391,6 +391,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. console.log()
   - 1.1 Use CSS
 2. console.time()
+3. console.error()
+4. console.warn()
 
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
@@ -9591,7 +9593,7 @@ console.log('%cHello..%cNew Color here..', 'font-weight: bold; color: red', 'fon
 ```
 
 
-<br><br><br><br>
+<br><br>
 
 # console.time()
 - https://developer.mozilla.org/en-US/docs/Web/API/Console/time
@@ -9604,6 +9606,24 @@ for (let i = 0; i < 100000000; i++){
 console.timeEnd("Timer")
 ```
 
+
+<br><br>
+
+# console.error()
+- https://www.w3schools.com/jsref/met_console_error.asp
+
+```javascript
+console.error("You made a mistake");
+```
+
+<br><br>
+
+# console.warn()
+- https://developer.mozilla.org/de/docs/Web/API/Console/warn
+
+```javascript
+console.warn("You made a mistake");
+```
 
 </details>
 
