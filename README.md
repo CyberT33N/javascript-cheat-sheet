@@ -3584,6 +3584,28 @@ switch("Banana") {
 <a name="_foreach"><h1>forEach</h1></a>
 
 <details><summary>Click to expand..</summary>
+	
+
+	
+# Example 	
+```javascript
+// ---- EXAMPLE #1 ----
+var fruits = ["apple", "orange", "cherry"];
+fruits.forEach(myFunction);
+
+function myFunction(item, index) {
+  console.log(`item: ${item} - index: ${index}`)
+}
+
+
+// ---- EXAMPLE #2 ----
+var fruits = ["apple", "orange", "cherry"];
+fruits.forEach((item, index) => {
+  console.log(`item: ${item} - index: ${index}`)
+})
+```	
+
+
   
 # Iterate through all keys of nested object
 ```javascript
