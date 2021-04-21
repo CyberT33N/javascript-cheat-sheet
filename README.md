@@ -128,7 +128,11 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 10. Pass Params without braces
 11. Generator Functions
 12. Lambda Function
-13.  Anonymous Function
+13. Anonymous Function
+
+# [Map](#_map)
+1. .set and .get
+2. loop
 
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
@@ -4520,6 +4524,176 @@ printName("Tom");
 ```
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br><br>
+
+
+
+
+<a name="_map"><h1>Map</h1></a>
+  
+<details><summary>Click to expand..</summary>
+  
+# Guides
+- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+```javascript
+const currencyMap = new Map([
+  ["United States", "USD"],
+  ["India", "Rupee"],
+])
+console.log(currencyMap);
+```
+
+
+ <br><br>
+
+# .set and .get
+```javascript
+// ---- EXAMPLE #1 ----
+const currencyMap = new Map([])
+currencyMap.set("United States", "USD")
+console.log(currencyMap);
+
+const currency = currencyMap.get("United States")
+console.log(currency);
+
+
+// ---- EXAMPLE #2 - Use Object ----
+const currencyMap = new Map([])
+const usa = {name: "United States"}
+currencyMap.set(usa, "USD")
+console.log(currencyMap);
+
+const currency = currencyMap.get(usa)
+console.log(currency);
+```
+
+
+<br><br>
+
+# loop
+```javascript
+var myMap = new Map();
+myMap.set(0, "zero");
+myMap.set(1, "one");
+for (var [key, value] of myMap) {
+  console.log(key + " = " + value);
+}
+// 0 = zero
+// 1 = one
+
+for (var key of myMap.keys()) {
+  console.log(key);
+}
+// 0
+// 1
+
+for (var value of myMap.values()) {
+  console.log(value);
+}
+// zero
+// one
+
+for (var [key, value] of myMap.entries()) {
+  console.log(key + " = " + value);
+}
+// 0 = zero
+// 1 = one
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
