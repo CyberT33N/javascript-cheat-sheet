@@ -394,6 +394,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. console.error()
 4. console.warn()
 5. console.assert()
+6. console.table()
+
 
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
@@ -9637,6 +9639,30 @@ console.warn("You made a mistake");
 let x = 3
 console.assert(x === 2, 'x is not 2..')
 ```
+
+
+<br><br>
+
+# console.table()
+- https://developer.mozilla.org/de/docs/Web/API/Console/table
+
+```javascript
+// ---- EXAMPLE #1 - Array ----
+console.table(["apples", "oranges", "bananas"]);
+
+
+// ---- EXAMPLE #2 - Object ----
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+var me = new Person("John", "Smith");
+console.table(me);
+```
+
+
+
 </details>
 
 <br><br>
