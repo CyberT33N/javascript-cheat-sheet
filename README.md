@@ -390,6 +390,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Log](#_log)
 1. console.log()
   - 1.1 Use CSS
+2. console.time()
 
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
@@ -9590,6 +9591,20 @@ console.log('%cHello..%cNew Color here..', 'font-weight: bold; color: red', 'fon
 ```
 
 
+<br><br><br><br>
+
+# console.time()
+- https://developer.mozilla.org/en-US/docs/Web/API/Console/time
+
+```javascript
+console.time("Timer")
+for (let i = 0; i < 100000000; i++){
+  // ..
+}
+console.timeEnd("Timer")
+```
+
+
 </details>
 
 <br><br>
@@ -9623,7 +9638,7 @@ console.log('%cHello..%cNew Color here..', 'font-weight: bold; color: red', 'fon
 
 
 
-
+The Conditional (Ternary) Operator Exp
 
 
 
