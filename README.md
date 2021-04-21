@@ -393,6 +393,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. console.time()
 3. console.error()
 4. console.warn()
+5. console.assert()
 
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
@@ -9625,6 +9626,17 @@ console.error("You made a mistake");
 console.warn("You made a mistake");
 ```
 
+
+
+<br><br>
+
+# console.assert()
+- https://developer.mozilla.org/en-US/docs/Web/API/console/assert
+
+```javascript
+let x = 3
+console.assert(x === 2, 'x is not 2..')
+```
 </details>
 
 <br><br>
