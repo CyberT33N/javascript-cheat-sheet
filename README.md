@@ -104,6 +104,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Make the loop jump to the next iteration when i is 5
 4. break the loop when i is 5
 5. Use array as variable
+6. label
+  - 6.1 Using a labeled continue with for loops
+  - 6.2 Using a labeled break with for loops
 
 # [While](#_while)
 1. Do loop based on length of array
@@ -3769,7 +3772,7 @@ for (i = 0; i < 10; i++) {
 }
 ```
 
-<br>
+<br><br>
 
 # break the loop when i is 5
 ```javascript
@@ -3781,7 +3784,7 @@ for (i = 0; i < 10; i++) {
 
 
 
-<br>
+<br><br>
 
 # Use array as variable
 ```javascript
@@ -3799,6 +3802,70 @@ for (const [key, value] of Object.entries(object1)) {
 // "b: 42"
 // order is not guaranteed
 ```
+
+
+
+
+
+<br><br>
+
+# label (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/label)
+
+<br><br>
+
+## Using a labeled continue with for loops
+```javascript
+var i, j;
+
+loop1:
+for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
+   loop2:
+   for (j = 0; j < 3; j++) {   //The second for statement is labeled "loop2"
+      if (i === 1 && j === 1) {
+         continue loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+   }
+}
+
+// Output is:
+//   "i = 0, j = 0"
+//   "i = 0, j = 1"
+//   "i = 0, j = 2"
+//   "i = 1, j = 0"
+//   "i = 2, j = 0"
+//   "i = 2, j = 1"
+//   "i = 2, j = 2"
+// Notice how it skips both "i = 1, j = 1" and "i = 1, j = 2"
+```
+
+
+
+<br><br>
+
+## Using a labeled break with for loops
+```javascript
+var i, j;
+
+loop1:
+for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
+   loop2:
+   for (j = 0; j < 3; j++) {   //The second for statement is labeled "loop2"
+      if (i === 1 && j === 1) {
+         break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+   }
+}
+
+// Output is:
+//   "i = 0, j = 0"
+//   "i = 0, j = 1"
+//   "i = 0, j = 2"
+//   "i = 1, j = 0"
+// Notice the difference with the previous continue example
+```
+
 
 </details>
 
