@@ -134,6 +134,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. .set and .get
 2. loop
 
+# [Set](#_set)
+1. Example
+2. .delete
+
 # [ESM (es-modules) and CJS (commonjs)](#_esm-es-modules-and-cjs-commonjs)
 1. Examples for difference
 2. CJS
@@ -4677,6 +4681,7 @@ for (var [key, value] of myMap.entries()) {
 
 
 
+</details>
 
 
 
@@ -4690,6 +4695,116 @@ for (var [key, value] of myMap.entries()) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br><br>
+
+
+
+
+<a name="_set"><h1>Set</h1></a>
+  
+<details><summary>Click to expand..</summary>
+  
+  
+<br><br>
+   
+# Guides
+- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+<br><br>
+   
+
+# Examples
+```javascript
+const uniqueNumbers = [1,2,3,3,4]
+const set = new Set(uniqueNumbers)
+console.log(set)
+console.log(set.has(2)) // true
+console.log(set.has(5)) // false
+```
+
+<br><br><br><br>
+   
+
+
+# .delete
+```javascript
+const uniqueNumbers = [1,2,3,3,4]
+const set = new Set(uniqueNumbers)
+console.log(set.delete(2))
+console.log(set)
+console.log(set.has(2))
+```
+
+</details>
 
 
 
