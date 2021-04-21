@@ -260,6 +260,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. .flat()
 8. remove all duplicates from an array of objects by property
 9. Destructuring
+10. Freeze Array
 
 
 # [Link](#_link)
@@ -6030,17 +6031,41 @@ for (const [key, value] of Object.entries(object1)) {
 ## .freeze() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
 - The Object.freeze() method freezes an object. A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed. In addition, freezing an object also prevents its prototype from being changed. freeze() returns the same object that was passed in.
 ```javascript
+// ---- EXAMPLE #1 ----
 const obj = {
   prop: 42
 };
 
 Object.freeze(obj);
 
-obj.prop = 33;
-// Throws an error in strict mode
+obj.prop = 33; // Throws an error in strict mode
 
-console.log(obj.prop);
-// expected output: 42
+console.log(obj.prop); // expected output: 42
+
+
+
+// ---- EXAMPLE #2 ----
+const obj = Object.freeze({
+  prop: 42
+});
+
+obj.prop = 33; // Throws an error in strict mode
+
+console.log(obj.prop); // expected output: 42
+
+
+
+// ---- EXAMPLE #3 - Nested objects are not frozen----
+const obj = Object.freeze({
+  prop: 42,
+  adress: {
+    street: "1234"
+  }
+});
+
+obj.adress.street = 33; // Throws an error in strict mode
+
+console.log(obj.adress.street );// expected output: 33
 ```
 
 
@@ -7424,6 +7449,20 @@ let [a, b] = ar
 
 console.log(a); // banana
 console.log(b); // apple
+```
+
+
+
+
+
+<br><br>
+
+
+# Freeze Array
+```javascript
+const ar = Object.freeze(['banana'])
+ar.push('apple')
+console.log(ar)
 ```
 
 </details>
