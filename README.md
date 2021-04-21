@@ -395,6 +395,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 4. console.warn()
 5. console.assert()
 6. console.table()
+7. console.trace()
+
 
 
 # [Tutorials](#_tutorials)
@@ -9659,6 +9661,25 @@ function Person(firstName, lastName) {
 
 var me = new Person("John", "Smith");
 console.table(me);
+```
+
+
+
+<br><br>
+
+# console.trace()
+- https://developer.mozilla.org/en-US/docs/Web/API/Console/trace
+- The console interface's trace() method outputs a stack trace to the Web Console.
+
+```javascript
+function foo() {
+  function bar() {
+    console.trace();
+  }
+  bar();
+}
+
+foo();
 ```
 
 
