@@ -5166,7 +5166,7 @@ if (a === true) {
 
 
 // app2.mjs
-export const test = () => {
+export const test = async () => {
     console.log(true)
 }
 ```
