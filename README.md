@@ -230,6 +230,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 15. Beautify object
 16. Object shorthand
 17. Overwrite properties
+18. Check if property exist
   
 # [Array](#_array)
 1. Clone unique
@@ -7055,6 +7056,51 @@ var b = {
 
 console.log(b)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+# Check if property exist
+```javascript
+// ---- EXAMPLE #1 ----
+let obj = {
+  banana: true,
+  apple: false
+}
+
+if("apple" in obj) console.log('Property was found')
+
+
+
+// ---- EXAMPLE #2 ----
+let obj = {
+  banana: true,
+  apple: false
+}
+
+if(obj.hasOwnProperty('apple')) console.log('Property was found')
+```
+
 </details>
 
 
