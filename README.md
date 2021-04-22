@@ -151,6 +151,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 3.3 Export / Import
   - 3.4 Client Side
   - 3.5 No require, exports, module.exports, __filename, __dirname
+  - 3.6 Dynamic Module Import
 
 # [Prototypes](#_prototypes)
 1. Instantiate Object with Object.create (OLD METHOD)
@@ -5129,8 +5130,7 @@ export let pptr;
 </script>
 ```
 
-<br>
-<br>
+<br><br>
 
 
 ## No require, exports, module.exports, __filename, __dirname (https://nodejs.org/api/esm.html#esm_no_require_exports_module_exports_filename_dirname)
@@ -5140,6 +5140,35 @@ import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+```
+
+
+
+
+
+
+<br><br>
+
+
+## Dynamic Module Import
+```javascript
+// app.mjs
+const loadTest = async () => {
+    const {test} = await import("./app2.mjs")
+    test()
+}
+
+var a = true
+if (a === true) {
+    loadTest()
+}
+
+
+
+// app2.mjs
+export const test = () => {
+    console.log(true)
+}
 ```
 
 </details>
