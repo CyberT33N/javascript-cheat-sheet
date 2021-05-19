@@ -535,25 +535,13 @@ _____________________________________________________
 # URL()
 - https://developer.mozilla.org/en-US/docs/Web/API/URL/URL
 ```javascript
-// Base urls
-let m = 'https://developer.mozilla.org';
-let a = new URL("/", m);                                // => 'https://developer.mozilla.org/'
-let b = new URL(m);                                     // => 'https://developer.mozilla.org/'
+let test = new URL('https://developer.mozilla.org/fr-FR/toto?peter=true&lena=true')
 
-        new URL('en-US/docs', b);                      // => 'https://developer.mozilla.org/en-US/docs'
-let d = new URL('/en-US/docs', b);                     // => 'https://developer.mozilla.org/en-US/docs'
-        new URL('/en-US/docs', d);                     // => 'https://developer.mozilla.org/en-US/docs'
-        new URL('/en-US/docs', a);                     // => 'https://developer.mozilla.org/en-US/docs'
+let res1 = test.searchParams.get('peter')
+console.log(res1)
 
-        new URL('/en-US/docs', "https://developer.mozilla.org/fr-FR/toto");
-                                                       // => 'https://developer.mozilla.org/en-US/docs'
-
-        new URL('/en-US/docs', '');                    // Raises a TypeError exception as '' is not a valid URL
-        new URL('/en-US/docs');                        // Raises a TypeError exception as '/en-US/docs' is not a valid URL
-        new URL('http://www.example.com', );           // => 'http://www.example.com/'
-        new URL('http://www.example.com', b);          // => 'http://www.example.com/'
-
-        new URL("//foo.com", "https://example.com")    // => 'https://foo.com' (see relative URLs)
+let res2 = Object.fromEntries(test.searchParams)
+console.log(res2)
 ```
 
 
