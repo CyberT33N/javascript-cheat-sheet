@@ -20,6 +20,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [General](#_general)
 1. strict mode
 
+# [Web API](#_webapi)
+1. URL()
+
 # [Scope](#_scope)
 1. You can not access variables which are defined within a function
 2. Child Objects share this of parent Object
@@ -480,6 +483,129 @@ question badge
 </details>
 
 <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+_____________________________________________________
+_____________________________________________________
+<br><br>
+
+<a name="_webapi"><h1>Web API</h1></a>
+<details><summary>Click to expand..</summary>
+
+# URL()
+- https://developer.mozilla.org/en-US/docs/Web/API/URL/URL
+```javascript
+// Base urls
+let m = 'https://developer.mozilla.org';
+let a = new URL("/", m);                                // => 'https://developer.mozilla.org/'
+let b = new URL(m);                                     // => 'https://developer.mozilla.org/'
+
+        new URL('en-US/docs', b);                      // => 'https://developer.mozilla.org/en-US/docs'
+let d = new URL('/en-US/docs', b);                     // => 'https://developer.mozilla.org/en-US/docs'
+        new URL('/en-US/docs', d);                     // => 'https://developer.mozilla.org/en-US/docs'
+        new URL('/en-US/docs', a);                     // => 'https://developer.mozilla.org/en-US/docs'
+
+        new URL('/en-US/docs', "https://developer.mozilla.org/fr-FR/toto");
+                                                       // => 'https://developer.mozilla.org/en-US/docs'
+
+        new URL('/en-US/docs', '');                    // Raises a TypeError exception as '' is not a valid URL
+        new URL('/en-US/docs');                        // Raises a TypeError exception as '/en-US/docs' is not a valid URL
+        new URL('http://www.example.com', );           // => 'http://www.example.com/'
+        new URL('http://www.example.com', b);          // => 'http://www.example.com/'
+
+        new URL("//foo.com", "https://example.com")    // => 'https://foo.com' (see relative URLs)
+```
+
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
