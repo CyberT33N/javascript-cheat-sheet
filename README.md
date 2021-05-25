@@ -308,13 +308,14 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 20. Insert HTML after specific element
 21. Find element
 22. Draggable
-  <br>22.1 Exclude element
+  <br> 22.1 Exclude element
 
 # [Async](#_async)
 1. Create Async
 2. setTimeout
 3. setInterval
 4. Functions - In Parallel
+  <br> Specific amount of runs
 5. Loops (Array) - In Parallel
 6. Loops - Sequential (For Loop)
 7. Combine Async with promise
@@ -8557,6 +8558,12 @@ async function loop() {
 loop();
 ```
 
+	
+	
+	
+	
+	
+	
 <br><br>
 
 
@@ -8594,6 +8601,44 @@ async function b (){
 }); 
 
 ```
+	
+	
+	
+		
+<br><br>
+
+
+## Specific amount of runs
+```javascript
+const sampleFunction = async () => {
+  new Promise(resolve => setTimeout(() => resolve(), 100))
+}
+
+
+const promises = []
+
+for (let i = 0; i < 10; i++) {
+  promises.push(sampleFunction)
+}
+
+const doSomeAsyncStuff = async (funcs) => {
+  const allPromises = funcs.map(func => func())
+  const res = await Promise.all(allPromises)
+  return res
+}
+
+doSomeAsyncStuff(promises)
+```
+	
+	
+	
+	
+	
+	
+	
+	
+<br><br>	
+<br><br>
 
 # Loops (Array) - In Parallel
 ```javascript
