@@ -274,7 +274,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 8. remove all duplicates from an array of objects by property
 9. Destructuring
 10. Freeze Array
-
+11. Compare two unsorted arrays
 
 # [Link](#_link)
 1. Get current link / domain
@@ -7992,6 +7992,21 @@ ar.push('apple')
 console.log(ar)
 ```
 
+	
+	
+	
+	
+<br><br>
+
+
+# Compare two unsorted arrays
+```javascript
+var _ = require('lodash')
+const checkArraysResult = _.isEmpty(_.xor(arr1, arr2))
+```
+
+	
+	
 </details>
 
 
