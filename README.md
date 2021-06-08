@@ -175,12 +175,13 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Static (isolated function)
 3. Subclasses (Inheritance)
 4. Multiple Inheritance (Mixins)
-5. Event listener
-6. Bind this to other method
-7. Private and public methods
-8. Service classes
-9. Get class name
-10. Object Destructuring with this
+5. Use always same instance (singleton)
+6. Event listener
+7. Bind this to other method
+8. Private and public methods
+9. Service classes
+10. Get class name
+11. Object Destructuring with this
 
 # [Time/Date](#_time)
 1. format time to AM/PM
