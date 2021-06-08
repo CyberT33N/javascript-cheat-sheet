@@ -5759,17 +5759,19 @@ c.foo(); // prints "foo from MyMixin"
 # Use always same instance (singleton)
 ```javascript
 class test {
-  constructor(){
-    if(test.instance == null){
-      test.instance = this;
-    }
-    return test.instance;
-  };
+	constructor(){
+	if(test.instance === undefined){
+	    this.projectDbs = {}
 
+	    test.instance = this
+	}
 
-  createData(data){
-    this.example = data;
-  };
+	returntest.instance
+	}
+
+	createData(data){
+	  this.example = data;
+	}
 };
 
 
