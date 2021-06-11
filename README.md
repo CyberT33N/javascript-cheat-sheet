@@ -1571,6 +1571,17 @@ console.log(multiply(5, 2));
 
 console.log(multiply(5));
 // expected output: 5
+
+
+
+
+
+// ---- EXAMPLE #2 - Object Destructuring ----
+function getConnection({dbName, force = false, models = []} = {}) {
+  console.log('dbName: ' + dbName);
+}
+
+getConnection({dbName: true})
 ```
 
 
