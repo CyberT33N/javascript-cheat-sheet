@@ -132,6 +132,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 11. Generator Functions
 12. Lambda Function
 13. Anonymous Function
+14. Default function parameter
 
 # [Map](#_map)
 1. .set and .get
@@ -4687,6 +4688,50 @@ printName("Tom");
 //result: Tom
 ```
 
+	
+	
+	
+	
+	
+	
+<br><br>
+
+
+
+# Default function parameter (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+```javascript
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5, 2));
+// expected output: 10
+
+console.log(multiply(5));
+// expected output: 5
+
+
+
+
+
+// ---- EXAMPLE #2 - Object Destructuring ----
+function getConnection({dbName, force = false, models = []} = {}) {
+  console.log('dbName: ' + dbName);
+}
+
+getConnection({dbName: true})
+```
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </details>
 
 
