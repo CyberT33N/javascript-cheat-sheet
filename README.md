@@ -278,6 +278,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 9. Destructuring
 10. Freeze Array
 11. Compare two unsorted arrays
+12. Check if type is array
 
 # [Link](#_link)
 1. Get current link / domain
@@ -8098,6 +8099,17 @@ const checkArraysResult = _.isEmpty(_.xor(arr1, arr2))
 ```
 
 	
+		
+	
+<br><br>
+
+
+# Check if type is array
+```javascript
+var ar = []
+console.log(Array.isArray(ar)) // true
+```
+
 	
 </details>
 
