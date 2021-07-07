@@ -5818,13 +5818,13 @@ c.foo(); // prints "foo from MyMixin"
 ```javascript
 class test {
 	constructor(){
-	if(test.instance === undefined){
-	    this.projectDbs = {}
+		if(test.instance === undefined){
+		    this.projectDbs = {}
 
-	    test.instance = this
-	}
+		    test.instance = this
+		}
 
-	return test.instance
+		return test.instance
 	}
 
 	createData(data){
