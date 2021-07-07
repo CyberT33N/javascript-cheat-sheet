@@ -5824,7 +5824,7 @@ class test {
 	    test.instance = this
 	}
 
-	returntest.instance
+	return test.instance
 	}
 
 	createData(data){
