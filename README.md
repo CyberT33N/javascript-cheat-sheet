@@ -199,7 +199,6 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Cookie](#_cookie)
 1. Get value of specific cookie
 
-
 # [String](#_string)
 1. .includes()
 
@@ -274,7 +273,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 6.26 Map
       - 6.26.1 Convert Array to Array with Objects
 7. .flat()
-8. remove all duplicates from an array of objects by property
+8. remove all duplicates from an array
+  <br> 8.1 remove all duplicates from an array of objects by property
 9. Destructuring
 10. Freeze Array
 11. Compare two unsorted arrays
@@ -8040,8 +8040,19 @@ arr3.flat(2);
 
 <br><br>
 
+# remove all duplicates from an array
+```javascript
+const a = ['name']
+const b = ['name', 'weight']
+	
+const concatedArray = Array.from(new Set(a.concat(b)))
+```
+	
+	
+<br><br>
+	
 
-# remove all duplicates from an array of objects by property
+## remove all duplicates from an array of objects by property
 - https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects
 ```javascript
 # Find unique id's in an array.
