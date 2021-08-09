@@ -237,6 +237,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 17. Overwrite properties
 18. Check if property exist
 19. Object with function
+20. Clone Object
   
 # [Array](#_array)
 1. Clone unique
@@ -7355,6 +7356,20 @@ const obj = {
 };
 ```
 	
+
+	
+<br><br><br><br>
+
+# Clone Object
+```javascript
+const obj = {"name": "test"}
+
+// If you want shallow copy
+const clone = Object.assign({}, obj)
+
+// For "deep" copy
+const clone = JSON.parse(JSON.stringify(obj)
+```
 
 </details>
 
