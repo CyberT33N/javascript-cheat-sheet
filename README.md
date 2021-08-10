@@ -7364,11 +7364,21 @@ const obj = {
 ```javascript
 const obj = {"name": "test"}
 
-// If you want shallow copy
+	
+	
+// Shallow copy - Method #1
 const clone = Object.assign({}, obj)
 
-// For "deep" copy
-const clone = JSON.parse(JSON.stringify(obj)
+// Shallow copy - Method #2
+const clone = _.clone(obj);
+	
+	
+	
+// Deep copy - Method #1
+const cloneDeep = JSON.parse(JSON.stringify(obj)
+	
+// Deep copy - Method #2
+const cloneDeep = _.cloneDeep(obj);
 ```
 
 </details>
