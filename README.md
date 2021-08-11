@@ -232,6 +232,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 12.2 set
 13. Sub-classing
 14. Find the count of duplicate property values in an object
+15. Find duplicated properties in array of objects
 15. Beautify object
 16. Object shorthand
 17. Overwrite properties
@@ -7198,15 +7199,40 @@ for (var key in counter) {
 ```
 
 
+	
+	
+	
+	
+	
+	
+
+
+
+<br><br><br><br>
+
+# Find duplicated properties in array of objects
+```javascript
+const values = [{id: 10, name: 'someName1'}, {id: 10, name: 'someName2'}, {id: 11, name:'someName3'}, {id: 12, name: 'someName4'}];
+
+const lookup = values.reduce((a, e) => {
+  a[e.id] = ++a[e.id] || 0;
+  return a;
+}, {});
+
+console.log(values.filter(e => lookup[e.id]));
+```
 
 
 
 
 
 
-
-
-
+	
+	
+	
+	
+	
+	
 
 
 
