@@ -239,6 +239,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 18. Check if property exist
 19. Object with function
 20. Clone Object
+21. Remove duplicated objects from array
   
 # [Array](#_array)
 1. Clone unique
@@ -7382,6 +7383,8 @@ const obj = {
 };
 ```
 	
+	
+	
 
 	
 <br><br><br><br>
@@ -7407,6 +7410,34 @@ const cloneDeep = JSON.parse(JSON.stringify(obj)
 const cloneDeep = _.cloneDeep(obj);
 ```
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<br><br><br><br>
+
+# Remove duplicated objects from array
+```javascript
+let person = [
+{name: "john"}, 
+{name: "jane"}, 
+{name: "imelda"}, 
+{name: "john"},
+{name: "jane"}
+];
+
+const data = Array.from(new Set(person.map(JSON.stringify))).map(JSON.parse);
+console.log(data);
+```
 </details>
 
 
