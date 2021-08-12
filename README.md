@@ -240,6 +240,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 19. Object with function
 20. Clone Object
 21. Remove duplicated objects from array
+23. Remove properties from object
   
 # [Array](#_array)
 1. Clone unique
@@ -7438,6 +7439,50 @@ let person = [
 const data = Array.from(new Set(person.map(JSON.stringify))).map(JSON.parse);
 console.log(data);
 ```
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<br><br><br><br>
+
+# Remove properties from object
+```javascript
+const removeProperty = (obj, props) => {
+    for(const prop of props){
+        Object.keys(obj).forEach(key =>
+            (key === prop) && delete obj[key] ||
+            (obj[key] && typeof obj[key] === 'object') && removeProperty(obj[key], prop)
+        )
+    }
+
+    return obj
+}
+
+
+const obj = {
+name: true,
+title: true,
+lean: true
+}
+
+
+const res = removeProperty(obj, ['name', 'title'])
+console.log(res)
+```
+	
+	
+	
+	
+	
+	
 </details>
 
 
