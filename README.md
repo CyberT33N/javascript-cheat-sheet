@@ -7455,16 +7455,38 @@ console.log(data);
 
 # Remove properties from object
 ```javascript
-const removeProperty = (obj, props) => {
+'use strict'
+
+/**
+ * Remove property from object
+ * @param {Object} obj
+ * @param {String} prop - Property name
+ * @returns {*}
+ */
+const _removeProperty = (obj, prop) => {
+  Object.keys(obj).forEach(key =>
+      (key === prop) && delete obj[key] ||
+      (obj[key] && typeof obj[key] === 'object') && _removeProperty(obj[key], prop)
+  )
+
+  return obj
+}
+
+/**
+ * Remove properties from object
+ * @param {Object} obj
+ * @param {Array} props
+ * @returns {*}
+ */
+const removeProperties = (obj, props) => {
     for(const prop of props){
-        Object.keys(obj).forEach(key =>
-            (key === prop) && delete obj[key] ||
-            (obj[key] && typeof obj[key] === 'object') && removeProperty(obj[key], prop)
-        )
+        obj = _removeProperty(obj, prop)
     }
 
     return obj
 }
+
+
 
 
 const obj = {
@@ -7474,7 +7496,7 @@ lean: true
 }
 
 
-const res = removeProperty(obj, ['name', 'title'])
+const res = removeProperties(obj, ['name', 'title'])
 console.log(res)
 ```
 	
