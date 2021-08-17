@@ -8195,6 +8195,11 @@ const a = ['name']
 const b = ['name', 'weight']
 	
 const concatedArray = Array.from(new Set(a.concat(b)))
+	
+
+// single array
+const b = ['name', 'name', 'weight']	
+const concatedArray = Array.from(new Set(b.concat(b)))
 ```
 	
 	
