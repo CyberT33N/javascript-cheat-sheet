@@ -283,6 +283,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 10. Freeze Array
 11. Compare two unsorted arrays
 12. Check if type is array
+13. Remove element from array by value
 
 # [Link](#_link)
 1. Get current link / domain
@@ -8273,6 +8274,25 @@ const checkArraysResult = _.isEmpty(_.xor(arr1, arr2))
 ```javascript
 var ar = []
 console.log(Array.isArray(ar)) // true
+```
+
+	
+	
+	
+	
+	
+		
+<br><br>
+
+
+# Remove element from array by value
+```javascript
+// Method #1
+var ary = ['three', 'seven', 'eleven'];
+var filteredAry = ary.filter(e => e !== 'seven')
+	
+// Method #2
+ary = _.without(ary, 'seven')
 ```
 
 	
