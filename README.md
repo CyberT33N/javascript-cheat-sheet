@@ -285,6 +285,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 11. Compare two unsorted arrays
 12. Check if type is array
 13. Remove element from array by value
+14. Convert array of objects to single object
 
 # [Link](#_link)
 1. Get current link / domain
@@ -8312,6 +8313,28 @@ var filteredAry = ary.filter(e => e !== 'seven')
 ary = _.without(ary, 'seven')
 ```
 
+	
+	
+	
+	
+		
+<br><br>
+
+
+# Convert array of objects to single object
+```javascript
+// Method #1
+const array = [
+  { name: "something", value: "something" },
+  { name: "somethingElse", value: "something else" },
+];
+
+const newObject = Object.assign({}, ...array.map(item => ({ [item.name]: item.value })));
+// >> { something: "something", somethingElse: "something else" }
+	
+// Method #2
+const obj = _.keyBy(arrayOfObjects, 'keyName')
+```
 	
 </details>
 
