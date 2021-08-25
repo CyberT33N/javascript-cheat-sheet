@@ -279,6 +279,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. .flat()
 8. remove all duplicates from an array
   <br> 8.1 remove all duplicates from an array of objects by property
+  <br> 8.2 remove all duplicates from an array of objects
 9. Destructuring
 10. Freeze Array
 11. Compare two unsorted arrays
@@ -8218,6 +8219,22 @@ arr.filter((v,i,a)=>a.findIndex(t=>(t.place === v.place && t.name===v.name))===i
 
 # Unique by all properties (This will be slow for large arrays)
 arr.filter((v,i,a)=>a.findIndex(t=>(JSON.stringify(t) === JSON.stringify(v)))===i)
+```
+
+	
+<br><br>
+	
+
+## remove all duplicates from an array of objects
+- https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects
+```javascript
+# method #1
+var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }];
+_.uniqWith(objects, _.isEqual);
+// => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
+	
+# method 2
+const unique = [...new Map(arr.map(item => [item[key], item])).values()]
 ```
 
 
