@@ -1618,6 +1618,16 @@ function loginf() {
   setImmediate(loginf);
 }
 loginf();
+	
+
+// method #3
+const mainLoop = async() => {
+	for (;;) {
+	  await main()
+	}
+}
+
+mainLoop().catch(console.error)
 ```
 
 	
