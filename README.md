@@ -134,6 +134,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 12. Lambda Function
 13. Anonymous Function
 14. Default function parameter
+15. Endless loop without memory leak
 
 # [Map](#_map)
 1. .set and .get
@@ -1596,6 +1597,25 @@ getConnection({dbName: true})
 ```
 
 
+	
+	
+<br><br>
+
+## Endless loop without memory leak
+```javascript
+function loginf() {
+  console.log(1+1);
+  process.nextTick(loginf);
+}
+	
+loginf();
+```
+
+	
+	
+	
+	
+	
 
 
 
