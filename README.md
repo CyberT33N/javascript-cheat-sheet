@@ -1603,11 +1603,20 @@ getConnection({dbName: true})
 
 ## Endless loop without memory leak
 ```javascript
+// method #1
 function loginf() {
   console.log(1+1);
   process.nextTick(loginf);
 }
 	
+loginf();
+	
+	
+// method #2
+function loginf() {
+  console.log(1+1);
+  setImmediate(loginf);
+}
 loginf();
 ```
 
