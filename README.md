@@ -110,6 +110,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 6. label
   - 6.1 Using a labeled continue with for loops
   - 6.2 Using a labeled break with for loops
+7. Endless loop
 
 # [While](#_while)
 1. Do loop based on length of array
@@ -4044,6 +4045,20 @@ for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
 // Notice the difference with the previous continue example
 ```
 
+	
+	
+	
+	
+
+<br><br>
+
+## Endless loop
+```javascript
+for (;;) {
+  //..
+}
+```
+	
 
 </details>
 
