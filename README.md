@@ -361,6 +361,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Anime.js](#_animejs)
 1. Remove Animation
 2. Bouncing easing
+3. Color switch
 
 # [Owl Carousel](#_owl-carousel)
 1. Fix auto width problems / resize on width/height change
@@ -9479,14 +9480,33 @@ style.setProperty('--background', 'url(http://placekitten.com/200/300)');
 <a name="_animejs"><h1>Anime.js</h1></a>
 <details><summary>Click to expand..</summary>
 
+<br><br>
+	
 # Remove Animation
 ```javascript
 anime.remove( document.querySelector('#layertwo') )
 ```
 
+<br><br>
+	
 # Bouncing easing
 ```javascript
-{duration: 2000, easing: 'easeOutElastic(1, .2)'} // <-- change .2 to higher value for slower bounce effect
+anime({
+  targets: '.css-prop-demo .el',
+  duration: 2000,
+  easing: 'easeOutElastic(1, .2)'
+});
+```
+
+<br><br>
+	
+# Color switch
+```javascript
+anime({
+  targets: '.css-prop-demo .el',
+  backgroundColor: '#FFF',
+  easing: 'easeInOutQuad'
+});
 ```
 
 </details>
