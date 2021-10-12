@@ -8760,6 +8760,13 @@ console.log( 'path: ' + $(".owl-carousel .owl-item").getSelector() );
 
 	
 // If you want to get the nth child use $(this).index()
+$(elImageCSS).hover(function(){
+	const selector = `${elImageCSS}:nth-child(${$(this).index()})`
+	console.log(selector)
+}, function(){
+	const selector = `${elImageCSS}:nth-child(${$(this).index()})`
+	console.log(selector)
+})
 ```
 
 <br><br>
