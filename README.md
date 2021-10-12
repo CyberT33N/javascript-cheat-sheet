@@ -111,7 +111,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 6.1 Using a labeled continue with for loops
   - 6.2 Using a labeled break with for loops
 7. Endless loop
-
+8. Get index of array
+	
 # [While](#_while)
 1. Do loop based on length of array
 2. do/while statement
@@ -4099,12 +4100,64 @@ for (;;) {
 }
 ```
 	
+	
+<br><br>
+
+## Get index of array
+```javascript
+for (let [index, val] of array.entries()) {
+  // your code goes here    
+}
+```
 
 </details>
 
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
