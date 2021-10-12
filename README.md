@@ -8735,7 +8735,7 @@ document.querySelector(".chat").scrollTop = document.querySelector(".chat").scro
     });
 ```
 
-# Get path of element
+# Get path of element (css selector)
 ```javascript
 jQuery.fn.getSelector = function() {
 
@@ -8758,8 +8758,12 @@ jQuery.fn.getSelector = function() {
 
 console.log( 'path: ' + $(".owl-carousel .owl-item").getSelector() );
 
+	
+// If you want to get the nth child use $(this).index()
 ```
 
+<br><br>
+	
 # each loop
 ```javascript
 $( ".owl-carousel .owl-item" ).each(function() { });
