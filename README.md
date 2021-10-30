@@ -1596,6 +1596,20 @@ function getConnection({dbName, force = false, models = []} = {}) {
 }
 
 getConnection({dbName: true})
+	
+	
+	
+	
+
+// ---- EXAMPLE #3 - Nested Object Destructuring ----
+function doit( arg1 = 'one', hash = { prop1: 'two', prop2: 'three' }, { prop1, prop2 } = hash ) {
+    console.log(`arg1`, arg1)
+    console.log(`prop1`, prop1)
+    console.log(`prop2`, prop2)
+    console.log(`hash`, hash)
+}
+
+doit()
 ```
 
 
