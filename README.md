@@ -289,6 +289,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 12. Check if type is array
 13. Remove element from array by value
 14. Convert array of objects to single object
+15. Replace each element of array
 
 # [Link](#_link)
 1. Get current link / domain
@@ -8458,6 +8459,28 @@ const newObject = Object.assign({}, ...array.map(item => ({ [item.name]: item.va
 // Method #2
 const obj = _.keyBy(arrayOfObjects, 'keyName')
 ```
+	
+	
+	
+	
+			
+<br><br>
+
+
+# Replace each element of array
+```javascript
+const audioList = ["song1", "song2", "song3", "song3"];
+
+const res = audioList.map(audio => ({ audio, played: false }));
+
+console.log(res);
+```
+	
+	
+	
+	
+	
+	
 	
 </details>
 
