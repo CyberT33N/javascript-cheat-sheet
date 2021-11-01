@@ -5318,9 +5318,12 @@ ______________________________________________________
 # ESM
 
 ## Features
-- No need for **"use strict"**
-- async
-
+- No need for **"use strict"** because it will be default
+- async works without self invoked functions
+- import statements sadly only support single or double quotes. So this is not working:
+	```javascript
+	import stats from `./${process.env.STATS}`
+	```
 
 
 
@@ -5357,14 +5360,16 @@ Name your export instead of using default. It should look like this
 */
 	
 // add.mjs
-export const add =  (a, b) =>  a + b;
-// OR
-// export const add = function(a, b) { return a+b };
+export const add = (a, b) => a + b;
 
 // app.mjs
 import { add } from './add.mjs';
 
 
+	
+	
+	
+	
 	
 	
 
