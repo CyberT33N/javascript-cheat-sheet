@@ -5317,14 +5317,24 @@ ______________________________________________________
 
 # ESM
 
-## Features
+## Features & Good 2 Know
 - No need for **"use strict"** because it will be default
 - async works without self invoked functions
+	
 - import statements sadly only support single or double quotes. So this is not working:
 	```javascript
 	import stats from `./${process.env.STATS}`
+	
+	// only this is allowed
+        import stats from '../sample/file.js'
 	```
+- import statements sadly only works by writing the javascript file with extension. So this is not working:
+	```javascript
+	import stats from `./file`
 
+        // this works instead
+        import stats from `./file.js`
+	```
 
 
 
