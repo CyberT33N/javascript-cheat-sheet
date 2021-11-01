@@ -5351,8 +5351,11 @@ node --experimental-modules app.mjs
 
 ## Export / Import
 ```javascript
-/* ## Option 1 ##
-Name your export instead of using default. It should look like this */
+/*
+## Option 1 ##
+Name your export instead of using default. It should look like this
+*/
+	
 // add.mjs
 export const add =  (a, b) =>  a + b;
 // OR
@@ -5362,6 +5365,8 @@ export const add =  (a, b) =>  a + b;
 import { add } from './add.mjs';
 
 
+	
+	
 
 /* ## Option 2 ##
 Use the export default syntax. It looks like this */
@@ -5374,6 +5379,9 @@ export default function add(a, b) {
 // app.,js
 import add from './add.mjs';
 
+	
+	
+	
 
 
 /* ## Option 3 ##
@@ -5392,6 +5400,11 @@ import bot from './controller.mjs';
 await bot.startBROWSER();
 
 
+	
+	
+	
+	
+	
 
 /* ## Option 4 ##
 Use export on specific functions and import all available to object*/
