@@ -5328,19 +5328,19 @@ ______________________________________________________
 <br><br><br><br>
 
 ## How to enable?
-- If you use any older Node version than 14 you must use:
-```javascript
-node --experimental-modules app.mjs
-```
-<br><br>
-
 ```javascript
 // package.json
 "type": "module"
 
-// Also rename all files where you use ESM to .mjs
+// In some node versions you may must rename your files to .mjs
+```	
+- On some Node Versions you may need to use:
+```javascript
+node --experimental-modules app.mjs
 ```
-
+	
+	
+<br><br>
 
 
 
