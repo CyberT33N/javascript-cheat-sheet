@@ -9033,13 +9033,12 @@ async function test(){
 
 # setTimeout
 ```javascript
-// method #1
-await new Promise(resolve => setTimeout(resolve, 1000));
+// method #1 (Works with node 16+)
+import { setTimeout } from 'timers/promises';
+await setTimeout(5000)
 
 // method #2
-setTimeout(async ()=>
- // some async stuff here..
-});
+await new Promise(resolve => setTimeout(resolve, 1000));
 ```
 
 
