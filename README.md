@@ -1119,10 +1119,34 @@ function test({a = false, b = false}){
 
 test({...obj1, ...obj2});
 ```
-
-
-
+	
 <br><br>
+	
+#### Object Destructuring without let, const, var
+```javascript
+const objectReturningFunction = () => {
+    return {a:true, b:false}
+}
+
+let a, b
+;({a, b} = objectReturningFunction())
+
+console.log(b)
+```
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<br><br><br><br>
 
 ## Conditions
 ```javascript
