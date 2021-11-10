@@ -204,6 +204,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [String](#_string)
 1. .includes()
+2. Get name of string in function
 
 # [object](#_object)
 1. Check if object is empty
@@ -6477,11 +6478,30 @@ var value = match[1];
 <a name="_string"><h1>String</h1></a>
 <details><summary>Click to expand..</summary>
 
+	
 # .includes()
 ```javascript
 var str = "Hello world, welcome to the universe.";
 var n = str.includes("world");
 console.log(n); // true
+```
+	
+<br><br>
+	
+# get name of string in function
+```javascript
+const test = (prop) => {
+    var name = Object.keys(prop)[0];
+    var value = prop[name];
+
+    const obj = {}
+    obj[name] = value
+    return obj
+}
+
+let schema = true
+
+console.log(test({schema}))
 ```
 
 </details>
