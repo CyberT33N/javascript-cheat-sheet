@@ -1133,6 +1133,12 @@ let a, b
 ;({a, b} = objectReturningFunction())
 
 console.log(b)
+	
+	
+	
+// Example #2
+let { hasChanged } = await getModel(modelName)
+;({ hasChanged } = await getModel(modelName2))
 ```
 
 
