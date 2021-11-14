@@ -5427,10 +5427,11 @@ node --experimental-modules app.mjs
 	
 /*
 ## Option 0 ##
-Write like CJS but with import instead
+Write like CJS but with import instead. Results will be stored inside of default
 */
 	
-const requirements = await import('./requirements.js')
+const requirements = await import('../requirements.js')
+const { getMongoConn } = requirements.default
 	
 	
 	
