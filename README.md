@@ -5430,7 +5430,7 @@ node --experimental-modules app.mjs
 Write like CJS but with import instead
 */
 	
-const requirements = import('./requirements.js')
+const requirements = await import('./requirements.js')
 	
 	
 	
