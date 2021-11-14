@@ -5342,6 +5342,35 @@ var someone = new Person("First name", "Last name");
 someone.display();
 ```
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <br><br>
 ______________________________________________________
 <br><br>
@@ -5395,6 +5424,18 @@ node --experimental-modules app.mjs
 
 ## Export / Import
 ```javascript
+	
+/*
+## Option 0 ##
+Write like CJS but with import instead
+*/
+	
+const requirements = import('./requirements.js')
+	
+	
+	
+	
+	
 /*
 ## Option 1 ##
 Name your export instead of using default. It should look like this
@@ -5465,14 +5506,25 @@ await bot.getUserDetails(req, res);
 
 
 
+	
+	
+	
+	
 /* ## Option 5 - export classes ##
 export class startBROWSER {/*..*/};
 
 
+	
+	
+	
 
 /* ## Option 6 - export variable ##
 export let pptr;
 ```
+	
+	
+	
+	
 <br>
 <br>
 
