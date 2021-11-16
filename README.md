@@ -406,6 +406,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Regex](#_regex)
 1. .replace() with regex
 2. Capturing groups
+3. Create regex with variable
 
 # [Javascript Internal](#_javascriptinternal)
 1. .setTimeout
@@ -10237,9 +10238,12 @@ function checkSafari(){ return /^((?!chrome|android).)*safari/i.test(navigator.u
 <details><summary>Click to expand..</summary>
 
 
+	
+
 # .replace() with regex
 https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff
 
+	
 ```javascript
 // method #1
 var url = 'lolfoo';
@@ -10263,6 +10267,19 @@ let result = re.exec('2015-01-02');
 // result.groups.month === '01';
 // result.groups.day === '02';
 ```
+	
+	
+	
+# Create regex with variable
+```javascript
+const testVar = 123
+const regex = new RegExp(`ReGeX${testVar}ReGeX`);
+console.log(regex)
+```
+
+
+<br><br>
+	
 
 
 </details>
