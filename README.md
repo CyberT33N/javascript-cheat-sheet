@@ -187,6 +187,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 10. Get class name
 11. Object Destructuring with this
 
+
 # [Time/Date](#_time)
 1. format time to AM/PM
 2. get current Date
@@ -6164,16 +6165,46 @@ class BrowserWrapper {
     // public
     async connect() {
         this.browser = true
+	return this.browser
     }
 
     // private
     async _disconnect() {
         this.browser = false
+	return this.browser
     }
 }
+	
+const browser = new BrowserWrapper();
+console.log(instance.example); //=> true
+console.log(instance.connect()); //=> true
+console.log(instance._disconnect()); //=> false
 ```
 
+- In this example private methods are not public accessable
+```javascript
+class Something {
+  #property;
 
+  constructor(){
+    this.#property = "test";
+  }
+
+  #privateMethod() {
+    return 'hello world';
+  }
+
+  getPrivateMessage() {
+      return this.#property;
+  }
+}
+
+const instance = new Something();
+console.log(instance.property); //=> undefined
+console.log(instance.privateMethod); //=> undefined
+console.log(instance.getPrivateMessage()); //=> test
+console.log(instance.#property); //=> Syntax error
+```
 
 
 
