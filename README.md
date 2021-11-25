@@ -6213,6 +6213,8 @@ console.log(instance.#property); //=> Syntax error
 - In this example you can set private properties but not methods
 ```javascript
 // Works too with new WeakMap();
+
+// Works too without using Symbol just by declaring those variables out of scope from the class
 const property = Symbol();
 const hidden = Symbol();
 
