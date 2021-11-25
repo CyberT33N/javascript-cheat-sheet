@@ -182,7 +182,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 5. Use always same instance (singleton)
 6. Event listener
 7. Bind this to other method
-8. Private and public methods
+8. Private and public
 9. Service classes
 10. Get class name
 11. Object Destructuring with this
@@ -6154,7 +6154,7 @@ async _onDisconnect() {
 
 
 
-# Private and public methods 
+# Private and public
 - In this example private methods are still public accessable but you can tell other developer which methods are used outside by other files (public) and which methods are only used internal (private) in this class
 ```javascript
 class BrowserWrapper {
@@ -6181,6 +6181,8 @@ console.log(instance.connect()); //=> true
 console.log(instance._disconnect()); //=> false
 ```
 
+<br><br>
+	
 - In this example private methods are not public accessable
 ```javascript
 class Something {
@@ -6205,13 +6207,50 @@ console.log(instance.privateMethod); //=> undefined
 console.log(instance.getPrivateMessage()); //=> test
 console.log(instance.#property); //=> Syntax error
 ```
-
-
-
-
-
-
+	
 <br><br>
+
+- In this example you can set private properties but not methods
+```javascript
+// Works too with new WeakMap();
+const property = Symbol();
+const hidden = Symbol();
+
+class Something {
+constructor(){
+    this[property] = "test";
+}
+
+get() {
+   return this[property]
+}
+
+/* not working */
+//         [hidden]() {
+//            return this[property]
+//         }
+
+//         public() {
+//            return this.hidden()
+//         }
+}
+
+var instance = new Something();
+
+console.log(instance.property); // <-- undefined
+console.log(instance.get()); // <-- test
+```
+
+
+
+	
+	
+	
+	
+	
+	
+
+<br><br><br><br>
 
 
 
