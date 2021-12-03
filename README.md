@@ -4592,6 +4592,7 @@ person.fullName.apply(person1);  // Will return "Mary Doe"
 
 # .bind() (https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 - The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+- Make sure to create a new variable when you bind something.
 ```javascript
 const module = {
   x: 42,
