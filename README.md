@@ -325,7 +325,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 20. Insert HTML after specific element
 21. Find element
 22. Draggable
-  <br> 22.1 Exclude element
+  - 22.1 Exclude element
+23. Input
+  - 23.1 Get input value for each key stroke
+  - 23.2 Get input value after submit
 
 # [Async](#_async)
 1. Create Async
@@ -9166,6 +9169,37 @@ $( '.element' ).find( '.test' );
 $(".cardWrap").draggable({ handle: '.cardDescription', cancel: '.cloudimage-360' });
 ```
 
+	
+	
+	
+<br><br><br><br>
+
+## Get input value for each key stroke
+```html
+$('#dSuggest').on("input", function() {
+    var dInput = this.value;
+    console.log(dInput);
+    $(".dDimension:contains('" + dInput + "')").css("display","block");
+});
+```
+
+		
+<br><br>
+
+## Get input value after submit
+```html
+$('input').on('keydown', function(e) {
+	if (e.keyCode === 13) {
+	    alert($(this).val())
+	}
+})
+```
+
+	
+	
+	
+	
+	
 
 </details>
 
