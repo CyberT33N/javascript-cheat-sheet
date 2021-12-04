@@ -881,6 +881,9 @@ _____________________________________________________
 ```javascript
 // generate random number between 1-50
 Math.round(Math.random() * 50 + 1);
+	
+// generate random number between 0-4
+Math.floor(Math.random() * (4 + 1))
 ```
 
 <br><br>
