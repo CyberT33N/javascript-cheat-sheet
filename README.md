@@ -187,6 +187,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 9. Service classes
 10. Get class name
 11. Object Destructuring with this
+12. Private Class Fields
 
 
 # [Time/Date](#_time)
@@ -3901,7 +3902,7 @@ fruits.forEach((item, index) => {
 ```javascript
 function resetValuesToZero (obj) {
     Object.keys(obj).forEach(function (key) {
-        if (typeof obj[key] === 'object') {
+        if (typeof obj[key] === 'object') {  // if (typeof obj[key] === 'object' && !Array.isArray(obj[key]) && !_.isEmpty(obj[key])) {
             return resetValuesToZero(obj[key]);
         }
         obj[key] = 0;
@@ -6395,6 +6396,94 @@ var obj = {
   "apple": true
 }
 var test = new getThumbnailCfg(obj)
+```
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<br><br>
+
+
+
+# Private Class Fields
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
+	
+	
+```javascript
+class ClassWithPrivateField {
+  #privateField;
+}
+
+class ClassWithPrivateMethod {
+  #privateMethod() {
+    return 'hello world';
+  }
+}
+
+class ClassWithPrivateStaticField {
+  static #PRIVATE_STATIC_FIELD;
+}
+
+class ClassWithPrivateStaticMethod {
+  static #privateStaticMethod() {
+    return 'hello world';
+  }
+}
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+// Example #1
+class Something {
+  #property;
+
+  constructor(){
+    this.#property = "test";
+  }
+
+  #privateMethod() {
+    return 'hello world';
+  }
+
+  getPrivateMessage() {
+      return this.#property;
+  }
+}
+
+const instance = new Something();
+console.log(instance.property); //=> undefined
+console.log(instance.privateMethod); //=> undefined
+console.log(instance.getPrivateMessage()); //=> test
+console.log(instance.#property); //=> Syntax error
+	
+
+	
+// Example #1
 ```
 
 
