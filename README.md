@@ -107,7 +107,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Do loop based on length of array
 3. Make the loop jump to the next iteration when i is 5
 4. break the loop when i is 5
-5. Use array as variable
+5. Get key and value of object
 6. label
   - 6.1 Using a labeled continue with for loops
   - 6.2 Using a labeled break with for loops
@@ -4116,7 +4116,7 @@ for (i = 0; i < 10; i++) {
 
 <br><br>
 
-# Use array as variable
+# Get key and value of object
 ```javascript
 const object1 = {
   a: 'somestring',
