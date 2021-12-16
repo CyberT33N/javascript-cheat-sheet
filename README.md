@@ -67,6 +67,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 14. Command Pattern
 15. Facade Pattern
 16. Decorator Pattern
+17. Enum Pattern
 
 # [DOM](#_dom)
 1. Console clear assignment and variables
@@ -2876,6 +2877,59 @@ function getFetch(url, params = {}) {
 
 
 
+
+
+<br><br><br><br>
+
+## Enum Pattern
+- https://masteringjs.io/tutorials/fundamentals/enum
+
+```javascript
+class Direction {
+  static Up = new Direction('Up');
+  static Down = new Direction('Down');
+  static Left = new Direction('Left');
+  static Right = new Direction('Right');
+
+  constructor(name) {
+    this.name = name;
+  }
+  toString() {
+    return `Color.${this.name}`;
+  }
+}
+```
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
