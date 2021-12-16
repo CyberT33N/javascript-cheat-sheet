@@ -7934,10 +7934,22 @@ console.log(data);
 	
 <br><br><br><br>
 
-# Remove properties from object
+# Remove properties from object rekursive
 ```javascript
-'use strict'
+// Method #1
+const _ = require('lodash')
+const newObj = _.omit(obj, ['x','y']);
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+// Method #2	
 /**
  * Remove property from object
  * @param {Object} obj
