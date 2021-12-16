@@ -4118,6 +4118,7 @@ for (i = 0; i < 10; i++) {
 
 # Get key and value of object
 ```javascript
+// Example #1
 const object1 = {
   a: 'somestring',
   b: 42
@@ -4131,6 +4132,17 @@ for (const [key, value] of Object.entries(object1)) {
 // "a: somestring"
 // "b: 42"
 // order is not guaranteed
+	
+	
+	
+	
+// Example #2	
+const documents = [ {__v: '1.2', modelName: 'test'} ]	
+
+for (const { __v: newVersion, modelName } of documents) {
+    console.log('newVersion': + newVersion)
+    console.log('modelName': + modelName)
+}	
 ```
 
 
