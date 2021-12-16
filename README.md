@@ -248,6 +248,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 20. Clone Object
 21. Remove duplicated objects from array
 23. Remove properties from object
+24. object values to array
   
 # [Array](#_array)
 1. Clone unique
@@ -8006,6 +8007,41 @@ console.log(res)
 ```
 	
 	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<br><br><br><br>
+
+# object values to array
+```javascript
+let obj = {apple:true,c:false}
+let obj2 = {banana:false,d:false}
+
+let ar = Object.keys(obj)
+    .map(function(key) {
+        return obj[key];
+    });
+
+console.log(ar) // [true, false]
+```
+
 	
 	
 	
