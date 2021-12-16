@@ -9390,8 +9390,12 @@ async function test(){
 
 # setTimeout
 ```javascript
-// method #1 (Works with node 16+)
+// method #1a ESM (Works with node 16+)
 import { setTimeout } from 'timers/promises';
+await setTimeout(5000)
+		
+// method #1a CJS (Works with node 16+)
+const { setTimeout } = require('timers/promises');
 await setTimeout(5000)
 
 // method #2
