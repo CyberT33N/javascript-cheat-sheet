@@ -317,6 +317,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 9. Check for Touch Event (Mobile/Tablet)
 10. Wait until scroll is finished
 11. Scroll to bottom
+12. Scroll to specific element
 12. Import scripts with callback
 13. Get path of element
 14. each loop
@@ -9205,15 +9206,36 @@ console.log( 'xPos: ' + xPos );
 
 ```
 
+	
+<br><br>	
+	
 # Wait until scroll is finished
 ```javascript
 $('html').animate({scrollTop: $("layerone").offset().top}, 'slow', function() {
 console.log('scroll done..');
 });
 ```
+	
+<br><br>	
 
 
 # Scroll to bottom
+```html
+html {
+  scroll-behavior: smooth;
+}
+```
+	
+```javascript
+// Scroll to a certain element
+document.querySelector('.hello').scrollIntoView({ 
+  behavior: 'smooth' 
+});
+```
+	
+<br><br>
+	
+# Scroll to specific element
 ```javascript
 // method #1
 $("a[href='#bottom']").click(function() {
@@ -9225,6 +9247,7 @@ $("a[href='#bottom']").click(function() {
 document.querySelector(".chat").scrollTop = document.querySelector(".chat").scrollHeight;
 ```
 
+<br><br>
 
 # Import scripts with callback
 ```javascript
