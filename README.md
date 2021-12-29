@@ -9265,6 +9265,7 @@ document.querySelector(".chat").scrollTop = document.querySelector(".chat").scro
 
 # Get path of element (css selector)
 ```javascript
+// Method #1
 jQuery.fn.getSelector = function() {
 
     if ($(this).attr('id')) {
@@ -9282,10 +9283,50 @@ jQuery.fn.getSelector = function() {
 
     return $(this).parent().getSelector() + ' ' + myOwn;
 }
-
-
 console.log( 'path: ' + $(".owl-carousel .owl-item").getSelector() );
+	
+	
+	
+// Method #2
+	function getSelector(el)
+        {
+            var $el = jQuery(el);
 
+            var selector = $el.parents(":not(html,body)")
+                .map(function() {
+                    var i = jQuery(this).index();
+                    i_str = '';
+
+                    if (typeof i != 'undefined')
+                    {
+                        i = i + 1;
+                        i_str += ":nth-child(" + i + ")";
+                    }
+
+                    return this.tagName + i_str;
+                })
+                .get().reverse().join(" ");
+
+            if (selector) {
+                selector += " "+ $el[0].nodeName;
+            }
+
+            var index = $el.index();
+            if (typeof index != 'undefined')  {
+                index = index + 1;
+                selector += ":nth-child(" + index + ")";
+            }
+
+            return selector;
+        }
+	
+
+console.log( 'path: ' + getSelector($(".owl-carousel .owl-item")) );
+
+	
+	
+	
+	
 	
 // If you want to get the nth child use $(this).index()
 $(elImageCSS).hover(function(){
