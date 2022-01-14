@@ -9158,6 +9158,8 @@ $("#prospects_form").submit(function(e) {
 ```javascript
 // method 1 (for me only this worked stable)
 var lastScrollTop = 0;
+
+// Or use body as css selector
 $(window).scroll(function(event){
    var st = $(window).scrollTop();
    if (st > lastScrollTop){
