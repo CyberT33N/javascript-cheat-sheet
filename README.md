@@ -333,6 +333,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 23. Input
   - 23.1 Get input value for each key stroke
   - 23.2 Get input value after submit
+24. Check if element is in viewport
 
 # [Async](#_async)
 1. Create Async
@@ -9459,7 +9460,7 @@ $('#dSuggest').on("input", function() {
 <br><br>
 
 ## Get input value after submit
-```html
+```javascript								  
 $('input').on('keydown', function(e) {
 	if (e.keyCode === 13) {
 	    alert($(this).val())
@@ -9469,7 +9470,22 @@ $('input').on('keydown', function(e) {
 
 	
 	
-	
+			
+<br><br>
+
+## Check if element is in viewport
+```javascript
+$.fn.isInViewport = function() {
+	var elementTop = $(this).offset().top;
+	var elementBottom = elementTop + $(this).outerHeight();
+	var viewportTop = $(window).scrollTop();
+	var viewportBottom = viewportTop + $(window).height();
+	return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+									  
+$('.swiper').isInViewport() // returns true or false
+```
+
 	
 	
 
