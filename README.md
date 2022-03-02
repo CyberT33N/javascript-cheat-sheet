@@ -4666,6 +4666,22 @@ person.fullName.apply(person1);  // Will return "Mary Doe"
 - The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
 - Make sure to create a new variable when you bind something.
 ```javascript
+// Example #1	
+// a function
+var something = function (a, b, c) {
+  console.log(a, b, c);
+};
+
+// a binding of something with 3 defined args
+var b = something.bind(null, 1, 2, 3);
+
+// call b
+b();
+//=> 1 2 3
+	
+	
+	
+// Example #2
 const module = {
   x: 42,
   getX: function() {
