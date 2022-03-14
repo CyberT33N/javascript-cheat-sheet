@@ -7961,12 +7961,23 @@ console.log(data);
 	
 <br><br><br><br>
 
-# Remove properties from object rekursive
+# Remove properties from object recursive
 ```javascript
 // Method #1
 const _ = require('lodash')
 const newObj = _.omit(obj, ['x','y']);
+```
+	
+<br><br>
 
+# Remove properties from array of objects recursive
+```javascript
+// Method #1
+const _ = require('lodash')
+var strippedRows = _.map(rows, function (row) {
+    return _.omit(row, ['bad', 'anotherbad']);
+});
+```
 	
 	
 	
