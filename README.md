@@ -159,7 +159,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 3.3 Export / Import
   - 3.4 Client Side
   - 3.5 No require, exports, module.exports, __filename, __dirname
-  - 3.6 Dynamic Module Import
+  - 3.6 Import script dynamic
 
 # [Prototypes](#_prototypes)
 1. Instantiate Object with Object.create (OLD METHOD)
@@ -5658,8 +5658,11 @@ const __dirname = dirname(__filename);
 <br><br>
 
 
-## Dynamic Module Import
+## Import script dycamic
 ```javascript
+// If you use vanilla javascript you can use this to enable esm
+// <script type="module" src="js/home/searchBar/app.js"></script>
+	
 // app.mjs
 const loadTest = async () => {
     const {test} = await import("./app2.mjs")
