@@ -249,6 +249,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 21. Remove duplicated objects from array
 23. Remove properties from object
 24. object values to array
+25. do not set undefined properties in object
   
 # [Array](#_array)
 1. Clone unique
@@ -8072,6 +8073,18 @@ console.log(ar) // [true, false]
 
 	
 	
+	
+<br><br><br><br>
+
+# do not set undefined properties in object
+```javascript
+const a = 123
+const b = undefined
+const obj = { a, ...(b ? { b } : {}) }
+
+console.log(obj) // { a: 123 }
+```
+
 	
 	
 </details>
