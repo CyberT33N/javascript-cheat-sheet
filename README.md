@@ -308,6 +308,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   <br>1.1 Insert all contents of another same origin HTML file to current page
   <br>1.2 Insert specific element of another same origin HTML file to current page
 2. Check for click
+  <br> 2.1 Check for click to a JQuery object not yet added to the DOM
 3. Check browser
 4. Event Listener
   - 4.1 Manually trigger event listener
@@ -9140,9 +9141,6 @@ $(".some_class").on("click", function(e) {
 
 // method #2
 $("#clicker").click(function () { /*..*/ });
-
-// method #3
-$(document).on('click', '#yourid', function() { /*..*/ });
 ```
 
 # Check browser (https://api.jquery.com/jQuery.browser/)
@@ -9154,8 +9152,34 @@ if ($.browser.mozilla) { ... }
 const isFirefoxBrowser = navigator.userAgent.includes('Firefox');
 ```
 
-
+	
+	
+	
+	
+	
+	
 <br><br>
+
+# Check for click to a JQuery object not yet added to the DOM
+- Use the parent which will always exist to register the click event
+```javascript
+// Method #1
+$(document).on('click', '#yourid', function() { /*..*/ });
+	
+// Method #2
+$('body').on('click', '#yourid', function() { /*..*/ });
+```
+
+	
+	
+	
+	
+	
+	
+	
+	
+
+<br><br><br><br>
 
 # Event Listener (https://api.jquery.com/category/events/)
 ```javascript
