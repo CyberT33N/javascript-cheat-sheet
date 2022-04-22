@@ -414,6 +414,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. .replace() with regex
 2. Capturing groups
 3. Create regex with variable
+4. Matching
 
 # [Javascript Internal](#_javascriptinternal)
 1. .setTimeout
@@ -10741,6 +10742,18 @@ console.log(regex)
 <br><br>
 	
 
+# matching
+```javascript
+const data = 'width: 480px; transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(3.75deg) scale(1); z-index: 1; margin-top: 0px; transition-duration: 0ms;'
+
+let regexpNames =  /rotateY\((.*?)\)/mg;
+let result = regexpNames.exec(data);
+
+console.log(result[1]) // rotateY(3.75deg)
+```
+
+
+<br><br>
 
 </details>
 
