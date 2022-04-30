@@ -392,6 +392,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Open something new window
 3. Get link params from oauth popup window
 4. localStorage
+5. Extend/Add url without reload page
 
 # [Clipboard](#_clipboard)
 1. Copy any text to clipboard
@@ -10416,8 +10417,9 @@ oauthOpen('http://localhost:1337/oauth-dialog.html', async (err, code) => {
 ```
 
 
-<br>
-<br>
+	
+	
+<br><br>
 
 # localStorage (https://www.w3schools.com/jsref/prop_win_localstorage.asp)
 
@@ -10443,6 +10445,20 @@ localStorage.clickcount + " time(s).";
 
 
 
+	
+<br><br>
+
+# Extend/Add url without reload page
+- https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API
+
+```javascript
+// Change url by adding /search?q
+window.history.pushState('search', 'search', `/search?q=${searchValue}`);
+```
+	
+	
+	
+	
 </details>
 
 
