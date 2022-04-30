@@ -393,6 +393,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 3. Get link params from oauth popup window
 4. localStorage
 5. Extend/Add url without reload page
+6. Get url query paramater
 
 # [Clipboard](#_clipboard)
 1. Copy any text to clipboard
@@ -10458,6 +10459,13 @@ window.history.pushState('search', 'search', `/search?q=${searchValue}`);
 	
 	
 	
+<br><br>
+
+# Get url query paramater
+```javascript
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('paramNameHere');
+```
 	
 </details>
 
