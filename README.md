@@ -7919,11 +7919,13 @@ const clone = Object.assign({}, obj)
 const clone = _.clone(obj);
 	
 	
-	
-// Deep copy - Method #1
-const cloneDeep = JSON.parse(JSON.stringify(obj)
+// Deep copy - Method #2 (https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
+const cloneDeep = structuredClone(obj)
 	
 // Deep copy - Method #2
+const cloneDeep = JSON.parse(JSON.stringify(obj)
+	
+// Deep copy - Method #3
 const cloneDeep = _.cloneDeep(obj);
 ```
 
