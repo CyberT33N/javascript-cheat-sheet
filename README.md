@@ -4691,6 +4691,24 @@ const res = fn.apply(person)
 - The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
 - Make sure to create a new variable when you bind something.
 ```javascript
+// Example #0
+const fn = function(apple) {
+    console.log('apple:', apple)
+}
+
+const obj = {
+    apple:true
+}
+
+const test = fn.bind(this, obj)
+
+test()
+	
+	
+	
+	
+	
+	
 // Example #1	
 // a function
 var something = function (a, b, c) {
