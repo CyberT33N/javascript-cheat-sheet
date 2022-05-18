@@ -4663,6 +4663,24 @@ var person1 = {
 person.fullName.apply(person1);  // Will return "Mary Doe"
 ```
 
+	
+<br><br>
+
+## Add new variables to scope of function#
+- This will not work with bind only with apply
+```javascript
+const fn = function () {
+    console.log(this.firstName)
+    console.log(this.lastName)
+}
+	
+var person = {
+  firstName: "Mary",
+  lastName: "Doe"
+}
+	
+fn.apply(person)
+```
 
 
 <br><br>
