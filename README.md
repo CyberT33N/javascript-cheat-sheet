@@ -4666,20 +4666,22 @@ person.fullName.apply(person1);  // Will return "Mary Doe"
 	
 <br><br>
 
-## Add new variables to scope of function#
+## Add new variables to scope of function
 - This will not work with bind only with apply
 ```javascript
 const fn = function () {
     console.log(this.firstName)
     console.log(this.lastName)
+    return this.firstName
 }
 	
 var person = {
   firstName: "Mary",
   lastName: "Doe"
 }
-	
-fn.apply(person)
+
+// This will call ne function
+const res = fn.apply(person)
 ```
 
 
