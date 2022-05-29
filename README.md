@@ -1539,9 +1539,11 @@ console.log(set1.has(6));
 ```javascript
 class test {
   constructor(){
-    if(test.instance == null){
+    if (test.instance === undefined) {
+      this.apple = true
       test.instance = this;
     }
+	
     return test.instance;
   };
 
