@@ -1537,29 +1537,52 @@ console.log(set1.has(6));
 
 ## Singleton with Classes
 ```javascript
-class test {
-  constructor(){
-    if (test.instance === undefined) {
-      this.apple = true
-      test.instance = this;
+/**
+ *
+ */
+class MongooseUtils {
+    /**
+     *
+     * @param name
+     * @returns {MongooseUtils}
+     */
+    constructor(name) {
+        if (MongooseUtils.instance === undefined) {
+            // Because we override here the instance of the class with this we can declear any first singleton init call properties here with this.
+            this.base = 1234
+            MongooseUtils.instance = this
+        }
+
+        // If you want to change instance properties by inherit a new instance class with properties you must override the instance which we return. If you create a new instance and do not pass params for consstructor then we will use a fallback to the last value of the singleton
+        MongooseUtils.instance.name = name || MongooseUtils.instance.name
+
+        return MongooseUtils.instance
     }
-	
-    return test.instance;
-  };
 
+    /**
+     *
+     * @param data
+     */
+    createData(data){
+        this.example = data
+    }
+}
 
-  createData(data){
-    this.example = data;
-  };
-};
+const instanceA = new MongooseUtils('test1')
+instanceA.createData('a')
+console.log('instanceA: ' + instanceA.example) // <-- will print a
+console.log('instanceA name: ' + instanceA.name) // <-- will print test1
+console.log('instanceA base: ' + instanceA.base) // <-- will print 1234
 
+const instance2 = new MongooseUtils()
+console.log('instance2: ' + instance2.example) // <-- will print a
+console.log('instance2 name: ' + instance2.name) // <-- will print test1
+console.log('instance2 base: ' + instance2.base) // <-- will print 1234
 
-let a = new test();
-a.createData('a')
-console.log('a: ' + a.example); // <-- will print a
-
-let b = new test();
-console.log('b: ' + b.example); // <-- will print a
+const instance3 = new MongooseUtils('test3')
+console.log('instance3: ' + instance3.example) // <-- will print a
+console.log('instance3 name: ' + instance3.name) // <-- will print test3
+console.log('instance3 base: ' + instance3.base) // <-- will print 1234
 ```
 
 
@@ -6197,30 +6220,54 @@ c.foo(); // prints "foo from MyMixin"
 <br><br>
 
 # Use always same instance (singleton)
+	
 ```javascript
-class test {
-	constructor(){
-		if(test.instance === undefined){
-		    this.projectDbs = {}
+/**
+ *
+ */
+class MongooseUtils {
+    /**
+     *
+     * @param name
+     * @returns {MongooseUtils}
+     */
+    constructor(name) {
+        if (MongooseUtils.instance === undefined) {
+            // Because we override here the instance of the class with this we can declear any first singleton init call properties here with this.
+            this.base = 1234
+            MongooseUtils.instance = this
+        }
 
-		    test.instance = this
-		}
+        // If you want to change instance properties by inherit a new instance class with properties you must override the instance which we return. If you create a new instance and do not pass params for consstructor then we will use a fallback to the last value of the singleton
+        MongooseUtils.instance.name = name || MongooseUtils.instance.name
 
-		return test.instance
-	}
+        return MongooseUtils.instance
+    }
 
-	createData(data){
-	  this.example = data;
-	}
-};
+    /**
+     *
+     * @param data
+     */
+    createData(data){
+        this.example = data
+    }
+}
 
+const instanceA = new MongooseUtils('test1')
+instanceA.createData('a')
+console.log('instanceA: ' + instanceA.example) // <-- will print a
+console.log('instanceA name: ' + instanceA.name) // <-- will print test1
+console.log('instanceA base: ' + instanceA.base) // <-- will print 1234
 
-let a = new test();
-a.createData('a')
-console.log('a: ' + a.example); // <-- will print a
+const instance2 = new MongooseUtils()
+console.log('instance2: ' + instance2.example) // <-- will print a
+console.log('instance2 name: ' + instance2.name) // <-- will print test1
+console.log('instance2 base: ' + instance2.base) // <-- will print 1234
 
-let b = new test();
-console.log('b: ' + b.example); // <-- will print a
+const instance3 = new MongooseUtils('test3')
+console.log('instance3: ' + instance3.example) // <-- will print a
+console.log('instance3 name: ' + instance3.name) // <-- will print test3
+console.log('instance3 base: ' + instance3.base) // <-- will print 1234
 ```
 
 
