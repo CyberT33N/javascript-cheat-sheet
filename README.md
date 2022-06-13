@@ -445,7 +445,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 9. Destructuring
 10. Microservices
   - 10.1 Object-oriented
-- 11. YAML
+11. YAML
+12. You do not need lodash
 
 </details>
 
@@ -11373,6 +11374,14 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 - https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e
 
 
+	
+	
+	
+	
+	
+	
+	
+	
 <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -11383,6 +11392,15 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 ## Object-oriented
 - https://nodesource.com/blog/microservices-in-nodejs
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -11411,6 +11429,40 @@ https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
      location: "a pear tree"
    turtle-doves: two
 ```
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
 
+# You do not need lodash
+- https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_isempty
+	
 </details>
 
