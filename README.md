@@ -351,6 +351,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Use then & catch with async functions where we resolve promise
 2. async await for promise resolve
 3. Nested Functions
+4. Execute function and if it is promise wait for it
 
 # [Wait](#_wait)
 1. Wait until some condition is true
@@ -9951,6 +9952,22 @@ function scrollafterchangeDOWN(){return new Promise(resolve => {
 })};
 
 ```
+
+
+
+
+<br><br>
+
+# Execute function and if it is promise wait for it
+```javascript
+// First execute the function. If it is not a promise it will be just be executed. If it is a promise then you land in the then.
+Promise.resolve(environment()).then(() => {
+    //..
+})
+```
+
+
+
 
 </details>
 
