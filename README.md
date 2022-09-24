@@ -98,6 +98,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Switch](#_switch)
 1. Use unique scope for each case
 
+# [Proxy](#_proxy)
+1. Log every function call
+
 # [forEach](#_foreach)
 1. Iterate through all keys of nested object
 2. Pass Function
@@ -3853,6 +3856,94 @@ switch("Banana") {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+<a name="_proxy"><h1>Proxy</h1></a>
+<details><summary>Click to expand..</summary>
+  
+<br><br>
+
+# Guides
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+- https://www.javascripttutorial.net/es6/javascript-proxy/#:~:text=A%20JavaScript%20Proxy%20is%20an,%2C%20and%20function%20invocations%2C%20etc.
+
+<br><br>
+
+```javascript
+switch("Banana") {
+const target = {
+  message1: "hello",
+  message2: "everyone"
+};
+
+const handler1 = {};
+
+const proxy1 = new Proxy(target, handler1);
+
+console.log(proxy1.message1); // hello
+console.log(proxy1.message2); // everyone
+```
+
+<br><br>
+
+
+# Log every function call
+```javascript
+class TestClass {
+  a() {
+    this.aa = 1;
+  }
+  b() {
+    this.bb = 1;
+  }
+}
+
+
+const logger = className => {
+  return new Proxy(new className(), {
+    get: function(target, name, receiver) {
+      if (!target.hasOwnProperty(name)) {
+        if (typeof target[name] === "function") {
+          console.log(
+            "Calling Method : ",
+            name,
+            "|| on : ",
+            target.constructor.name
+          );
+        }
+        return new Proxy(target[name], this);
+      }
+      return Reflect.get(target, name, receiver);
+    }
+  });
+};
+
+
+
+const instance = logger(TestClass)
+
+instance.a() // output: "Calling Method : a || on : TestClass"
+```
+
+</details>
 
 
 
