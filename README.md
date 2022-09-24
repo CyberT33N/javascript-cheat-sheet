@@ -434,6 +434,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 5. console.assert()
 6. console.table()
 7. console.trace()
+8. Log every method call
 
 
 
@@ -11318,6 +11319,94 @@ foo();
 ```
 
 
+	
+	
+	
+	
+	
+	
+<br><br>
+
+# Log every method call
+- https://github.com/aigoncharov/class-logger#installation
+	
+```javascript
+	import { LogClass, Log } from 'class-logger'
+
+@LogClass()
+class Test {
+  @Log()
+  method1() {
+    return 123
+  }
+
+  @Log()
+  async methodAsync1() {
+    // do something asynchronous
+    return Symbol()
+  }
+
+  @Log()
+  methodError() {
+    throw new Error()
+  }
+
+  @Log()
+  property1 = () => null
+
+  @Log()
+  static methodStatic1(arg1) {
+    return {
+      prop1: 'test',
+    }
+  }
+}
+
+// Logs to the console before the method call:
+// 'Test.methodStatic1. Args: [42].'
+Test.methodStatic1(42)
+// Logs to the console after the method call:
+// 'Test.methodStatic1 -> done. Args: [42]. Res: {"prop1":"test"}.'
+
+// Logs to the console before the class' construction:
+// 'Test.construct. Args: [].'
+const test = new Test()
+
+// Logs to the console before the method call:
+// 'Test.method1. Args: [].'
+test.method1()
+// Logs to the console after the method call:
+// 'Test.method1 -> done. Args: []. Res: 123.'
+
+// Logs to the console before the method call:
+// 'Test.methodAsync1. Args: [].'
+test.methodAsync1()
+// Logs to the console after the method call (after the promise is resolved):
+// 'Test.methodAsync1 -> done. Args: []. Res: Symbol().'
+
+// Logs to the console before the method call:
+// 'Test.methodError. Args: [].'
+test.methodError()
+// Logs to the console after the method call:
+// 'Test.methodError -> error. Args: []. Res: Error {"name":"Error","message":"","stack":"some stack trace"}.'
+
+// Logs to the console before the method call:
+// 'Test.property1. Args: [].'
+test.property1()
+// Logs to the console after the method call:
+// 'Test.property1 -> done. Args: []. Res: null.'
+```
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 </details>
 
