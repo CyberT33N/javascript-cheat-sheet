@@ -11441,12 +11441,6 @@ test.property1()
 
 
 
-The Conditional (Ternary) Operator Exp
-
-
-
-
-
 
 
 
