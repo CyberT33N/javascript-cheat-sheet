@@ -452,6 +452,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 10.1 Object-oriented
 11. YAML
 12. You do not need lodash
+13. Aspect-Oriented Programming (AOP)
 
 </details>
 
@@ -11633,19 +11634,6 @@ https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -11653,6 +11641,28 @@ https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
 
 # You do not need lodash
 - https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_isempty
+
+
+
+
+
+
+
+
+
+
+	
+	
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+# Aspect-Oriented Programming (AOP)
+- https://blog.bitsrc.io/aspect-oriented-programming-in-javascript-c4cb43f6bfcc
+- https://medium.com/@blueish/an-introduction-to-aspect-oriented-programming-5a2988f51ee2
+- https://thecodebarbarian.com/practical-aspect-oriented-programming-in-javascript.html
+- https://github.com/mgechev/aspect.js
 	
 </details>
 
