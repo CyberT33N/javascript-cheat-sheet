@@ -299,6 +299,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 13. Remove element from array by value
 14. Convert array of objects to single object
 15. Replace each element of array
+16. Check if an array contains any element of another array
 
 # [Link](#_link)
 1. Get current link / domain
@@ -9117,6 +9118,20 @@ const res = audioList.map(audio => ({ audio, played: false }));
 
 console.log(res);
 ```
+	
+				
+<br><br>
+
+
+# Check if an array contains any element of another array
+```javascript
+// ES2016:
+const found = arr1.some(r=> arr2.includes(r))
+
+// ES6:
+const found = arr1.some(r=> arr2.indexOf(r) >= 0)
+```
+	
 	
 	
 	
