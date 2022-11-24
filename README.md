@@ -4817,7 +4817,8 @@ const data = await fn()
 
 
 
-
+// Example Core - Call Function and bind any this property to it and call it:
+await yourFn.bind({ yourPropName })()
 
 
 // Example #0
