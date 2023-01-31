@@ -5696,6 +5696,9 @@ Write like CJS but with import instead. Results will be stored inside of default
 	
 const requirements = await import('../requirements.js')
 const { getMongoConn } = requirements.default
+
+// This works aswell
+(await import('../requirements.js')).default
 	
 	
 	
