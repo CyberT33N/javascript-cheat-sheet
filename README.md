@@ -300,6 +300,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 14. Convert array of objects to single object
 15. Replace each element of array
 16. Check if an array contains any element of another array
+17. Check if an array contains any object of another array and then overwrite it
 
 # [Link](#_link)
 1. Get current link / domain
@@ -9145,6 +9146,30 @@ const found = arr1.some(r=> arr2.includes(r))
 const found = arr1.some(r=> arr2.indexOf(r) >= 0)
 ```
 	
+	
+	
+				
+<br><br>
+
+
+# Check if an array contains any object of another array and then overwrite it
+```javascript
+let project = [{ _id: 1, name: 'Project 1' }, { _id: 2, name: 'Project 2' }];
+let common = [{ _id: 3, name: 'Common 1' }, { _id: 2, name: 'Common 2' }];
+
+let filteredCommon = common.filter(c => !project.some(p => p._id === c._id));
+let result = project.concat(filteredCommon);
+
+console.log(result);
+/*
+This will output:
+[
+  { _id: 1, name: 'Project 1' },
+  { _id: 2, name: 'Project 2' },
+  { _id: 3, name: 'Common 1' }
+]
+*/
+```
 	
 	
 	
