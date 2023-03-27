@@ -8891,6 +8891,34 @@ const map1 = array1.map(x => x * 2);
 console.log(map1);
 // expected output: Array [2, 8, 18, 32]
 ```
+	
+<br><br>
+	
+### await
+```
+async function readAllJsonFiles() {
+  const fs = require('fs-extra');
+  const path = require('path');
+
+  const directoryPath = './test/SchemaEntities';
+
+  try {
+    const files = await fs.readdir(directoryPath);
+
+    const fileContents = await Promise.all(
+      files.map(async (filename) => {
+        const filePath = path.join(directoryPath, filename);
+        const fileContent = await fs.readJson(filePath);
+        return fileContent;
+      })
+    );
+
+    console.log(fileContents);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
 
 
 
