@@ -1165,6 +1165,14 @@ let { hasChanged } = await getModel(modelName)
 ```
 
 
+<br><br>
+	
+### Remove property from object
+```
+// Remove placements property from obj
+const { placements, ...newObj } = obj
+```
+	
 	
 	
 	
