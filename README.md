@@ -8288,6 +8288,21 @@ console.log(ar) // [true, false]
 
 # do not set undefined properties in object
 ```javascript
+// example #1
+const bcc = false
+const bccAddress = { test: true }
+    
+const email = {
+apple: true,
+...(bcc ? { bccAddress } : {})
+}
+
+console.log('email: ', email)
+
+
+
+
+// example #2
 const a = 123
 const b = undefined
 const obj = { a, ...(b ? { b } : {}) }
