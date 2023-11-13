@@ -6274,6 +6274,58 @@ console.log('getDetails: ' + getDetails);
 
 # Multiple Inheritance (Mixins)
 ```javascript
+// ---- EXAMPLE #0 -----
+/**
+ * Multiple Inheritance by simply merging the props functions
+ * together to be used as right side extension of the keyword "extends Classes.
+ * Beware of the fact that order of classes matter, mpst outer right class
+ * wins when methods with the same name collide. 
+ * 
+ * @param {Array<Object>} bases 
+ */
+function Classes(bases) {
+    
+    /**
+     *  Merge and mix all functions
+     *  @class
+     */
+    class Bases {
+
+        /**
+         * Calls the constructors of each class in the scope of Bases and adds it
+         * to an instance of {@link Bases}
+         */
+        constructor(){
+            bases.forEach(base => Object.assign(this, new base()))
+        }
+    }
+    // combines the prototypes of each class passed
+    bases.forEach(base => {
+        Object.getOwnPropertyNames(base.prototype)
+            .filter(prop => prop != 'constructor')
+            .forEach(prop => Bases.prototype[prop] = base.prototype[prop])
+    })
+    return Bases
+}
+
+class A{
+   sing(){console.log('lalilala')}
+}
+
+class B{
+    speak(){console.log('hi all!')} 
+}
+
+class C extends Classes([A,B]){
+    singAndSpeak(){
+         this.sing()
+         this.speak()
+     }
+}
+
+
+
+
 // ---- EXAMPLE #1 -----
 class Animal {
   constructor(){ 
