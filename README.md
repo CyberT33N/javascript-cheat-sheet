@@ -3900,6 +3900,38 @@ switch("Banana") {
 <br><br>
 
 ```javascript
+# method #1 - Mongoose Model example
+js cheat sheet
+import mongoose from 'mongoose';
+
+// Dein ursprüngliches Mongoose-Modell
+const OriginalModel = mongoose.model('DeinModel', {
+  // Hier sind deine Modelleigenschaften
+});
+
+// Proxy für findOne() Methode
+const CustomFindOneProxy = new Proxy(OriginalModel, {
+  get: function (target, prop, receiver) {
+    if (prop === 'findOne') {
+      return function (conditions, callback) {
+        // Hier kommt deine benutzerdefinierte Logik für findOne()
+        console.log('Benutzerdefinierte findOne() Logik hier');
+        // Du kannst auch die Original-Methode aufrufen, wenn nötig
+        return target[prop](conditions, callback);
+      };
+    } else {
+      // Für andere Eigenschaften/Methode des Modells
+      return Reflect.get(target, prop, receiver);
+    }
+  },
+});
+
+
+
+
+
+
+# method #2
 const target = {
   message1: "hello",
   message2: "everyone"
