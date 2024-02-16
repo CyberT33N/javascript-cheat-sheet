@@ -456,6 +456,11 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 12. You do not need lodash
 13. Aspect-Oriented Programming (AOP)
 
+
+
+# [Frameworks](#_frameworks)
+1. ui.shadcn.com
+
 </details>
 
 
@@ -11619,7 +11624,18 @@ test.property1()
 
 
 
+<a name="_frameworks"><h1>Frameworks</h1></a>
+<details><summary>Click to expand..</summary>
 
+
+# ui.shadcn.com
+- https://ui.shadcn.com/docs/components/context-menu
+
+
+
+
+
+</details
 
 
 
@@ -11755,7 +11771,10 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 
 	
 	
-	
+
+
+
+ 
 	
 	
 	
