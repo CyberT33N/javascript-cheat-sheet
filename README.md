@@ -11160,6 +11160,13 @@ console.log(regex)
 
 # matching
 ```javascript
+# Method #1
+if (!/^test-\d+$/.test(dbName)) {
+	console.warn(`Invalid project ID for migrations: ${dbName}. We will skip the migration`)
+	return
+}
+
+# Method #2
 const data = 'width: 480px; transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(3.75deg) scale(1); z-index: 1; margin-top: 0px; transition-duration: 0ms;'
 
 let regexpNames =  /rotateY\((.*?)\)/mg;
