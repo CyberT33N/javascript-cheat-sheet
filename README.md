@@ -1558,6 +1558,53 @@ console.log(set1.has(6));
 <br><br>
 
 ## Singleton with Classes
+
+### Example #1
+```
+class Singleton {
+    // Static field to hold the single instance
+    static #instance;
+
+    // Private constructor to prevent direct instantiation
+    constructor() {
+        if (Singleton.#instance) {
+            throw new Error('Instance already exists. Use Singleton.getInstance() to get the instance.');
+        }
+        this.value = Math.random(); // Example property
+    }
+
+    // Static method to get the single instance of the class
+    static getInstance() {
+        if (!Singleton.#instance) {
+            Singleton.#instance = new Singleton();
+        }
+        return Singleton.#instance;
+    }
+
+    // Example method
+    getValue() {
+        return this.value;
+    }
+}
+
+// Usage
+try {
+    const instance1 = Singleton.getInstance();
+    console.log(instance1.getValue()); // Some random value
+
+    const instance2 = Singleton.getInstance();
+    console.log(instance2.getValue()); // Same value as instance1
+
+    console.log(instance1 === instance2); // true
+
+    // Attempting to create a new instance directly will throw an error
+    const newInstance = new Singleton(); // Error: Instance already exists. Use Singleton.getInstance() to get the instance.
+} catch (error) {
+    console.error(error.message);
+}
+```
+
+### Example #2
 ```javascript
 /**
  *
@@ -6426,7 +6473,54 @@ c.foo(); // prints "foo from MyMixin"
 <br><br>
 
 # Use always same instance (singleton)
-	
+
+
+### Example #1
+```
+class Singleton {
+    // Static field to hold the single instance
+    static #instance;
+
+    // Private constructor to prevent direct instantiation
+    constructor() {
+        if (Singleton.#instance) {
+            throw new Error('Instance already exists. Use Singleton.getInstance() to get the instance.');
+        }
+        this.value = Math.random(); // Example property
+    }
+
+    // Static method to get the single instance of the class
+    static getInstance() {
+        if (!Singleton.#instance) {
+            Singleton.#instance = new Singleton();
+        }
+        return Singleton.#instance;
+    }
+
+    // Example method
+    getValue() {
+        return this.value;
+    }
+}
+
+// Usage
+try {
+    const instance1 = Singleton.getInstance();
+    console.log(instance1.getValue()); // Some random value
+
+    const instance2 = Singleton.getInstance();
+    console.log(instance2.getValue()); // Same value as instance1
+
+    console.log(instance1 === instance2); // true
+
+    // Attempting to create a new instance directly will throw an error
+    const newInstance = new Singleton(); // Error: Instance already exists. Use Singleton.getInstance() to get the instance.
+} catch (error) {
+    console.error(error.message);
+}
+```
+
+ ### Example #2
 ```javascript
 /**
  *
