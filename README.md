@@ -6357,6 +6357,133 @@ console.log('getDetails: ' + getDetails);
 
 
 # Multiple Inheritance (Mixins)
+
+
+<br><br>
+<br><br>
+
+## TypeScript
+
+<br><br>
+
+### Example 1 - Default
+- The helper function mix() extends from multiple classes and assign the this context to the instance of the parent class(ParentManager)
+- ClassA contains a cunstructor which contains e.g. this.test which will be available aswell in ClassB
+
+
+```typescript
+type Constructor<T = {}> = new (...args: any[]) => T
+
+export default function mix<T extends Constructor[]>(...bases: T) {
+    class Base {
+        [key: string]: any
+
+        constructor(...args: any[]) {
+            bases.forEach(base => {
+                const instance = new base(...args)
+                Object.assign(this, instance)
+            })
+        }
+    }
+
+    bases.forEach(base => {
+        Object.getOwnPropertyNames(base.prototype).forEach(name => {
+            Base.prototype[name] = base.prototype[name]
+        })
+    })
+
+    return Base
+}
+
+export default class ParentManager extends mix(ClassA, ClassB) {
+    constructor() {
+        super('eth')
+    }
+}
+```
+
+
+## Example 2 - Custom nested properties for each extended class
+- In comparsion to example 1 here we assign the instance of ClassB to this.balance. This is usefully when you want to create a more cleaner nested logic for better naming.
+  - ClassB is still able to use this from ParentManager & ClassA
+ 
+- MixinConfig:
+  - property: The child property you want to use where you want to assign your instance at
+  - initSuper: Set to true if you want to pass the arguments of super() from parent class to the class instance where you extend at. Default will be false
+  - Class: The Class you want to extend from 
+```typescript
+// Type for constructor
+type Constructor<T = {}> = new (...args: any[]) => T
+
+// Type for mixin config
+interface MixinConfig {
+    Class: Constructor
+    property?: string
+    initSuper?: boolean
+}
+
+// Class mix function to combine multiple classes
+export default function mix(...configs: MixinConfig[]) {
+   class Base {
+        [key: string]: any
+     
+        constructor(...args: any[]) {
+            configs.forEach(config => {
+                const { Class, property, initSuper } = config as MixinConfig
+
+                // If initSuper is true, create new instance of the class with arguments from parent class
+                const instance = initSuper ? new Class(...args) : new Class()
+
+                if (property) {
+                // Create new instance of the class at the custom property
+                    this[property] = instance
+
+                    // Assign this to the custom property from config
+                    Object.assign(this, this[property])
+
+                    /*
+                    Assign this to the custom property from the class.
+                    This is useful when the class has a method that uses this from parent class
+                    */
+                    Object.assign(this[property], this)
+                } else {
+                    // Create new instance of the class at the class itself if no custom property
+                    Object.assign(this, instance)
+                }
+            })
+        }
+    }
+
+    // Assign all methods from all classes to the Base class
+    configs.forEach(config => {
+        const { Class } = config
+
+        Object.getOwnPropertyNames(Class.prototype).forEach(name => {
+            Base.prototype[name] = Class.prototype[name]
+        })
+    })
+
+    return Base as Constructor
+}
+
+export default class ParentManager extends mix(
+    { Class: ClassA },
+    { Class: ClassB, property: 'balance' }
+) {
+    [key: string]: ClassA & ClassB
+
+    constructor() {
+        super('eth')
+    }
+}
+```
+
+
+
+
+
+
+## Common JS
 ```javascript
 // ---- EXAMPLE #00 -----
 class Class1 extends BaseClass {}
