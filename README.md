@@ -6358,6 +6358,23 @@ console.log('getDetails: ' + getDetails);
 
 # Multiple Inheritance (Mixins)
 ```javascript
+// ---- EXAMPLE #00 -----
+class Class1 extends BaseClass {}
+class Class2 extends BaseClass {}
+
+class Example {
+  class1: Class1 // Sorry for the Typescript
+  class2: Class2
+
+  constructor (props) {
+    this.class1 = new Class1(props)
+    this.class2 = new Class2(props)
+  }
+}
+
+
+
+
 // ---- EXAMPLE #0 -----
 /**
  * Multiple Inheritance by simply merging the props functions
