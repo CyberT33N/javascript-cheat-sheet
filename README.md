@@ -6397,6 +6397,7 @@ export default function mix<T extends Constructor[]>(...bases: T) {
 
 export default class ParentManager extends mix(ClassA, ClassB) {
     constructor() {
+        // will be passed to each extended Class. Please check example #2 for more control
         super('eth')
     }
 }
@@ -6467,7 +6468,7 @@ export default function mix(...configs: MixinConfig[]) {
 }
 
 export default class ParentManager extends mix(
-    { Class: ClassA },
+    { Class: ClassA, initSuper: true  },
     { Class: ClassB, property: 'balance' }
 ) {
     [key: string]: ClassA & ClassB
