@@ -6569,9 +6569,12 @@ export default function mix(...configs: MixinConfig[]) {
         })
     })
 
-    return Base as Constructor
+       return Base as Constructor<Base & 
+        {
+            [K in keyof Base]: Base[K]} &
+            {[K in keyof InstanceType<MixinConfig['Class']>]: InstanceType<MixinConfig['Class']>[K]
+        }>
 }
-
 ```
 
 
