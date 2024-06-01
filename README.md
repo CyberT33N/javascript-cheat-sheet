@@ -6480,9 +6480,116 @@ export default class ParentManager extends mix(
 ```
 
 
+## Example 3 - Nested custom properties
+- In comparsion to example #2 here you can e.g. acces this.classA.test() from this.classB.test()
+```typescript
+
+// Type for constructor
+type Constructor<T = {}> = new (...args: any[]) => T
+
+// Type for mixin config
+interface MixinConfig {
+    Class: Constructor
+    property?: string,
+    initSuper?: boolean
+}
+
+// Class mix function to combine multiple classes
+export default function mix(...configs: MixinConfig[]) {
+    class Base {
+        [key: string]: any
+
+        constructor(...args: any[]) {
+            configs.forEach(config => {
+                this.loadConfig(config, args)
+            })
+        }
+
+        // Create new instance of the class from config
+        getInstanceOfConfig(config: MixinConfig, args: any[]) {
+            const { Class, initSuper } = config
+
+            // If initSuper is true, create new instance of the class with arguments from parent class
+            const instance = initSuper ? new Class(...args) : new Class()
+            return instance
+        }
+
+        // Assign this to the instance
+        getThisContextOfClass(config: MixinConfig, instance: object) {
+            const { property } = config
+
+            if (property) {
+                // Create new instance of the class at the custom property
+                this[property] = instance
+
+                // Assign the custom property to parent class instance
+                Object.assign(this, this[property])
+
+                // Assign this to the custom property from the class.
+                Object.assign(this[property], this)
+            } else {
+                // Create new instance of the class at the class itself if no custom property
+                Object.assign(this, instance)
+            }
+
+            return this
+        }
+
+        // Assign all classes instances to custom property
+        assignClassesToCustomProperty(customProperty: string, args: any[]) {
+            configs.forEach(config => {
+                const instance = this.getInstanceOfConfig(config, args)
+                const thisContext = this.getThisContextOfClass(config, instance)
+                Object.assign(this[customProperty], thisContext)
+            })
+        }
+
+        // Load config and assign instance to parent class
+        loadConfig(config: MixinConfig, args: any[]) {
+            const instance = this.getInstanceOfConfig(config, args)
+
+            // Assign this to the instance
+            this.getThisContextOfClass(config, instance)
+
+            const { property } = config
+
+            // If custom property is set iterate over all classes and assign instances to the custom property
+            if (property) {
+                this.assignClassesToCustomProperty(property, args)
+            } 
+        }
+    }
+
+    // Assign all methods from all classes to the Base class
+    configs.forEach(config => {
+        const { Class } = config
+
+        Object.getOwnPropertyNames(Class.prototype).forEach(name => {
+            Base.prototype[name] = Class.prototype[name]
+        })
+    })
+
+    return Base as Constructor
+}
+
+```
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
 
 ## Common JS
 ```javascript
