@@ -6483,7 +6483,31 @@ export default class ParentManager extends mix(
 ## Example 3 - Nested custom properties
 - In comparsion to example #2 here you can e.g. acces this.classA.test() from this.classB.test()
 ```typescript
+export default class EthCoinManager extends mix(
+    // ==== THIRD PARTY ====
+    { Class: EtherscanManager, property: 'etherscan' },
+    { Class: CoinmarketCapManager, property: 'coinMarketCap' },
 
+    // ==== LOGIC CLASSES ====
+    { Class: CryptoAccountManager, initSuper: true },
+    { Class: BalanceManager, property: 'balance' },
+    { Class: TransactionManager, property: 'transaction' },
+
+    // ==== UTILS ====
+    { Class: Utils, property: 'utils' }
+) {
+    etherscan!: EtherscanManager
+    coinMarketCap!: CoinmarketCapManager
+    balance!: BalanceManager
+    transaction!: TransactionManager
+
+    constructor() {
+        super('eth')
+    }
+}
+```
+
+```typescript
 // Type for constructor
 type Constructor<T = {}> = new (...args: any[]) => T
 
