@@ -7277,6 +7277,7 @@ describe() {
 }
 ```
 
+<br><br>
 
 
 ### Example #2
@@ -7303,6 +7304,21 @@ describe('getInstance()', () => {
             expect(modelManager.models).toEqual([])
         })
     })
+```
+
+
+<br><br>
+
+
+### Example #3
+- Use Reflect
+```typescript
+ it.only('should create new instance', async() => {
+    const mongooseUtils = await MongooseUtils.getInstance()
+
+    expect(initStub.calledOnce).toBe(true)
+    expect(Reflect.get(mongooseUtils, 'connectionString')).toBe(process.env.MONGODB_CONNECTION_STRING)
+})
 ```
 
 
