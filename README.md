@@ -192,7 +192,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 11. Object Destructuring with this
 12. Private Class Fields
 13. Private Methods
- - 13.1 Test private Methods
+ - 13.1 Test private Methods in TS
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -7206,12 +7206,13 @@ class Example {
 <br><br>
 
 
-## Test private Methods
+## Test private Methods in TS
 
 <br><br>
 
 
 ### Example #1
+- Get Prototype
 ```typescript
 class Example {
     private privateMethod() {}
@@ -7226,6 +7227,34 @@ describe() {
         exampleProto.privateMethod();
     })
 }
+```
+
+
+
+### Example #2
+- Type cast
+```typescript
+(<any>myClass).privateMethod();
+const value = (<any>myClass).privateValue;
+
+describe('getInstance()', () => {
+        let initStub: sinon.SinonStub
+
+        beforeEach(() => {
+            initStub = sinon.stub((<any>ModelManager).prototype, 'init').resolves()
+        })
+
+        afterEach(() => {
+            initStub.restore()
+        })
+
+        it.only('should create new instance', async() => {
+            const modelManager = await ModelManager.getInstance()
+
+            expect(initStub.calledOnce).toBe(true)
+            expect(modelManager.models).toEqual([])
+        })
+    })
 ```
 
 
