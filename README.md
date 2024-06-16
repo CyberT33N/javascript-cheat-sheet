@@ -7261,6 +7261,7 @@ class Example {
 
 ### Example #1
 - Get Prototype
+- Notice that you will create a new object here which does not include properties from your created instance
 ```typescript
 class Example {
     private privateMethod() {}
@@ -7283,8 +7284,14 @@ describe() {
 ### Example #2
 - Type cast
 ```typescript
-(<any>myClass).privateMethod();
-const value = (<any>myClass).privateValue;
+describe('getConnection', () => {
+	it.only('should return a valid mongoose connection', async() => {
+	    const conn = await (<any>mongooseUtils).getConnection()
+	
+	    expect(conn).toBeTruthy()
+	    expect(conn).toBeInstanceOf(mongoose.Connection)
+	})
+})
 
 describe('getInstance()', () => {
         let initStub: sinon.SinonStub
