@@ -191,7 +191,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 10. Get class name
 11. Object Destructuring with this
 12. Private Class Fields
-
+13. Private Methods
+ - 13.1 Test private Methods
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -7123,8 +7124,7 @@ var test = new getThumbnailCfg(obj)
 
 # Private Class Fields
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
-	
-	
+
 ```javascript
 class ClassWithPrivateField {
   #privateField;
@@ -7186,6 +7186,48 @@ console.log(instance.#property); //=> Syntax error
 	
 // Example #1
 ```
+
+
+
+
+<br><br>
+<br><br>
+
+
+# Private Methods
+```typescript
+class Example {
+    private privateMethod() {}
+    public test() {}
+}
+```
+
+<br><br>
+<br><br>
+
+
+## Test private Methods
+
+<br><br>
+
+
+### Example #1
+```typescript
+class Example {
+    private privateMethod() {}
+    public test() {}
+}
+
+describe() {
+    it('test', () => {
+        const example = new Example();
+        const exampleProto = Object.getPrototypeOf(example);
+
+        exampleProto.privateMethod();
+    })
+}
+```
+
 
 
 </details>
