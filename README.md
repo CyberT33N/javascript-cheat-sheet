@@ -1560,52 +1560,77 @@ console.log(set1.has(6));
 
 ## Singleton with Classes
 
-### Example #1
-```
-class Singleton {
-    // Static field to hold the single instance
-    static #instance;
-
-    // Private constructor to prevent direct instantiation
-    constructor() {
-        if (Singleton.#instance) {
-            throw new Error('Instance already exists. Use Singleton.getInstance() to get the instance.');
-        }
-        this.value = Math.random(); // Example property
-    }
-
-    // Static method to get the single instance of the class
-    static getInstance() {
-        if (!Singleton.#instance) {
-            Singleton.#instance = new Singleton();
-        }
-        return Singleton.#instance;
-    }
-
-    // Example method
-    getValue() {
-        return this.value;
-    }
-}
-
-// Usage
-try {
-    const instance1 = Singleton.getInstance();
-    console.log(instance1.getValue()); // Some random value
-
-    const instance2 = Singleton.getInstance();
-    console.log(instance2.getValue()); // Same value as instance1
-
-    console.log(instance1 === instance2); // true
-
-    // Attempting to create a new instance directly will throw an error
-    const newInstance = new Singleton(); // Error: Instance already exists. Use Singleton.getInstance() to get the instance.
-} catch (error) {
-    console.error(error.message);
-}
-```
+<br><br>
 
 ### Example #2
+```javascript
+class ModelManager {
+    // eslint-disable-next-line no-use-before-define
+    private static instance: ModelManager
+    models: Array<{
+        modelName: string
+        model: mongoose.Model<any>
+    }>
+
+    private constructor() {
+        this.models = []
+    }
+  
+    static async getInstance() {
+        if (this.instance) {
+            return this.instance
+        }
+      
+        // Create instance
+        this.instance = new ModelManager()
+
+        // ==== VARIABLES ====
+        this.instance.models = []
+
+        // ==== INITIALIZATION ====
+        await this.instance.init()
+
+        return this.instance
+    }
+
+    private async init() {
+        if(!this.models) {
+            const path = `${getDirname()}/**/*.model.js`
+            this.models = await this.globModels(path)
+        }
+    }
+
+    private async globModels(expression: string) {
+        const modelPaths = await glob(expression)
+ 
+        const models = []
+
+        for (const path of modelPaths) {
+            const file = await import(path)
+            const Model = await file.default()
+            models.push(Model)
+        }
+
+        return models
+    }
+
+    public async getModels() {
+        const models = this.models
+        return models
+    }
+
+    public async getModel(name: string) {
+        const model = this.models.find(model => model.modelName === name)
+        return model
+    }
+}
+
+```
+
+
+
+### Example #3
+- Old style
 ```javascript
 /**
  *
