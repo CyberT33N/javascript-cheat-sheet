@@ -193,6 +193,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 12. Private Class Fields
 13. Private Methods
  - 13.1 Test private Methods in TS
+14. Get methods/properties of class instance
+15. Assign class instance to class prototype
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -254,6 +256,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 23. Remove properties from object
 24. object values to array
 25. do not set undefined properties in object
+26. add fn/property to prototype of object
   
 # [Array](#_array)
 1. Clone unique
@@ -7330,6 +7333,83 @@ describe('getInstance()', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+# Get methods/properties of class instance
+```typescript
+const { ...object } = classInstance
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+# Assign class instance to class prototype
+```typescript
+# Method #1
+Object.setPrototypeOf(currentClass, parentInstance)
+
+# Method ä2
+currentClass.prototype += parentInstance
+```
+
+
 </details>
 
 
@@ -8914,6 +8994,48 @@ const obj = { a, ...(b ? { b } : {}) }
 console.log(obj) // { a: 123 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+# add fn/property to prototype of object
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
+```javascript
+const obj = {};
+const parent = { foo: 'bar' };
+
+console.log(obj.foo);
+// Expected output: undefined
+
+Object.setPrototypeOf(obj, parent);
+
+console.log(obj.foo);
+```
 	
 	
 </details>
