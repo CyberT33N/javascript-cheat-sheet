@@ -1566,7 +1566,7 @@ console.log(set1.has(6));
 <br><br>
 
 ### Example #2
-```javascript
+```typescript
 class ModelManager {
     // eslint-disable-next-line no-use-before-define
     private static instance: ModelManager
