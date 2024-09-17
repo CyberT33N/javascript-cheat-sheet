@@ -160,6 +160,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 3.1 Features
   - 3.2 How to enable?
   - 3.3 Export / Import
+    - 3.31 Re-export default
+    - 3.32 Re-export default as object
+    - 3.33 Re-export object as object
   - 3.4 Client Side
   - 3.5 No require, exports, module.exports, __filename, __dirname
   - 3.6 Import script dynamic
@@ -5911,12 +5914,43 @@ export class startBROWSER {/*..*/};
 /* ## Option 6 - export variable ##
 export let pptr;
 ```
+
+<br><br>
+<br><br>
+
+
+### Re-export default
+```javascript
+export * as errorMiddleware from './middleware'
+```
+
+<br><br>
+<br><br>
+
+
+### Re-export object
+```javascript
+export { default as HttpClientError } from './errors/HttpClientError'
+```
 	
+
+
+<br><br>
+<br><br>
+
+
+### Re-export object as object
+```javascript
+export { HttpClientError } from './errors/HttpClientError'
+```
 	
+
+
+ 
 	
-	
-<br>
-<br>
+<br><br>
+<br><br>
+
 
 
 ## Client Side
