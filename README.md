@@ -325,7 +325,12 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 6.26 Map
       - 6.26.1 Convert Array to Array with Objects
   - 6.27 .flatMap()
-7. .flat()
+  - 6.28 .findLast()
+  - 6.29 .findLastIndex()
+  - 6.30 .toReversed()
+  - 6.31 .toSorted()
+  - 6.32 .toSpliced()
+  - 6.33 .with()
 8. remove all duplicates from an array
   <br> 8.1 remove all duplicates from an array of objects by property
   <br> 8.2 remove all duplicates from an array of objects
@@ -9919,7 +9924,7 @@ console.log(docs);
 <br><br>
 
 
-#### flatMap()
+#### .flatMap()
 **Beschreibung**: `flatMap()` ist eine Methode, die auf Arrays angewendet wird. Sie kombiniert die Funktionalität von `map()` und `flat()`, um ein Array zu erstellen, das sowohl transformiert als auch flach gemacht wird.
 
 ```javascript
@@ -9934,27 +9939,97 @@ console.log(verdoppelt); // [2, 4, 6]
 
 <br><br>
 
+#### .findLast()
+- ES2023 added the findLast() method that will start from the end of an array and return the value of the first element that satisfies a condition.
 
-# .flat()
-- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 ```javascript
-var arr1 = [1, 2, [3, 4]];
-arr1.flat();
-// [1, 2, 3, 4]
-
-var arr2 = [1, 2, [3, 4, [5, 6]]];
-arr2.flat();
-// [1, 2, 3, 4, [5, 6]]
-
-var arr3 = [1, 2, [3, 4, [5, 6]]];
-arr3.flat(2);
-// [1, 2, 3, 4, 5, 6]
+const temp = [27, 28, 30, 40, 42, 35, 30];
+let high = temp.findLast(x => x > 40);
 ```
 
 
+<br><br>
+
+
+#### .findLastIndex()
+- ES2023 The findLastIndex() method finds the index of the last element that satisfies a condition.
+
+```javascript
+const temp = [27, 28, 30, 40, 42, 35, 30];
+let pos = temp.findLastIndex(x => x > 40);
+```
+
+
+<br><br>
 
 
 
+#### .toReversed()
+- ES2023 added the Array toReversed() method as a safe way to reverse an array without altering the original array. The difference between the new toReversed() method and the old reverse() method is that the new method creates a new array, keeping the original array unchanged, while the old method altered the original array.
+```javascript
+const months = ["Jan", "Feb", "Mar", "Apr"];
+const reversed = months.toReversed();
+```
+
+
+<br><br>
+
+
+
+#### .toSorted()
+- ES2023 added the Array toSorted() method as a safe way to sort an array without altering the original array.
+
+The difference between the new toSorted() method and the old sort() method is that the new method creates a new array, keeping the original array unchanged, while the old method altered the original array.
+```javascript
+const months = ["Jan", "Feb", "Mar", "Apr"];
+const sorted = months.toSorted();
+```
+
+
+<br><br>
+
+
+
+#### .toSpliced()
+- ES2023 added the Array toSpliced() method as a safe way to splice an array without altering the original array.
+
+The difference between the new toSpliced() method and the old splice() method is that the new method creates a new array, keeping the original array unchanged, while the old method altered the original array.
+```javascript
+const months = ["Jan", "Feb", "Mar", "Apr"];
+const spliced = months.toSpliced(0, 1);
+```
+
+<br><br>
+
+
+
+
+<br><br>
+
+
+
+#### .with()
+- ES2023 added the Array with() method as a safe way to update elements in an array without altering the original array.
+```javascript
+const months = ["Januar", "Februar", "Mar", "April"];
+const new = months.with(2, "March");
+```
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
 <br><br>
 
 # remove all duplicates from an array
