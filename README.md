@@ -1,6 +1,28 @@
 # Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
+## Guides
+
+<br><br>
+
+### ECMAScript
+- https://www.w3schools.com/js/js_versions.asp
+
+
+
+
+
+
+
+
+
+ 
+<br><br>
+<br><br>
+___________________________________________
+___________________________________________
+<br><br>
+<br><br>
 
 
 
@@ -41,7 +63,10 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 2.2 Object destructuring
   - 2.3 Conditions
 3. Logical Operator
-  - Nullish Coalescing Operator
+  - Nullish Coalescing Operator (??)
+  - AND Assignment (&&=)
+  - OR Assignment (||=)
+  - Nullish Coalescing Assignment (??=)
 4. Condition at variable decleration
 5. in Operator
 6. typeof Operator
@@ -217,6 +242,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [String](#_string)
 1. .includes()
 2. Get name of string in function
+3. trim(), trimStart() & trimEnd()
+4. matchAll() & replaceAll()
 
 # [object](#_object)
 1. Check if object is empty
@@ -295,6 +322,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 6.25 .copyWithin()
   - 6.26 Map
       - 6.26.1 Convert Array to Array with Objects
+  - 6.27 .flatMap()
 7. .flat()
 8. remove all duplicates from an array
   <br> 8.1 remove all duplicates from an array of objects by property
@@ -364,6 +392,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. async await for promise resolve
 3. Nested Functions
 4. Execute function and if it is promise wait for it
+5. finally()
 
 # [Wait](#_wait)
 1. Wait until some condition is true
@@ -1221,7 +1250,7 @@ const { placements, ...newObj } = obj
 
 <br><br>
 
-## Nullish Coalescing Operator
+## Nullish Coalescing Operator (??)
 
 - Syntax:
 ```javascript
@@ -1252,6 +1281,41 @@ const result = null || undefined ?? 'OK'; // SyntaxError
 const result = (null || undefined) ?? 'OK'; 
 console.log(result); // 'OK'
 ```
+
+
+
+<br><br>
+
+## AND Assignment (&&=)
+- If the first value is true, the second value is assigned.
+```javascript
+let x = 10;
+x &&= 5;
+```
+
+
+
+<br><br>
+
+## OR Assignment (||=)
+- If the first value is false, the second value is assigned.
+```javascript
+let x = 10;
+x ||= 5;
+```
+
+
+
+<br><br>
+
+## Nullish Coalescing Assignment (??=)
+- If the first value is undefined or null, the second value is assigned.
+```javascript
+let x;
+x ??= 5;
+```
+
+
 
 
 ## Logical OR
@@ -7743,6 +7807,60 @@ let schema = true
 console.log(test({schema}))
 ```
 
+
+
+
+<br><br>
+	
+# trim(), trimStart() & trimEnd()
+**Beschreibung**: Diese Methoden dienen dazu, Leerzeichen oder bestimmte Zeichen am Anfang und Ende von Strings zu entfernen.
+
+#### Funktionsweise
+
+1. **`trim()`**:
+   - **Zweck**: Entfernt Leerzeichen (Whitespace) von beiden Enden eines Strings.
+   - **Beispiel**:
+     ```javascript
+     const str = "   Hallo Welt!   ";
+     const trimmedStr = str.trim(); // "Hallo Welt!"
+     ```
+
+2. **`trimStart()`** (auch `trimLeft()` genannt):
+   - **Zweck**: Entfernt Leerzeichen (Whitespace) nur vom Anfang eines Strings.
+   - **Beispiel**:
+     ```javascript
+     const str = "   Hallo Welt!   ";
+     const trimmedStartStr = str.trimStart(); // "Hallo Welt!   "
+     ```
+
+3. **`trimEnd()`** (auch `trimRight()` genannt):
+   - **Zweck**: Entfernt Leerzeichen (Whitespace) nur vom Ende eines Strings.
+   - **Beispiel**:
+     ```javascript
+     const str = "   Hallo Welt!   ";
+     const trimmedEndStr = str.trimEnd(); // "   Hallo Welt!"
+     ```
+
+#### Vorteile
+
+- **Datenbereinigung**: Nützlich für die Bereinigung von Benutzereingaben.
+- **Konsistenz**: Stellt sicher, dass Strings die gewünschte Formatierung haben, insbesondere bei Vergleichen oder beim Speichern in Datenbanken.
+- **Flexibilität**: `trimStart()` und `trimEnd()` bieten mehr Kontrolle, wenn nur ein Ende bearbeitet werden soll.
+
+
+
+
+
+<br><br>
+	
+# matchAll() & replaceAll()
+- Normally match() or replace() only replace the first matched value. Now matchAll() & replaceAll() replaces all
+```javascript
+const test = text.matchAll("Cats");
+
+const test2 = text.replaceAll("Cats", "Hello Cats are Cats");
+```
+
 </details>
 
 
@@ -9762,6 +9880,25 @@ console.log(docs);
 
 
 
+<br><br>
+
+
+#### flatMap()
+**Beschreibung**: `flatMap()` ist eine Methode, die auf Arrays angewendet wird. Sie kombiniert die Funktionalität von `map()` und `flat()`, um ein Array zu erstellen, das sowohl transformiert als auch flach gemacht wird.
+
+```javascript
+const zahlen = [1, 2, 3];
+
+// Verwende flatMap, um jede Zahl zu verdoppeln und das Ergebnis zu glätten
+const verdoppelt = zahlen.flatMap(x => [x * 2]);
+
+console.log(verdoppelt); // [2, 4, 6]
+```
+
+
+<br><br>
+
+
 # .flat()
 - https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 ```javascript
@@ -10922,6 +11059,45 @@ Promise.resolve(environment()).then(() => {
 })
 ```
 
+
+<br><br>
+
+# finally()
+**Beschreibung**: `finally()` ist eine Methode, die an ein Promise angehängt wird, um Code auszuführen, nachdem das Promise abgeschlossen ist, unabhängig vom Ergebnis.
+
+#### Funktionsweise
+
+1. **Promise-Zustände**:
+   - **Pending**: Warten auf die Ausführung.
+   - **Fulfilled**: Erfolgreiche Ausführung.
+   - **Rejected**: Fehlgeschlagene Ausführung.
+
+2. **Verkettung**:
+   - **`then()`**: Erfolgreiche Ausführung.
+   - **`catch()`**: Fehlgeschlagene Ausführung.
+   - **`finally()`**: Immer ausgeführt, unabhängig vom Ausgang.
+
+#### Beispiel
+
+```javascript
+let myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const success = true; // Ändere zu false für Fehler
+        success ? resolve('Erfolg!') : reject('Fehler!');
+    }, 1000);
+});
+
+myPromise
+    .then(result => {
+        console.log(result); // Erfolgreiche Ausgabe
+    })
+    .catch(error => {
+        console.error(error); // Fehlerausgabe
+    })
+    .finally(() => {
+        console.log('Aufräumaktionen hier.'); // Immer ausgeführt
+    });
+```
 
 
 
