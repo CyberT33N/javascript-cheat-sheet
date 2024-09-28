@@ -223,6 +223,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
  - 13.1 Test private Methods in TS
 14. Get methods/properties of class instance
 15. Assign class instance to class prototype
+16. Field Declarations
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -263,6 +264,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 4.11 .isPrototypeOf()
   - 4.12 .keys()
   - 4.13 .values()
+  - 4.14 .hasOwn()
 5. Object instances
 6. Mutability
 7. Null is an object too
@@ -476,7 +478,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 7. console.trace()
 8. Log every method call
 
-
+# [Error](#_error)
+1. cause
 
 # [Tutorials](#_tutorials)
 1. The Conditional (Ternary) Operator Explained
@@ -7510,6 +7513,27 @@ currentClass.prototype += parentInstance
 ```
 
 
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+# Field Declarations
+```typescript
+class Hello {
+  counter = 0; // Class field
+}
+const myClass = new Hello();
+
+let x = myClass.counter;
+```
+
 </details>
 
 
@@ -8362,6 +8386,16 @@ console.log(Object.values(object1));
 // expected output: Array ["somestring", 42, false]
 ```
 
+
+
+<br><br>
+
+## .values
+- ES2022 provides a safe way to check if a property is the own property of an object.
+- Object.hasOwn() is similar to Object.prototype.hasOwnProperty but supports all object types.
+```javascript
+Object.hasOwn("initProp")
+```
 
 
 
@@ -12510,6 +12544,56 @@ test.property1()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="_error"><h1>Error</h1></a>
+<details><summary>Click to expand..</summary>
+
+
+# cause
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause
+- The cause data property of an Error instance indicates the specific original cause of the error. It is used when catching and re-throwing an error with a more-specific or useful error message in order to still have access to the original error.
+```javascript
+try {
+  connectToDatabase();
+} catch (err) {
+  throw new Error("Connecting to database failed.", { cause: err });
+}
+```
+
+
+
+
+<br><br>
+
+</details>
+
+<br><br>
 
 
 
