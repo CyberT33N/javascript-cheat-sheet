@@ -169,6 +169,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Map](#_map)
 1. .set and .get
 2. loop
+3. .groupBy()
 
 # [Set](#_set)
 1. Example
@@ -265,6 +266,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 4.12 .keys()
   - 4.13 .values()
   - 4.14 .hasOwn()
+  - 5.15 .groupBy()
 5. Object instances
 6. Mutability
 7. Null is an object too
@@ -5512,6 +5514,31 @@ for (var [key, value] of myMap.entries()) {
 
 
 
+<br><br>
+
+# .groupBy()
+- The Map.groupBy() method groups elements of an object according to string values returned from a callback function.
+- The Map.groupBy() method does not change the original object.
+```javascript
+// Create an Array
+const fruits = [
+  {name:"apples", quantity:300},
+  {name:"bananas", quantity:500},
+  {name:"oranges", quantity:200},
+  {name:"kiwi", quantity:150}
+];
+
+// Callback function to Group Elements
+function myCallback({ quantity }) {
+  return quantity > 200 ? "ok" : "low";
+}
+
+// Group by Quantity
+const result = Map.groupBy(fruits, myCallback);
+```
+
+
+
 </details>
 
 
@@ -8404,9 +8431,41 @@ Object.hasOwn("initProp")
 
 
 
+<br><br>
+
+## .groupBy()
+- The Object.groupBy() method groups elements of an object according to string values returned from a callback function.
+- The Object.groupBy() method does not change the original object.
+```javascript
+// Create an Array
+const fruits = [
+  {name:"apples", quantity:300},
+  {name:"bananas", quantity:500},
+  {name:"oranges", quantity:200},
+  {name:"kiwi", quantity:150}
+];
+
+// Callback function to Group Elements
+function myCallback({ quantity }) {
+  return quantity > 200 ? "ok" : "low";
+}
+
+// Group by Quantity
+const result = Object.groupBy(fruits, myCallback);
+```
 
 
 
+
+
+
+
+
+
+
+
+
+<br><br>
 <br><br>
 
 # Object instances
