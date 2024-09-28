@@ -392,7 +392,9 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. async await for promise resolve
 3. Nested Functions
 4. Execute function and if it is promise wait for it
-5. finally()
+5. Promise.finally()
+6. Promise.allSettled()
+7. Promise.any()
 
 # [Wait](#_wait)
 1. Wait until some condition is true
@@ -11062,7 +11064,7 @@ Promise.resolve(environment()).then(() => {
 
 <br><br>
 
-# finally()
+# Promise.finally()
 **Beschreibung**: `finally()` ist eine Methode, die an ein Promise angehängt wird, um Code auszuführen, nachdem das Promise abgeschlossen ist, unabhängig vom Ergebnis.
 
 #### Funktionsweise
@@ -11100,6 +11102,44 @@ myPromise
 ```
 
 
+<br><br>
+
+# Promise.allSettled()
+**Beschreibung**: `Promise.allSettled()` ist eine Methode, die ein einzelnes Promise zurückgibt, das erfüllt wird, wenn alle der übergebenen Promises entweder erfüllt oder abgelehnt wurden. Es ermöglicht das parallele Warten auf mehrere Promises und gibt die Ergebnisse aller Promises zurück, unabhängig davon, ob sie erfolgreich waren oder nicht.
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'Fehler!'));
+const promise3 = Promise.resolve(5);
+
+Promise.allSettled([promise1, promise2, promise3])
+    .then((results) => {
+        console.log(results);
+        // Ergebnis:
+        // [
+        //   { status: "fulfilled", value: 3 },
+        //   { status: "rejected", reason: "Fehler!" },
+        //   { status: "fulfilled", value: 5 }
+        // ]
+    });
+```
+
+<br><br>
+
+# Promise.any()
+**Beschreibung**: `Promise.any()` ist eine Methode, die ein einzelnes Promise zurückgibt, das erfüllt wird, wenn eines der übergebenen Promises erfüllt wird. Wenn alle übergebenen Promises abgelehnt werden, wird das zurückgegebene Promise abgelehnt.
+```javascript
+const promise1 = Promise.reject('Fehler 1');
+const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'Erfolg 2'));
+const promise3 = Promise.reject('Fehler 3');
+
+Promise.any([promise1, promise2, promise3])
+    .then((result) => {
+        console.log(result); // "Erfolg 2"
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+```
 
 </details>
 
