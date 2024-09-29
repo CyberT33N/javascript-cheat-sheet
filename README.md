@@ -225,6 +225,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 14. Get methods/properties of class instance
 15. Assign class instance to class prototype
 16. Field Declarations
+17. Singleton with multiple instances
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -7566,6 +7567,101 @@ const myClass = new Hello();
 
 let x = myClass.counter;
 ```
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+# Singleton with multiple instances
+
+```typescript
+/**
+ * A utility class for managing MongoDB connections and schemas.
+ */
+class MongooseUtils {
+    // A map to hold instances of MongooseUtils for different databases
+    // eslint-disable-next-line no-use-before-define
+    private static instances: Map<string, MongooseUtils> = new Map()
+
+    // MongoDB connection object
+    private conn: mongoose.Connection | null = null
+
+    // Connection string for MongoDB
+    private connectionString: string
+
+    /**
+     * Private constructor to prevent direct instantiation.
+     * @param {string} dbName - The name of the database to connect to.
+     */
+    private constructor(readonly dbName: string) {
+        this.connectionString = process.env.MONGODB_CONNECTION_STRING!
+    }
+
+    /**
+     * Gets an instance of MongooseUtils for a specified database.
+     * If an instance does not exist, a new one will be created.
+     * @param {string} dbName - The name of the database.
+     * @returns An instance of MongooseUtils.
+     */
+    public static getInstance(dbName: string): MongooseUtils {
+        if (!MongooseUtils.instances.has(dbName)) {
+            MongooseUtils.instances.set(dbName, new MongooseUtils(dbName))
+        }
+        
+        return MongooseUtils.instances.get(dbName)!
+    }
+
+    /**
+     * Initializes the MongoDB connection.
+     * @throws BaseError if the connection fails.
+     */
+    private async init(): Promise<void> {
+        console.log('[ModelManager] - Attempting to connect to MongoDB...')
+
+        this.updateConnectionString()
+
+        try {
+            this.conn = await mongoose.createConnection(this.connectionString).asPromise()
+        } catch (e: unknown) {
+            throw new BaseError(
+                '[ModelManager] - Error while initializing connection with MongoDB', e as Error
+            )
+        }
+    }
+
+    /**
+     * Updates the connection string to include the database name.
+     */
+    private updateConnectionString(): void {
+        const urlObj = new URL(this.connectionString)
+        urlObj.pathname = `/${this.dbName}`
+        this.connectionString = urlObj.toString()
+    }
+
+    /**
+     * Retrieves the current MongoDB connection.
+     * If the connection is not established, it will initialize it first.
+     * @returns A Promise that resolves to the MongoDB connection.
+     */
+    public async getConnection(): Promise<Connection> {
+        if (!this.conn) {
+            await this.init()
+        }
+        return this.conn!
+    }
+}
+
+export default MongooseUtils
+
+```
+
+
 
 </details>
 
