@@ -1644,7 +1644,7 @@ console.log(set1.has(6));
 
 <br><br>
 
-### Example #2
+### Example #1 **RECOMMENDED**
 ```typescript
 class ModelManager {
     // eslint-disable-next-line no-use-before-define
@@ -1709,7 +1709,8 @@ class ModelManager {
 
 ```
 
-
+<br><br>
+<br><br>
 
 ### Example #3
 - Old style
