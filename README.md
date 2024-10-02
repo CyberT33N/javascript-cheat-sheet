@@ -7453,11 +7453,21 @@ describe('getInstance()', () => {
     })
 ```
 
+<br><br>
+
+### Example #3
+- Casting
+```typescript
+beforeEach(() => {
+    initStub = sinon.stub(ModelManager.prototype, 'init' as keyof ModelManager).resolves()
+})
+```
+
 
 <br><br>
 
 
-### Example #3
+### Example #4
 - Use Reflect
 ```typescript
  it.only('should create new instance', async() => {
