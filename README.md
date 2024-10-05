@@ -1,5 +1,7 @@
-Use always same instance (singleton)# Javascript Cheat Sheet
+# Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
+
+<br><br>
 
 ## Guides
 
