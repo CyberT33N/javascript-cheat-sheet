@@ -1709,6 +1709,18 @@ class ModelManager {
 }
 
 ```
+- This how you can reset the instance in your test:
+	```typescript
+	beforeEach(async() => {
+		// Reset instance before creating a new one
+		(<any>ModelManager).instance = null
+		modelManager = await ModelManager.getInstance()
+	})
+	```
+
+
+
+
 
 <br><br>
 <br><br>
@@ -1763,6 +1775,7 @@ console.log('instance3: ' + instance3.example) // <-- will print a
 console.log('instance3 name: ' + instance3.name) // <-- will print test3
 console.log('instance3 base: ' + instance3.base) // <-- will print 1234
 ```
+
 
 
 
