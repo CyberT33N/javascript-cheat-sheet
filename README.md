@@ -1,4 +1,4 @@
-# Javascript Cheat Sheet
+Use always same instance (singleton)# Javascript Cheat Sheet
 Javascript Cheat Sheet for the most common stuff..
 
 ## Guides
@@ -6997,8 +6997,22 @@ class ModelManager {
         return model
     }
 }
-
 ```
+- This is how you can reset the instance in your test:
+	```typescript
+	beforeEach(async() => {
+		// Reset instance before creating a new one
+		(<any>ModelManager).instance = null
+		
+		initStub = sinon.stub(
+		    ModelManager.prototype, 'init' as keyof ModelManager
+		).resolves()
+		
+		modelManager = await ModelManager.getInstance()
+	})
+	```
+
+
 
 ### Example #2
 - old style cjs
@@ -7600,7 +7614,14 @@ class MongooseUtils {
 export default MongooseUtils
 
 ```
-
+- This is how you can reset the instance in your test:
+	```typescript
+	beforeEach(() => {
+	        (<any>MongooseUtils).instances = new Map()
+	        mongooseUtils = MongooseUtils.getInstance(dbName)
+	        expect(mongooseUtils).toBeInstanceOf(MongooseUtils)
+	})
+	```
 
 
 </details>
