@@ -7616,13 +7616,58 @@ class MongooseUtils {
 export default MongooseUtils
 
 ```
-- This is how you can reset the instance in your test:
+- This is how you can reset the instance in your test and test getInstance:
 	```typescript
-	beforeEach(() => {
+	    let mongooseUtils: MongooseUtils
+	
+	    const dbName = 'test'
+	
+	    beforeEach(() => {
 	        (<any>MongooseUtils).instances = new Map()
 	        mongooseUtils = MongooseUtils.getInstance(dbName)
 	        expect(mongooseUtils).toBeInstanceOf(MongooseUtils)
-	})
+	    })
+	
+	    describe('getInstance()', () => {
+	        describe('[EXISTING INSTANCE]', () => {
+	            beforeEach(() => {
+	                ;(<any>mongooseUtils).changed = true
+	            })
+	             
+	            it('should get existing instance for db', async() => {
+	                const mongooseUtils2 = MongooseUtils.getInstance(dbName)
+	                expect(mongooseUtils2).toEqual(mongooseUtils)
+	
+	                expect((<any>MongooseUtils).instances.size).toBe(1)
+	                
+	                expect(Reflect.get(mongooseUtils2, 'changed')).toBe(true)
+	                expect(Reflect.get(mongooseUtils2, 'dbName')).toBe(dbName)
+	            })
+	        })
+	        
+	        describe('[NEW INSTANCE]', () => {
+	            const dbName2 = 'test2'
+	
+	            it.only('should create new instance and set default properties', async() => {
+	                expect(Reflect.get(mongooseUtils, 'dbName')).toBe(dbName)
+	                expect(Reflect.get(mongooseUtils, 'conn')).toBe(null)
+	                expect(Reflect.get(mongooseUtils, 'connectionString'))
+	                .toBe(process.env.MONGODB_CONNECTION_STRING)
+	            })
+	
+	            it.only('should create new instance if instance for db not exists', async() => {
+	                // ==== INSTANCE #1 ====
+	                expect((<any>MongooseUtils).instances.size).toBe(1)
+	
+	                // ==== INSTANCE #2 ====
+	                const mongooseUtils2 = MongooseUtils.getInstance(dbName2)
+	                expect(mongooseUtils2).toBeInstanceOf(MongooseUtils)
+	                expect(mongooseUtils2).not.toEqual(mongooseUtils)
+	
+	                expect((<any>MongooseUtils).instances.size).toBe(2)
+	            })
+	        })
+	    })
 	```
 
 
