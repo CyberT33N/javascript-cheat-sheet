@@ -1714,8 +1714,8 @@ class ModelManager {
 - This how you can reset the instance in your test:
 	```typescript
 	beforeEach(async() => {
-		// Reset instance before creating a new one
-		(<any>ModelManager).instance = null
+	         // Reset instance before creating a new one
+		Reflect.set(ModelManager, 'instance', null)
 		modelManager = await ModelManager.getInstance()
 	})
 	```
