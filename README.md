@@ -7706,7 +7706,7 @@ it('should verify return type', () => {
 
 
 
-For good writing style you should never define a public method when you are not using this context. Create a static instead. If wanted with arrow funktion on your field declaration:
+For good writing style you should never define a public method when you are not using this context. Create a static instead. If wanted you can choose arrow funktion on your field declaration:
 ```typescript
     /**
      * Creates a Mongoose model based on the given name, schema, and database name.
@@ -7727,7 +7727,7 @@ For good writing style you should never define a public method when you are not 
         return Model
     }
 ```
-- **NOTICE that sinon stub/spies will not work anymore with the the class prototype when you use arrow functions. You can only use the instance**
+- **NOTICE that sinon stub/spies will not work anymore with the the class prototype when you use arrow functions and maybe other things also not working. You can only use the instance. For this reason I would recommend to not use arrow functions in cases where you can the function to e.g. a event handler you should bind the instance to it .bind(classInstacne)**
 ```typescript
 // Will not work anymore
 initStub = sinon.stub(
