@@ -7706,6 +7706,39 @@ export default MongooseUtils
     }
 ```
 
+But if you use this then for a good writing style related to https://typescript-eslint.io/rules/unbound-method/ you still should use an arrow function e.g:
+```typescript
+// Einfache Klasse mit einer Arrow Function und einer regulären Funktion
+class MyClass {
+  constructor() {
+    this.name = 'Dennis';
+  }
+
+  // Reguläre Funktion
+  regularFunction() {
+    console.log('Regular Function:', this.name);
+  }
+
+  // Arrow Function
+  arrowFunction = () => {
+    console.log('Arrow Function:', this.name);
+  }
+}
+
+const myObject = new MyClass();
+
+// Test der Methoden ohne Kontextverlust
+myObject.regularFunction(); // Ausgabe: "Regular Function: Dennis"
+myObject.arrowFunction(); // Ausgabe: "Arrow Function: Dennis"
+
+// Kontextverlust: Wir übergeben die Methoden als Callback
+const regularCallback = myObject.regularFunction;
+const arrowCallback = myObject.arrowFunction;
+
+regularCallback(); // Ausgabe: "Regular Function: undefined" (Kontextverlust) <-- Will throw error
+arrowCallback();   // Ausgabe: "Arrow Function: Dennis" (Beibehaltung des Kontexts)
+
+```
 
 
 
