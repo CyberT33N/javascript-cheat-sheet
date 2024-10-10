@@ -7727,7 +7727,20 @@ For good writing style you should never define a public method when you are not 
         return Model
     }
 ```
-- **NOTICE that sinon stub will not work anymore when you use arrow functions**
+- **NOTICE that sinon stub/spies will not work anymore with the the class prototype when you use arrow functions. You can only use the instance**
+```typescript
+// Will not work anymore
+initStub = sinon.stub(
+    ModelManager.prototype, 'init' as keyof ModelManager
+).resolves()
+
+// Will work
+initStub = sinon.stub(
+    modelManager, 'init' as keyof ModelManager
+).resolves()
+```
+
+<br><br>
 
 But if you use this then you still should use an arrow function e.g or you keep the function as it is and use .bind(classInstacne). It depends how flexible you want to be:
 ```typescript
