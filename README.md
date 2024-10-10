@@ -228,6 +228,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 15. Assign class instance to class prototype
 16. Field Declarations
 17. Singleton with multiple instances
+18. Unbound methods (methods without this)
 
 # [Time/Date](#_time)
 1. format time to AM/PM
@@ -7669,6 +7670,44 @@ export default MongooseUtils
 	        })
 	    })
 	```
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+# Unbound methods (methods without this)
+- For good writing style you should never define a method when you are not using this context. Create a static or use a arrow funktion on your field declaration:
+```typescript
+    /**
+     * Creates a Mongoose model based on the given name, schema, and database name.
+     * @template TMongooseSchema - The type of the mongoose schema.
+     * @param modelDetails - An object containing the model's details.
+     * @returns A promise that resolves to the created Mongoose Model instance.
+     */
+    public createModel = async({
+        modelName,
+        schema,
+        dbName
+    })  => {
+        const mongooseUtils = MongooseUtils.getInstance(dbName)
+        const Model = await mongooseUtils.createModel(schema, modelName)
+        
+        // Ensure indexes are created for the model
+        await Model.createIndexes()
+        return Model
+    }
+```
+
+
+
 
 
 </details>
