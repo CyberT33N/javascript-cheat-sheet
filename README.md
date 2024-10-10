@@ -7684,7 +7684,29 @@ export default MongooseUtils
 
 
 # Unbound methods (methods without this)
-- For good writing style you should never define a method when you are not using this context. Create a static or use a arrow funktion on your field declaration:
+- When you are using eslint and you are passing your class method to an event handler or you are writing a test then you will get the error [unbound-method](https://typescript-eslint.io/rules/unbound-method/). This will happen when your method is not a arrow function
+```typescript
+ /**
+     * Updates the connection string to include the database name.
+     * @returns {void} A void that esolves when the connection string is updated.
+     */
+    private updateConnectionString(): void {
+        const urlObj = new URL(this.connectionString)
+        urlObj.pathname = `/${this.dbName}`
+        this.connectionString = urlObj.toString()
+    }
+
+```
+```typescript
+it('should verify return type', () => {
+    expectTypeOf(mongooseUtils.updateConnectionString).returns.resolves
+	.toEqualTypeOf<mongoose.Connection>()
+})
+```
+
+
+
+For good writing style you should never define a public method when you are not using this context. Create a static instead with arrow funktion on your field declaration:
 ```typescript
     /**
      * Creates a Mongoose model based on the given name, schema, and database name.
@@ -7706,7 +7728,7 @@ export default MongooseUtils
     }
 ```
 
-But if you use this then for a good writing style related to https://typescript-eslint.io/rules/unbound-method/ you still should use an arrow function e.g:
+But if you use this then you still should use an arrow function e.g or you keep the function as it is and use .bind(classInstacne). It depends how flexible you want to be:
 ```typescript
 // Einfache Klasse mit einer Arrow Function und einer regulären Funktion
 class MyClass {
@@ -7740,6 +7762,29 @@ arrowCallback();   // Ausgabe: "Arrow Function: Dennis" (Beibehaltung des Kontex
 
 ```
 
+
+### Should I always use arrow functions?
+
+Not always, but **often**. Arrow functions are useful when you want to ensure that the `this` context is **preserved**, especially in callbacks or event handlers. They give you the advantage of not needing to explicitly `bind(this)`, which makes the code cleaner.
+
+### When **arrow functions** make sense:
+1. **Callbacks and Event Handlers**: Arrow functions are ideal when passing a method as a callback without losing the context.
+   ```javascript
+   button.addEventListener('click', this.handleClick); // Might lose context
+   button.addEventListener('click', () => this.handleClick()); // Arrow function keeps `this`
+   ```
+
+2. **Avoiding `bind(this)`**: You don't need to worry about using `bind(this)` to explicitly set the context.
+
+### When **regular functions** are better:
+1. **If you use inheritance** and implement polymorphic functions, it's better to use regular methods.
+2. **If you want to adjust functions dynamically** (e.g., using `call` or `apply`), you need the flexibility of regular functions since arrow functions cannot be rebound.
+
+### Rule of Thumb:
+- **Arrow Functions**: Use them when you don't want to deal with the `this` context, which is most of the time. They are particularly helpful in modern JavaScript and TypeScript projects.
+- **Regular Methods**: Use them when you need to explicitly change the context, or in cases involving inheritance and complex object structures.
+
+Try it in your code, but in many situations, arrow functions will help you avoid many `this` context issues.
 
 
 
