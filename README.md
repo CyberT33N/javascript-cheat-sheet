@@ -1,5 +1,5 @@
 # Javascript Cheat Sheet
-Javascript Cheat Sheet for the most common stuff..
+A comprehensive collection of JavaScript essentials, designed to help developers quickly reference syntax, methods, and best practices. This cheat sheet covers everything from basic concepts to advanced features
 
 <br><br>
 
