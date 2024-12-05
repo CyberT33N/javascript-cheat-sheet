@@ -72,6 +72,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 4. Condition at variable decleration
 5. in Operator
 6. typeof Operator
+7. Pipeline Operator
  
 # [Constructors](#_constructors)
 1. Set()
@@ -1431,6 +1432,48 @@ var test = 'aaa'
 if(typeof test === 'string') console.log(true)
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+# Pipeline Operator
+Der JavaScript-Operator `|>` ist der **Pipeline-Operator**, der in der Entwicklung ist (Stand: ES2024). Er macht Code sauberer, indem er Ausdrücke schrittweise verarbeitet, ähnlich wie in einer Pipeline.  
+
+### So funktioniert er:  
+Er nimmt das Ergebnis eines Ausdrucks und gibt es als Argument an die nächste Funktion weiter.  
+
+### Beispiel:  
+Ohne Pipeline-Operator:  
+```javascript
+const result = double(square(increment(2)));
+console.log(result); // 18
+```
+
+Mit Pipeline-Operator:  
+```javascript
+const result = 2 |> increment |> square |> double;
+console.log(result); // 18
+```
+
+### Erklärt:
+1. `2` wird an `increment` übergeben.  
+2. Das Ergebnis wird an `square` übergeben.  
+3. Das Ergebnis wird an `double` übergeben.  
+
+### Vorteil:
+- **Bessere Lesbarkeit:** Es liest sich von links nach rechts, wie man denkt.  
+- **Weniger Klammern:** Kein Verschachteln von Funktionsaufrufen nötig.  
+
+Noch experimentell, aber ein potenzieller Game-Changer! 😊
 
 
 
