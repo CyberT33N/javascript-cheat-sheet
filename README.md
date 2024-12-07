@@ -59,20 +59,29 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Operators](#_operators)
 1. Conditional Operators
-  - 1.1 Ternary
-2. Spread Operator
+  - 1.1 Ternary Operator ( age < 18 ? "Too young" : "Old enough" )
+2. Spread Operator ( ... )
   - 2.1 convert array to paramater
   - 2.2 Object destructuring
   - 2.3 Conditions
 3. Logical Operator
-  - Nullish Coalescing Operator (??)
-  - AND Assignment (&&=)
-  - OR Assignment (||=)
-  - Nullish Coalescing Assignment (??=)
-4. Condition at variable decleration
-5. in Operator
-6. typeof Operator
-7. Pipeline Operator
+  - Nullish Coalescing Operator ( ?? )
+  - AND Assignment ( &&= )
+  - OR Assignment ( ||= )
+  - Nullish Coalescing Assignment ( ??= )
+4. Condition at variable decleration ( a > b )
+5. in Operator ( if('make' in car) )
+6. typeof Operator ( if(typeof test === 'string') )
+7. Pipeline Operator ( |> )
+8. Comparison Operators
+  8.1 equal to ( == )
+  8.2 equal value and equal type ( === )
+  8.3 not equal ( != )
+  8.4 not equal value or not equal type ( !== )
+  8.5 greater than ( > )
+  8.6 less than ( < )
+  8.7 greater than or equal to ( >= )
+  8.8 less than or equal to ( <= )
  
 # [Constructors](#_constructors)
 1. Set()
@@ -1147,7 +1156,7 @@ _____________________________________________________
 
 <br><br>
 
-## Ternary Operator
+## Ternary Operator 
 - https://www.w3schools.com/js/tryit.asp?filename=tryjs_comparison
 
 ```javascript
@@ -1476,6 +1485,93 @@ console.log(result); // 18
 Noch experimentell, aber ein potenzieller Game-Changer! 😊
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+# Comparison Operators
+- https://www.w3schools.com/js/js_comparisons.asp
+- Comparison operators are used for controlling the flow of your program. They allow you to compare two values and determine whether certain conditions are met.
+
+<br><br>
+
+## equal to ( == )
+- Compares two values for equality, but without considering the types.
+```javascript
+5 == '5';  // true
+```
+
+<br><br>
+
+## equal value and equal type ( === )
+- This is the preferred way of comparing values because it checks both the value and the type.
+```javascript
+5 === '5';  // false
+5 === 5;    // true
+```
+
+
+<br><br>
+
+## not equal ( != )
+```javascript
+x != 8 	// true
+```
+
+<br><br>
+
+## not equal value or not equal type ( !== )
+```javascript
+x !== 5 	/false
+```
+
+
+<br><br>
+
+## greater than ( > )
+```javascript
+x > 8 	// false
+```
+
+<br><br>
+
+## less than ( < )
+```javascript
+x < 8 	// false
+```
+
+<br><br>
+
+## greater than or equal to ( >= )
+```javascript
+x >= 8 	// false
+```
+
+<br><br>
+
+## less than or equal to ( <= )
+```javascript
+x <= 8 	// false
+```
 
 </details>
 
