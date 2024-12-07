@@ -74,15 +74,20 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 6. typeof Operator ( if(typeof test === 'string') )
 7. Pipeline Operator ( |> )
 8. Comparison Operators
-  8.1 equal to ( == )
-  8.2 equal value and equal type ( === )
-  8.3 not equal ( != )
-  8.4 not equal value or not equal type ( !== )
-  8.5 greater than ( > )
-  8.6 less than ( < )
-  8.7 greater than or equal to ( >= )
-  8.8 less than or equal to ( <= )
- 
+  - 8.1 equal to ( == )
+  - 8.2 equal value and equal type ( === )
+  - 8.3 not equal ( != )
+  - 8.4 not equal value or not equal type ( !== )
+  - 8.5 greater than ( > )
+  - 8.6 less than ( < )
+  - 8.7 greater than or equal to ( >= )
+  - 8.8 less than or equal to ( <= )
+9. Arithmetic Operators
+  - 9.1 Exponentiation operator ( ** )
+  - 9.2 Modulus operator ( % )
+  - 9.3 Increment operator ( ++ )
+  - 9.4 Decrement operator ( -- )
+
 # [Constructors](#_constructors)
 1. Set()
 
@@ -1572,6 +1577,76 @@ x >= 8 	// false
 ```javascript
 x <= 8 	// false
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+# Arithmetic Operators
+- https://www.w3schools.com/js/js_arithmetic.asp
+- Arithmetic operators perform arithmetic on numbers (literals or variables).
+
+<br><br>
+
+## Exponentiation operator ( ** )
+- The exponentiation operator (**) raises the first operand to the power of the second operand.
+  - x ** 2 bedeutet: 5 hoch 2.
+  -Das entspricht 5×5, was 25 ergibt.
+```javascript
+let x = 5;
+let z = x ** 2; // 25
+```
+
+
+<br><br>
+
+## Modulus operator ( ++ )
+- The modulus operator (%) returns the division remainder.
+```javascript
+let x = 5;
+let y = 2;
+let z = x % y;
+console.log(z) // 1
+```
+
+<br><br>
+
+## Increment operator ( ++ )
+- The increment operator (++) increments numbers.
+```javascript
+let x = 5;
+x++; // 
+console.log(x) // 6
+```
+
+<br><br>
+
+## Decrement operator ( -- )
+- The decrement operator (--) decrements numbers.
+```javascript
+let x = 5;
+x--; // 
+console.log(x) // 4
+```
+
+
+
+
 
 </details>
 
