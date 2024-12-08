@@ -87,6 +87,14 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 9.2 Modulus operator ( % )
   - 9.3 Increment operator ( ++ )
   - 9.4 Decrement operator ( -- )
+10. Bitwise Operators
+  - 10.1 AND oPERATOR ( & )
+  - 10.2 OR Operator ( | )
+  - 10.3 XOR Operator ( ^ )
+  - 10.4 NOT Operator ( ~ )
+  - 10.5 Left Shift Operator ( << )
+  - 10.6 Right Shift Operator ( >> )
+  - 10.7 Unsigned Right Shift Operator (>>>)
 
 # [Constructors](#_constructors)
 1. Set()
@@ -1646,6 +1654,101 @@ console.log(x) // 4
 
 
 
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+
+
+# 10. Bitwise Operators
+
+<br><br>
+
+## 10.1 AND Operator (`&`)
+
+Der `&`-Operator vergleicht die Bits beider Operanden und gibt `1` zurück, wenn beide Bits `1` sind. Andernfalls wird `0` zurückgegeben.
+
+```javascript
+let a = 5;  // 0101
+let b = 3;  // 0011
+let result = a & b;  // 0001 (1)
+console.log(result);  // Ausgabe: 1
+```
+
+## 10.2 OR Operator (`|`)
+
+Der `|`-Operator vergleicht die Bits beider Operanden und gibt `1` zurück, wenn eines der beiden Bits `1` ist.
+
+```javascript
+let a = 5;  // 0101
+let b = 3;  // 0011
+let result = a | b;  // 0111 (7)
+console.log(result);  // Ausgabe: 7
+```
+
+## 10.3 XOR Operator (`^`)
+
+Der `^`-Operator vergleicht die Bits beider Operanden und gibt `1` zurück, wenn die Bits unterschiedlich sind, andernfalls `0`.
+
+```javascript
+let a = 5;  // 0101
+let b = 3;  // 0011
+let result = a ^ b;  // 0110 (6)
+console.log(result);  // Ausgabe: 6
+```
+
+## 10.4 NOT Operator (`~`)
+
+Der `~`-Operator kehrt alle Bits des Operanden um (invertiert die Bits). Er entspricht der negativen Zahl des Operanden minus eins.
+
+```javascript
+let a = 5;  // 0101
+let result = ~a;  // 1010 (negiert 5)
+console.log(result);  // Ausgabe: -6
+```
+
+## 10.5 Left Shift Operator (`<<`)
+
+Der `<<`-Operator verschiebt die Bits eines Operanden um eine bestimmte Anzahl nach links. Dabei werden rechts Nullen eingefügt.
+
+```javascript
+let a = 5;  // 0101
+let result = a << 1;  // 1010 (10)
+console.log(result);  // Ausgabe: 10
+```
+
+## 10.6 Right Shift Operator (`>>`)
+
+Der `>>`-Operator verschiebt die Bits eines Operanden um eine bestimmte Anzahl nach rechts. Das Vorzeichenbit wird beibehalten, was bedeutet, dass für negative Zahlen `1` eingefügt wird.
+
+```javascript
+let a = 5;  // 0101
+let result = a >> 1;  // 0010 (2)
+console.log(result);  // Ausgabe: 2
+```
+
+## 10.7 Unsigned Right Shift Operator (`>>>`)
+
+Der `>>>`-Operator verschiebt die Bits eines Operanden um eine bestimmte Anzahl nach rechts und fügt immer `0` an der linken Seite ein, unabhängig vom Vorzeichen des Operanden.
+
+```javascript
+let a = -5;  // 11111111111111111111111111111011
+let result = a >>> 1;  // 01111111111111111111111111111101 (2147483643)
+console.log(result);  // Ausgabe: 2147483643
+```
+
+
+<br><br>
+<br><br>
 
 
 </details>
