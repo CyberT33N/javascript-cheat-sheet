@@ -488,7 +488,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Do something when current page / popup windows was closed
 
 # [Os/Device Detect](#_osdevice-detect)
-1. Check if tablet/smartphone
+1. Check if mobile/tablet/smartphone
 2. Check if iOS
 3. Check if Safari Browser
 
@@ -12693,7 +12693,30 @@ popup.onbeforeunload = function(){ /* .. */ };
 <details><summary>Click to expand..</summary>
 
 
-# Check if tablet/smartphone
+# Check if mobile/tablet/smartphone
+
+
+Option 0 (Created with chatgpt):
+```
+const mobileCheck = function() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  
+  // Bekannte mobile Plattformen
+  const mobileRegex = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od|ad)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino|crkey/i;
+  
+  // Zusätzliche Checks für neue mobile Browser oder Plattformen
+  const additionalMobileRegex = /(mobile|tablet|ipad|playbook|silk|kindle|opera mini|opera mobi|blackberry|bb10|playstation vita|nokia|lumia|webos|samsung|huawei|oppo|vivo|xiaomi|miui)/i;
+
+  // Prüfung auf Mobilgerät
+  return mobileRegex.test(userAgent) || additionalMobileRegex.test(userAgent);
+};
+
+
+mobileCheck()
+```
+
+
+<br>
 
 Option 1:
 ```javascript
