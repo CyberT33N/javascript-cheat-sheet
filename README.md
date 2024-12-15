@@ -538,8 +538,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 
 # [Utils](#_utils)
-1. FuckAdBlock
-
+1. Detect Adblock
 2. 
 
 
@@ -13411,7 +13410,21 @@ try {
 <details><summary>Click to expand..</summary>
 
 
-# FuckAdBlock
+# Detect Adblock
+
+Option 1:
+```javascript
+fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js').then(() => {
+   // ..
+}).catch((e) => {
+	console.log(e);
+	adBlockDetected()
+});
+```
+
+
+
+Option 2 (FuckAdBlock):
 - https://github.com/sitexw/FuckAdBlock
 ```
 // Function called if AdBlock is not detected
