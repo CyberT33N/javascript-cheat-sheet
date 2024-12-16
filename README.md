@@ -538,6 +538,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Frameworks](#_frameworks)
 1. ui.shadcn.com
 2. Floating UI
+3. Tippy.js
+4. Swiper.js
 
 
 # [Utils](#_utils)
@@ -13433,6 +13435,15 @@ try {
 
 # Floating UI
 - https://floating-ui.com/
+
+<br><br>
+
+# Tippy.js
+
+<br><br>
+
+# Swiper.js
+- https://swiperjs.com/
 
 
 
