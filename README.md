@@ -95,6 +95,8 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 10.5 Left Shift Operator ( << )
   - 10.6 Right Shift Operator ( >> )
   - 10.7 Unsigned Right Shift Operator (>>>)
+11. Assignment Operator
+  - 11.1 Safe Assignment Operator ( ?= )
 
 # [Constructors](#_constructors)
 1. Set()
@@ -1753,9 +1755,48 @@ console.log(result);  // Ausgabe: 2147483643
 ```
 
 
+
+
+
+
+
+
+
+<br><br>
+<br><br>
 <br><br>
 <br><br>
 
+
+# Assignment Operator
+
+<br><br>
+
+## Safe Assignment Operator ( ?= )
+- Alternative to try catch
+
+```javascript
+async function fetchUserData(userId) {
+  const [fetchError, response] = ?= await fetch(`/api/users/${userId}`);
+  if (fetchError) return { error: 'Failed to fetch user data' };
+
+  const [parseError, userData] = ?= await response.json();
+  if (parseError) return { error: 'Failed to parse user data' };
+
+  return { userData };
+}
+
+// Usage
+async function displayUserProfile(userId) {
+  const { error, userData } = await fetchUserData(userId);
+  if (error) {
+    console.error(error);
+    displayErrorMessage(error);
+  } else {
+    renderUserProfile(userData);
+  }
+}
+```
 
 </details>
 
