@@ -537,11 +537,12 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Frameworks](#_frameworks)
 1. ui.shadcn.com
+2. Floating UI
 
 
 # [Utils](#_utils)
 1. Detect Adblock
-2. 
+
 
 
 </details>
@@ -13428,7 +13429,10 @@ try {
 # ui.shadcn.com
 - https://ui.shadcn.com/docs/components/context-menu
 
+<br><br>
 
+# Floating UI
+- https://floating-ui.com/
 
 
 
@@ -13444,7 +13448,7 @@ try {
 
 
 
-
+<br><br>
 
 
 <a name="_utils"><h1>Utils</h1></a>
@@ -13635,7 +13639,7 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
 - https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e
 
 
-	
+</details>
 	
 
 
@@ -13643,7 +13647,14 @@ let el = document.querySelector('.zp_33Rq5.zp_49YQRaa')?.querySelectorAll('.mdi-
  
 	
 	
-	
+
+
+
+
+
+
+
+ 
 	
 	
 <br><br>
