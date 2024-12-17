@@ -266,6 +266,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 1. Sort Array by Numbers ASC
 2. Sort Array by String ASC
 3. Sort Array by two values ASC
+4. Recursively sort object keys alphabetically (case-insensitive) and array elements
 
 # [Cookie](#_cookie)
 1. Get value of specific cookie
@@ -8410,6 +8411,50 @@ r.sort((a, b) => a.sorting - b.sorting || a.name.localeCompare(b.name));
 ```
 
 
+
+
+
+
+# Recursively sort object keys alphabetically (case-insensitive) and array elements
+```javascript
+// Function to recursively sort object keys alphabetically (case-insensitive) and array elements
+        const sortObjectKeys = (obj) => {
+            if (_.isArray(obj)) {
+                // If it's an array, remove duplicates and sort elements
+                return [...new Set(obj.map(JSON.stringify))]  // Remove duplicates from arrays
+                    .map(item => JSON.parse(item))
+                    .map(item => sortObjectKeys(item)) // Sort each array item
+                    .sort((a, b) => {
+                        // If the items are objects, sort by their first key (case-insensitive)
+                        if (_.isObject(a) && _.isObject(b)) {
+                            return Object.keys(a)[0].localeCompare(Object.keys(b)[0], undefined, { sensitivity: 'base' });
+                        }
+                        // If both items are strings, sort them case-insensitive
+                        if (typeof a === 'string' && typeof b === 'string') {
+                            return a.localeCompare(b, undefined, { sensitivity: 'base' });
+                        }
+                        return 0;
+                    });
+            } else if (_.isObject(obj)) {
+                // If it's an object, sort the object keys alphabetically (case-insensitive)
+                return Object.keys(obj)
+                    .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+                    .reduce((acc, key) => {
+                        acc[key] = sortObjectKeys(obj[key]); // Recursively sort nested objects or arrays
+                        return acc;
+                    }, {});
+            }
+            return obj; // Return primitive values as they are
+        };
+```
+
+
+
+
+
+
+
+
  </details> 
 
 
@@ -8418,12 +8463,46 @@ r.sort((a, b) => a.sorting - b.sorting || a.name.localeCompare(b.name));
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
-
-
-
-
-
+<br><br>
 
 <a name="_cookie"><h1>Cookie</h1></a>
 <details><summary>Click to expand..</summary>
