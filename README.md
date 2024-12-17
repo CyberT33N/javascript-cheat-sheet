@@ -10825,6 +10825,14 @@ const new = months.with(2, "March");
 <br><br>
 
 # remove all duplicates from an array
+Method 1:
+```
+const _ = require('lodash')
+const uniqAr = _.uniqWith(arrayHere, _.isEqual);
+```
+
+
+Method 2
 ```javascript
 const a = ['name']
 const b = ['name', 'weight']
