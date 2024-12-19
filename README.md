@@ -364,6 +364,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
   - 6.31 .toSorted()
   - 6.32 .toSpliced()
   - 6.33 .with()
+  - 6.34 .findIndex()
 8. remove all duplicates from an array
   <br> 8.1 remove all duplicates from an array of objects by property
   <br> 8.2 remove all duplicates from an array of objects
@@ -10862,6 +10863,22 @@ const spliced = months.toSpliced(0, 1);
 ```javascript
 const months = ["Januar", "Februar", "Mar", "April"];
 const new = months.with(2, "March");
+```
+
+
+<br><br>
+
+
+
+#### .findIndex()
+- Die findIndex()-Methode von Array-Instanzen gibt den Index des ersten Elements in einem Array zurück, das die bereitgestellte Testfunktion erfüllt. Wenn kein Element die Testfunktion erfüllt, wird -1 zurückgegeben.
+```javascript
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// Expected output: 3
 ```
 
 <br><br>
