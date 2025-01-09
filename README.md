@@ -46,6 +46,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 
 # [Web API](#_webapi)
 1. URL()
+2. Web Workers
 
 # [Scope](#_scope)
 1. You can not access variables which are defined within a function
@@ -676,6 +677,118 @@ let res2 = Object.fromEntries(test.searchParams)
 console.log(res2)
 ```
 
+
+
+<br><br
+
+# Web Workers
+
+JavaScript Web Workers
+Was sind Web Workers?
+
+Web Workers sind eine JavaScript-API, die es ermöglicht, Skriptausführungen im Hintergrund durchzuführen, ohne die Benutzerschnittstelle zu blockieren. Das bedeutet, dass komplexe Berechnungen oder langwierige Aufgaben in einem separaten Thread laufen können, während die Hauptseite des Browsers reaktionsfähig bleibt.
+
+Wie funktionieren Web Workers?
+
+    Erstellung eines Web Workers:
+        Ein Web Worker wird durch das Erstellen eines neuen Worker-Objekts initiiert. Dabei wird die URL eines JavaScript-Skripts angegeben, das im Hintergrund ausgeführt wird.
+
+    ```javascript
+    let worker = new Worker('worker.js');
+    ```
+
+    Kommunikation zwischen Hauptthread und Worker:
+        Die Kommunikation erfolgt über die postMessage-Methode. Der Hauptthread kann Nachrichten an den Worker senden, und der Worker kann Nachrichten an den Hauptthread zurücksenden.
+
+    ```javascript
+
+    // Im Hauptthread
+    worker.postMessage('Hallo vom Hauptthread!');
+
+    worker.onmessage = function(event) {
+        console.log('Nachricht vom Worker:', event.data);
+    };
+
+    // Im Worker-Skript (worker.js)
+    self.onmessage = function(event) {
+        console.log('Nachricht vom Hauptthread:', event.data);
+        self.postMessage('Hallo zurück vom Worker!');
+    };
+    ```
+
+    Beenden des Workers:
+        Ein Worker kann durch die terminate-Methode beendet werden.
+
+    ```javascript
+
+    worker.terminate();
+    ```
+
+Beispiel für einen einfachen Web Worker
+
+Angenommen, du möchtest eine intensive Berechnung durchführen, wie das Fakultäts einer Zahl zu berechnen:
+
+    Haupt-Skript (index.html):
+
+
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Worker Beispiel</title>
+</head>
+<body>
+    <script>
+        let worker = new Worker('worker.js');
+
+        worker.onmessage = function(event) {
+            document.getElementById('result').textContent = event.data;
+        };
+
+        document.getElementById('calculate').onclick = function() {
+            let number = parseInt(document.getElementById('number').value);
+            worker.postMessage(number);
+        };
+    </script>
+    <input type="number" id="number" placeholder="Gib eine Zahl ein">
+    <button id="calculate">Berechne Fakultät</button>
+    <p id="result"></p>
+</body>
+</html>
+```
+
+    Worker-Skript (worker.js):
+
+
+```javascript
+
+self.onmessage = function(event) {
+    let number = event.data;
+    let factorial = calculateFactorial(number);
+    self.postMessage(factorial);
+};
+
+function calculateFactorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * calculateFactorial(n - 1);
+    }
+}
+```
+
+Nutzung von Web Workers:
+
+    Vorteile:
+        Vermeidung von UI-Blockierungen durch Hintergrundprozesse.
+        Möglichkeit zur Parallelisierung von Aufgaben für bessere Leistung.
+    Einschränkungen:
+        Web Workers haben keinen direkten Zugriff auf das DOM, können also nicht direkt HTML manipulieren.
+        Die Kommunikation zwischen Hauptthread und Worker ist asynchron, was das Debugging etwas komplizierter macht.
+
+
+Mit diesen einfachen Beispielen kannst du direkt in dein JavaScript Cheat Sheet integrieren, um die Funktionsweise und Nutzung von Web Workers klar zu veranschaulichen.
 
 
 </details>
