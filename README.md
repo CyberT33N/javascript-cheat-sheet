@@ -217,6 +217,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
     - 3.31 Re-export default
     - 3.32 Re-export default as object
     - 3.33 Re-export object as object
+    - 3.34 Import JSON
   - 3.4 Client Side
   - 3.5 No require, exports, module.exports, __filename, __dirname
   - 3.6 Import script dynamic
@@ -6601,7 +6602,36 @@ export { HttpClientError } from './errors/HttpClientError'
 
 
  
+<br><br>
+<br><br>
+
+
+### Import JSON
+```javascript
+import json from './foo.json' assert { type: 'json' };
+console.log(json.answer); // 42
+```
 	
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<br><br>
+<br><br>
 <br><br>
 <br><br>
 
