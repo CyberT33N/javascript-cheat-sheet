@@ -545,6 +545,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 2. Floating UI
 3. Tippy.js
 4. Swiper.js
+5. GSAP
 
 
 # [Utils](#_utils)
@@ -13749,6 +13750,10 @@ try {
 # Swiper.js
 - https://swiperjs.com/
 
+<br><br>
+
+# GSAP
+- https://gsap.com/
 
 
 </details
