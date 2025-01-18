@@ -47,6 +47,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 # [Web API](#_webapi)
 1. URL()
 2. Web Workers
+3. AbortController API
 
 # [Scope](#_scope)
 1. You can not access variables which are defined within a function
@@ -791,6 +792,122 @@ Nutzung von Web Workers:
 
 
 Mit diesen einfachen Beispielen kannst du direkt in dein JavaScript Cheat Sheet integrieren, um die Funktionsweise und Nutzung von Web Workers klar zu veranschaulichen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br
+
+# AbortController API
+
+Die `AbortController` API ermöglicht es, asynchrone Operationen (wie z.B. Fetch-Anfragen oder Promises) abzubrechen. Dies ist besonders nützlich, um Ressourcen zu sparen und unerwünschte Ergebnisse zu verhindern, wenn eine Operation nicht mehr benötigt wird.
+
+## Verwendung
+
+1.  **Erstellen eines `AbortController`:**
+
+    ```javascript
+    const controller = new AbortController();
+    ```
+
+2.  **Abrufen des `signal`:**
+
+    Das `signal` des Controllers wird an die abzubrechende Operation übergeben.
+    
+    ```javascript
+    const signal = controller.signal; 
+    ```
+
+3.  **Anhängen des `signal` an die Operation:**
+
+    Das hängt davon ab, wie die Operation durchgeführt wird. Bei `fetch` wird das `signal` als Option hinzugefügt:
+
+    ```javascript
+    fetch('https://example.com/data', { signal })
+      .then(response => /* ... */)
+      .catch(error => {
+        if (error.name === 'AbortError') {
+          // Anfrage wurde abgebrochen
+          console.log('Fetch wurde abgebrochen');
+        } else {
+          // Andere Fehler behandeln
+        }
+      });
+    ```
+
+    Bei Promises kann es z.B. durch einen Abort-Callback gelöst werden.
+
+4.  **Abbrechen der Operation:**
+
+    Mit `controller.abort()` wird die Operation abgebrochen.
+
+    ```javascript
+    // Irgendwann später
+    controller.abort();
+    ```
+
+## Kern-Eigenschaften und Methoden
+
+*   **`AbortController()`**
+    *   Konstruktor: Erstellt eine neue `AbortController` Instanz.
+
+*   **`AbortController.signal`**
+    *   Eigenschaft: Gibt ein `AbortSignal` Objekt zurück, welches mit der Operation verbunden wird.
+        *   **`AbortSignal.aborted` (read-only)**: Boolescher Wert, der `true` ist, wenn die Operation abgebrochen wurde.
+        *   **`AbortSignal.onabort`**: Event-Handler, der aufgerufen wird, wenn die Operation abgebrochen wird.
+        *   **`AbortSignal.reason`**: Ein Optionaler Wert, der dem abort-call übergeben wurde.
+
+*   **`AbortController.abort(reason)`**
+    *   Methode: Bricht die mit dem `AbortSignal` verbundene Operation ab. Kann einen optionalen Grund übergeben, der über das `signal.reason` ausgelesen werden kann.
+
+## Anwendungsfälle
+
+*   **Fetch-Anfragen:** Abbruch von ausstehenden Netzwerk-Requests.
+*   **Asynchrone Operationen:** Abbruch von Timern, Animationen, Event-Listenern oder anderen asynchronen Prozessen.
+*   **Umgang mit User-Interaktionen:** Abbruch von Operationen, die durch Benutzereingaben überholt wurden.
+*   **Optimierung:** Vermeidung von unnötigen Berechnungen und Updates, wenn eine Operation irrelevant geworden ist.
+
+## Beispiel: Fetch-Abbruch
+
+```javascript
+const controller = new AbortController();
+const signal = controller.signal;
+
+fetch('https://example.com/data', { signal })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => {
+    if (error.name === 'AbortError') {
+      console.log('Fetch-Anfrage abgebrochen!');
+    }
+    else {
+        console.error(error);
+    }
+  });
+
+// Nach einigen Sekunden abbruch
+setTimeout(() => {
+  controller.abort();
+}, 3000);
+```
+
+
+
+
+
+
+
+
+
 
 
 </details>
