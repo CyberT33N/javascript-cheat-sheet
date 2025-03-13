@@ -439,6 +439,7 @@ for(const d of document.querySelectorAll('#readme details')){d.removeAttribute('
 5. Promise.finally()
 6. Promise.allSettled()
 7. Promise.any()
+8. Promise.withResolvers()
 
 # [Wait](#_wait)
 1. Wait until some condition is true
@@ -12386,6 +12387,73 @@ Promise.any([promise1, promise2, promise3])
         console.error(error);
     });
 ```
+
+
+<br><br>
+
+# Promise.withResolver()
+
+<details><summary>Click to expand..</summary>
+	
+
+Mit **ES2024** kommt `Promise.withResolvers()`, eine neue Methode, die das Arbeiten mit Promises erleichtert.  
+
+#### **Was macht `Promise.withResolvers()`?**
+Es gibt ein Objekt mit zwei Werten zurück:  
+- **`promise`** – Das Promise-Objekt  
+- **`resolve`** – Die zugehörige `resolve`-Funktion  
+- **`reject`** – Die zugehörige `reject`-Funktion  
+
+Bisher mussten wir sowas umständlich so schreiben:  
+
+```js
+function getWeather() {
+  let resolveFn, rejectFn;
+  const promise = new Promise((resolve, reject) => {
+    resolveFn = resolve;
+    rejectFn = reject;
+  });
+
+  setTimeout(() => {
+    resolveFn("☀️ Sunny");
+  }, 1000);
+
+  return promise;
+}
+
+getWeather().then(console.log); // Nach 1 Sekunde: "☀️ Sunny"
+```
+
+Hier müssen wir erst Variablen `resolveFn` und `rejectFn` anlegen – etwas umständlich.  
+
+---
+
+### **Mit `Promise.withResolvers()` geht es eleganter:**
+```js
+function getWeather() {
+  const { promise, resolve } = Promise.withResolvers();
+  
+  setTimeout(() => resolve("☀️ Sunny"), 1000);
+  
+  return promise;
+}
+
+getWeather().then(console.log); // Nach 1 Sekunde: "☀️ Sunny"
+```
+
+✅ **Klarer, kompakter und einfacher zu lesen.**  
+
+---
+
+### **Anwendungsfälle**
+- **Event-Listener in Promises kapseln**
+- **Warten auf asynchrone Ereignisse**
+- **Timeouts und Abbruchlogik** einfacher umsetzen  
+
+**Fazit:** `Promise.withResolvers()` beseitigt Boilerplate-Code und macht asynchrone Logik sauberer! 🚀
+
+</details>
+
 
 </details>
 
